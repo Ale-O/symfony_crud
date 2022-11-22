@@ -201,7 +201,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
         // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
         echo "\">
-                                Symfony Demo
+                                Skeleton
                             </a>
 
                             <button type=\"button\" class=\"navbar-toggle\"
@@ -576,7 +576,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
                     <div class=\"container\">
                         <div class=\"navbar-header col-md-3 col-lg-2\">
                             <a class=\"navbar-brand\" href=\"{{ path('homepage') }}\">
-                                Symfony Demo
+                                Skeleton
                             </a>
 
                             <button type=\"button\" class=\"navbar-toggle\"
@@ -711,6 +711,6 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
         <!-- Page rendered on {{ 'now'|format_datetime('long', 'long', '', 'UTC') }} -->
     </body>
 </html>
-", "base.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\base.html.twig");
     }
 }
