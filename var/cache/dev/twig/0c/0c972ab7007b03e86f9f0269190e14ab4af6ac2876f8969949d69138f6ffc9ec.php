@@ -39,26 +39,10 @@ class __TwigTemplate_5637c7b2e81d32479f49a1eae7f79fa00c78f597326409c6c94320d9202
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/about.html.twig"));
 
-        // line 1
-        echo "<div class=\"section about\">
-    <div class=\"well well-lg\">
-        <p>
-            ";
-        // line 4
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("help.app_description");
+        // line 13
         echo "
-        </p>
-        <p>
-            ";
-        // line 7
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("help.more_information");
-        echo "
-        </p>
-    </div>
-</div>
-
 ";
-        // line 15
+        // line 17
         echo "<!-- Fragment rendered on ";
         echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, "now", "long", "long", "", "UTC"), "html", null, true);
         echo " -->
@@ -83,12 +67,13 @@ class __TwigTemplate_5637c7b2e81d32479f49a1eae7f79fa00c78f597326409c6c94320d9202
 
     public function getDebugInfo()
     {
-        return array (  62 => 15,  54 => 7,  48 => 4,  43 => 1,);
+        return array (  46 => 17,  43 => 13,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"section about\">
+        return new Source("{#
+<div class=\"section about\">
     <div class=\"well well-lg\">
         <p>
             {{ 'help.app_description'|trans|raw }}
@@ -98,11 +83,12 @@ class __TwigTemplate_5637c7b2e81d32479f49a1eae7f79fa00c78f597326409c6c94320d9202
         </p>
     </div>
 </div>
+#}
 
 {# it's not mandatory to set the timezone in localizeddate(). This is done to
    avoid errors when the 'intl' PHP extension is not available and the application
    is forced to use the limited \"intl polyfill\", which only supports UTC and GMT #}
 <!-- Fragment rendered on {{ 'now'|format_datetime('long', 'long', '', 'UTC') }} -->
-", "blog/about.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\blog\\about.html.twig");
+", "blog/about.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\about.html.twig");
     }
 }

@@ -39,19 +39,6 @@ class __TwigTemplate_0f949e5a0cd8fbd77cda2131f208a5f17555e9f777dd1c9d9ddecf39d35
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/_rss.html.twig"));
 
-        // line 1
-        echo "<div class=\"section rss\">
-    <a href=\"";
-        // line 2
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_rss", twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 2, $this->source); })()), "request", [], "any", false, false, false, 2), "query", [], "any", false, false, false, 2), "all", [], "any", false, false, false, 2)), "html", null, true);
-        echo "\">
-        <i class=\"fa fa-rss\" aria-hidden=\"true\"></i> ";
-        // line 3
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.rss"), "html", null, true);
-        echo "
-    </a>
-</div>
-";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -65,23 +52,20 @@ class __TwigTemplate_0f949e5a0cd8fbd77cda2131f208a5f17555e9f777dd1c9d9ddecf39d35
         return "blog/_rss.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  50 => 3,  46 => 2,  43 => 1,);
+        return array ();
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"section rss\">
+        return new Source("{#
+<div class=\"section rss\">
     <a href=\"{{ path('blog_rss', app.request.query.all) }}\">
         <i class=\"fa fa-rss\" aria-hidden=\"true\"></i> {{ 'menu.rss'|trans }}
     </a>
 </div>
-", "blog/_rss.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\blog\\_rss.html.twig");
+#}
+", "blog/_rss.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\_rss.html.twig");
     }
 }

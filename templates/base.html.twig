@@ -25,7 +25,7 @@
                     <div class="container">
                         <div class="navbar-header col-md-3 col-lg-2">
                             <a class="navbar-brand" href="{{ path('homepage') }}">
-                                Skeleton
+                                Crud
                             </a>
 
                             <button type="button" class="navbar-toggle"
@@ -83,6 +83,7 @@
                                     </li>
                                 {% endif %}
 
+                                {#
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="locales">
                                         <i class="fa fa-globe" aria-hidden="true"></i>
@@ -95,6 +96,7 @@
                                         {% endfor %}
                                     </ul>
                                 </li>
+                                #}
                             </ul>
                         </div>
                     </div>
@@ -111,6 +113,7 @@
                         {% block main %}{% endblock %}
                     </div>
 
+                    
                     <div id="sidebar" class="col-sm-3">
                         {% block sidebar %}
                             {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', {
@@ -120,6 +123,8 @@
                             })) }}
                         {% endblock %}
                     </div>
+                    
+
                 </div>
             {% endblock %}
         </div>
@@ -129,9 +134,10 @@
                 <div class="container">
                     <div class="row">
                         <div id="footer-copyright" class="col-md-6">
-                            <p>&copy; {{ 'now'|date('Y') }} - The Symfony Project</p>
+                            <p>&copy; {{ 'now'|date('Y') }} - The Crud Project</p>
                             <p>{{ 'mit_license'|trans }}</p>
                         </div>
+                        {#
                         <div id="footer-resources" class="col-md-6">
                             <p>
                                 <a href="https://twitter.com/symfony" title="Symfony Twitter">
@@ -145,6 +151,7 @@
                                 </a>
                             </p>
                         </div>
+                        #}
                     </div>
                 </div>
             </footer>

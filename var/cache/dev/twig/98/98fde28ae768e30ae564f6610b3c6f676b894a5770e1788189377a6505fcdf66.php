@@ -28,7 +28,6 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
             'body_id' => [$this, 'block_body_id'],
             'javascripts' => [$this, 'block_javascripts'],
             'main' => [$this, 'block_main'],
-            'sidebar' => [$this, 'block_sidebar'],
         ];
     }
 
@@ -175,111 +174,10 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
             </div>
         </div>
 
-        <div id=\"login-help\" class=\"col-sm-7\">
-            <h3>
-                <i class=\"hidden-xs fa fa-long-arrow-left\" aria-hidden=\"true\"></i>
-                ";
-        // line 44
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("help.login_users"), "html", null, true);
+        ";
+        // line 89
         echo "
-            </h3>
-
-            <table class=\"table table-striped table-bordered table-hover\">
-                <thead>
-                    <tr>
-                        <th scope=\"col\">";
-        // line 50
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.username"), "html", null, true);
-        echo "</th>
-                        <th scope=\"col\">";
-        // line 51
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.password"), "html", null, true);
-        echo "</th>
-                        <th scope=\"col\">";
-        // line 52
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.role"), "html", null, true);
-        echo "</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>john_user</td>
-                        <td>kitten</td>
-                        <td><code>ROLE_USER</code> (";
-        // line 59
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("help.role_user"), "html", null, true);
-        echo ")</td>
-                    </tr>
-                    <tr>
-                        <td>jane_admin</td>
-                        <td>kitten</td>
-                        <td><code>ROLE_ADMIN</code> (";
-        // line 64
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("help.role_admin"), "html", null, true);
-        echo ")</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div id=\"login-users-help\" class=\"panel panel-default\">
-                <div class=\"panel-body\">
-                    <p>
-                        <span class=\"label label-success\">";
-        // line 72
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("note"), "html", null, true);
-        echo "</span>
-                        ";
-        // line 73
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("help.reload_fixtures"), "html", null, true);
-        echo "<br/>
-
-                        <code class=\"console\">\$ php bin/console doctrine:fixtures:load</code>
-                    </p>
-
-                    <p>
-                        <span class=\"label label-success\">";
-        // line 79
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("tip"), "html", null, true);
-        echo "</span>
-                        ";
-        // line 80
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("help.add_user"), "html", null, true);
-        echo "<br/>
-
-                        <code class=\"console\">\$ php bin/console app:add-user</code>
-                    </p>
-                </div>
-            </div>
-        </div>
     </div>
-";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 90
-    public function block_sidebar($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
-
-        // line 91
-        echo "    ";
-        $this->displayParentBlock("sidebar", $context, $blocks);
-        echo "
-
-    ";
-        // line 93
-        echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
-        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -301,7 +199,7 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
 
     public function getDebugInfo()
     {
-        return array (  281 => 93,  275 => 91,  265 => 90,  246 => 80,  242 => 79,  233 => 73,  229 => 72,  218 => 64,  210 => 59,  200 => 52,  196 => 51,  192 => 50,  183 => 44,  170 => 34,  165 => 32,  161 => 31,  155 => 28,  149 => 25,  145 => 24,  140 => 22,  135 => 20,  129 => 16,  123 => 13,  120 => 12,  117 => 11,  107 => 10,  95 => 7,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  179 => 89,  169 => 34,  164 => 32,  160 => 31,  154 => 28,  148 => 25,  144 => 24,  139 => 22,  134 => 20,  128 => 16,  122 => 13,  119 => 12,  116 => 11,  106 => 10,  94 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -346,6 +244,7 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
             </div>
         </div>
 
+        {#
         <div id=\"login-help\" class=\"col-sm-7\">
             <h3>
                 <i class=\"hidden-xs fa fa-long-arrow-left\" aria-hidden=\"true\"></i>
@@ -392,14 +291,18 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
                 </div>
             </div>
         </div>
+        #}
+
     </div>
 {% endblock %}
 
+{#
 {% block sidebar %}
     {{ parent() }}
 
     {{ show_source_code(_self) }}
 {% endblock %}
-", "security/login.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\security\\login.html.twig");
+#}
+", "security/login.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\security\\login.html.twig");
     }
 }
