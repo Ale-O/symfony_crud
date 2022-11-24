@@ -557,6 +557,6 @@ class __TwigTemplate_904a6d1681daaf3b7a35bb5083947a88beaaed4af1f62f78be9ceb852b0
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Collector/http_client.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\http_client.html.twig");
+", "@WebProfiler/Collector/http_client.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\http_client.html.twig");
     }
 }

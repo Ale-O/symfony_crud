@@ -245,6 +245,6 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
         </div>
     </div>
 {% endblock %}
-", "default/homepage.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\default\\homepage.html.twig");
+", "default/homepage.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\default\\homepage.html.twig");
     }
 }

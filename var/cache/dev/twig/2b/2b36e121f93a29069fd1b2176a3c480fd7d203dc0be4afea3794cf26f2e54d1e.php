@@ -92,6 +92,6 @@ class __TwigTemplate_9f8244316de1ecbca3ab2d5d355b83f2c248faea4a197b8d03e2678929e
         {{ 'action.delete_post'|trans }}
     </button>
 </form>
-", "admin/blog/_delete_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\admin\\blog\\_delete_form.html.twig");
+", "admin/blog/_delete_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\blog\\_delete_form.html.twig");
     }
 }

@@ -50,6 +50,13 @@
             <div class="col-sm-9">
                 {{ comment.content|markdown_to_html|sanitize_html }}
             </div>
+
+            <div class="col-sm-9">
+                <a href="{{ path('blog_show', {id: comment.id}) }}" class="btn btn-sm btn-default">
+                    <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show'|trans }}
+                </a>
+            </div>
+
         </div>
     {% else %}
         <div class="post-comment">

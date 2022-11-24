@@ -132,6 +132,6 @@ class __TwigTemplate_aa836aa67c70ccc5ed3307f333c1fe3ac8648fe2744ca3a6aa9635f2ca1
         {{ include('blog/_comment_form.html.twig') }}
     </div>
 {% endblock %}
-", "blog/comment_form_error.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\blog\\comment_form_error.html.twig");
+", "blog/comment_form_error.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\comment_form_error.html.twig");
     }
 }

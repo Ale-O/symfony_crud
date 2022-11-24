@@ -69,6 +69,6 @@ class __TwigTemplate_4044370c2409cb9f42e9c10843586a8aa17e7b75cbbd1cea1620cfeb415
     public function getSourceContext()
     {
         return new Source("{{ content|markdown_to_html }}
-", "@email/zurb_2/notification/content_markdown.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\vendor\\symfony\\twig-bridge\\Resources\\views\\Email\\zurb_2\\notification\\content_markdown.html.twig");
+", "@email/zurb_2/notification/content_markdown.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\vendor\\symfony\\twig-bridge\\Resources\\views\\Email\\zurb_2\\notification\\content_markdown.html.twig");
     }
 }

@@ -210,6 +210,6 @@ class __TwigTemplate_2d835a3bdca7c97973326def80ee3d86195fe52d938c872e12e5dbfcb3a
 
     {{ show_source_code(_self) }}
 {% endblock %}
-", "user/change_password.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\user\\change_password.html.twig");
+", "user/change_password.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\user\\change_password.html.twig");
     }
 }

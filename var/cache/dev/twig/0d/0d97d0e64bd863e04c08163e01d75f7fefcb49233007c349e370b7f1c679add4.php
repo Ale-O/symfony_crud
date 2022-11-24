@@ -200,6 +200,6 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
     {{ parent() }}
     {{ encore_entry_script_tags('admin') }}
 {% endblock %}
-", "admin/layout.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\admin\\layout.html.twig");
+", "admin/layout.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\layout.html.twig");
     }
 }

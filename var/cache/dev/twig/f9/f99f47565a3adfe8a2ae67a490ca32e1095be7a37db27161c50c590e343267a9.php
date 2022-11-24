@@ -186,6 +186,6 @@ class __TwigTemplate_169cb8566d3845f84456200ebec18f6b5b93fedfb128d7ccfe0ca02c00c
 
     {{ show_source_code(_self) }}
 {% endblock %}
-", "@Twig/Exception/error.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\bundles\\TwigBundle\\Exception\\error.html.twig");
+", "@Twig/Exception/error.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\bundles\\TwigBundle\\Exception\\error.html.twig");
     }
 }

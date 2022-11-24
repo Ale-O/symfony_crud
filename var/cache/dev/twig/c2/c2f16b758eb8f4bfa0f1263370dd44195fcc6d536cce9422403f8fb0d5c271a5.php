@@ -151,20 +151,22 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
         </a>
     </div>
 
+    
     <div class=\"section\">
         ";
-        // line 30
-        echo twig_include($this->env, $context, "admin/blog/_delete_form.html.twig", ["post" => (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 30, $this->source); })())], false);
+        // line 31
+        echo twig_include($this->env, $context, "admin/blog/_delete_form.html.twig", ["post" => (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 31, $this->source); })())], false);
         echo "
     </div>
+    
 
     ";
-        // line 33
+        // line 35
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 35
+        // line 37
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -188,7 +190,7 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
 
     public function getDebugInfo()
     {
-        return array (  168 => 35,  163 => 33,  157 => 30,  149 => 25,  145 => 24,  142 => 23,  132 => 22,  120 => 19,  115 => 17,  107 => 14,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  170 => 37,  165 => 35,  158 => 31,  149 => 25,  145 => 24,  142 => 23,  132 => 22,  120 => 19,  115 => 17,  107 => 14,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -221,14 +223,16 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
         </a>
     </div>
 
+    
     <div class=\"section\">
         {{ include('admin/blog/_delete_form.html.twig', {post: post}, with_context = false) }}
     </div>
+    
 
     {{ parent() }}
 
     {{ show_source_code(_self) }}
 {% endblock %}
-", "admin/blog/show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\admin\\blog\\show.html.twig");
+", "admin/blog/show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\blog\\show.html.twig");
     }
 }

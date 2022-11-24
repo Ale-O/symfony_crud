@@ -174,6 +174,6 @@ class __TwigTemplate_0c30bdf98a1bdd88a0a7ad8cd0dc006ab31496f2c911c30e4071425f246
         {% endfor %}
     </channel>
 </rss>
-", "blog/index.xml.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\blog\\index.xml.twig");
+", "blog/index.xml.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\index.xml.twig");
     }
 }

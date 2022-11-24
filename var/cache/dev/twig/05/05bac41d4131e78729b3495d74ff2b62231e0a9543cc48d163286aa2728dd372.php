@@ -168,6 +168,6 @@ class __TwigTemplate_d8a6da327f87534325ee50edcecd3be0d4a19fbfb9993b9587e8afb82e9
         </div>
     </fieldset>
 {{ form_end(form) }}
-", "blog/_comment_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\blog\\_comment_form.html.twig");
+", "blog/_comment_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\_comment_form.html.twig");
     }
 }

@@ -226,6 +226,6 @@ class __TwigTemplate_68664278e6fbbff5b93d9e368157c7d80e13bdf9d018cf9db2ff5b4191e
 
     {{ show_source_code(_self) }}
 {% endblock %}
-", "blog/search.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\blog\\search.html.twig");
+", "blog/search.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\search.html.twig");
     }
 }

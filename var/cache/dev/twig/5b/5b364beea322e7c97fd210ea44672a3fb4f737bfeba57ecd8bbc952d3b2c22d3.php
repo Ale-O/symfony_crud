@@ -181,15 +181,28 @@ class __TwigTemplate_afcb4b5f39cb2f1d6ed3d79efeeb170c298c56bb021422a2a04b227bd21
             echo $this->extensions['HtmlSanitizer\Bundle\Twig\TwigExtension']->sanitize($this->env->getRuntime('Twig\Extra\Markdown\MarkdownRuntime')->convert(twig_get_attribute($this->env, $this->source, $context["comment"], "content", [], "any", false, false, false, 51)));
             echo "
             </div>
+
+            <div class=\"col-sm-9\">
+                <a href=\"";
+            // line 55
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show", ["id" => twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 55)]), "html", null, true);
+            echo "\" class=\"btn btn-sm btn-default\">
+                    <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
+            // line 56
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.show"), "html", null, true);
+            echo "
+                </a>
+            </div>
+
         </div>
     ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 55
+            // line 62
             echo "        <div class=\"post-comment\">
             <p>";
-            // line 56
+            // line 63
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.no_comments"), "html", null, true);
             echo "</p>
         </div>
@@ -206,7 +219,7 @@ class __TwigTemplate_afcb4b5f39cb2f1d6ed3d79efeeb170c298c56bb021422a2a04b227bd21
 
     }
 
-    // line 61
+    // line 68
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -216,37 +229,37 @@ class __TwigTemplate_afcb4b5f39cb2f1d6ed3d79efeeb170c298c56bb021422a2a04b227bd21
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 62
+        // line 69
         echo "    ";
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("edit", (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 62, $this->source); })()))) {
-            // line 63
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("edit", (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 69, $this->source); })()))) {
+            // line 70
             echo "        <div class=\"section\">
             <a class=\"btn btn-lg btn-block btn-success\" href=\"";
-            // line 64
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_post_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 64, $this->source); })()), "id", [], "any", false, false, false, 64)]), "html", null, true);
+            // line 71
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_post_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 71, $this->source); })()), "id", [], "any", false, false, false, 71)]), "html", null, true);
             echo "\">
                 <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
-            // line 65
+            // line 72
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit_post"), "html", null, true);
             echo "
             </a>
         </div>
     ";
         }
-        // line 69
+        // line 76
         echo "
     ";
-        // line 73
+        // line 80
         echo "    ";
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 75
+        // line 82
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
     ";
-        // line 76
+        // line 83
         echo twig_include($this->env, $context, "blog/_rss.html.twig");
         echo "
 ";
@@ -270,7 +283,7 @@ class __TwigTemplate_afcb4b5f39cb2f1d6ed3d79efeeb170c298c56bb021422a2a04b227bd21
 
     public function getDebugInfo()
     {
-        return array (  250 => 76,  246 => 75,  240 => 73,  237 => 69,  230 => 65,  226 => 64,  223 => 63,  220 => 62,  210 => 61,  193 => 56,  190 => 55,  181 => 51,  174 => 48,  168 => 44,  163 => 42,  160 => 41,  155 => 40,  149 => 37,  144 => 34,  138 => 31,  133 => 29,  129 => 28,  126 => 27,  120 => 25,  117 => 24,  111 => 15,  106 => 13,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  263 => 83,  259 => 82,  253 => 80,  250 => 76,  243 => 72,  239 => 71,  236 => 70,  233 => 69,  223 => 68,  206 => 63,  203 => 62,  192 => 56,  188 => 55,  181 => 51,  174 => 48,  168 => 44,  163 => 42,  160 => 41,  155 => 40,  149 => 37,  144 => 34,  138 => 31,  133 => 29,  129 => 28,  126 => 27,  120 => 25,  117 => 24,  111 => 15,  106 => 13,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -327,6 +340,13 @@ class __TwigTemplate_afcb4b5f39cb2f1d6ed3d79efeeb170c298c56bb021422a2a04b227bd21
             <div class=\"col-sm-9\">
                 {{ comment.content|markdown_to_html|sanitize_html }}
             </div>
+
+            <div class=\"col-sm-9\">
+                <a href=\"{{ path('blog_show', {id: comment.id}) }}\" class=\"btn btn-sm btn-default\">
+                    <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
+                </a>
+            </div>
+
         </div>
     {% else %}
         <div class=\"post-comment\">
@@ -352,6 +372,6 @@ class __TwigTemplate_afcb4b5f39cb2f1d6ed3d79efeeb170c298c56bb021422a2a04b227bd21
     {{ show_source_code(_self) }}
     {{ include('blog/_rss.html.twig') }}
 {% endblock %}
-", "blog/post_show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\my_project\\templates\\blog\\post_show.html.twig");
+", "blog/post_show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\post_show.html.twig");
     }
 }

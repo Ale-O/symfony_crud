@@ -141,6 +141,18 @@ class BlogController extends AbstractController
     }
 
     /**
+     * @Route("/{id<\d+>}", methods="GET", name="blog_show")
+     */
+    public function show(Post $post): Response
+    {
+        // $this->denyAccessUnlessGranted(PostVoter::SHOW, $post, 'Posts can only be shown to their authors.');
+
+        return $this->render('admin/blog/sub_element_show.html.twig', [
+            'comment' => $post,
+        ]);
+    }
+
+    /**
      * @Route("/search", methods="GET", name="blog_search")
      */
     public function search(Request $request, PostRepository $posts): Response
