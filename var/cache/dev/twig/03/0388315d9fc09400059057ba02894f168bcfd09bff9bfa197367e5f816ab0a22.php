@@ -85,24 +85,30 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         // line 6
-        echo "    <h1>";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6), "html", null, true);
+        echo "
+    <h1>";
+        // line 7
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 7, $this->source); })()), "id", [], "any", false, false, false, 7), "html", null, true);
+        echo "</h1>
+    <h1>";
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 8, $this->source); })()), "publishedAt", [], "any", false, false, false, 8), "medium", "short", "", "UTC"), "html", null, true);
         echo "</h1>
 
     <p class=\"post-metadata\">
         <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> ";
-        // line 9
-        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 9, $this->source); })()), "publishedAt", [], "any", false, false, false, 9), "long", "medium", "", "UTC"), "html", null, true);
+        // line 11
+        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 11, $this->source); })()), "publishedAt", [], "any", false, false, false, 11), "long", "medium", "", "UTC"), "html", null, true);
         echo "</span>
         <span class=\"metadata\"><i class=\"fa fa-user\"></i> ";
-        // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 10, $this->source); })()), "author", [], "any", false, false, false, 10), "fullName", [], "any", false, false, false, 10), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 12, $this->source); })()), "author", [], "any", false, false, false, 12), "fullName", [], "any", false, false, false, 12), "html", null, true);
         echo "</span>
     </p>
 
     ";
-        // line 13
-        echo $this->extensions['HtmlSanitizer\Bundle\Twig\TwigExtension']->sanitize($this->env->getRuntime('Twig\Extra\Markdown\MarkdownRuntime')->convert(twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 13, $this->source); })()), "content", [], "any", false, false, false, 13)));
+        // line 15
+        echo $this->extensions['HtmlSanitizer\Bundle\Twig\TwigExtension']->sanitize($this->env->getRuntime('Twig\Extra\Markdown\MarkdownRuntime')->convert(twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 15, $this->source); })()), "content", [], "any", false, false, false, 15)));
         echo "
 
 ";
@@ -126,7 +132,7 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
 
     public function getDebugInfo()
     {
-        return array (  105 => 13,  99 => 10,  95 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  111 => 15,  105 => 12,  101 => 11,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -136,7 +142,9 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
 {% block body_id 'blog_show' %}
 
 {% block main %}
+
     <h1>{{ comment.id }}</h1>
+    <h1>{{ comment.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
 
     <p class=\"post-metadata\">
         <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> {{ comment.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>

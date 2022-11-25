@@ -51,6 +51,9 @@
                 {{ comment.content|markdown_to_html|sanitize_html }}
             </div>
 
+            <h1>{{ comment.id }}</h1>
+            <h1>{{ comment.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
+
             <div class="col-sm-9">
                 <a href="{{ path('blog_show', {id: comment.id}) }}" class="btn btn-sm btn-default">
                     <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show'|trans }}

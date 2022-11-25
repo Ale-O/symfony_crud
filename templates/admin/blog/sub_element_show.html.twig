@@ -3,7 +3,9 @@
 {% block body_id 'blog_show' %}
 
 {% block main %}
+
     <h1>{{ comment.id }}</h1>
+    <h1>{{ comment.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
 
     <p class="post-metadata">
         <span class="metadata"><i class="fa fa-calendar"></i> {{ comment.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
