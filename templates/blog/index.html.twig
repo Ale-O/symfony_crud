@@ -5,25 +5,29 @@
 {% block main %}
     {% for post in paginator.results %}
 
-        {% if (app.user.fullName in post.tags) or ( is_granted('ROLE_ADMIN') ) %}
+        {% if app.user.fullName is defined %}
 
-            <article class="post">
-                <h2>
-                    <a href="{{ path('blog_post', {slug: post.slug}) }}">
-                        {{ post.title }}
-                    </a>
-                </h2>
+            {% if (app.user.fullName in post.tags) or ( is_granted('ROLE_ADMIN') ) %}
 
-                <p class="post-metadata">
-                    <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-                    <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
-                </p>
+                <article class="post">
+                    <h2>
+                        <a href="{{ path('blog_post', {slug: post.slug}) }}">
+                            {{ post.title }}
+                        </a>
+                    </h2>
 
-                <p>{{ post.summary }}</p>
+                    <p class="post-metadata">
+                        <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+                        <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
+                    </p>
 
-                {{ include('blog/_post_tags.html.twig') }}
+                    <p>{{ post.summary }}</p>
 
-            </article>
+                    {{ include('blog/_post_tags.html.twig') }}
+
+                </article>
+
+            {% endif %}
 
         {% endif %}
 

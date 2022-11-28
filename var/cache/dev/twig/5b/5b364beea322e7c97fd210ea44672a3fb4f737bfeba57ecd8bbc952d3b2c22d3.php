@@ -111,14 +111,14 @@ class __TwigTemplate_afcb4b5f39cb2f1d6ed3d79efeeb170c298c56bb021422a2a04b227bd21
         echo twig_include($this->env, $context, "blog/_post_tags.html.twig");
         echo "
 
-    <div id=\"post-add-comment\" class=\"well\">
+    <div id=\"post-add-subelement\" class=\"well\">
         ";
         // line 24
         echo "        ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 25
             echo "            ";
-            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\BlogController::commentForm", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 25, $this->source); })()), "id", [], "any", false, false, false, 25)]));
+            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\BlogController::subelementForm", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 25, $this->source); })()), "id", [], "any", false, false, false, 25)]));
             echo "
         ";
         } else {
@@ -135,7 +135,7 @@ class __TwigTemplate_afcb4b5f39cb2f1d6ed3d79efeeb170c298c56bb021422a2a04b227bd21
                 </a>
                 ";
             // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.to_publish_a_comment"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.to_publish_a_subelement"), "html", null, true);
             echo "
             </p>
         ";
@@ -144,57 +144,57 @@ class __TwigTemplate_afcb4b5f39cb2f1d6ed3d79efeeb170c298c56bb021422a2a04b227bd21
         echo "    </div>
 
     <h3>
-        <i class=\"fa fa-comments\" aria-hidden=\"true\"></i> ";
+        <i class=\"fa fa-subelements\" aria-hidden=\"true\"></i> ";
         // line 37
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.num_comments", ["count" => twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 37, $this->source); })()), "comments", [], "any", false, false, false, 37))]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.num_subelements", ["count" => twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 37, $this->source); })()), "subelements", [], "any", false, false, false, 37))]), "html", null, true);
         echo "
     </h3>
 
     ";
         // line 40
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 40, $this->source); })()), "comments", [], "any", false, false, false, 40));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 40, $this->source); })()), "subelements", [], "any", false, false, false, 40));
         $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
+        foreach ($context['_seq'] as $context["_key"] => $context["subelement"]) {
             // line 41
-            echo "        <div class=\"row post-comment\">
-            <a name=\"comment_";
+            echo "        <div class=\"row post-subelement\">
+            <a name=\"subelement_";
             // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 42), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subelement"], "id", [], "any", false, false, false, 42), "html", null, true);
             echo "\"></a>
             <h4 class=\"col-sm-3\">
                 <strong>";
             // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "author", [], "any", false, false, false, 44), "fullName", [], "any", false, false, false, 44), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["subelement"], "author", [], "any", false, false, false, 44), "fullName", [], "any", false, false, false, 44), "html", null, true);
             echo "</strong> ";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.commented_on"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.subelemented_on"), "html", null, true);
             echo "
                 ";
             // line 48
             echo "                <strong>";
-            echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "publishedAt", [], "any", false, false, false, 48), "medium", "short", "", "UTC"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["subelement"], "publishedAt", [], "any", false, false, false, 48), "medium", "short", "", "UTC"), "html", null, true);
             echo "</strong>
             </h4>
             <div class=\"col-sm-9\">
                 ";
             // line 51
-            echo $this->extensions['HtmlSanitizer\Bundle\Twig\TwigExtension']->sanitize($this->env->getRuntime('Twig\Extra\Markdown\MarkdownRuntime')->convert(twig_get_attribute($this->env, $this->source, $context["comment"], "content", [], "any", false, false, false, 51)));
+            echo $this->extensions['HtmlSanitizer\Bundle\Twig\TwigExtension']->sanitize($this->env->getRuntime('Twig\Extra\Markdown\MarkdownRuntime')->convert(twig_get_attribute($this->env, $this->source, $context["subelement"], "content", [], "any", false, false, false, 51)));
             echo "
             </div>
 
             <h1>";
             // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 54), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subelement"], "id", [], "any", false, false, false, 54), "html", null, true);
             echo "</h1>
             <h1>";
             // line 55
-            echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "publishedAt", [], "any", false, false, false, 55), "medium", "short", "", "UTC"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["subelement"], "publishedAt", [], "any", false, false, false, 55), "medium", "short", "", "UTC"), "html", null, true);
             echo "</h1>
 
             <div class=\"col-sm-9\">
                 <a href=\"";
             // line 58
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show", ["id" => twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show", ["id" => twig_get_attribute($this->env, $this->source, $context["subelement"], "id", [], "any", false, false, false, 58)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-default\">
                     <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
             // line 59
@@ -209,16 +209,16 @@ class __TwigTemplate_afcb4b5f39cb2f1d6ed3d79efeeb170c298c56bb021422a2a04b227bd21
         }
         if (!$context['_iterated']) {
             // line 65
-            echo "        <div class=\"post-comment\">
+            echo "        <div class=\"post-subelement\">
             <p>";
             // line 66
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.no_comments"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.no_subelements"), "html", null, true);
             echo "</p>
         </div>
     ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['subelement'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -313,56 +313,56 @@ class __TwigTemplate_afcb4b5f39cb2f1d6ed3d79efeeb170c298c56bb021422a2a04b227bd21
 
     {{ include('blog/_post_tags.html.twig') }}
 
-    <div id=\"post-add-comment\" class=\"well\">
+    <div id=\"post-add-subelement\" class=\"well\">
         {# The 'IS_AUTHENTICATED_FULLY' role ensures that the user has entered
         their credentials (login + password) during this session. If they
         are automatically logged via the 'Remember Me' functionality, they won't
-        be able to add a comment.
+        be able to add a subelement.
         See https://symfony.com/doc/current/security/remember_me.html#forcing-the-user-to-re-authenticate-before-accessing-certain-resources
         #}
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            {{ render(controller('App\\\\Controller\\\\BlogController::commentForm', {'id': post.id})) }}
+            {{ render(controller('App\\\\Controller\\\\BlogController::subelementForm', {'id': post.id})) }}
         {% else %}
             <p>
                 <a class=\"btn btn-success\" href=\"{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}\">
                     <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> {{ 'action.sign_in'|trans }}
                 </a>
-                {{ 'post.to_publish_a_comment'|trans }}
+                {{ 'post.to_publish_a_subelement'|trans }}
             </p>
         {% endif %}
     </div>
 
     <h3>
-        <i class=\"fa fa-comments\" aria-hidden=\"true\"></i> {{ 'post.num_comments'|trans({ 'count': post.comments|length }) }}
+        <i class=\"fa fa-subelements\" aria-hidden=\"true\"></i> {{ 'post.num_subelements'|trans({ 'count': post.subelements|length }) }}
     </h3>
 
-    {% for comment in post.comments %}
-        <div class=\"row post-comment\">
-            <a name=\"comment_{{ comment.id }}\"></a>
+    {% for subelement in post.subelements %}
+        <div class=\"row post-subelement\">
+            <a name=\"subelement_{{ subelement.id }}\"></a>
             <h4 class=\"col-sm-3\">
-                <strong>{{ comment.author.fullName }}</strong> {{ 'post.commented_on'|trans }}
+                <strong>{{ subelement.author.fullName }}</strong> {{ 'post.subelemented_on'|trans }}
                 {# it's not mandatory to set the timezone in localizeddate(). This is done to
                    avoid errors when the 'intl' PHP extension is not available and the application
                    is forced to use the limited \"intl polyfill\", which only supports UTC and GMT #}
-                <strong>{{ comment.publishedAt|format_datetime('medium', 'short', '', 'UTC') }}</strong>
+                <strong>{{ subelement.publishedAt|format_datetime('medium', 'short', '', 'UTC') }}</strong>
             </h4>
             <div class=\"col-sm-9\">
-                {{ comment.content|markdown_to_html|sanitize_html }}
+                {{ subelement.content|markdown_to_html|sanitize_html }}
             </div>
 
-            <h1>{{ comment.id }}</h1>
-            <h1>{{ comment.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
+            <h1>{{ subelement.id }}</h1>
+            <h1>{{ subelement.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
 
             <div class=\"col-sm-9\">
-                <a href=\"{{ path('blog_show', {id: comment.id}) }}\" class=\"btn btn-sm btn-default\">
+                <a href=\"{{ path('blog_show', {id: subelement.id}) }}\" class=\"btn btn-sm btn-default\">
                     <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
                 </a>
             </div>
 
         </div>
     {% else %}
-        <div class=\"post-comment\">
-            <p>{{ 'post.no_comments'|trans }}</p>
+        <div class=\"post-subelement\">
+            <p>{{ 'post.no_subelements'|trans }}</p>
         </div>
     {% endfor %}
 {% endblock %}

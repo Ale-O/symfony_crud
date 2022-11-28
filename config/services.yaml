@@ -37,5 +37,5 @@ services:
 
     # when the service definition only contains arguments, you can omit the
     # 'arguments' key and define the arguments just below the service class
-    App\EventSubscriber\CommentNotificationSubscriber:
+    App\EventSubscriber\SubelementNotificationSubscriber:
         $sender: '%app.notifications.email_sender%'

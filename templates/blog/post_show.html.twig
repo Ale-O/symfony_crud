@@ -14,56 +14,56 @@
 
     {{ include('blog/_post_tags.html.twig') }}
 
-    <div id="post-add-comment" class="well">
+    <div id="post-add-subelement" class="well">
         {# The 'IS_AUTHENTICATED_FULLY' role ensures that the user has entered
         their credentials (login + password) during this session. If they
         are automatically logged via the 'Remember Me' functionality, they won't
-        be able to add a comment.
+        be able to add a subelement.
         See https://symfony.com/doc/current/security/remember_me.html#forcing-the-user-to-re-authenticate-before-accessing-certain-resources
         #}
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            {{ render(controller('App\\Controller\\BlogController::commentForm', {'id': post.id})) }}
+            {{ render(controller('App\\Controller\\BlogController::subelementForm', {'id': post.id})) }}
         {% else %}
             <p>
                 <a class="btn btn-success" href="{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}">
                     <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.sign_in'|trans }}
                 </a>
-                {{ 'post.to_publish_a_comment'|trans }}
+                {{ 'post.to_publish_a_subelement'|trans }}
             </p>
         {% endif %}
     </div>
 
     <h3>
-        <i class="fa fa-comments" aria-hidden="true"></i> {{ 'post.num_comments'|trans({ 'count': post.comments|length }) }}
+        <i class="fa fa-subelements" aria-hidden="true"></i> {{ 'post.num_subelements'|trans({ 'count': post.subelements|length }) }}
     </h3>
 
-    {% for comment in post.comments %}
-        <div class="row post-comment">
-            <a name="comment_{{ comment.id }}"></a>
+    {% for subelement in post.subelements %}
+        <div class="row post-subelement">
+            <a name="subelement_{{ subelement.id }}"></a>
             <h4 class="col-sm-3">
-                <strong>{{ comment.author.fullName }}</strong> {{ 'post.commented_on'|trans }}
+                <strong>{{ subelement.author.fullName }}</strong> {{ 'post.subelemented_on'|trans }}
                 {# it's not mandatory to set the timezone in localizeddate(). This is done to
                    avoid errors when the 'intl' PHP extension is not available and the application
                    is forced to use the limited "intl polyfill", which only supports UTC and GMT #}
-                <strong>{{ comment.publishedAt|format_datetime('medium', 'short', '', 'UTC') }}</strong>
+                <strong>{{ subelement.publishedAt|format_datetime('medium', 'short', '', 'UTC') }}</strong>
             </h4>
             <div class="col-sm-9">
-                {{ comment.content|markdown_to_html|sanitize_html }}
+                {{ subelement.content|markdown_to_html|sanitize_html }}
             </div>
 
-            <h1>{{ comment.id }}</h1>
-            <h1>{{ comment.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
+            <h1>{{ subelement.id }}</h1>
+            <h1>{{ subelement.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
 
             <div class="col-sm-9">
-                <a href="{{ path('blog_show', {id: comment.id}) }}" class="btn btn-sm btn-default">
+                <a href="{{ path('blog_show', {id: subelement.id}) }}" class="btn btn-sm btn-default">
                     <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show'|trans }}
                 </a>
             </div>
 
         </div>
     {% else %}
-        <div class="post-comment">
-            <p>{{ 'post.no_comments'|trans }}</p>
+        <div class="post-subelement">
+            <p>{{ 'post.no_subelements'|trans }}</p>
         </div>
     {% endfor %}
 {% endblock %}

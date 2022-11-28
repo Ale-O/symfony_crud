@@ -84,12 +84,12 @@
                 <source>title.edit_post</source>
                 <target>Modifier l'élément #{id, number}</target>
             </trans-unit>
-            <trans-unit id="title.add_comment">
-                <source>title.add_comment</source>
+            <trans-unit id="title.add_subelement">
+                <source>title.add_subelement</source>
                 <target>Ajouter un sous-élément</target>
             </trans-unit>
-            <trans-unit id="title.comment_error">
-                <source>title.comment_error</source>
+            <trans-unit id="title.subelement_error">
+                <source>title.subelement_error</source>
                 <target>Il y a eu une erreur lors de l'ajout du sous-élément.</target>
             </trans-unit>
             <trans-unit id="title.edit_user">
@@ -161,8 +161,8 @@
                 <source>action.back_to_list</source>
                 <target>Retour à la liste des éléments</target>
             </trans-unit>
-            <trans-unit id="action.publish_comment">
-                <source>action.publish_comment</source>
+            <trans-unit id="action.publish_subelement">
+                <source>action.publish_subelement</source>
                 <target>Ajouter</target>
             </trans-unit>
             <trans-unit id="action.sign_in">
@@ -304,20 +304,20 @@
                 <target>Recherche</target>
             </trans-unit>
 
-            <trans-unit id="post.to_publish_a_comment">
-                <source>post.to_publish_a_comment</source>
+            <trans-unit id="post.to_publish_a_subelement">
+                <source>post.to_publish_a_subelement</source>
                 <target>pour rajouter un sous-élément</target>
             </trans-unit>
-            <trans-unit id="post.num_comments">
-                <source>post.num_comments</source>
+            <trans-unit id="post.num_subelements">
+                <source>post.num_subelements</source>
                 <target>{count, plural, one {# sous-élément} other {# sous-éléments}}</target>
             </trans-unit>
-            <trans-unit id="post.commented_on">
-                <source>post.commented_on</source>
+            <trans-unit id="post.subelemented_on">
+                <source>post.subelemented_on</source>
                 <target>ajouté le</target>
             </trans-unit>
-            <trans-unit id="post.no_comments">
-                <source>post.no_comments</source>
+            <trans-unit id="post.no_subelements">
+                <source>post.no_subelements</source>
                 <target>Ajouter un premier sous-élément.</target>
             </trans-unit>
             <trans-unit id="post.no_posts_found">
@@ -350,12 +350,12 @@
                 <target>Informations mises à jour avec succès !</target>
             </trans-unit>
 
-            <trans-unit id="notification.comment_created">
-                <source>notification.comment_created</source>
+            <trans-unit id="notification.subelement_created">
+                <source>notification.subelement_created</source>
                 <target>Votre élément a été complété par un sous-élément !</target>
             </trans-unit>
-            <trans-unit id="notification.comment_created.description">
-                <source>notification.comment_created.description</source>
+            <trans-unit id="notification.subelement_created.description">
+                <source>notification.subelement_created.description</source>
                 <target><![CDATA[Votre élément "{title}" a été complété par un sous-élément. Vous pouvez lire le sous-élément en suivant <a href="{link}">ce lien</a>]]></target>
             </trans-unit>
 
@@ -411,8 +411,8 @@
                 <source>help.post_content</source>
                 <target>Utilisez du Markdown pour formater le contenu de l'élément. Le HTML est également autorisé.</target>
             </trans-unit>
-            <trans-unit id="help.comment_content">
-                <source>help.comment_content</source>
+            <trans-unit id="help.subelement_content">
+                <source>help.subelement_content</source>
                 <target>Les sous-éléments non conformes seront modérés.</target>
             </trans-unit>
 

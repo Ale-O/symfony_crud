@@ -11,8 +11,8 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Comment;
 use App\Entity\Post;
+use App\Entity\Subelement;
 use App\Entity\Tag;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -82,12 +82,12 @@ class AppFixtures extends Fixture
             $post->addTag(...$tags);
 
             foreach (range(1, 5) as $i) {
-                $comment = new Comment();
-                $comment->setAuthor($this->getReference('john_user'));
-                $comment->setContent($this->getRandomText(random_int(255, 512)));
-                $comment->setPublishedAt(new \DateTime('now + '.$i.'seconds'));
+                $subelement = new Subelement();
+                $subelement->setAuthor($this->getReference('john_user'));
+                $subelement->setContent($this->getRandomText(random_int(255, 512)));
+                $subelement->setPublishedAt(new \DateTime('now + '.$i.'seconds'));
 
-                $post->addComment($comment);
+                $post->addSubelement($subelement);
             }
 
             $manager->persist($post);
@@ -125,7 +125,7 @@ class AppFixtures extends Fixture
     {
         $posts = [];
         foreach ($this->getPhrases() as $i => $title) {
-            // $postData = [$title, $slug, $summary, $content, $publishedAt, $author, $tags, $comments];
+            // $postData = [$title, $slug, $summary, $content, $publishedAt, $author, $tags, $subelements];
             $posts[] = [
                 $title,
                 $this->slugger->slug($title)->lower(),

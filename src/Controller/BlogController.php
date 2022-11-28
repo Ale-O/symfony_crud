@@ -11,10 +11,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Comment;
 use App\Entity\Post;
-use App\Event\CommentCreatedEvent;
-use App\Form\CommentType;
+use App\Entity\Subelement;
+use App\Event\SubelementCreatedEvent;
+use App\Form\SubelementType;
 use App\Repository\PostRepository;
 use App\Repository\TagRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
@@ -76,7 +76,7 @@ class BlogController extends AbstractController
         // Symfony's 'dump()' function is an improved version of PHP's 'var_dump()' but
         // it's not available in the 'prod' environment to prevent leaking sensitive information.
         // It can be used both in PHP files and Twig templates, but it requires to
-        // have enabled the DebugBundle. Uncomment the following line to see it in action:
+        // have enabled the DebugBundle. Unsubelement the following line to see it in action:
         //
         // dump($post, $this->getUser(), new \DateTime());
 
@@ -84,7 +84,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/comment/{postSlug}/new", methods="POST", name="comment_new")
+     * @Route("/subelement/{postSlug}/new", methods="POST", name="subelement_new")
      * @IsGranted("IS_AUTHENTICATED_FULLY")
      * @ParamConverter("post", options={"mapping": {"postSlug": "slug"}})
      *
@@ -92,18 +92,18 @@ class BlogController extends AbstractController
      * (postSlug) doesn't match any of the Doctrine entity properties (slug).
      * See https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html#doctrine-converter
      */
-    public function commentNew(Request $request, Post $post, EventDispatcherInterface $eventDispatcher): Response
+    public function subelementNew(Request $request, Post $post, EventDispatcherInterface $eventDispatcher): Response
     {
-        $comment = new Comment();
-        $comment->setAuthor($this->getUser());
-        $post->addComment($comment);
+        $subelement = new Subelement();
+        $subelement->setAuthor($this->getUser());
+        $post->addSubelement($subelement);
 
-        $form = $this->createForm(CommentType::class, $comment);
+        $form = $this->createForm(SubelementType::class, $subelement);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($comment);
+            $em->persist($subelement);
             $em->flush();
 
             // When an event is dispatched, Symfony notifies it to all the listeners
@@ -111,12 +111,12 @@ class BlogController extends AbstractController
             // passed in the event and they can even modify the execution flow, so
             // there's no guarantee that the rest of this controller will be executed.
             // See https://symfony.com/doc/current/components/event_dispatcher.html
-            $eventDispatcher->dispatch(new CommentCreatedEvent($comment));
+            $eventDispatcher->dispatch(new SubelementCreatedEvent($subelement));
 
             return $this->redirectToRoute('blog_post', ['slug' => $post->getSlug()]);
         }
 
-        return $this->render('blog/comment_form_error.html.twig', [
+        return $this->render('blog/subelement_form_error.html.twig', [
             'post' => $post,
             'form' => $form->createView(),
         ]);
@@ -130,11 +130,11 @@ class BlogController extends AbstractController
      * The "id" of the Post is passed in and then turned into a Post object
      * automatically by the ParamConverter.
      */
-    public function commentForm(Post $post): Response
+    public function subelementForm(Post $post): Response
     {
-        $form = $this->createForm(CommentType::class);
+        $form = $this->createForm(SubelementType::class);
 
-        return $this->render('blog/_comment_form.html.twig', [
+        return $this->render('blog/_subelement_form.html.twig', [
             'post' => $post,
             'form' => $form->createView(),
         ]);
@@ -143,12 +143,12 @@ class BlogController extends AbstractController
     /**
      * @Route("/{id<\d+>}", methods="GET", name="blog_show")
      */
-    public function commentShow(Comment $comment): Response
+    public function subelementShow(Subelement $subelement): Response
     {
         // $this->denyAccessUnlessGranted(PostVoter::SHOW, $post, 'Posts can only be shown to their authors.');
 
         return $this->render('admin/blog/sub_element_show.html.twig', [
-            'comment' => $comment,
+            'subelement' => $subelement,
         ]);
     }
 

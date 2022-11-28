@@ -66,10 +66,10 @@ class Post extends \App\Entity\Post implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'comments', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'tags'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'subelements', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'tags'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'comments', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'tags'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'subelements', '' . "\0" . 'App\\Entity\\Post' . "\0" . 'tags'];
     }
 
     /**
@@ -304,34 +304,34 @@ class Post extends \App\Entity\Post implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getComments(): \Doctrine\Common\Collections\Collection
+    public function getSubelements(): \Doctrine\Common\Collections\Collection
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getComments', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSubelements', []);
 
-        return parent::getComments();
+        return parent::getSubelements();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function addComment(\App\Entity\Comment $comment): void
+    public function addSubelement(\App\Entity\Subelement $subelement): void
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addComment', [$comment]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addSubelement', [$subelement]);
 
-        parent::addComment($comment);
+        parent::addSubelement($subelement);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function removeComment(\App\Entity\Comment $comment): void
+    public function removeSubelement(\App\Entity\Subelement $subelement): void
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeComment', [$comment]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeSubelement', [$subelement]);
 
-        parent::removeComment($comment);
+        parent::removeSubelement($subelement);
     }
 
     /**

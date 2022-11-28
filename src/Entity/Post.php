@@ -93,17 +93,17 @@ class Post
     private $author;
 
     /**
-     * @var Comment[]|Collection
+     * @var Subelement[]|Collection
      *
      * @ORM\OneToMany(
-     *      targetEntity="Comment",
+     *      targetEntity="Subelement",
      *      mappedBy="post",
      *      orphanRemoval=true,
      *      cascade={"persist"}
      * )
      * @ORM\OrderBy({"publishedAt": "DESC"})
      */
-    private $comments;
+    private $subelements;
 
     /**
      * @var Tag[]|Collection
@@ -118,7 +118,7 @@ class Post
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
-        $this->comments = new ArrayCollection();
+        $this->subelements = new ArrayCollection();
         $this->tags = new ArrayCollection();
     }
 
@@ -177,22 +177,22 @@ class Post
         $this->author = $author;
     }
 
-    public function getComments(): Collection
+    public function getSubelements(): Collection
     {
-        return $this->comments;
+        return $this->subelements;
     }
 
-    public function addComment(Comment $comment): void
+    public function addSubelement(Subelement $subelement): void
     {
-        $comment->setPost($this);
-        if (!$this->comments->contains($comment)) {
-            $this->comments->add($comment);
+        $subelement->setPost($this);
+        if (!$this->subelements->contains($subelement)) {
+            $this->subelements->add($subelement);
         }
     }
 
-    public function removeComment(Comment $comment): void
+    public function removeSubelement(Subelement $subelement): void
     {
-        $this->comments->removeElement($comment);
+        $this->subelements->removeElement($subelement);
     }
 
     public function getSummary(): ?string

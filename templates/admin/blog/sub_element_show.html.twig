@@ -4,15 +4,15 @@
 
 {% block main %}
 
-    <h1>{{ comment.id }}</h1>
-    <h1>{{ comment.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
+    <h1>{{ subelement.id }}</h1>
+    <h1>{{ subelement.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
 
     <p class="post-metadata">
-        <span class="metadata"><i class="fa fa-calendar"></i> {{ comment.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-        <span class="metadata"><i class="fa fa-user"></i> {{ comment.author.fullName }}</span>
+        <span class="metadata"><i class="fa fa-calendar"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+        <span class="metadata"><i class="fa fa-user"></i> {{ subelement.author.fullName }}</span>
     </p>
 
-    {{ comment.content|markdown_to_html|sanitize_html }}
+    {{ subelement.content|markdown_to_html|sanitize_html }}
 
 {% endblock %}
 
