@@ -40,11 +40,11 @@ class __TwigTemplate_9f8244316de1ecbca3ab2d5d355b83f2c248faea4a197b8d03e2678929e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/blog/_delete_form.html.twig"));
 
         // line 1
-        echo twig_include($this->env, $context, "blog/_delete_post_confirmation.html.twig");
+        echo twig_include($this->env, $context, "blog/_delete_element_confirmation.html.twig");
         echo "
 <form action=\"";
         // line 2
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("admin_post_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("admin_element_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2)]), "html", null, true);
         echo "\" method=\"post\" data-confirmation=\"true\" id=\"delete-form\">
     <input type=\"hidden\" name=\"token\" value=\"";
         // line 3
@@ -54,7 +54,7 @@ class __TwigTemplate_9f8244316de1ecbca3ab2d5d355b83f2c248faea4a197b8d03e2678929e
         <i class=\"fa fa-trash\" aria-hidden=\"true\"></i>
         ";
         // line 6
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.delete_post"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.delete_element"), "html", null, true);
         echo "
     </button>
 </form>
@@ -84,12 +84,12 @@ class __TwigTemplate_9f8244316de1ecbca3ab2d5d355b83f2c248faea4a197b8d03e2678929e
 
     public function getSourceContext()
     {
-        return new Source("{{ include('blog/_delete_post_confirmation.html.twig') }}
-<form action=\"{{ url('admin_post_delete', {id: post.id}) }}\" method=\"post\" data-confirmation=\"true\" id=\"delete-form\">
+        return new Source("{{ include('blog/_delete_element_confirmation.html.twig') }}
+<form action=\"{{ url('admin_element_delete', {id: element.id}) }}\" method=\"post\" data-confirmation=\"true\" id=\"delete-form\">
     <input type=\"hidden\" name=\"token\" value=\"{{ csrf_token('delete') }}\" />
     <button type=\"submit\" class=\"btn btn-lg btn-block btn-danger\">
         <i class=\"fa fa-trash\" aria-hidden=\"true\"></i>
-        {{ 'action.delete_post'|trans }}
+        {{ 'action.delete_element'|trans }}
     </button>
 </form>
 ", "admin/blog/_delete_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\blog\\_delete_form.html.twig");

@@ -14,7 +14,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             ],
             'name' => [
                 'admin_index',
-                'admin_post_index',
+                'admin_element_index',
             ],
             'methods' => [
                 [

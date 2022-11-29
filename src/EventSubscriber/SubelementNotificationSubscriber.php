@@ -20,7 +20,7 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * Notifies post's author about new subelements.
+ * Notifies element's author about new subelements.
  *
  * @author Oleg Voronkovich <oleg-voronkovich@yandex.ru>
  */
@@ -50,23 +50,23 @@ class SubelementNotificationSubscriber implements EventSubscriberInterface
     {
         /** @var Subelement $subelement */
         $subelement = $event->getSubelement();
-        $post = $subelement->getPost();
+        $element = $subelement->getElement();
 
-        $linkToPost = $this->urlGenerator->generate('blog_post', [
-            'slug' => $post->getSlug(),
+        $linkToElement = $this->urlGenerator->generate('blog_element', [
+            'slug' => $element->getSlug(),
             '_fragment' => 'subelement_'.$subelement->getId(),
         ], UrlGeneratorInterface::ABSOLUTE_URL);
 
         $subject = $this->translator->trans('notification.subelement_created');
         $body = $this->translator->trans('notification.subelement_created.description', [
-            '%title%' => $post->getTitle(),
-            '%link%' => $linkToPost,
+            '%title%' => $element->getTitle(),
+            '%link%' => $linkToElement,
         ]);
 
         // See https://symfony.com/doc/current/mailer.html
         $email = (new Email())
             ->from($this->sender)
-            ->to($post->getAuthor()->getEmail())
+            ->to($element->getAuthor()->getEmail())
             ->subject($subject)
             ->html($body)
         ;

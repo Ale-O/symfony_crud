@@ -66,7 +66,7 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body_id"));
 
-        echo "admin_post_index";
+        echo "admin_element_index";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -87,7 +87,7 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.post_list"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.element_list"), "html", null, true);
         echo "</h1>
 
     <table class=\"table table-striped table-middle-aligned\">
@@ -111,25 +111,25 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
         ";
         // line 17
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 17, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["elements"]) || array_key_exists("elements", $context) ? $context["elements"] : (function () { throw new RuntimeError('Variable "elements" does not exist.', 17, $this->source); })()));
         $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+        foreach ($context['_seq'] as $context["_key"] => $context["element"]) {
             // line 18
             echo "            <tr>
                 <td>";
             // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 19), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["element"], "title", [], "any", false, false, false, 19), "html", null, true);
             echo "</td>
                 ";
             // line 23
             echo "                <td>";
-            echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "publishedAt", [], "any", false, false, false, 23), "medium", "short", "", "UTC"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["element"], "publishedAt", [], "any", false, false, false, 23), "medium", "short", "", "UTC"), "html", null, true);
             echo "</td>
                 <td class=\"text-right\">
                     <div class=\"item-actions\">
                         <a href=\"";
             // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_post_show", ["id" => twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_show", ["id" => twig_get_attribute($this->env, $this->source, $context["element"], "id", [], "any", false, false, false, 26)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-default\">
                             <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
             // line 27
@@ -139,7 +139,7 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
 
                         <a href=\"";
             // line 30
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_post_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["element"], "id", [], "any", false, false, false, 30)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-primary\">
                             <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
             // line 31
@@ -157,13 +157,13 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
             echo "            <tr>
                 <td colspan=\"4\" align=\"center\">";
             // line 38
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.no_posts_found"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("element.no_elements_found"), "html", null, true);
             echo "</td>
            </tr>
         ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['element'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 41
         echo "        </tbody>
@@ -191,11 +191,11 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
         echo "    <div class=\"section actions\">
         <a href=\"";
         // line 47
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_post_new");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_new");
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> ";
         // line 48
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.create_post"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.create_element"), "html", null, true);
         echo "
         </a>
     </div>
@@ -237,10 +237,10 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
     {
         return new Source("{% extends 'admin/layout.html.twig' %}
 
-{% block body_id 'admin_post_index' %}
+{% block body_id 'admin_element_index' %}
 
 {% block main %}
-    <h1>{{ 'title.post_list'|trans }}</h1>
+    <h1>{{ 'title.element_list'|trans }}</h1>
 
     <table class=\"table table-striped table-middle-aligned\">
         <thead>
@@ -251,20 +251,20 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
             </tr>
         </thead>
         <tbody>
-        {% for post in posts %}
+        {% for element in elements %}
             <tr>
-                <td>{{ post.title }}</td>
+                <td>{{ element.title }}</td>
                 {# it's not mandatory to set the timezone in localizeddate(). This is done to
                    avoid errors when the 'intl' PHP extension is not available and the application
                    is forced to use the limited \"intl polyfill\", which only supports UTC and GMT #}
-                <td>{{ post.publishedAt|format_datetime('medium', 'short', '', 'UTC') }}</td>
+                <td>{{ element.publishedAt|format_datetime('medium', 'short', '', 'UTC') }}</td>
                 <td class=\"text-right\">
                     <div class=\"item-actions\">
-                        <a href=\"{{ path('admin_post_show', {id: post.id}) }}\" class=\"btn btn-sm btn-default\">
+                        <a href=\"{{ path('admin_element_show', {id: element.id}) }}\" class=\"btn btn-sm btn-default\">
                             <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
                         </a>
 
-                        <a href=\"{{ path('admin_post_edit', {id: post.id}) }}\" class=\"btn btn-sm btn-primary\">
+                        <a href=\"{{ path('admin_element_edit', {id: element.id}) }}\" class=\"btn btn-sm btn-primary\">
                             <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
                         </a>
                     </div>
@@ -272,7 +272,7 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
             </tr>
         {% else %}
             <tr>
-                <td colspan=\"4\" align=\"center\">{{ 'post.no_posts_found'|trans }}</td>
+                <td colspan=\"4\" align=\"center\">{{ 'element.no_elements_found'|trans }}</td>
            </tr>
         {% endfor %}
         </tbody>
@@ -281,8 +281,8 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
 
 {% block sidebar %}
     <div class=\"section actions\">
-        <a href=\"{{ path('admin_post_new') }}\" class=\"btn btn-lg btn-block btn-success\">
-            <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> {{ 'action.create_post'|trans }}
+        <a href=\"{{ path('admin_element_new') }}\" class=\"btn btn-lg btn-block btn-success\">
+            <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> {{ 'action.create_element'|trans }}
         </a>
     </div>
 

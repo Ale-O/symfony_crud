@@ -11,7 +11,7 @@
 
 namespace App\Tests\Controller;
 
-use App\Entity\Post;
+use App\Entity\Element;
 use App\Pagination\Paginator;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -36,8 +36,8 @@ class BlogControllerTest extends WebTestCase
 
         $this->assertCount(
             Paginator::PAGE_SIZE,
-            $crawler->filter('article.post'),
-            'The homepage displays the right number of posts.'
+            $crawler->filter('article.element'),
+            'The homepage displays the right number of elements.'
         );
     }
 
@@ -51,7 +51,7 @@ class BlogControllerTest extends WebTestCase
         $this->assertCount(
             Paginator::PAGE_SIZE,
             $crawler->filter('item'),
-            'The xml file displays the right number of posts.'
+            'The xml file displays the right number of elements.'
         );
     }
 
@@ -69,16 +69,16 @@ class BlogControllerTest extends WebTestCase
         ]);
         $client->followRedirects();
 
-        // Find first blog post
+        // Find first blog element
         $crawler = $client->request('GET', '/en/blog/');
-        $postLink = $crawler->filter('article.post > h2 a')->link();
+        $elementLink = $crawler->filter('article.element > h2 a')->link();
 
-        $client->click($postLink);
+        $client->click($elementLink);
         $crawler = $client->submitForm('Publish comment', [
             'comment[content]' => 'Hi, Symfony!',
         ]);
 
-        $newComment = $crawler->filter('.post-comment')->first()->filter('div > p')->text();
+        $newComment = $crawler->filter('.element-comment')->first()->filter('div > p')->text();
 
         $this->assertSame('Hi, Symfony!', $newComment);
     }

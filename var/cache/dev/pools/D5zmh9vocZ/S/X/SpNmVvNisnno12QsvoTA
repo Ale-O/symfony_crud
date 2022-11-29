@@ -11,7 +11,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                 '/{id<\\d+>}',
             ],
             'name' => [
-                'admin_post_show',
+                'admin_element_show',
             ],
             'methods' => [
                 [

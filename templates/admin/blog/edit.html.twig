@@ -1,9 +1,9 @@
 {% extends 'admin/layout.html.twig' %}
 
-{% block body_id 'admin_post_edit' %}
+{% block body_id 'admin_element_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit_post'|trans({'%id%': post.id}) }}</h1>
+    <h1>{{ 'title.edit_element'|trans({'%id%': element.id}) }}</h1>
 
     {{ include('admin/blog/_form.html.twig', {
         form: form,
@@ -14,13 +14,13 @@
 
 {% block sidebar %}
     <div class="section">
-        <a href="{{ path('admin_post_show', {id: post.id}) }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show_post'|trans }}
+        <a href="{{ path('admin_element_show', {id: element.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show_element'|trans }}
         </a>
     </div>
 
     <div class="section actions">
-        {{ include('admin/blog/_delete_form.html.twig', {post: post}, with_context = false) }}
+        {{ include('admin/blog/_delete_form.html.twig', {element: element}, with_context = false) }}
     </div>
 
     {{ parent() }}

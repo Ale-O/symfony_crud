@@ -43,7 +43,7 @@ class __TwigTemplate_7bd9dc3b1e777078519be491dd49ac507bece74423e841c635f86e5b511
         echo "
 ";
         // line 9
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form_start', ["method" => "POST", "action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_new", ["postSlug" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 9, $this->source); })()), "slug", [], "any", false, false, false, 9)])]);
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form_start', ["method" => "POST", "action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_new", ["elementSlug" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 9, $this->source); })()), "slug", [], "any", false, false, false, 9)])]);
         echo "
     ";
         // line 15
@@ -136,7 +136,7 @@ class __TwigTemplate_7bd9dc3b1e777078519be491dd49ac507bece74423e841c635f86e5b511
     {{ form_start(form, {method: ..., action: ..., attr: {novalidate: 'novalidate'}}) }}
 #}
 
-{{ form_start(form, {method: 'POST', action: path('subelement_new', {'postSlug': post.slug})}) }}
+{{ form_start(form, {method: 'POST', action: path('subelement_new', {'elementSlug': element.slug})}) }}
     {#  instead of displaying form fields one by one, you can also display them
         all with their default options and styles just by calling to this function:
 

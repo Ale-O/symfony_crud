@@ -3,27 +3,27 @@
 {% block body_id 'blog_index' %}
 
 {% block main %}
-    {% for post in paginator.results %}
+    {% for element in paginator.results %}
 
         {% if app.user.fullName is defined %}
 
-            {% if (app.user.fullName in post.tags) or ( is_granted('ROLE_ADMIN') ) %}
+            {% if (app.user.fullName in element.tags) or ( is_granted('ROLE_ADMIN') ) %}
 
-                <article class="post">
+                <article class="element">
                     <h2>
-                        <a href="{{ path('blog_post', {slug: post.slug}) }}">
-                            {{ post.title }}
+                        <a href="{{ path('blog_element', {slug: element.slug}) }}">
+                            {{ element.title }}
                         </a>
                     </h2>
 
-                    <p class="post-metadata">
-                        <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-                        <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
+                    <p class="element-metadata">
+                        <span class="metadata"><i class="fa fa-calendar"></i> {{ element.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+                        <span class="metadata"><i class="fa fa-user"></i> {{ element.author.fullName }}</span>
                     </p>
 
-                    <p>{{ post.summary }}</p>
+                    <p>{{ element.summary }}</p>
 
-                    {{ include('blog/_post_tags.html.twig') }}
+                    {{ include('blog/_element_tags.html.twig') }}
 
                 </article>
 
@@ -32,7 +32,7 @@
         {% endif %}
 
     {% else %}
-        <div class="well">{{ 'post.no_posts_found'|trans }}</div>
+        <div class="well">{{ 'element.no_elements_found'|trans }}</div>
     {% endfor %}
 
     {% if paginator.hasToPaginate %}

@@ -103,7 +103,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
             $context['loop']['length'] = $length;
             $context['loop']['last'] = 1 === $length;
         }
-        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+        foreach ($context['_seq'] as $context["_key"] => $context["element"]) {
             // line 7
             echo "
         ";
@@ -113,41 +113,41 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
                 echo "
             ";
                 // line 10
-                if ((twig_in_filter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10), "fullName", [], "any", false, false, false, 10), twig_get_attribute($this->env, $this->source, $context["post"], "tags", [], "any", false, false, false, 10)) || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN"))) {
+                if ((twig_in_filter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10), "fullName", [], "any", false, false, false, 10), twig_get_attribute($this->env, $this->source, $context["element"], "tags", [], "any", false, false, false, 10)) || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN"))) {
                     // line 11
                     echo "
-                <article class=\"post\">
+                <article class=\"element\">
                     <h2>
                         <a href=\"";
                     // line 14
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_post", ["slug" => twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 14)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_element", ["slug" => twig_get_attribute($this->env, $this->source, $context["element"], "slug", [], "any", false, false, false, 14)]), "html", null, true);
                     echo "\">
                             ";
                     // line 15
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 15), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["element"], "title", [], "any", false, false, false, 15), "html", null, true);
                     echo "
                         </a>
                     </h2>
 
-                    <p class=\"post-metadata\">
+                    <p class=\"element-metadata\">
                         <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> ";
                     // line 20
-                    echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "publishedAt", [], "any", false, false, false, 20), "long", "medium", "", "UTC"), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["element"], "publishedAt", [], "any", false, false, false, 20), "long", "medium", "", "UTC"), "html", null, true);
                     echo "</span>
                         <span class=\"metadata\"><i class=\"fa fa-user\"></i> ";
                     // line 21
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "author", [], "any", false, false, false, 21), "fullName", [], "any", false, false, false, 21), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["element"], "author", [], "any", false, false, false, 21), "fullName", [], "any", false, false, false, 21), "html", null, true);
                     echo "</span>
                     </p>
 
                     <p>";
                     // line 24
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "summary", [], "any", false, false, false, 24), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["element"], "summary", [], "any", false, false, false, 24), "html", null, true);
                     echo "</p>
 
                     ";
                     // line 26
-                    echo twig_include($this->env, $context, "blog/_post_tags.html.twig");
+                    echo twig_include($this->env, $context, "blog/_element_tags.html.twig");
                     echo "
 
                 </article>
@@ -174,12 +174,12 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
         if (!$context['_iterated']) {
             // line 35
             echo "        <div class=\"well\">";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.no_posts_found"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("element.no_elements_found"), "html", null, true);
             echo "</div>
     ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['element'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 37
         echo "
@@ -324,27 +324,27 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
 {% block body_id 'blog_index' %}
 
 {% block main %}
-    {% for post in paginator.results %}
+    {% for element in paginator.results %}
 
         {% if app.user.fullName is defined %}
 
-            {% if (app.user.fullName in post.tags) or ( is_granted('ROLE_ADMIN') ) %}
+            {% if (app.user.fullName in element.tags) or ( is_granted('ROLE_ADMIN') ) %}
 
-                <article class=\"post\">
+                <article class=\"element\">
                     <h2>
-                        <a href=\"{{ path('blog_post', {slug: post.slug}) }}\">
-                            {{ post.title }}
+                        <a href=\"{{ path('blog_element', {slug: element.slug}) }}\">
+                            {{ element.title }}
                         </a>
                     </h2>
 
-                    <p class=\"post-metadata\">
-                        <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-                        <span class=\"metadata\"><i class=\"fa fa-user\"></i> {{ post.author.fullName }}</span>
+                    <p class=\"element-metadata\">
+                        <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> {{ element.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+                        <span class=\"metadata\"><i class=\"fa fa-user\"></i> {{ element.author.fullName }}</span>
                     </p>
 
-                    <p>{{ post.summary }}</p>
+                    <p>{{ element.summary }}</p>
 
-                    {{ include('blog/_post_tags.html.twig') }}
+                    {{ include('blog/_element_tags.html.twig') }}
 
                 </article>
 
@@ -353,7 +353,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
         {% endif %}
 
     {% else %}
-        <div class=\"well\">{{ 'post.no_posts_found'|trans }}</div>
+        <div class=\"well\">{{ 'element.no_elements_found'|trans }}</div>
     {% endfor %}
 
     {% if paginator.hasToPaginate %}

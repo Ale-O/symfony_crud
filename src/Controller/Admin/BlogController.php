@@ -11,10 +11,10 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Post;
-use App\Form\PostType;
-use App\Repository\PostRepository;
-use App\Security\PostVoter;
+use App\Entity\Element;
+use App\Form\ElementType;
+use App\Repository\ElementRepository;
+use App\Security\ElementVoter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -31,7 +31,7 @@ use Symfony\Component\Routing\Annotation\Route;
  *
  * See http://knpbundles.com/keyword/admin
  *
- * @Route("/admin/post")
+ * @Route("/admin/element")
  * @IsGranted("ROLE_ADMIN")
  *
  * @author Ryan Weaver <weaverryan@gmail.com>
@@ -40,10 +40,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class BlogController extends AbstractController
 {
     /**
-     * Lists all Post entities.
+     * Lists all Element entities.
      *
      * This controller responds to two different routes with the same URL:
-     *   * 'admin_post_index' is the route with a name that follows the same
+     *   * 'admin_element_index' is the route with a name that follows the same
      *     structure as the rest of the controllers of this class.
      *   * 'admin_index' is a nice shortcut to the backend homepage. This allows
      *     to create simpler links in the templates. Moreover, in the future we
@@ -51,19 +51,19 @@ class BlogController extends AbstractController
      *     the route name and therefore, without breaking any existing link.
      *
      * @Route("/", methods="GET", name="admin_index")
-     * @Route("/", methods="GET", name="admin_post_index")
+     * @Route("/", methods="GET", name="admin_element_index")
      */
-    public function index(PostRepository $posts): Response
+    public function index(ElementRepository $elements): Response
     {
-        $authorPosts = $posts->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
+        $authorElements = $elements->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
 
-        return $this->render('admin/blog/index.html.twig', ['posts' => $authorPosts]);
+        return $this->render('admin/blog/index.html.twig', ['elements' => $authorElements]);
     }
 
     /**
-     * Creates a new Post entity.
+     * Creates a new Element entity.
      *
-     * @Route("/new", methods="GET|POST", name="admin_post_new")
+     * @Route("/new", methods="GET|POST", name="admin_element_new")
      *
      * NOTE: the Method annotation is optional, but it's a recommended practice
      * to constraint the HTTP methods each controller responds to (by default
@@ -71,11 +71,11 @@ class BlogController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        $post = new Post();
-        $post->setAuthor($this->getUser());
+        $element = new Element();
+        $element->setAuthor($this->getUser());
 
         // See https://symfony.com/doc/current/form/multiple_buttons.html
-        $form = $this->createForm(PostType::class, $post)
+        $form = $this->createForm(ElementType::class, $element)
             ->add('saveAndCreateNew', SubmitType::class);
 
         $form->handleRequest($request);
@@ -86,92 +86,92 @@ class BlogController extends AbstractController
         // See https://symfony.com/doc/current/forms.html#processing-forms
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($post);
+            $em->persist($element);
             $em->flush();
 
             // Flash messages are used to notify the user about the result of the
             // actions. They are deleted automatically from the session as soon
             // as they are accessed.
             // See https://symfony.com/doc/current/controller.html#flash-messages
-            $this->addFlash('success', 'post.created_successfully');
+            $this->addFlash('success', 'element.created_successfully');
 
             if ($form->get('saveAndCreateNew')->isClicked()) {
-                return $this->redirectToRoute('admin_post_new');
+                return $this->redirectToRoute('admin_element_new');
             }
 
-            return $this->redirectToRoute('admin_post_index');
+            return $this->redirectToRoute('admin_element_index');
         }
 
         return $this->render('admin/blog/new.html.twig', [
-            'post' => $post,
+            'element' => $element,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * Finds and displays a Post entity.
+     * Finds and displays a Element entity.
      *
-     * @Route("/{id<\d+>}", methods="GET", name="admin_post_show")
+     * @Route("/{id<\d+>}", methods="GET", name="admin_element_show")
      */
-    public function show(Post $post): Response
+    public function show(Element $element): Response
     {
         // This security check can also be performed
-        // using an annotation: @IsGranted("show", subject="post", message="Posts can only be shown to their authors.")
-        $this->denyAccessUnlessGranted(PostVoter::SHOW, $post, 'Posts can only be shown to their authors.');
+        // using an annotation: @IsGranted("show", subject="element", message="Elements can only be shown to their authors.")
+        $this->denyAccessUnlessGranted(ElementVoter::SHOW, $element, 'Elements can only be shown to their authors.');
 
         return $this->render('admin/blog/show.html.twig', [
-            'post' => $post,
+            'element' => $element,
         ]);
     }
 
     /**
-     * Displays a form to edit an existing Post entity.
+     * Displays a form to edit an existing Element entity.
      *
-     * @Route("/{id<\d+>}/edit", methods="GET|POST", name="admin_post_edit")
-     * @IsGranted("edit", subject="post", message="Posts can only be edited by their authors.")
+     * @Route("/{id<\d+>}/edit", methods="GET|POST", name="admin_element_edit")
+     * @IsGranted("edit", subject="element", message="Elements can only be edited by their authors.")
      */
-    public function edit(Request $request, Post $post): Response
+    public function edit(Request $request, Element $element): Response
     {
-        $form = $this->createForm(PostType::class, $post);
+        $form = $this->createForm(ElementType::class, $element);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'post.updated_successfully');
+            $this->addFlash('success', 'element.updated_successfully');
 
-            return $this->redirectToRoute('admin_post_edit', ['id' => $post->getId()]);
+            return $this->redirectToRoute('admin_element_edit', ['id' => $element->getId()]);
         }
 
         return $this->render('admin/blog/edit.html.twig', [
-            'post' => $post,
+            'element' => $element,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * Deletes a Post entity.
+     * Deletes a Element entity.
      *
-     * @Route("/{id}/delete", methods="POST", name="admin_post_delete")
-     * @IsGranted("delete", subject="post")
+     * @Route("/{id}/delete", methods="POST", name="admin_element_delete")
+     * @IsGranted("delete", subject="element")
      */
-    public function delete(Request $request, Post $post): Response
+    public function delete(Request $request, Element $element): Response
     {
         if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
-            return $this->redirectToRoute('admin_post_index');
+            return $this->redirectToRoute('admin_element_index');
         }
 
-        // Delete the tags associated with this blog post. This is done automatically
+        // Delete the tags associated with this blog element. This is done automatically
         // by Doctrine, except for SQLite (the database used in this application)
         // because foreign key support is not enabled by default in SQLite
-        $post->getTags()->clear();
+        $element->getTags()->clear();
 
         $em = $this->getDoctrine()->getManager();
-        $em->remove($post);
+        $em->remove($element);
         $em->flush();
 
-        $this->addFlash('success', 'post.deleted_successfully');
+        $this->addFlash('success', 'element.deleted_successfully');
 
-        return $this->redirectToRoute('admin_post_index');
+        return $this->redirectToRoute('admin_element_index');
     }
 }

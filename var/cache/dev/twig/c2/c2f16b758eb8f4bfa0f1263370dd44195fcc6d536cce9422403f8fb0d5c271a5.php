@@ -66,7 +66,7 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body_id"));
 
-        echo "admin_post_show";
+        echo "admin_element_show";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -87,17 +87,17 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 6, $this->source); })()), "title", [], "any", false, false, false, 6), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 6, $this->source); })()), "title", [], "any", false, false, false, 6), "html", null, true);
         echo "</h1>
 
-    <p class=\"post-metadata\">
+    <p class=\"element-metadata\">
         <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> ";
         // line 9
-        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 9, $this->source); })()), "publishedAt", [], "any", false, false, false, 9), "long", "medium", "", "UTC"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 9, $this->source); })()), "publishedAt", [], "any", false, false, false, 9), "long", "medium", "", "UTC"), "html", null, true);
         echo "</span>
         <span class=\"metadata\"><i class=\"fa fa-user\"></i> ";
         // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 10, $this->source); })()), "author", [], "any", false, false, false, 10), "fullName", [], "any", false, false, false, 10), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 10, $this->source); })()), "author", [], "any", false, false, false, 10), "fullName", [], "any", false, false, false, 10), "html", null, true);
         echo "</span>
     </p>
 
@@ -106,18 +106,18 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
         // line 14
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.summary"), "html", null, true);
         echo "</strong>: ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 14, $this->source); })()), "summary", [], "any", false, false, false, 14), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 14, $this->source); })()), "summary", [], "any", false, false, false, 14), "html", null, true);
         echo "</p>
     </div>
 
     ";
         // line 17
-        echo $this->extensions['HtmlSanitizer\Bundle\Twig\TwigExtension']->sanitize($this->env->getRuntime('Twig\Extra\Markdown\MarkdownRuntime')->convert(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 17, $this->source); })()), "content", [], "any", false, false, false, 17)));
+        echo $this->extensions['HtmlSanitizer\Bundle\Twig\TwigExtension']->sanitize($this->env->getRuntime('Twig\Extra\Markdown\MarkdownRuntime')->convert(twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 17, $this->source); })()), "content", [], "any", false, false, false, 17)));
         echo "
 
     ";
         // line 19
-        echo twig_include($this->env, $context, "blog/_post_tags.html.twig");
+        echo twig_include($this->env, $context, "blog/_element_tags.html.twig");
         echo "
 ";
         
@@ -142,7 +142,7 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
         echo "    <div class=\"section\">
         <a href=\"";
         // line 24
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_post_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 24, $this->source); })()), "id", [], "any", false, false, false, 24)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 24, $this->source); })()), "id", [], "any", false, false, false, 24)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
         // line 25
@@ -155,7 +155,7 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
     <div class=\"section\">
         ";
         // line 31
-        echo twig_include($this->env, $context, "admin/blog/_delete_form.html.twig", ["post" => (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 31, $this->source); })())], false);
+        echo twig_include($this->env, $context, "admin/blog/_delete_form.html.twig", ["element" => (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 31, $this->source); })())], false);
         echo "
     </div>
     
@@ -197,35 +197,35 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
     {
         return new Source("{% extends 'admin/layout.html.twig' %}
 
-{% block body_id 'admin_post_show' %}
+{% block body_id 'admin_element_show' %}
 
 {% block main %}
-    <h1>{{ post.title }}</h1>
+    <h1>{{ element.title }}</h1>
 
-    <p class=\"post-metadata\">
-        <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-        <span class=\"metadata\"><i class=\"fa fa-user\"></i> {{ post.author.fullName }}</span>
+    <p class=\"element-metadata\">
+        <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> {{ element.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+        <span class=\"metadata\"><i class=\"fa fa-user\"></i> {{ element.author.fullName }}</span>
     </p>
 
     <div class=\"well\">
-        <p class=\"m-b-0\"><strong>{{ 'label.summary'|trans }}</strong>: {{ post.summary }}</p>
+        <p class=\"m-b-0\"><strong>{{ 'label.summary'|trans }}</strong>: {{ element.summary }}</p>
     </div>
 
-    {{ post.content|markdown_to_html|sanitize_html }}
+    {{ element.content|markdown_to_html|sanitize_html }}
 
-    {{ include('blog/_post_tags.html.twig') }}
+    {{ include('blog/_element_tags.html.twig') }}
 {% endblock %}
 
 {% block sidebar %}
     <div class=\"section\">
-        <a href=\"{{ path('admin_post_edit', {id: post.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
+        <a href=\"{{ path('admin_element_edit', {id: element.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'action.edit_contents'|trans }}
         </a>
     </div>
 
     
     <div class=\"section\">
-        {{ include('admin/blog/_delete_form.html.twig', {post: post}, with_context = false) }}
+        {{ include('admin/blog/_delete_form.html.twig', {element: element}, with_context = false) }}
     </div>
     
 

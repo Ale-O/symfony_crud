@@ -95,7 +95,7 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
         echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 8, $this->source); })()), "publishedAt", [], "any", false, false, false, 8), "medium", "short", "", "UTC"), "html", null, true);
         echo "</h1>
 
-    <p class=\"post-metadata\">
+    <p class=\"element-metadata\">
         <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> ";
         // line 11
         echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 11, $this->source); })()), "publishedAt", [], "any", false, false, false, 11), "long", "medium", "", "UTC"), "html", null, true);
@@ -146,7 +146,7 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
     <h1>{{ subelement.id }}</h1>
     <h1>{{ subelement.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
 
-    <p class=\"post-metadata\">
+    <p class=\"element-metadata\">
         <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
         <span class=\"metadata\"><i class=\"fa fa-user\"></i> {{ subelement.author.fullName }}</span>
     </p>
@@ -158,14 +158,14 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
 {#
 {% block sidebar %}
     <div class=\"section\">
-        <a href=\"{{ path('admin_post_edit', {id: post.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
+        <a href=\"{{ path('admin_element_edit', {id: element.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'action.edit_contents'|trans }}
         </a>
     </div>
 
     
     <div class=\"section\">
-        {{ include('admin/blog/_delete_form.html.twig', {post: post}, with_context = false) }}
+        {{ include('admin/blog/_delete_form.html.twig', {element: element}, with_context = false) }}
     </div>
     
 

@@ -322,7 +322,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
             echo "                                        <li>
                                             <a href=\"";
             // line 52
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_post_index");
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
             echo "\">
                                                 <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> ";
             // line 53
@@ -557,7 +557,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
 
                                     {% if is_granted('ROLE_ADMIN') %}
                                         <li>
-                                            <a href=\"{{ path('admin_post_index') }}\">
+                                            <a href=\"{{ path('admin_element_index') }}\">
                                                 <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> {{ 'menu.admin'|trans }}
                                             </a>
                                         </li>

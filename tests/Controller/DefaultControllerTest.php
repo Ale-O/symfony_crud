@@ -11,7 +11,7 @@
 
 namespace App\Tests\Controller;
 
-use App\Entity\Post;
+use App\Entity\Element;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -46,15 +46,15 @@ class DefaultControllerTest extends WebTestCase
      * A good practice for tests is to not use the service container, to make
      * them more robust. However, in this example we must access to the container
      * to get the entity manager and make a database query. The reason is that
-     * blog post fixtures are randomly generated and there's no guarantee that
-     * a given blog post slug will be available.
+     * blog element fixtures are randomly generated and there's no guarantee that
+     * a given blog element slug will be available.
      */
-    public function testPublicBlogPost(): void
+    public function testPublicBlogElement(): void
     {
         $client = static::createClient();
         // the service container is always available via the test client
-        $blogPost = $client->getContainer()->get('doctrine')->getRepository(Post::class)->find(1);
-        $client->request('GET', sprintf('/en/blog/posts/%s', $blogPost->getSlug()));
+        $blogElement = $client->getContainer()->get('doctrine')->getRepository(Element::class)->find(1);
+        $client->request('GET', sprintf('/en/blog/elements/%s', $blogElement->getSlug()));
 
         $this->assertResponseIsSuccessful();
     }
@@ -87,9 +87,9 @@ class DefaultControllerTest extends WebTestCase
 
     public function getSecureUrls(): ?\Generator
     {
-        yield ['/en/admin/post/'];
-        yield ['/en/admin/post/new'];
-        yield ['/en/admin/post/1'];
-        yield ['/en/admin/post/1/edit'];
+        yield ['/en/admin/element/'];
+        yield ['/en/admin/element/new'];
+        yield ['/en/admin/element/1'];
+        yield ['/en/admin/element/1/edit'];
     }
 }

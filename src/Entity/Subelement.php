@@ -28,12 +28,12 @@ class Subelement
     private $id;
 
     /**
-     * @var Post
+     * @var Element
      *
-     * @ORM\ManyToOne(targetEntity="Post", inversedBy="subelements")
+     * @ORM\ManyToOne(targetEntity="Element", inversedBy="subelements")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $post;
+    private $element;
 
     /**
      * @var string
@@ -114,13 +114,13 @@ class Subelement
         $this->author = $author;
     }
 
-    public function getPost(): ?Post
+    public function getElement(): ?Element
     {
-        return $this->post;
+        return $this->element;
     }
 
-    public function setPost(Post $post): void
+    public function setElement(Element $element): void
     {
-        $this->post = $post;
+        $this->element = $element;
     }
 }

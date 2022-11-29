@@ -72,37 +72,37 @@ class __TwigTemplate_0c30bdf98a1bdd88a0a7ad8cd0dc006ab31496f2c911c30e4071425f246
         // line 11
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 11, $this->source); })()), "results", [], "any", false, false, false, 11));
-        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+        foreach ($context['_seq'] as $context["_key"] => $context["element"]) {
             // line 12
             echo "            <item>
                 <title>";
             // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 13), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["element"], "title", [], "any", false, false, false, 13), "html", null, true);
             echo "</title>
                 <description>";
             // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "summary", [], "any", false, false, false, 14), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["element"], "summary", [], "any", false, false, false, 14), "html", null, true);
             echo "</description>
                 <link>";
             // line 15
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("blog_post", ["slug" => twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 15)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("blog_element", ["slug" => twig_get_attribute($this->env, $this->source, $context["element"], "slug", [], "any", false, false, false, 15)]), "html", null, true);
             echo "</link>
                 <guid>";
             // line 16
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("blog_post", ["slug" => twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 16)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("blog_element", ["slug" => twig_get_attribute($this->env, $this->source, $context["element"], "slug", [], "any", false, false, false, 16)]), "html", null, true);
             echo "</guid>
                 <pubDate>";
             // line 17
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "publishedAt", [], "any", false, false, false, 17), "r", "GMT"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["element"], "publishedAt", [], "any", false, false, false, 17), "r", "GMT"), "html", null, true);
             echo "</pubDate>
                 <author>";
             // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "author", [], "any", false, false, false, 18), "email", [], "any", false, false, false, 18), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["element"], "author", [], "any", false, false, false, 18), "email", [], "any", false, false, false, 18), "html", null, true);
             echo "</author>
                 ";
             // line 19
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["post"], "tags", [], "any", false, false, false, 19));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["element"], "tags", [], "any", false, false, false, 19));
             foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
                 // line 20
                 echo "                    <category>";
@@ -118,7 +118,7 @@ class __TwigTemplate_0c30bdf98a1bdd88a0a7ad8cd0dc006ab31496f2c911c30e4071425f246
         ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['element'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 24
         echo "    </channel>
@@ -159,15 +159,15 @@ class __TwigTemplate_0c30bdf98a1bdd88a0a7ad8cd0dc006ab31496f2c911c30e4071425f246
         <link>{{ url('blog_index') }}</link>
         <language>{{ app.request.locale }}</language>
 
-        {% for post in paginator.results %}
+        {% for element in paginator.results %}
             <item>
-                <title>{{ post.title }}</title>
-                <description>{{ post.summary }}</description>
-                <link>{{ url('blog_post', {'slug': post.slug}) }}</link>
-                <guid>{{ url('blog_post', {'slug': post.slug}) }}</guid>
-                <pubDate>{{ post.publishedAt|date(format='r', timezone='GMT') }}</pubDate>
-                <author>{{ post.author.email }}</author>
-                {% for tag in post.tags %}
+                <title>{{ element.title }}</title>
+                <description>{{ element.summary }}</description>
+                <link>{{ url('blog_element', {'slug': element.slug}) }}</link>
+                <guid>{{ url('blog_element', {'slug': element.slug}) }}</guid>
+                <pubDate>{{ element.publishedAt|date(format='r', timezone='GMT') }}</pubDate>
+                <author>{{ element.author.email }}</author>
+                {% for tag in element.tags %}
                     <category>{{ tag.name }}</category>
                 {% endfor %}
             </item>

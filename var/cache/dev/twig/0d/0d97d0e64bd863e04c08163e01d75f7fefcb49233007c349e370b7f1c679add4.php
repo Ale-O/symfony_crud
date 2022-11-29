@@ -97,11 +97,11 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         echo "    <li>
         <a href=\"";
         // line 17
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_post_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
         echo "\">
             <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> ";
         // line 18
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.post_list"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.element_list"), "html", null, true);
         echo "
         </a>
     </li>
@@ -185,8 +185,8 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 
 {% block header_navigation_links %}
     <li>
-        <a href=\"{{ path('admin_post_index') }}\">
-            <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> {{ 'menu.post_list'|trans }}
+        <a href=\"{{ path('admin_element_index') }}\">
+            <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> {{ 'menu.element_list'|trans }}
         </a>
     </li>
     <li>

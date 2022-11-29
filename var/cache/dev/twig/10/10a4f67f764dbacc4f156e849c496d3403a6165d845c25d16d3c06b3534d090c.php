@@ -49,7 +49,7 @@ class __TwigTemplate_23700a8e97f68093a93891df845ef903f75aab3eb685b8565bcd206f268
             $context["attr"] = ["data-confirmation" => "true"];
             // line 11
             echo "    ";
-            echo twig_include($this->env, $context, "blog/_delete_post_confirmation.html.twig");
+            echo twig_include($this->env, $context, "blog/_delete_element_confirmation.html.twig");
             echo "
 ";
         }
@@ -70,7 +70,7 @@ class __TwigTemplate_23700a8e97f68093a93891df845ef903f75aab3eb685b8565bcd206f268
         echo "\">
         <i class=\"fa fa-save\" aria-hidden=\"true\"></i> ";
         // line 18
-        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 18, $this->source); })()), $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create_post"))) : ($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create_post"))), "html", null, true);
+        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 18, $this->source); })()), $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create_element"))) : ($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create_element"))), "html", null, true);
         echo "
     </button>
 
@@ -79,7 +79,7 @@ class __TwigTemplate_23700a8e97f68093a93891df845ef903f75aab3eb685b8565bcd206f268
         if ((((isset($context["include_back_to_home_link"]) || array_key_exists("include_back_to_home_link", $context))) ? (_twig_default_filter((isset($context["include_back_to_home_link"]) || array_key_exists("include_back_to_home_link", $context) ? $context["include_back_to_home_link"] : (function () { throw new RuntimeError('Variable "include_back_to_home_link" does not exist.', 21, $this->source); })()), false)) : (false))) {
             // line 22
             echo "        <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_post_index");
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
             echo "\" class=\"btn btn-link\">
             <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> ";
             // line 23
@@ -127,18 +127,18 @@ class __TwigTemplate_23700a8e97f68093a93891df845ef903f75aab3eb685b8565bcd206f268
 
 {% if show_confirmation|default(false) %}
     {% set attr = {'data-confirmation': 'true'} %}
-    {{ include('blog/_delete_post_confirmation.html.twig') }}
+    {{ include('blog/_delete_element_confirmation.html.twig') }}
 {% endif %}
 
 {{ form_start(form, {attr: attr|default({})}) }}
     {{ form_widget(form) }}
 
     <button type=\"submit\" class=\"{{ button_css|default(\"btn btn-primary\") }}\">
-        <i class=\"fa fa-save\" aria-hidden=\"true\"></i> {{ button_label|default('label.create_post'|trans) }}
+        <i class=\"fa fa-save\" aria-hidden=\"true\"></i> {{ button_label|default('label.create_element'|trans) }}
     </button>
 
     {% if include_back_to_home_link|default(false) %}
-        <a href=\"{{ path('admin_post_index') }}\" class=\"btn btn-link\">
+        <a href=\"{{ path('admin_element_index') }}\" class=\"btn btn-link\">
             <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> {{ 'action.back_to_list'|trans }}
         </a>
     {% endif %}

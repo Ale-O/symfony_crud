@@ -12,7 +12,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                 '/{id}/delete',
             ],
             'name' => [
-                'admin_post_delete',
+                'admin_element_delete',
             ],
             'methods' => [
                 [
@@ -25,7 +25,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                 1 => 'delete',
             ],
             'subject' => [
-                1 => 'post',
+                1 => 'element',
             ],
         ],
     ],

@@ -122,7 +122,7 @@ class __TwigTemplate_68664278e6fbbff5b93d9e368157c7d80e13bdf9d018cf9db2ff5b4191e
                    class=\"form-control search-field\"
                    placeholder=\"";
         // line 15
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.search_for"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("element.search_for"), "html", null, true);
         echo "\"
                    autocomplete=\"off\"
                    value=\"";
@@ -132,7 +132,7 @@ class __TwigTemplate_68664278e6fbbff5b93d9e368157c7d80e13bdf9d018cf9db2ff5b4191e
                    autofocus
                    data-no-results-message=\"";
         // line 19
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("post.search_no_results"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("element.search_no_results"), "html", null, true);
         echo "\"
             >
         </div>
@@ -208,11 +208,11 @@ class __TwigTemplate_68664278e6fbbff5b93d9e368157c7d80e13bdf9d018cf9db2ff5b4191e
         <div class=\"form-group\">
             <input name=\"q\"
                    class=\"form-control search-field\"
-                   placeholder=\"{{ 'post.search_for'|trans }}\"
+                   placeholder=\"{{ 'element.search_for'|trans }}\"
                    autocomplete=\"off\"
                    value=\"{{ query }}\"
                    autofocus
-                   data-no-results-message=\"{{ 'post.search_no_results'|trans }}\"
+                   data-no-results-message=\"{{ 'element.search_no_results'|trans }}\"
             >
         </div>
     </form>

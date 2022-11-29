@@ -10,7 +10,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/subelement/{postSlug}/new',
+                '/subelement/{elementSlug}/new',
             ],
             'name' => [
                 'subelement_new',
@@ -28,12 +28,12 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
         ],
         'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\ParamConverter' => [
             'name' => [
-                2 => 'post',
+                2 => 'element',
             ],
             'options' => [
                 2 => [
                     'mapping' => [
-                        'postSlug' => 'slug',
+                        'elementSlug' => 'slug',
                     ],
                 ],
             ],

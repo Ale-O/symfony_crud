@@ -66,7 +66,7 @@ class __TwigTemplate_f02b848076baab5ac7a9c60685b37d2ae3ef66dc1e329147b05b90af80b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body_id"));
 
-        echo "admin_post_edit";
+        echo "admin_element_edit";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -87,7 +87,7 @@ class __TwigTemplate_f02b848076baab5ac7a9c60685b37d2ae3ef66dc1e329147b05b90af80b
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit_post", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit_element", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
         echo "</h1>
 
     ";
@@ -119,11 +119,11 @@ class __TwigTemplate_f02b848076baab5ac7a9c60685b37d2ae3ef66dc1e329147b05b90af80b
         echo "    <div class=\"section\">
         <a href=\"";
         // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_post_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 17, $this->source); })()), "id", [], "any", false, false, false, 17)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 17, $this->source); })()), "id", [], "any", false, false, false, 17)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
         // line 18
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.show_post"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.show_element"), "html", null, true);
         echo "
         </a>
     </div>
@@ -131,7 +131,7 @@ class __TwigTemplate_f02b848076baab5ac7a9c60685b37d2ae3ef66dc1e329147b05b90af80b
     <div class=\"section actions\">
         ";
         // line 23
-        echo twig_include($this->env, $context, "admin/blog/_delete_form.html.twig", ["post" => (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 23, $this->source); })())], false);
+        echo twig_include($this->env, $context, "admin/blog/_delete_form.html.twig", ["element" => (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 23, $this->source); })())], false);
         echo "
     </div>
 
@@ -172,10 +172,10 @@ class __TwigTemplate_f02b848076baab5ac7a9c60685b37d2ae3ef66dc1e329147b05b90af80b
     {
         return new Source("{% extends 'admin/layout.html.twig' %}
 
-{% block body_id 'admin_post_edit' %}
+{% block body_id 'admin_element_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit_post'|trans({'%id%': post.id}) }}</h1>
+    <h1>{{ 'title.edit_element'|trans({'%id%': element.id}) }}</h1>
 
     {{ include('admin/blog/_form.html.twig', {
         form: form,
@@ -186,13 +186,13 @@ class __TwigTemplate_f02b848076baab5ac7a9c60685b37d2ae3ef66dc1e329147b05b90af80b
 
 {% block sidebar %}
     <div class=\"section\">
-        <a href=\"{{ path('admin_post_show', {id: post.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
-            <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show_post'|trans }}
+        <a href=\"{{ path('admin_element_show', {id: element.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
+            <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show_element'|trans }}
         </a>
     </div>
 
     <div class=\"section actions\">
-        {{ include('admin/blog/_delete_form.html.twig', {post: post}, with_context = false) }}
+        {{ include('admin/blog/_delete_form.html.twig', {element: element}, with_context = false) }}
     </div>
 
     {{ parent() }}

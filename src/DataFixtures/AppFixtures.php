@@ -11,7 +11,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Post;
+use App\Entity\Element;
 use App\Entity\Subelement;
 use App\Entity\Tag;
 use App\Entity\User;
@@ -36,7 +36,7 @@ class AppFixtures extends Fixture
     {
         $this->loadUsers($manager);
         $this->loadTags($manager);
-        $this->loadPosts($manager);
+        $this->loadElements($manager);
     }
 
     private function loadUsers(ObjectManager $manager): void
@@ -69,17 +69,17 @@ class AppFixtures extends Fixture
         $manager->flush();
     }
 
-    private function loadPosts(ObjectManager $manager): void
+    private function loadElements(ObjectManager $manager): void
     {
-        foreach ($this->getPostData() as [$title, $slug, $summary, $content, $publishedAt, $author, $tags]) {
-            $post = new Post();
-            $post->setTitle($title);
-            $post->setSlug($slug);
-            $post->setSummary($summary);
-            $post->setContent($content);
-            $post->setPublishedAt($publishedAt);
-            $post->setAuthor($author);
-            $post->addTag(...$tags);
+        foreach ($this->getElementData() as [$title, $slug, $summary, $content, $publishedAt, $author, $tags]) {
+            $element = new Element();
+            $element->setTitle($title);
+            $element->setSlug($slug);
+            $element->setSummary($summary);
+            $element->setContent($content);
+            $element->setPublishedAt($publishedAt);
+            $element->setAuthor($author);
+            $element->addTag(...$tags);
 
             foreach (range(1, 5) as $i) {
                 $subelement = new Subelement();
@@ -87,10 +87,10 @@ class AppFixtures extends Fixture
                 $subelement->setContent($this->getRandomText(random_int(255, 512)));
                 $subelement->setPublishedAt(new \DateTime('now + '.$i.'seconds'));
 
-                $post->addSubelement($subelement);
+                $element->addSubelement($subelement);
             }
 
-            $manager->persist($post);
+            $manager->persist($element);
         }
 
         $manager->flush();
@@ -121,24 +121,24 @@ class AppFixtures extends Fixture
         ];
     }
 
-    private function getPostData()
+    private function getElementData()
     {
-        $posts = [];
+        $elements = [];
         foreach ($this->getPhrases() as $i => $title) {
-            // $postData = [$title, $slug, $summary, $content, $publishedAt, $author, $tags, $subelements];
-            $posts[] = [
+            // $elementData = [$title, $slug, $summary, $content, $publishedAt, $author, $tags, $subelements];
+            $elements[] = [
                 $title,
                 $this->slugger->slug($title)->lower(),
                 $this->getRandomText(),
-                $this->getPostContent(),
+                $this->getElementContent(),
                 new \DateTime('now - '.$i.'days'),
-                // Ensure that the first post is written by Jane Doe to simplify tests
+                // Ensure that the first element is written by Jane Doe to simplify tests
                 $this->getReference(['jane_admin', 'tom_admin'][0 === $i ? 0 : random_int(0, 1)]),
                 $this->getRandomTags(),
             ];
         }
 
-        return $posts;
+        return $elements;
     }
 
     private function getPhrases(): array
@@ -190,7 +190,7 @@ class AppFixtures extends Fixture
         return $text;
     }
 
-    private function getPostContent(): string
+    private function getElementContent(): string
     {
         return <<<'MARKDOWN'
 Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor

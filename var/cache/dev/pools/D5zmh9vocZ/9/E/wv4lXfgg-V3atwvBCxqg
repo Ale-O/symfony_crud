@@ -12,7 +12,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                 '/{id<\\d+>}/edit',
             ],
             'name' => [
-                'admin_post_edit',
+                'admin_element_edit',
             ],
             'methods' => [
                 [
@@ -25,10 +25,10 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                 1 => 'edit',
             ],
             'subject' => [
-                1 => 'post',
+                1 => 'element',
             ],
             'message' => [
-                1 => 'Posts can only be edited by their authors.',
+                1 => 'Elements can only be edited by their authors.',
             ],
         ],
     ],

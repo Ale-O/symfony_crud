@@ -66,7 +66,7 @@ class __TwigTemplate_e3a9b4b61a574fb9b0b8320667bb0cd0f0939182e87cfc3b8a4ae63c3bd
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body_id"));
 
-        echo "admin_post_new";
+        echo "admin_element_new";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -87,7 +87,7 @@ class __TwigTemplate_e3a9b4b61a574fb9b0b8320667bb0cd0f0939182e87cfc3b8a4ae63c3bd
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.post_new"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.element_new"), "html", null, true);
         echo "</h1>
 
     ";
@@ -118,7 +118,7 @@ class __TwigTemplate_e3a9b4b61a574fb9b0b8320667bb0cd0f0939182e87cfc3b8a4ae63c3bd
         <button type=\"submit\" class=\"btn btn-primary\">
             <i class=\"fa fa-save\" aria-hidden=\"true\"></i> ";
         // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create_post"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create_element"), "html", null, true);
         echo "
         </button>
         ";
@@ -127,7 +127,7 @@ class __TwigTemplate_e3a9b4b61a574fb9b0b8320667bb0cd0f0939182e87cfc3b8a4ae63c3bd
         echo "
         <a href=\"";
         // line 19
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_post_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
         echo "\" class=\"btn btn-link\">
             <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> ";
         // line 20
@@ -194,10 +194,10 @@ class __TwigTemplate_e3a9b4b61a574fb9b0b8320667bb0cd0f0939182e87cfc3b8a4ae63c3bd
     {
         return new Source("{% extends 'admin/layout.html.twig' %}
 
-{% block body_id 'admin_post_new' %}
+{% block body_id 'admin_element_new' %}
 
 {% block main %}
-    <h1>{{ 'title.post_new'|trans }}</h1>
+    <h1>{{ 'title.element_new'|trans }}</h1>
 
     {{ form_start(form) }}
         {{ form_row(form.title) }}
@@ -207,10 +207,10 @@ class __TwigTemplate_e3a9b4b61a574fb9b0b8320667bb0cd0f0939182e87cfc3b8a4ae63c3bd
         {{ form_row(form.tags) }}
 
         <button type=\"submit\" class=\"btn btn-primary\">
-            <i class=\"fa fa-save\" aria-hidden=\"true\"></i> {{ 'label.create_post'|trans }}
+            <i class=\"fa fa-save\" aria-hidden=\"true\"></i> {{ 'label.create_element'|trans }}
         </button>
         {{ form_widget(form.saveAndCreateNew, {label: 'label.save_and_create_new', attr: {class: 'btn btn-primary'}}) }}
-        <a href=\"{{ path('admin_post_index') }}\" class=\"btn btn-link\">
+        <a href=\"{{ path('admin_element_index') }}\" class=\"btn btn-link\">
             <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> {{ 'action.back_to_list'|trans }}
         </a>
     {{ form_end(form) }}

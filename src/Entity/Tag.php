@@ -17,7 +17,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity()
  * @ORM\Table(name="symfony_demo_tag")
  *
- * Defines the properties of the Tag entity to represent the post tags.
+ * Defines the properties of the Tag entity to represent the element tags.
  *
  * See https://symfony.com/doc/current/doctrine.html#creating-an-entity-class
  *

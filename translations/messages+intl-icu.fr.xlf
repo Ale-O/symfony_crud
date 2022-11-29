@@ -76,12 +76,12 @@
                 <source>title.login</source>
                 <target>Connexion sécurisée</target>
             </trans-unit>
-            <trans-unit id="title.post_list">
-                <source>title.post_list</source>
+            <trans-unit id="title.element_list">
+                <source>title.element_list</source>
                 <target>Liste des éléments</target>
             </trans-unit>
-            <trans-unit id="title.edit_post">
-                <source>title.edit_post</source>
+            <trans-unit id="title.edit_element">
+                <source>title.edit_element</source>
                 <target>Modifier l'élément #{id, number}</target>
             </trans-unit>
             <trans-unit id="title.add_subelement">
@@ -105,8 +105,8 @@
                 <source>action.show</source>
                 <target>Voir</target>
             </trans-unit>
-            <trans-unit id="action.show_post">
-                <source>action.show_post</source>
+            <trans-unit id="action.show_element">
+                <source>action.show_element</source>
                 <target>Voir l'élément</target>
             </trans-unit>
             <trans-unit id="action.show_code">
@@ -117,40 +117,40 @@
                 <source>action.edit</source>
                 <target>Editer</target>
             </trans-unit>
-            <trans-unit id="action.edit_post">
-                <source>action.edit_post</source>
+            <trans-unit id="action.edit_element">
+                <source>action.edit_element</source>
                 <target>Modifier l'élément</target>
             </trans-unit>
             <trans-unit id="action.save">
                 <source>action.save</source>
                 <target>Enregistrer</target>
             </trans-unit>
-            <trans-unit id="action.delete_post">
-                <source>action.delete_post</source>
+            <trans-unit id="action.delete_element">
+                <source>action.delete_element</source>
                 <target>Supprimer l'élément</target>
             </trans-unit>
-            <trans-unit id="delete_post_modal.title">
-                <source>delete_post_modal.title</source>
+            <trans-unit id="delete_element_modal.title">
+                <source>delete_element_modal.title</source>
                 <target>Êtes-vous sûr de vouloir supprimer ce sous-élément ?</target>
             </trans-unit>
-            <trans-unit id="delete_post_modal.body">
-                <source>delete_post_modal.body</source>
+            <trans-unit id="delete_element_modal.body">
+                <source>delete_element_modal.body</source>
                 <target>Cette action ne peut pas être annulée.</target>
             </trans-unit>
-            <trans-unit id="label.delete_post">
-                <source>label.delete_post</source>
+            <trans-unit id="label.delete_element">
+                <source>label.delete_element</source>
                 <target>Supprimer l'élément</target>
             </trans-unit>
             <trans-unit id="label.cancel">
                 <source>label.cancel</source>
                 <target>Annuler</target>
             </trans-unit>
-            <trans-unit id="label.create_post">
-                <source>label.create_post</source>
+            <trans-unit id="label.create_element">
+                <source>label.create_element</source>
                 <target>Créer un élément</target>
             </trans-unit>
-            <trans-unit id="action.create_post">
-                <source>action.create_post</source>
+            <trans-unit id="action.create_element">
+                <source>action.create_element</source>
                 <target>Créer un nouvel élément</target>
             </trans-unit>
             <trans-unit id="label.save_and_create_new">
@@ -254,8 +254,8 @@
                 <source>label.actions</source>
                 <target>Actions</target>
             </trans-unit>
-            <trans-unit id="title.post_new">
-                <source>title.post_new</source>
+            <trans-unit id="title.element_new">
+                <source>title.element_new</source>
                 <target>Ajouter un nouvel élément</target>
             </trans-unit>
             <trans-unit id="action.edit_contents">
@@ -271,8 +271,8 @@
                 <source>menu.choose_language</source>
                 <target>Choisir la langue</target>
             </trans-unit>
-            <trans-unit id="menu.post_list">
-                <source>menu.post_list</source>
+            <trans-unit id="menu.element_list">
+                <source>menu.element_list</source>
                 <target>Liste des éléments</target>
             </trans-unit>
             <trans-unit id="menu.back_to_blog">
@@ -297,51 +297,51 @@
             </trans-unit>
             <trans-unit id="menu.rss">
                 <source>menu.rss</source>
-                <target>Blog Posts RSS</target>
+                <target>Blog Elements RSS</target>
             </trans-unit>
             <trans-unit id="menu.search">
                 <source>menu.search</source>
                 <target>Recherche</target>
             </trans-unit>
 
-            <trans-unit id="post.to_publish_a_subelement">
-                <source>post.to_publish_a_subelement</source>
+            <trans-unit id="element.to_publish_a_subelement">
+                <source>element.to_publish_a_subelement</source>
                 <target>pour rajouter un sous-élément</target>
             </trans-unit>
-            <trans-unit id="post.num_subelements">
-                <source>post.num_subelements</source>
+            <trans-unit id="element.num_subelements">
+                <source>element.num_subelements</source>
                 <target>{count, plural, one {# sous-élément} other {# sous-éléments}}</target>
             </trans-unit>
-            <trans-unit id="post.subelemented_on">
-                <source>post.subelemented_on</source>
+            <trans-unit id="element.subelemented_on">
+                <source>element.subelemented_on</source>
                 <target>ajouté le</target>
             </trans-unit>
-            <trans-unit id="post.no_subelements">
-                <source>post.no_subelements</source>
+            <trans-unit id="element.no_subelements">
+                <source>element.no_subelements</source>
                 <target>Ajouter un premier sous-élément.</target>
             </trans-unit>
-            <trans-unit id="post.no_posts_found">
-                <source>post.no_posts_found</source>
+            <trans-unit id="element.no_elements_found">
+                <source>element.no_elements_found</source>
                 <target>Aucun élément trouvé.</target>
             </trans-unit>
-            <trans-unit id="post.created_successfully">
-                <source>post.created_successfully</source>
+            <trans-unit id="element.created_successfully">
+                <source>element.created_successfully</source>
                 <target>Elément créé avec succès !</target>
             </trans-unit>
-            <trans-unit id="post.updated_successfully">
-                <source>post.updated_successfully</source>
+            <trans-unit id="element.updated_successfully">
+                <source>element.updated_successfully</source>
                 <target>Elément mis à jour avec succès !</target>
             </trans-unit>
-            <trans-unit id="post.deleted_successfully">
-                <source>post.deleted_successfully</source>
+            <trans-unit id="element.deleted_successfully">
+                <source>element.deleted_successfully</source>
                 <target>Elément supprimé avec succès !</target>
             </trans-unit>
-            <trans-unit id="post.search_for">
-                <source>post.search_for</source>
+            <trans-unit id="element.search_for">
+                <source>element.search_for</source>
                 <target>Rechercher...</target>
             </trans-unit>
-            <trans-unit id="post.search_no_results">
-                <source>post.search_no_results</source>
+            <trans-unit id="element.search_no_results">
+                <source>element.search_no_results</source>
                 <target>Aucun résultat</target>
             </trans-unit>
 
@@ -399,16 +399,16 @@
                 <source>help.more_information</source>
                 <target><![CDATA[Pour plus d'informations, consultez la <a href="https://symfony.com/doc">documentation de Symfony</a>.]]></target>
             </trans-unit>
-            <trans-unit id="help.post_summary">
-                <source>help.post_summary</source>
+            <trans-unit id="help.element_summary">
+                <source>help.element_summary</source>
                 <target>Les résumés ne peuvent pas contenir de contenu Markdown ou HTML ; seulement du texte brut.</target>
             </trans-unit>
-            <trans-unit id="help.post_publication">
-                <source>help.post_publication</source>
+            <trans-unit id="help.element_publication">
+                <source>help.element_publication</source>
                 <target>Sélectionnez une date future pour programmer le rajout de l'élément.</target>
             </trans-unit>
-            <trans-unit id="help.post_content">
-                <source>help.post_content</source>
+            <trans-unit id="help.element_content">
+                <source>help.element_content</source>
                 <target>Utilisez du Markdown pour formater le contenu de l'élément. Le HTML est également autorisé.</target>
             </trans-unit>
             <trans-unit id="help.subelement_content">
