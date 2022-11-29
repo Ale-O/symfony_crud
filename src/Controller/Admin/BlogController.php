@@ -55,9 +55,10 @@ class BlogController extends AbstractController
      */
     public function index(ElementRepository $elements): Response
     {
-        $authorElements = $elements->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
+        // $authorElements = $elements->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
+        $allElements = $elements->findAll();
 
-        return $this->render('admin/blog/index.html.twig', ['elements' => $authorElements]);
+        return $this->render('admin/blog/index.html.twig', ['elements' => $allElements]);
     }
 
     /**
@@ -117,7 +118,7 @@ class BlogController extends AbstractController
     {
         // This security check can also be performed
         // using an annotation: @IsGranted("show", subject="element", message="Elements can only be shown to their authors.")
-        $this->denyAccessUnlessGranted(ElementVoter::SHOW, $element, 'Elements can only be shown to their authors.');
+        // $this->denyAccessUnlessGranted(ElementVoter::SHOW, $element, 'Elements can only be shown to their authors.');
 
         return $this->render('admin/blog/show.html.twig', [
             'element' => $element,
