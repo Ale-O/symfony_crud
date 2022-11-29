@@ -190,9 +190,9 @@
                 <source>menu.post_list</source>
                 <target>Lista artykułów</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
-                <target>Powrót do bloga</target>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
+                <target>Powrót do cruda</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>

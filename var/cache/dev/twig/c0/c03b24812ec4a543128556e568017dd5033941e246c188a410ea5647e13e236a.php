@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* blog/_element_tags.html.twig */
+/* crud/_element_tags.html.twig */
 class __TwigTemplate_7241cc72a6f6f931f15666940710d1810f8cd006b1d3d91f3b917b85b48f9e5e extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_7241cc72a6f6f931f15666940710d1810f8cd006b1d3d91f3b917b85b48
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/_element_tags.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/_element_tags.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/_element_tags.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/_element_tags.html.twig"));
 
         // line 1
         if ( !twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 1, $this->source); })()), "tags", [], "any", false, false, false, 1), "empty", [], "any", false, false, false, 1)) {
@@ -50,7 +50,7 @@ class __TwigTemplate_7241cc72a6f6f931f15666940710d1810f8cd006b1d3d91f3b917b85b48
             foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
                 // line 4
                 echo "            <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_index", ["tag" => (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 4), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 4, $this->source); })()), "request", [], "any", false, false, false, 4), "query", [], "any", false, false, false, 4), "get", [0 => "tag"], "method", false, false, false, 4)))) ? (null) : (twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 4)))]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index", ["tag" => (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 4), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 4, $this->source); })()), "request", [], "any", false, false, false, 4), "query", [], "any", false, false, false, 4), "get", [0 => "tag"], "method", false, false, false, 4)))) ? (null) : (twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 4)))]), "html", null, true);
                 echo "\"
                class=\"label label-";
                 // line 5
@@ -84,7 +84,7 @@ class __TwigTemplate_7241cc72a6f6f931f15666940710d1810f8cd006b1d3d91f3b917b85b48
 
     public function getTemplateName()
     {
-        return "blog/_element_tags.html.twig";
+        return "crud/_element_tags.html.twig";
     }
 
     public function isTraitable()
@@ -102,7 +102,7 @@ class __TwigTemplate_7241cc72a6f6f931f15666940710d1810f8cd006b1d3d91f3b917b85b48
         return new Source("{% if not element.tags.empty %}
     <p class=\"element-tags\">
         {% for tag in element.tags %}
-            <a href=\"{{ path('blog_index', {'tag': tag.name == app.request.query.get('tag') ? null : tag.name}) }}\"
+            <a href=\"{{ path('crud_index', {'tag': tag.name == app.request.query.get('tag') ? null : tag.name}) }}\"
                class=\"label label-{{ tag.name == app.request.query.get('tag') ? 'success' : 'default' }}\"
             >
                 <i class=\"fa fa-tag\"></i> {{ tag.name }}
@@ -111,6 +111,6 @@ class __TwigTemplate_7241cc72a6f6f931f15666940710d1810f8cd006b1d3d91f3b917b85b48
     </p>
 {% endif %}
 
-", "blog/_element_tags.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\_element_tags.html.twig");
+", "crud/_element_tags.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\_element_tags.html.twig");
     }
 }

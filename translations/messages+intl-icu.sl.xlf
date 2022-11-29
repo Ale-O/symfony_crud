@@ -239,9 +239,9 @@
                 <source>menu.post_list</source>
                 <target>Seznam objav</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
-                <target>Nazaj na blog</target>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
+                <target>Nazaj na crud</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>
@@ -257,7 +257,7 @@
             </trans-unit>
             <trans-unit id="menu.rss">
                 <source>menu.rss</source>
-                <target>RSS objav bloga</target>
+                <target>RSS objav cruda</target>
             </trans-unit>
             <trans-unit id="menu.search">
                 <source>menu.search</source>
@@ -357,11 +357,11 @@
 
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Symfony Demo blog</target>
+                <target>Symfony Demo crud</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>Najnovejše objave objavljene na Symfony Demo blogu</target>
+                <target>Najnovejše objave objavljene na Symfony Demo crudu</target>
             </trans-unit>
         </body>
     </file>

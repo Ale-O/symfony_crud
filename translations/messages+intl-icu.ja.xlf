@@ -166,8 +166,8 @@
                 <source>menu.post_list</source>
                 <target>記事一覧</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
                 <target>ブログへ戻る</target>
             </trans-unit>
             <trans-unit id="menu.homepage">

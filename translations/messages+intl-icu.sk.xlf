@@ -271,9 +271,9 @@
                 <source>menu.post_list</source>
                 <target>Zoznam príspevkov</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
-                <target>Späť na blog</target>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
+                <target>Späť na crud</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>
@@ -293,7 +293,7 @@
             </trans-unit>
             <trans-unit id="menu.rss">
                 <source>menu.rss</source>
-                <target>Blogové príspevky RSS</target>
+                <target>Crudové príspevky RSS</target>
             </trans-unit>
             <trans-unit id="menu.search">
                 <source>menu.search</source>
@@ -401,11 +401,11 @@
             </trans-unit>
             <trans-unit id="help.post_publication">
                 <source>help.post_publication</source>
-                <target>Nastavením budúceho dátumu naplánujete zverejnenie blogového príspevku.</target>
+                <target>Nastavením budúceho dátumu naplánujete zverejnenie crudového príspevku.</target>
             </trans-unit>
             <trans-unit id="help.post_content">
                 <source>help.post_content</source>
-                <target>Pomocou Markdown naformátujte obsah blogového príspevku. HTML je tiež povolené.</target>
+                <target>Pomocou Markdown naformátujte obsah crudového príspevku. HTML je tiež povolené.</target>
             </trans-unit>
             <trans-unit id="help.comment_content">
                 <source>help.comment_content</source>
@@ -419,11 +419,11 @@
 
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Symfony Demo blog</target>
+                <target>Symfony Demo crud</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>Najnovšie príspevky zverejnené na blogu Symfony Demo</target>
+                <target>Najnovšie príspevky zverejnené na crudu Symfony Demo</target>
             </trans-unit>
 
             <trans-unit id="paginator.previous">

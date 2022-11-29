@@ -136,7 +136,7 @@ abstract class AbstractController implements ServiceSubscriberInterface
     /**
      * Forwards the request to another controller.
      *
-     * @param string $controller The controller name (a string like Bundle\BlogBundle\Controller\PostController::indexAction)
+     * @param string $controller The controller name (a string like Bundle\CrudBundle\Controller\PostController::indexAction)
      */
     protected function forward(string $controller, array $path = [], array $query = []): Response
     {

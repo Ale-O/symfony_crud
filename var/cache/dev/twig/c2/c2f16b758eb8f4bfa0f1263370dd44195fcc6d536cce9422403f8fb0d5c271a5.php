@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* admin/blog/show.html.twig */
+/* admin/crud/show.html.twig */
 class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d9292bbee extends Template
 {
     private $source;
@@ -41,12 +41,12 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/blog/show.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/show.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/blog/show.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/show.html.twig"));
 
-        $this->parent = $this->loadTemplate("admin/layout.html.twig", "admin/blog/show.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/layout.html.twig", "admin/crud/show.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -117,7 +117,7 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
 
     ";
         // line 19
-        echo twig_include($this->env, $context, "blog/_element_tags.html.twig");
+        echo twig_include($this->env, $context, "crud/_element_tags.html.twig");
         echo "
 ";
         
@@ -155,7 +155,7 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
     <div class=\"section\">
         ";
         // line 31
-        echo twig_include($this->env, $context, "admin/blog/_delete_form.html.twig", ["element" => (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 31, $this->source); })())], false);
+        echo twig_include($this->env, $context, "admin/crud/_delete_form.html.twig", ["element" => (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 31, $this->source); })())], false);
         echo "
     </div>
     
@@ -180,7 +180,7 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
 
     public function getTemplateName()
     {
-        return "admin/blog/show.html.twig";
+        return "admin/crud/show.html.twig";
     }
 
     public function isTraitable()
@@ -213,7 +213,7 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
 
     {{ element.content|markdown_to_html|sanitize_html }}
 
-    {{ include('blog/_element_tags.html.twig') }}
+    {{ include('crud/_element_tags.html.twig') }}
 {% endblock %}
 
 {% block sidebar %}
@@ -225,7 +225,7 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
 
     
     <div class=\"section\">
-        {{ include('admin/blog/_delete_form.html.twig', {element: element}, with_context = false) }}
+        {{ include('admin/crud/_delete_form.html.twig', {element: element}, with_context = false) }}
     </div>
     
 
@@ -233,6 +233,6 @@ class __TwigTemplate_6363d74f1cea97b0c3afdd3376bada4ccf6cc789b89cb7d283c6366d929
 
     {{ show_source_code(_self) }}
 {% endblock %}
-", "admin/blog/show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\blog\\show.html.twig");
+", "admin/crud/show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\crud\\show.html.twig");
     }
 }

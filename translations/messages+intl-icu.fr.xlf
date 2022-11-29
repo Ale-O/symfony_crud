@@ -275,8 +275,8 @@
                 <source>menu.element_list</source>
                 <target>Liste des éléments</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
                 <target>Retour à l'accueil</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
@@ -297,7 +297,7 @@
             </trans-unit>
             <trans-unit id="menu.rss">
                 <source>menu.rss</source>
-                <target>Blog Elements RSS</target>
+                <target>Crud Elements RSS</target>
             </trans-unit>
             <trans-unit id="menu.search">
                 <source>menu.search</source>
@@ -423,7 +423,7 @@
 
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Blog de démo Symfony</target>
+                <target>Crud de démo Symfony</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>

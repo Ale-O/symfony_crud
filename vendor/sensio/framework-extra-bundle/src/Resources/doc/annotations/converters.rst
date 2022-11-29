@@ -12,8 +12,8 @@ they can be injected as controller method arguments::
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
     /**
-     * @Route("/blog/{id}")
-     * @ParamConverter("post", class="SensioBlogBundle:Post")
+     * @Route("/crud/{id}")
+     * @ParamConverter("post", class="SensioCrudBundle:Post")
      */
     public function show(Post $post)
     {
@@ -21,7 +21,7 @@ they can be injected as controller method arguments::
 
 Several things happen under the hood:
 
-* The converter tries to get a ``SensioBlogBundle:Post`` object from the
+* The converter tries to get a ``SensioCrudBundle:Post`` object from the
   request attributes (request attributes comes from route placeholders -- here
   ``id``);
 
@@ -97,7 +97,7 @@ will automatically fetch them::
     /**
      * Fetch via primary key because {id} is in the route.
      *
-     * @Route("/blog/{id}")
+     * @Route("/crud/{id}")
      */
     public function showByPk(Post $post)
     {
@@ -106,7 +106,7 @@ will automatically fetch them::
     /**
      * Perform a findOneBy() where the slug property matches {slug}.
      *
-     * @Route("/blog/{slug}")
+     * @Route("/crud/{slug}")
      */
     public function show(Post $post)
     {
@@ -132,7 +132,7 @@ If automatic fetching doesn't work, use an expression::
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 
     /**
-     * @Route("/blog/{post_id}")
+     * @Route("/crud/{post_id}")
      * @Entity("post", expr="repository.find(post_id)")
      */
     public function show(Post $post)
@@ -152,7 +152,7 @@ any route wildcards - like ``{post_id}`` are available as variables.
 This can also be used to help resolve multiple arguments::
 
     /**
-     * @Route("/blog/{id}/comments/{comment_id}")
+     * @Route("/crud/{id}/comments/{comment_id}")
      * @Entity("comment", expr="repository.find(comment_id)")
      */
     public function show(Post $post, Comment $comment)
@@ -174,7 +174,7 @@ A number of ``options`` are available on the ``@ParamConverter`` or
   converter will find by the primary key::
 
     /**
-     * @Route("/blog/{post_id}")
+     * @Route("/crud/{post_id}")
      * @ParamConverter("post", options={"id" = "post_id"})
      */
     public function showPost(Post $post)
@@ -186,7 +186,7 @@ A number of ``options`` are available on the ``@ParamConverter`` or
   name::
 
     /**
-     * @Route("/blog/{date}/{slug}/comments/{comment_slug}")
+     * @Route("/crud/{date}/{slug}/comments/{comment_slug}")
      * @ParamConverter("post", options={"mapping": {"date": "date", "slug": "slug"}})
      * @ParamConverter("comment", options={"mapping": {"comment_slug": "slug"}})
      */
@@ -198,7 +198,7 @@ A number of ``options`` are available on the ``@ParamConverter`` or
   method by *excluding* one or more properties so that not *all* are used::
 
     /**
-     * @Route("/blog/{date}/{slug}")
+     * @Route("/crud/{date}/{slug}")
      * @ParamConverter("post", options={"exclude": {"date"}})
      */
     public function show(Post $post, \DateTime $date)
@@ -212,7 +212,7 @@ A number of ``options`` are available on the ``@ParamConverter`` or
   manager, but you can configure this::
 
     /**
-     * @Route("/blog/{id}")
+     * @Route("/crud/{id}")
      * @ParamConverter("post", options={"entity_manager" = "foo"})
      */
     public function show(Post $post)
@@ -230,7 +230,7 @@ The datetime converter converts any route or request attribute into a datetime
 instance::
 
     /**
-     * @Route("/blog/archive/{start}/{end}")
+     * @Route("/crud/archive/{start}/{end}")
      */
     public function archive(\DateTime $start, \DateTime $end)
     {
@@ -240,7 +240,7 @@ By default any date format that can be parsed by the ``DateTime`` constructor
 is accepted. You can be stricter with input given through the options::
 
     /**
-     * @Route("/blog/archive/{start}/{end}")
+     * @Route("/crud/archive/{start}/{end}")
      * @ParamConverter("start", options={"format": "!Y-m-d"})
      * @ParamConverter("end", options={"format": "!Y-m-d"})
      */

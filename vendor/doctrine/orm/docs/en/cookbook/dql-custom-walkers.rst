@@ -56,17 +56,17 @@ points. There are probably much more use-cases.
 Generic count query for pagination
 ----------------------------------
 
-Say you have a blog and posts all with one category and one author.
+Say you have a crud and posts all with one category and one author.
 A query for the front-page or any archive page might look something
 like:
 
 .. code-block:: sql
 
-    SELECT p, c, a FROM BlogPost p JOIN p.category c JOIN p.author a WHERE ...
+    SELECT p, c, a FROM CrudPost p JOIN p.category c JOIN p.author a WHERE ...
 
-Now in this query the blog post is the root entity, meaning its the
+Now in this query the crud post is the root entity, meaning its the
 one that is hydrated directly from the query and returned as an
-array of blog posts. In contrast the comment and author are loaded
+array of crud posts. In contrast the comment and author are loaded
 for deeper use in the object tree.
 
 A pagination for this query would want to approximate the number of
@@ -76,7 +76,7 @@ query for pagination would look like:
 
 .. code-block:: sql
 
-    SELECT count(DISTINCT p.id) FROM BlogPost p JOIN p.category c JOIN p.author a WHERE ...
+    SELECT count(DISTINCT p.id) FROM CrudPost p JOIN p.category c JOIN p.author a WHERE ...
 
 Now you could go and write each of these queries by hand, or you
 can use a tree walker to modify the AST for you. Lets see how the
@@ -172,7 +172,7 @@ We will implement a custom Output Walker that allows to specify the
 .. code-block:: php
 
     <?php
-    $dql = "SELECT p, c, a FROM BlogPost p JOIN p.category c JOIN p.author a WHERE ...";
+    $dql = "SELECT p, c, a FROM CrudPost p JOIN p.category c JOIN p.author a WHERE ...";
     $query = $m->createQuery($dql);
     $query->setHint(Query::HINT_CUSTOM_OUTPUT_WALKER, 'DoctrineExtensions\Query\MysqlWalker');
     $query->setHint("mysqlWalker.sqlNoCache", true);

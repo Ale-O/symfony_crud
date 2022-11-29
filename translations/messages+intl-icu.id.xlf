@@ -166,9 +166,9 @@
                 <source>menu.post_list</source>
                 <target>Daftar posting</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
-                <target>Kembali ke blog</target>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
+                <target>Kembali ke crud</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>

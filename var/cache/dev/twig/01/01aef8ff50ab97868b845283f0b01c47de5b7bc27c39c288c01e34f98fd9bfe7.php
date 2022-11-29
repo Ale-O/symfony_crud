@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* blog/element_show.html.twig */
+/* crud/element_show.html.twig */
 class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e452133ed3 extends Template
 {
     private $source;
@@ -41,12 +41,12 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/element_show.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/element_show.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/element_show.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/element_show.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "blog/element_show.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "crud/element_show.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -66,7 +66,7 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body_id"));
 
-        echo "blog_element_show";
+        echo "crud_element_show";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -108,7 +108,7 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
 
     ";
         // line 15
-        echo twig_include($this->env, $context, "blog/_element_tags.html.twig");
+        echo twig_include($this->env, $context, "crud/_element_tags.html.twig");
         echo "
 
     <div id=\"element-add-subelement\" class=\"well\">
@@ -118,7 +118,7 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 25
             echo "            ";
-            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\BlogController::subelementForm", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 25, $this->source); })()), "id", [], "any", false, false, false, 25)]));
+            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\CrudController::subelementForm", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 25, $this->source); })()), "id", [], "any", false, false, false, 25)]));
             echo "
         ";
         } else {
@@ -194,7 +194,7 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
             <div class=\"col-sm-9\">
                 <a href=\"";
             // line 58
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show", ["id" => twig_get_attribute($this->env, $this->source, $context["subelement"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_show", ["id" => twig_get_attribute($this->env, $this->source, $context["subelement"], "id", [], "any", false, false, false, 58)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-default\">
                     <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
             // line 59
@@ -269,7 +269,7 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
         echo "
     ";
         // line 86
-        echo twig_include($this->env, $context, "blog/_rss.html.twig");
+        echo twig_include($this->env, $context, "crud/_rss.html.twig");
         echo "
 ";
         
@@ -282,7 +282,7 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
 
     public function getTemplateName()
     {
-        return "blog/element_show.html.twig";
+        return "crud/element_show.html.twig";
     }
 
     public function isTraitable()
@@ -299,7 +299,7 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block body_id 'blog_element_show' %}
+{% block body_id 'crud_element_show' %}
 
 {% block main %}
     <h1>{{ element.title }}</h1>
@@ -311,7 +311,7 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
 
     {{ element.content|markdown_to_html|sanitize_html }}
 
-    {{ include('blog/_element_tags.html.twig') }}
+    {{ include('crud/_element_tags.html.twig') }}
 
     <div id=\"element-add-subelement\" class=\"well\">
         {# The 'IS_AUTHENTICATED_FULLY' role ensures that the user has entered
@@ -321,7 +321,7 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
         See https://symfony.com/doc/current/security/remember_me.html#forcing-the-user-to-re-authenticate-before-accessing-certain-resources
         #}
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            {{ render(controller('App\\\\Controller\\\\BlogController::subelementForm', {'id': element.id})) }}
+            {{ render(controller('App\\\\Controller\\\\CrudController::subelementForm', {'id': element.id})) }}
         {% else %}
             <p>
                 <a class=\"btn btn-success\" href=\"{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}\">
@@ -354,7 +354,7 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
             <h1>{{ subelement.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
 
             <div class=\"col-sm-9\">
-                <a href=\"{{ path('blog_show', {id: subelement.id}) }}\" class=\"btn btn-sm btn-default\">
+                <a href=\"{{ path('crud_show', {id: subelement.id}) }}\" class=\"btn btn-sm btn-default\">
                     <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
                 </a>
             </div>
@@ -382,8 +382,8 @@ class __TwigTemplate_0e1b40064024e9feb7c32c33140e91b641dd0408c6488938907e30e4521
     {{ parent() }}
 
     {{ show_source_code(_self) }}
-    {{ include('blog/_rss.html.twig') }}
+    {{ include('crud/_rss.html.twig') }}
 {% endblock %}
-", "blog/element_show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\element_show.html.twig");
+", "crud/element_show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\element_show.html.twig");
     }
 }

@@ -52,7 +52,7 @@ class SubelementNotificationSubscriber implements EventSubscriberInterface
         $subelement = $event->getSubelement();
         $element = $subelement->getElement();
 
-        $linkToElement = $this->urlGenerator->generate('blog_element', [
+        $linkToElement = $this->urlGenerator->generate('crud_element', [
             'slug' => $element->getSlug(),
             '_fragment' => 'subelement_'.$subelement->getId(),
         ], UrlGeneratorInterface::ABSOLUTE_URL);

@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity
  * @ORM\Table(name="symfony_demo_subelement")
  *
- * Defines the properties of the Subelement entity to represent the blog subelements.
+ * Defines the properties of the Subelement entity to represent the crud subelements.
  * See https://symfony.com/doc/current/doctrine.html#creating-an-entity-class
  *
  * Tip: if you have an existing database, you can generate these entity class automatically.

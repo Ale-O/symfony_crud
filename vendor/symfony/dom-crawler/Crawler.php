@@ -212,7 +212,7 @@ class Crawler implements \Countable, \IteratorAggregate
      *
      * @param int $options Bitwise OR of the libxml option constants
      *                     LIBXML_PARSEHUGE is dangerous, see
-     *                     http://symfony.com/blog/security-release-symfony-2-0-17-released
+     *                     http://symfony.com/crud/security-release-symfony-2-0-17-released
      */
     public function addXmlContent(string $content, string $charset = 'UTF-8', int $options = \LIBXML_NONET)
     {

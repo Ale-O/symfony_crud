@@ -130,7 +130,7 @@ two events.
 
 There is no limit to what you can and can't validate in
 "PrePersist" and "PreUpdate" as long as you don't create new entity
-instances. This was already discussed in the previous blog post on
+instances. This was already discussed in the previous crud post on
 the Versionable extension, which requires another type of event
 called "onFlush".
 

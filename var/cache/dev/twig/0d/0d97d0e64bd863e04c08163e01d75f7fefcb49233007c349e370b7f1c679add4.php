@@ -108,11 +108,11 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
     <li>
         <a href=\"";
         // line 22
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
         echo "\">
             <i class=\"fa fa-home\" aria-hidden=\"true\"></i> ";
         // line 23
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.back_to_blog"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.back_to_crud"), "html", null, true);
         echo "
         </a>
     </li>
@@ -190,8 +190,8 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         </a>
     </li>
     <li>
-        <a href=\"{{ path('blog_index') }}\">
-            <i class=\"fa fa-home\" aria-hidden=\"true\"></i> {{ 'menu.back_to_blog'|trans }}
+        <a href=\"{{ path('crud_index') }}\">
+            <i class=\"fa fa-home\" aria-hidden=\"true\"></i> {{ 'menu.back_to_crud'|trans }}
         </a>
     </li>
 {% endblock %}

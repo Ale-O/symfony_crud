@@ -18,7 +18,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Defines the form used to create and manipulate blog subelements. Although in this
+ * Defines the form used to create and manipulate crud subelements. Although in this
  * case the form is trivial and we could build it inside the controller, a good
  * practice is to always define your forms as classes.
  *

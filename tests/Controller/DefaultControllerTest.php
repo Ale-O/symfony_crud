@@ -46,15 +46,15 @@ class DefaultControllerTest extends WebTestCase
      * A good practice for tests is to not use the service container, to make
      * them more robust. However, in this example we must access to the container
      * to get the entity manager and make a database query. The reason is that
-     * blog element fixtures are randomly generated and there's no guarantee that
-     * a given blog element slug will be available.
+     * crud element fixtures are randomly generated and there's no guarantee that
+     * a given crud element slug will be available.
      */
-    public function testPublicBlogElement(): void
+    public function testPublicCrudElement(): void
     {
         $client = static::createClient();
         // the service container is always available via the test client
-        $blogElement = $client->getContainer()->get('doctrine')->getRepository(Element::class)->find(1);
-        $client->request('GET', sprintf('/en/blog/elements/%s', $blogElement->getSlug()));
+        $crudElement = $client->getContainer()->get('doctrine')->getRepository(Element::class)->find(1);
+        $client->request('GET', sprintf('/en/crud/elements/%s', $crudElement->getSlug()));
 
         $this->assertResponseIsSuccessful();
     }
@@ -81,7 +81,7 @@ class DefaultControllerTest extends WebTestCase
     public function getPublicUrls(): ?\Generator
     {
         yield ['/'];
-        yield ['/en/blog/'];
+        yield ['/en/crud/'];
         yield ['/en/login'];
     }
 

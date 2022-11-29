@@ -11,34 +11,34 @@ $ composer require symfony/routing
 ```
 
 ```php
-use App\Controller\BlogController;
+use App\Controller\CrudController;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 
-$route = new Route('/blog/{slug}', ['_controller' => BlogController::class]);
+$route = new Route('/crud/{slug}', ['_controller' => CrudController::class]);
 $routes = new RouteCollection();
-$routes->add('blog_show', $route);
+$routes->add('crud_show', $route);
 
 $context = new RequestContext();
 
 // Routing can match routes with incoming requests
 $matcher = new UrlMatcher($routes, $context);
-$parameters = $matcher->match('/blog/lorem-ipsum');
+$parameters = $matcher->match('/crud/lorem-ipsum');
 // $parameters = [
-//     '_controller' => 'App\Controller\BlogController',
+//     '_controller' => 'App\Controller\CrudController',
 //     'slug' => 'lorem-ipsum',
-//     '_route' => 'blog_show'
+//     '_route' => 'crud_show'
 // ]
 
 // Routing can also generate URLs for a given route
 $generator = new UrlGenerator($routes, $context);
-$url = $generator->generate('blog_show', [
-    'slug' => 'my-blog-post',
+$url = $generator->generate('crud_show', [
+    'slug' => 'my-crud-post',
 ]);
-// $url = '/blog/my-blog-post'
+// $url = '/crud/my-crud-post'
 ```
 
 Resources

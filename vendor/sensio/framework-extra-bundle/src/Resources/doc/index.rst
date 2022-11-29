@@ -107,7 +107,7 @@ This example shows all the available annotations in action::
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
     /**
-     * @Route("/blog")
+     * @Route("/crud")
      * @Cache(expires="tomorrow")
      */
     class AnnotController
@@ -126,8 +126,8 @@ This example shows all the available annotations in action::
         /**
          * @Route("/{id}")
          * @Method("GET")
-         * @ParamConverter("post", class="SensioBlogBundle:Post")
-         * @Template("@SensioBlog/annot/show.html.twig", vars={"post"})
+         * @ParamConverter("post", class="SensioCrudBundle:Post")
+         * @Template("@SensioCrud/annot/show.html.twig", vars={"post"})
          * @Cache(smaxage="15", lastmodified="post.getUpdatedAt()", etag="'Post' ~ post.getId() ~ post.getUpdatedAt()")
          * @IsGranted("ROLE_SPECIAL_USER")
          * @Security("has_role('ROLE_ADMIN') and is_granted('POST_SHOW', post)")

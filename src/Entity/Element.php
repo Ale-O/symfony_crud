@@ -22,7 +22,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="symfony_demo_element")
  * @UniqueEntity(fields={"slug"}, errorPath="title", message="element.slug_unique")
  *
- * Defines the properties of the Element entity to represent the blog elements.
+ * Defines the properties of the Element entity to represent the crud elements.
  *
  * See https://symfony.com/doc/current/doctrine.html#creating-an-entity-class
  *

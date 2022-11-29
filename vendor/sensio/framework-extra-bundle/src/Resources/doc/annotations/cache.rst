@@ -24,7 +24,7 @@ of a controller::
     /**
      * @Cache(expires="tomorrow", public=true)
      */
-    class BlogController extends Controller
+    class CrudController extends Controller
     {
     }
 
@@ -34,7 +34,7 @@ configuration, the latter overrides the former::
     /**
      * @Cache(expires="tomorrow")
      */
-    class BlogController extends Controller
+    class CrudController extends Controller
     {
         /**
          * @Cache(expires="+2 days")

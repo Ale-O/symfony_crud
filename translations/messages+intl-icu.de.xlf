@@ -190,9 +190,9 @@
                 <source>menu.post_list</source>
                 <target>Beitragsliste</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
-                <target>Zurück zum Blog</target>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
+                <target>Zurück zum Crud</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>
@@ -290,7 +290,7 @@
             </trans-unit>
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Blog</target>
+                <target>Crud</target>
             </trans-unit>
             <trans-unit id="menu.choose_language">
                 <source>menu.choose_language</source>
@@ -298,11 +298,11 @@
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>Die neuesten Posts, die auf dem Symfony Blog veröffentlicht wurden.</target>
+                <target>Die neuesten Posts, die auf dem Symfony Crud veröffentlicht wurden.</target>
             </trans-unit>
             <trans-unit id="menu.rss">
                 <source>menu.rss</source>
-                <target>Blog Posts RSS</target>
+                <target>Crud Posts RSS</target>
             </trans-unit>
             <trans-unit id="menu.search">
                 <source>menu.search</source>

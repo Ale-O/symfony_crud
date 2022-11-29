@@ -276,8 +276,8 @@
                 <source>menu.post_list</source>
                 <target>文章列表</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
                 <target>返回博客</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
@@ -414,7 +414,7 @@
 
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Symfony Demo blog</target>
+                <target>Symfony Demo crud</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>

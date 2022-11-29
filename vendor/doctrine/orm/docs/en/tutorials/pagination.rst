@@ -10,7 +10,7 @@ has a very simple API and implements the SPL interfaces ``Countable`` and
     <?php
     use Doctrine\ORM\Tools\Pagination\Paginator;
 
-    $dql = "SELECT p, c FROM BlogPost p JOIN p.comments c";
+    $dql = "SELECT p, c FROM CrudPost p JOIN p.comments c";
     $query = $entityManager->createQuery($dql)
                            ->setFirstResult(0)
                            ->setMaxResults(100);

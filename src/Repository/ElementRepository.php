@@ -20,7 +20,7 @@ use function Symfony\Component\String\u;
 
 /**
  * This custom Doctrine repository contains some methods which are useful when
- * querying for blog element information.
+ * querying for crud element information.
  *
  * See https://symfony.com/doc/current/doctrine.html#querying-for-objects-the-repository
  *

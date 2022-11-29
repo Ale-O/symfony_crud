@@ -110,7 +110,7 @@ Behaviors
 Doctrine ORM will **never** include a behavior system like Doctrine 1
 in the core library. We don't think behaviors add more value than
 they cost pain and debugging hell. Please see the many different
-blog posts we have written on this topics:
+crud posts we have written on this topics:
 
 -  `Doctrine2 "Behaviors" in a Nutshell <http://www.doctrine-project.org/2010/02/17/doctrine2-behaviours-nutshell.html>`_
 -  `A re-usable Versionable behavior for Doctrine2 <http://www.doctrine-project.org/2010/02/24/doctrine2-versionable.html>`_

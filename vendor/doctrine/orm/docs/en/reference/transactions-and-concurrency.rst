@@ -319,27 +319,27 @@ Important Implementation Notes
 
 You can easily get the optimistic locking workflow wrong if you
 compare the wrong versions. Say you have Alice and Bob editing a
-hypothetical blog post:
+hypothetical crud post:
 
--  Alice reads the headline of the blog post being "Foo", at
+-  Alice reads the headline of the crud post being "Foo", at
    optimistic lock version 1 (GET Request)
--  Bob reads the headline of the blog post being "Foo", at
+-  Bob reads the headline of the crud post being "Foo", at
    optimistic lock version 1 (GET Request)
 -  Bob updates the headline to "Bar", upgrading the optimistic lock
    version to 2 (POST Request of a Form)
 -  Alice updates the headline to "Baz", ... (POST Request of a
    Form)
 
-Now at the last stage of this scenario the blog post has to be read
+Now at the last stage of this scenario the crud post has to be read
 again from the database before Alice's headline can be applied. At
-this point you will want to check if the blog post is still at
+this point you will want to check if the crud post is still at
 version 1 (which it is not in this scenario).
 
 Using optimistic locking correctly, you *have* to add the version
 as an additional hidden field (or into the SESSION for more
 safety). Otherwise you cannot verify the version is still the one
 being originally read from the database when Alice performed her
-GET request for the blog post. If this happens you might see lost
+GET request for the crud post. If this happens you might see lost
 updates you wanted to prevent with Optimistic Locking.
 
 See the example code, The form (GET Request):
@@ -347,7 +347,7 @@ See the example code, The form (GET Request):
 .. code-block:: php
 
     <?php
-    $post = $em->find('BlogPost', 123456);
+    $post = $em->find('CrudPost', 123456);
     
     echo '<input type="hidden" name="id" value="' . $post->getId() . '" />';
     echo '<input type="hidden" name="version" value="' . $post->getCurrentVersion() . '" />';
@@ -360,7 +360,7 @@ And the change headline action (POST Request):
     $postId = (int)$_GET['id'];
     $postVersion = (int)$_GET['version'];
     
-    $post = $em->find('BlogPost', $postId, \Doctrine\DBAL\LockMode::OPTIMISTIC, $postVersion);
+    $post = $em->find('CrudPost', $postId, \Doctrine\DBAL\LockMode::OPTIMISTIC, $postVersion);
 
 .. _transactions-and-concurrency_pessimistic-locking:
 

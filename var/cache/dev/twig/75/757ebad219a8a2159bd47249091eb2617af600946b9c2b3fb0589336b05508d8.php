@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* blog/index.html.twig */
+/* crud/index.html.twig */
 class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a654aa extends Template
 {
     private $source;
@@ -41,12 +41,12 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/index.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/index.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/index.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "blog/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "crud/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -66,7 +66,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body_id"));
 
-        echo "blog_index";
+        echo "crud_index";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -120,7 +120,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
                     <h2>
                         <a href=\"";
                     // line 14
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_element", ["slug" => twig_get_attribute($this->env, $this->source, $context["element"], "slug", [], "any", false, false, false, 14)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_element", ["slug" => twig_get_attribute($this->env, $this->source, $context["element"], "slug", [], "any", false, false, false, 14)]), "html", null, true);
                     echo "\">
                             ";
                     // line 15
@@ -147,7 +147,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
 
                     ";
                     // line 26
-                    echo twig_include($this->env, $context, "blog/_element_tags.html.twig");
+                    echo twig_include($this->env, $context, "crud/_element_tags.html.twig");
                     echo "
 
                 </article>
@@ -194,7 +194,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
             if (twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 41, $this->source); })()), "hasPreviousPage", [], "any", false, false, false, 41)) {
                 // line 42
                 echo "                    <li class=\"prev\"><a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_index_paginated", ["page" => twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 42, $this->source); })()), "previousPage", [], "any", false, false, false, 42), "tag" => (isset($context["tagName"]) || array_key_exists("tagName", $context) ? $context["tagName"] : (function () { throw new RuntimeError('Variable "tagName" does not exist.', 42, $this->source); })())]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index_paginated", ["page" => twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 42, $this->source); })()), "previousPage", [], "any", false, false, false, 42), "tag" => (isset($context["tagName"]) || array_key_exists("tagName", $context) ? $context["tagName"] : (function () { throw new RuntimeError('Variable "tagName" does not exist.', 42, $this->source); })())]), "html", null, true);
                 echo "\" rel=\"previous\"><i class=\"fa fw fa-long-arrow-left\"></i> ";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.previous"), "html", null, true);
                 echo "</a></li>
@@ -226,7 +226,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
                 } else {
                     // line 51
                     echo "                        <li><a href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_index_paginated", ["page" => $context["i"], "tag" => (isset($context["tagName"]) || array_key_exists("tagName", $context) ? $context["tagName"] : (function () { throw new RuntimeError('Variable "tagName" does not exist.', 51, $this->source); })())]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index_paginated", ["page" => $context["i"], "tag" => (isset($context["tagName"]) || array_key_exists("tagName", $context) ? $context["tagName"] : (function () { throw new RuntimeError('Variable "tagName" does not exist.', 51, $this->source); })())]), "html", null, true);
                     echo "\">";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo "</a></li>
@@ -245,7 +245,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
             if (twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 55, $this->source); })()), "hasNextPage", [], "any", false, false, false, 55)) {
                 // line 56
                 echo "                    <li class=\"next\"><a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_index_paginated", ["page" => twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 56, $this->source); })()), "nextPage", [], "any", false, false, false, 56), "tag" => (isset($context["tagName"]) || array_key_exists("tagName", $context) ? $context["tagName"] : (function () { throw new RuntimeError('Variable "tagName" does not exist.', 56, $this->source); })())]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index_paginated", ["page" => twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 56, $this->source); })()), "nextPage", [], "any", false, false, false, 56), "tag" => (isset($context["tagName"]) || array_key_exists("tagName", $context) ? $context["tagName"] : (function () { throw new RuntimeError('Variable "tagName" does not exist.', 56, $this->source); })())]), "html", null, true);
                 echo "\" rel=\"next\">";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.next"), "html", null, true);
                 echo " <i class=\"fa fw fa-arrow-right\"></i></a></li>
@@ -291,7 +291,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
         echo "
     ";
         // line 69
-        echo twig_include($this->env, $context, "blog/_rss.html.twig");
+        echo twig_include($this->env, $context, "crud/_rss.html.twig");
         echo "
 ";
         
@@ -304,7 +304,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
 
     public function getTemplateName()
     {
-        return "blog/index.html.twig";
+        return "crud/index.html.twig";
     }
 
     public function isTraitable()
@@ -321,7 +321,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block body_id 'blog_index' %}
+{% block body_id 'crud_index' %}
 
 {% block main %}
     {% for element in paginator.results %}
@@ -332,7 +332,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
 
                 <article class=\"element\">
                     <h2>
-                        <a href=\"{{ path('blog_element', {slug: element.slug}) }}\">
+                        <a href=\"{{ path('crud_element', {slug: element.slug}) }}\">
                             {{ element.title }}
                         </a>
                     </h2>
@@ -344,7 +344,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
 
                     <p>{{ element.summary }}</p>
 
-                    {{ include('blog/_element_tags.html.twig') }}
+                    {{ include('crud/_element_tags.html.twig') }}
 
                 </article>
 
@@ -360,7 +360,7 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
         <div class=\"navigation text-center\">
             <ul class=\"pagination\">
                 {% if paginator.hasPreviousPage %}
-                    <li class=\"prev\"><a href=\"{{ path('blog_index_paginated', {page: paginator.previousPage, tag: tagName}) }}\" rel=\"previous\"><i class=\"fa fw fa-long-arrow-left\"></i> {{ 'paginator.previous'|trans }}</a></li>
+                    <li class=\"prev\"><a href=\"{{ path('crud_index_paginated', {page: paginator.previousPage, tag: tagName}) }}\" rel=\"previous\"><i class=\"fa fw fa-long-arrow-left\"></i> {{ 'paginator.previous'|trans }}</a></li>
                 {% else %}
                     <li class=\"prev disabled\"><span><i class=\"fa fw fa-arrow-left\"></i> {{ 'paginator.previous'|trans }}</span></li>
                 {% endif %}
@@ -369,12 +369,12 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
                     {% if i == paginator.currentPage %}
                         <li class=\"active\"><span>{{ i }} <span class=\"sr-only\">{{ 'paginator.current'|trans }}</span></span></li>
                     {% else %}
-                        <li><a href=\"{{ path('blog_index_paginated', {page: i, tag: tagName}) }}\">{{ i }}</a></li>
+                        <li><a href=\"{{ path('crud_index_paginated', {page: i, tag: tagName}) }}\">{{ i }}</a></li>
                     {% endif %}
                 {% endfor %}
 
                 {% if paginator.hasNextPage %}
-                    <li class=\"next\"><a href=\"{{ path('blog_index_paginated', {page: paginator.nextPage, tag: tagName}) }}\" rel=\"next\">{{ 'paginator.next'|trans }} <i class=\"fa fw fa-arrow-right\"></i></a></li>
+                    <li class=\"next\"><a href=\"{{ path('crud_index_paginated', {page: paginator.nextPage, tag: tagName}) }}\" rel=\"next\">{{ 'paginator.next'|trans }} <i class=\"fa fw fa-arrow-right\"></i></a></li>
                 {% else %}
                     <li class=\"next disabled\"><span>{{ 'paginator.next'|trans }} <i class=\"fa fw fa-arrow-right\"></i></span></li>
                 {% endif %}
@@ -387,8 +387,8 @@ class __TwigTemplate_4d0f026fcac02971e69963b3bdf8f34912fd48ee6436d52ec8ffcc9860a
     {{ parent() }}
 
     {{ show_source_code(_self) }}
-    {{ include('blog/_rss.html.twig') }}
+    {{ include('crud/_rss.html.twig') }}
 {% endblock %}
-", "blog/index.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\index.html.twig");
+", "crud/index.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\index.html.twig");
     }
 }

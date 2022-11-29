@@ -275,9 +275,9 @@
                 <source>menu.post_list</source>
                 <target>Įrašų sąrašas</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
-                <target>Atgal į blogą</target>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
+                <target>Atgal į crudą</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>
@@ -297,7 +297,7 @@
             </trans-unit>
             <trans-unit id="menu.rss">
                 <source>menu.rss</source>
-                <target>Blogo Įrašai RSS</target>
+                <target>Crudo Įrašai RSS</target>
             </trans-unit>
             <trans-unit id="menu.search">
                 <source>menu.search</source>
@@ -405,7 +405,7 @@
             </trans-unit>
             <trans-unit id="help.post_publication">
                 <source>help.post_publication</source>
-                <target>Nustatykite datą ateityje, kad planuotumėte blogo įrašo paskelbimą.</target>
+                <target>Nustatykite datą ateityje, kad planuotumėte crudo įrašo paskelbimą.</target>
             </trans-unit>
             <trans-unit id="help.post_content">
                 <source>help.post_content</source>
@@ -423,11 +423,11 @@
 
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Symfony Demo blogas</target>
+                <target>Symfony Demo crudas</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>Naujausi įrašai paskelbti Symfony Demo bloge</target>
+                <target>Naujausi įrašai paskelbti Symfony Demo crude</target>
             </trans-unit>
 
             <trans-unit id="paginator.previous">

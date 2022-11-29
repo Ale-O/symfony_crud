@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* blog/_rss.html.twig */
+/* crud/_rss.html.twig */
 class __TwigTemplate_0f949e5a0cd8fbd77cda2131f208a5f17555e9f777dd1c9d9ddecf39d3599aeb extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_0f949e5a0cd8fbd77cda2131f208a5f17555e9f777dd1c9d9ddecf39d35
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/_rss.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/_rss.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/_rss.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/_rss.html.twig"));
 
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -49,7 +49,7 @@ class __TwigTemplate_0f949e5a0cd8fbd77cda2131f208a5f17555e9f777dd1c9d9ddecf39d35
 
     public function getTemplateName()
     {
-        return "blog/_rss.html.twig";
+        return "crud/_rss.html.twig";
     }
 
     public function getDebugInfo()
@@ -61,11 +61,11 @@ class __TwigTemplate_0f949e5a0cd8fbd77cda2131f208a5f17555e9f777dd1c9d9ddecf39d35
     {
         return new Source("{#
 <div class=\"section rss\">
-    <a href=\"{{ path('blog_rss', app.request.query.all) }}\">
+    <a href=\"{{ path('crud_rss', app.request.query.all) }}\">
         <i class=\"fa fa-rss\" aria-hidden=\"true\"></i> {{ 'menu.rss'|trans }}
     </a>
 </div>
 #}
-", "blog/_rss.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\_rss.html.twig");
+", "crud/_rss.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\_rss.html.twig");
     }
 }

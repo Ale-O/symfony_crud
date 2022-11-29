@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* blog/_delete_element_confirmation.html.twig */
+/* crud/_delete_element_confirmation.html.twig */
 class __TwigTemplate_b746cbef63e7e48fc6741340887a0825831c54ca5bc9a211d85934e2892db2a6 extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_b746cbef63e7e48fc6741340887a0825831c54ca5bc9a211d85934e2892
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/_delete_element_confirmation.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/_delete_element_confirmation.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/_delete_element_confirmation.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/_delete_element_confirmation.html.twig"));
 
         // line 2
         echo "<div class=\"modal fade\" id=\"confirmationModal\" tabindex=\"-1\">
@@ -81,7 +81,7 @@ class __TwigTemplate_b746cbef63e7e48fc6741340887a0825831c54ca5bc9a211d85934e2892
 
     public function getTemplateName()
     {
-        return "blog/_delete_element_confirmation.html.twig";
+        return "crud/_delete_element_confirmation.html.twig";
     }
 
     public function isTraitable()
@@ -115,6 +115,6 @@ class __TwigTemplate_b746cbef63e7e48fc6741340887a0825831c54ca5bc9a211d85934e2892
         </div>
     </div>
 </div>
-", "blog/_delete_element_confirmation.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\_delete_element_confirmation.html.twig");
+", "crud/_delete_element_confirmation.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\_delete_element_confirmation.html.twig");
     }
 }

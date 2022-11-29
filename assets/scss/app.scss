@@ -245,7 +245,7 @@ body#login #login-users-help p .console {
   padding: 10px
 }
 
-/* Common Blog page elements
+/* Common Crud page elements
    ------------------------------------------------------------------------- */
 .post-metadata {
   color: #b4bcc2;
@@ -260,70 +260,70 @@ body#login #login-users-help p .console {
   margin-right: 5px;
 }
 
-/* Page: 'Blog index'
+/* Page: 'Crud index'
    ------------------------------------------------------------------------- */
-body#blog_index #main h1,
-body#blog_index #main p {
+body#crud_index #main h1,
+body#crud_index #main p {
   margin-bottom: 0.5em
 }
 
-body#blog_index article.post {
+body#crud_index article.post {
   margin-bottom: 3em;
 }
 
-body#blog_index .post-metadata {
+body#crud_index .post-metadata {
   font-size: 16px;
   margin-bottom: 8px;
 }
 
-body#blog_index .post-tags .label-default {
+body#crud_index .post-tags .label-default {
   background-color: #e9ecec;
   color: #6d8283;
 }
-body#blog_index .post-tags .label-default i {
+body#crud_index .post-tags .label-default i {
   color: #a3b2b2;
 }
 
-/* Page: 'Blog post show'
+/* Page: 'Crud post show'
    ------------------------------------------------------------------------- */
-body#blog_post_show #main h3 {
+body#crud_post_show #main h3 {
   margin-bottom: 0.75em
 }
 
-body#blog_post_show .post-tags .label-default {
+body#crud_post_show .post-tags .label-default {
   background-color: #e9ecec;
   color: #6D8283;
   font-size: 16px;
   margin-right: 10px;
   padding: .4em 1em .5em;
 }
-body#blog_post_show .post-tags .label-default i {
+body#crud_post_show .post-tags .label-default i {
   color: #95A6A7;
 }
 
-body#blog_post_show #post-add-comment {
+body#crud_post_show #post-add-comment {
   margin: 2em 0
 }
 
-body#blog_post_show #post-add-comment p {
+body#crud_post_show #post-add-comment p {
   margin-bottom: 0
 }
 
-body#blog_post_show #post-add-comment p a.btn {
+body#crud_post_show #post-add-comment p a.btn {
   margin-right: 0.5em
 }
 
-body#blog_post_show .post-comment {
+body#crud_post_show .post-comment {
   margin-bottom: 2em
 }
 
-body#blog_post_show .post-comment h4 {
+body#crud_post_show .post-comment h4 {
   font-size: 13px;
   line-height: 1.42857;
   margin-top: 0
 }
 
-body#blog_post_show .post-comment h4 strong {
+body#crud_post_show .post-comment h4 strong {
   display: block
 }
 
@@ -339,22 +339,22 @@ body#comment_form_error h1.text-danger {
   }
 }
 
-/* Page: 'Blog search'
+/* Page: 'Crud search'
    ------------------------------------------------------------------------- */
-body#blog_search #main h1,
-body#blog_search #main p {
+body#crud_search #main h1,
+body#crud_search #main p {
   margin-bottom: 0.5em
 }
 
-body#blog_search article.post:first-child {
+body#crud_search article.post:first-child {
   margin-top: 2em;
 }
 
-body#blog_search article.post {
+body#crud_search article.post {
   margin-bottom: 2em;
 }
 
-body#blog_search .post-metadata {
+body#crud_search .post-metadata {
   font-size: 16px;
   margin-bottom: 8px;
 }

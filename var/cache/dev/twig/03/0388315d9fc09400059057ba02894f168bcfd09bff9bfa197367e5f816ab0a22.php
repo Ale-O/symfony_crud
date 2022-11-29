@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* admin/blog/sub_element_show.html.twig */
+/* admin/crud/sub_element_show.html.twig */
 class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148eaa8d extends Template
 {
     private $source;
@@ -40,12 +40,12 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/blog/sub_element_show.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/sub_element_show.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/blog/sub_element_show.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/sub_element_show.html.twig"));
 
-        $this->parent = $this->loadTemplate("admin/layout.html.twig", "admin/blog/sub_element_show.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/layout.html.twig", "admin/crud/sub_element_show.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -65,7 +65,7 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body_id"));
 
-        echo "blog_show";
+        echo "crud_show";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -122,7 +122,7 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
 
     public function getTemplateName()
     {
-        return "admin/blog/sub_element_show.html.twig";
+        return "admin/crud/sub_element_show.html.twig";
     }
 
     public function isTraitable()
@@ -139,7 +139,7 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
     {
         return new Source("{% extends 'admin/layout.html.twig' %}
 
-{% block body_id 'blog_show' %}
+{% block body_id 'crud_show' %}
 
 {% block main %}
 
@@ -165,7 +165,7 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
 
     
     <div class=\"section\">
-        {{ include('admin/blog/_delete_form.html.twig', {element: element}, with_context = false) }}
+        {{ include('admin/crud/_delete_form.html.twig', {element: element}, with_context = false) }}
     </div>
     
 
@@ -173,6 +173,6 @@ class __TwigTemplate_f89692600d626d93558268bb725c474e1f596cfebc489ffa67e94067148
 
     {{ show_source_code(_self) }}
 {% endblock %}
-#}", "admin/blog/sub_element_show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\blog\\sub_element_show.html.twig");
+#}", "admin/crud/sub_element_show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\crud\\sub_element_show.html.twig");
     }
 }

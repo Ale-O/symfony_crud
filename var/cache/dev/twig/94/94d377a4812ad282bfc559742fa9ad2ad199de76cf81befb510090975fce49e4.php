@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* blog/index.xml.twig */
+/* crud/index.xml.twig */
 class __TwigTemplate_0c30bdf98a1bdd88a0a7ad8cd0dc006ab31496f2c911c30e4071425f24617b8d extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_0c30bdf98a1bdd88a0a7ad8cd0dc006ab31496f2c911c30e4071425f246
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/index.xml.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/index.xml.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/index.xml.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/index.xml.twig"));
 
         // line 1
         echo "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>
@@ -61,7 +61,7 @@ class __TwigTemplate_0c30bdf98a1bdd88a0a7ad8cd0dc006ab31496f2c911c30e4071425f246
         echo "</lastBuildDate>
         <link>";
         // line 8
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("blog_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("crud_index");
         echo "</link>
         <language>";
         // line 9
@@ -85,11 +85,11 @@ class __TwigTemplate_0c30bdf98a1bdd88a0a7ad8cd0dc006ab31496f2c911c30e4071425f246
             echo "</description>
                 <link>";
             // line 15
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("blog_element", ["slug" => twig_get_attribute($this->env, $this->source, $context["element"], "slug", [], "any", false, false, false, 15)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("crud_element", ["slug" => twig_get_attribute($this->env, $this->source, $context["element"], "slug", [], "any", false, false, false, 15)]), "html", null, true);
             echo "</link>
                 <guid>";
             // line 16
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("blog_element", ["slug" => twig_get_attribute($this->env, $this->source, $context["element"], "slug", [], "any", false, false, false, 16)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("crud_element", ["slug" => twig_get_attribute($this->env, $this->source, $context["element"], "slug", [], "any", false, false, false, 16)]), "html", null, true);
             echo "</guid>
                 <pubDate>";
             // line 17
@@ -134,7 +134,7 @@ class __TwigTemplate_0c30bdf98a1bdd88a0a7ad8cd0dc006ab31496f2c911c30e4071425f246
 
     public function getTemplateName()
     {
-        return "blog/index.xml.twig";
+        return "crud/index.xml.twig";
     }
 
     public function isTraitable()
@@ -156,15 +156,15 @@ class __TwigTemplate_0c30bdf98a1bdd88a0a7ad8cd0dc006ab31496f2c911c30e4071425f246
         <description>{{ 'rss.description'|trans }}</description>
         <pubDate>{{ 'now'|date('r', timezone='GMT') }}</pubDate>
         <lastBuildDate>{{ (paginator.results|last).publishedAt|default('now')|date('r', timezone='GMT') }}</lastBuildDate>
-        <link>{{ url('blog_index') }}</link>
+        <link>{{ url('crud_index') }}</link>
         <language>{{ app.request.locale }}</language>
 
         {% for element in paginator.results %}
             <item>
                 <title>{{ element.title }}</title>
                 <description>{{ element.summary }}</description>
-                <link>{{ url('blog_element', {'slug': element.slug}) }}</link>
-                <guid>{{ url('blog_element', {'slug': element.slug}) }}</guid>
+                <link>{{ url('crud_element', {'slug': element.slug}) }}</link>
+                <guid>{{ url('crud_element', {'slug': element.slug}) }}</guid>
                 <pubDate>{{ element.publishedAt|date(format='r', timezone='GMT') }}</pubDate>
                 <author>{{ element.author.email }}</author>
                 {% for tag in element.tags %}
@@ -174,6 +174,6 @@ class __TwigTemplate_0c30bdf98a1bdd88a0a7ad8cd0dc006ab31496f2c911c30e4071425f246
         {% endfor %}
     </channel>
 </rss>
-", "blog/index.xml.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\index.xml.twig");
+", "crud/index.xml.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\index.xml.twig");
     }
 }

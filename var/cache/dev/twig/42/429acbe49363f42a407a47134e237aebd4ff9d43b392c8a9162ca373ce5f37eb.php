@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* blog/search.html.twig */
+/* crud/search.html.twig */
 class __TwigTemplate_68664278e6fbbff5b93d9e368157c7d80e13bdf9d018cf9db2ff5b4191eb8c8e extends Template
 {
     private $source;
@@ -42,12 +42,12 @@ class __TwigTemplate_68664278e6fbbff5b93d9e368157c7d80e13bdf9d018cf9db2ff5b4191e
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/search.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/search.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/search.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/search.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "blog/search.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "crud/search.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -94,7 +94,7 @@ class __TwigTemplate_68664278e6fbbff5b93d9e368157c7d80e13bdf9d018cf9db2ff5b4191e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body_id"));
 
-        echo "blog_search";
+        echo "crud_search";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -115,7 +115,7 @@ class __TwigTemplate_68664278e6fbbff5b93d9e368157c7d80e13bdf9d018cf9db2ff5b4191e
 
         // line 11
         echo "    <form action=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_search");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_search");
         echo "\" method=\"get\">
         <div class=\"form-group\">
             <input name=\"q\"
@@ -179,7 +179,7 @@ class __TwigTemplate_68664278e6fbbff5b93d9e368157c7d80e13bdf9d018cf9db2ff5b4191e
 
     public function getTemplateName()
     {
-        return "blog/search.html.twig";
+        return "crud/search.html.twig";
     }
 
     public function isTraitable()
@@ -201,10 +201,10 @@ class __TwigTemplate_68664278e6fbbff5b93d9e368157c7d80e13bdf9d018cf9db2ff5b4191e
     {{ encore_entry_script_tags('search') }}
 {% endblock %}
 
-{% block body_id 'blog_search' %}
+{% block body_id 'crud_search' %}
 
 {% block main %}
-    <form action=\"{{ path('blog_search') }}\" method=\"get\">
+    <form action=\"{{ path('crud_search') }}\" method=\"get\">
         <div class=\"form-group\">
             <input name=\"q\"
                    class=\"form-control search-field\"
@@ -226,6 +226,6 @@ class __TwigTemplate_68664278e6fbbff5b93d9e368157c7d80e13bdf9d018cf9db2ff5b4191e
 
     {{ show_source_code(_self) }}
 {% endblock %}
-", "blog/search.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\search.html.twig");
+", "crud/search.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\search.html.twig");
     }
 }

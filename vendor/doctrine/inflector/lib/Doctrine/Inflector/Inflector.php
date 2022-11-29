@@ -438,7 +438,7 @@ class Inflector
 
     /**
      * Convert any passed string to a url friendly string.
-     * Converts 'My first blog post' to 'my-first-blog-post'
+     * Converts 'My first crud post' to 'my-first-crud-post'
      *
      * @param  string $string String to urlize.
      *

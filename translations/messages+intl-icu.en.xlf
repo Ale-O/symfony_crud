@@ -275,9 +275,9 @@
                 <source>menu.post_list</source>
                 <target>Post list</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
-                <target>Back to blog</target>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
+                <target>Back to crud</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>
@@ -297,7 +297,7 @@
             </trans-unit>
             <trans-unit id="menu.rss">
                 <source>menu.rss</source>
-                <target>Blog Posts RSS</target>
+                <target>Crud Posts RSS</target>
             </trans-unit>
             <trans-unit id="menu.search">
                 <source>menu.search</source>
@@ -405,11 +405,11 @@
             </trans-unit>
             <trans-unit id="help.post_publication">
                 <source>help.post_publication</source>
-                <target>Set the date in the future to schedule the blog post publication.</target>
+                <target>Set the date in the future to schedule the crud post publication.</target>
             </trans-unit>
             <trans-unit id="help.post_content">
                 <source>help.post_content</source>
-                <target>Use Markdown to format the blog post contents. HTML is allowed too.</target>
+                <target>Use Markdown to format the crud post contents. HTML is allowed too.</target>
             </trans-unit>
             <trans-unit id="help.comment_content">
                 <source>help.comment_content</source>
@@ -423,11 +423,11 @@
 
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Symfony Demo blog</target>
+                <target>Symfony Demo crud</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>Most recent posts published on the Symfony Demo blog</target>
+                <target>Most recent posts published on the Symfony Demo crud</target>
             </trans-unit>
 
             <trans-unit id="paginator.previous">

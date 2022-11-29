@@ -35,12 +35,12 @@ refreshed:
 * Embed a unique key that is updated whenever the variables used in the
   template code changes.
 
-For instance, I would use ``{% cache "blog_post;v1;" ~ post.id ~ ";" ~
-post.updated_at %}`` to cache a blog content template fragment where
-``blog_post`` describes the template fragment, ``v1`` represents the first
-version of the template code, ``post.id`` represent the id of the blog post,
+For instance, I would use ``{% cache "crud_post;v1;" ~ post.id ~ ";" ~
+post.updated_at %}`` to cache a crud content template fragment where
+``crud_post`` describes the template fragment, ``v1`` represents the first
+version of the template code, ``post.id`` represent the id of the crud post,
 and ``post.updated_at`` returns a timestamp that represents the time where the
-blog post was last modified.
+crud post was last modified.
 
 Using such a strategy for naming cache keys allows to avoid using a ``ttl``.
 It's like using a "validation" strategy instead of an "expiration" strategy as
@@ -50,11 +50,11 @@ If your cache implementation supports tags, you can also tag your cache items:
 
 .. code-block:: twig
 
-    {% cache "cache key" tag('blog') %}
+    {% cache "cache key" tag('crud') %}
         Some code
     {% endcache %}
 
-    {% cache "cache key" tag(['cms', 'blog']) %}
+    {% cache "cache key" tag(['cms', 'crud']) %}
         Some code
     {% endcache %}
 
@@ -65,7 +65,7 @@ are local to the template fragment:
 
     {% set count = 1 %}
 
-    {% cache "cache key" tag('blog') %}
+    {% cache "cache key" tag('crud') %}
         {# Won't affect the value of count outside of the cache tag #}
         {% set count = 2 %}
         Some code

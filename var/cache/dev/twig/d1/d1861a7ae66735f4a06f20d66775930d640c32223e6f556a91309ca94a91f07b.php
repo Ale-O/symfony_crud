@@ -99,7 +99,7 @@ class __TwigTemplate_9eb53be1770235a48228823f5a47aef41cef98466200940fe960086781b
     <p>
         ";
         // line 22
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("http_error_404.suggestion", ["%url%" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_index")]);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("http_error_404.suggestion", ["%url%" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index")]);
         echo "
     </p>
 ";
@@ -177,7 +177,7 @@ class __TwigTemplate_9eb53be1770235a48228823f5a47aef41cef98466200940fe960086781b
         {{ 'http_error_404.description'|trans }}
     </p>
     <p>
-        {{ 'http_error_404.suggestion'|trans({ '%url%': path('blog_index') })|raw }}
+        {{ 'http_error_404.suggestion'|trans({ '%url%': path('crud_index') })|raw }}
     </p>
 {% endblock %}
 

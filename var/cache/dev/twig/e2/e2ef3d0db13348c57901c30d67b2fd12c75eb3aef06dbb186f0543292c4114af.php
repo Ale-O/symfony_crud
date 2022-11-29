@@ -124,7 +124,7 @@ class __TwigTemplate_911b6954b92b7ba8269b82847085d5402086930b7b7dd28d9b9709b5f0b
     <p>
         ";
         // line 27
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("http_error_500.suggestion", ["%url%" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_index")]);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("http_error_500.suggestion", ["%url%" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index")]);
         echo "
     </p>
 ";
@@ -207,7 +207,7 @@ class __TwigTemplate_911b6954b92b7ba8269b82847085d5402086930b7b7dd28d9b9709b5f0b
         {{ 'http_error_500.description'|trans }}
     </p>
     <p>
-        {{ 'http_error_500.suggestion'|trans({ '%url%': path('blog_index') })|raw }}
+        {{ 'http_error_500.suggestion'|trans({ '%url%': path('crud_index') })|raw }}
     </p>
 {% endblock %}
 

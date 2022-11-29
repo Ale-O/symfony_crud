@@ -101,7 +101,7 @@ CHANGELOG
    Before:
 
    ```php
-   $router->generate('blog_show', ['slug' => 'my-blog-post'], true);
+   $router->generate('crud_show', ['slug' => 'my-crud-post'], true);
    ```
 
    After:
@@ -109,7 +109,7 @@ CHANGELOG
    ```php
    use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
-   $router->generate('blog_show', ['slug' => 'my-blog-post'], UrlGeneratorInterface::ABSOLUTE_URL);
+   $router->generate('crud_show', ['slug' => 'my-crud-post'], UrlGeneratorInterface::ABSOLUTE_URL);
    ```
 
 2.5.0

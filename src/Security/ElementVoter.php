@@ -17,7 +17,7 @@ use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 
 /**
- * It grants or denies permissions for actions related to blog elements (such as
+ * It grants or denies permissions for actions related to crud elements (such as
  * showing, editing and deleting elements).
  *
  * See https://symfony.com/doc/current/security/voters.html
@@ -56,7 +56,7 @@ class ElementVoter extends Voter
         }
 
         // the logic of this voter is pretty simple: if the logged user is the
-        // author of the given blog element, grant permission; otherwise, deny it.
+        // author of the given crud element, grant permission; otherwise, deny it.
         // (the supports() method guarantees that $element is a Element object)
         return $user === $element->getAuthor();
     }

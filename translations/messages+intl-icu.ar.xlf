@@ -275,8 +275,8 @@
                 <source>menu.post_list</source>
                 <target>قائمه المنشورات</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
                 <target>الرجوع الى المدونه</target>
             </trans-unit>
             <trans-unit id="menu.homepage">

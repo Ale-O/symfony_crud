@@ -142,7 +142,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
                 <p>
                     <a class=\"btn btn-primary btn-lg\" href=\"";
         // line 24
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
         echo "\">
                         <i class=\"fa fa-users\" aria-hidden=\"true\"></i> ";
         // line 25
@@ -224,7 +224,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
                     {{ 'help.browse_app'|trans|raw }}
                 </p>
                 <p>
-                    <a class=\"btn btn-primary btn-lg\" href=\"{{ path('blog_index') }}\">
+                    <a class=\"btn btn-primary btn-lg\" href=\"{{ path('crud_index') }}\">
                         <i class=\"fa fa-users\" aria-hidden=\"true\"></i> {{ 'action.browse_app'|trans }}
                     </a>
                 </p>

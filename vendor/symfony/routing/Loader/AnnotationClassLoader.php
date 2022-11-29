@@ -34,18 +34,18 @@ use Symfony\Component\Routing\RouteCollection;
  * methods, host, and name. The name parameter is mandatory.
  * Here is an example of how you should be able to use it:
  *     /**
- *      * @Route("/Blog")
+ *      * @Route("/Crud")
  *      * /
- *     class Blog
+ *     class Crud
  *     {
  *         /**
- *          * @Route("/", name="blog_index")
+ *          * @Route("/", name="crud_index")
  *          * /
  *         public function index()
  *         {
  *         }
  *         /**
- *          * @Route("/{id}", name="blog_post", requirements = {"id" = "\d+"})
+ *          * @Route("/{id}", name="crud_post", requirements = {"id" = "\d+"})
  *          * /
  *         public function show()
  *         {
@@ -53,14 +53,14 @@ use Symfony\Component\Routing\RouteCollection;
  *     }
  *
  * On PHP 8, the annotation class can be used as an attribute as well:
- *     #[Route('/Blog')]
- *     class Blog
+ *     #[Route('/Crud')]
+ *     class Crud
  *     {
- *         #[Route('/', name: 'blog_index')]
+ *         #[Route('/', name: 'crud_index')]
  *         public function index()
  *         {
  *         }
- *         #[Route('/{id}', name: 'blog_post', requirements: ["id" => '\d+'])]
+ *         #[Route('/{id}', name: 'crud_post', requirements: ["id" => '\d+'])]
  *         public function show()
  *         {
  *         }

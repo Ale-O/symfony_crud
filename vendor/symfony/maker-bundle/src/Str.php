@@ -72,7 +72,7 @@ final class Str
 
     /**
      * Transforms the given string into the format commonly used by Twig variables
-     * (e.g. `BlogPostType` -> `blog_post_type`).
+     * (e.g. `CrudPostType` -> `crud_post_type`).
      */
     public static function asTwigVariable(string $value): string
     {

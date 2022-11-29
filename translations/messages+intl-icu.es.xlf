@@ -235,9 +235,9 @@
                 <source>menu.post_list</source>
                 <target>Listado de artículos</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
-                <target>Volver al blog</target>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
+                <target>Volver al crud</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>
@@ -319,7 +319,7 @@
             </trans-unit>
             <trans-unit id="menu.rss">
                 <source>menu.rss</source>
-                <target>RSS del blog</target>
+                <target>RSS del crud</target>
             </trans-unit>
             <trans-unit id="menu.search">
                 <source>menu.search</source>
@@ -355,11 +355,11 @@
             </trans-unit>
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Blog de Symfony Demo</target>
+                <target>Crud de Symfony Demo</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>Publicaciones más recientes publicadas en el blog de Symfony Demo</target>
+                <target>Publicaciones más recientes publicadas en el crud de Symfony Demo</target>
             </trans-unit>
 
             <trans-unit id="paginator.previous">

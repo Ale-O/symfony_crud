@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* admin/blog/index.html.twig */
+/* admin/crud/index.html.twig */
 class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b5fb70 extends Template
 {
     private $source;
@@ -41,12 +41,12 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/blog/index.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/index.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/blog/index.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("admin/layout.html.twig", "admin/blog/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/layout.html.twig", "admin/crud/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -220,7 +220,7 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
 
     public function getTemplateName()
     {
-        return "admin/blog/index.html.twig";
+        return "admin/crud/index.html.twig";
     }
 
     public function isTraitable()
@@ -290,6 +290,6 @@ class __TwigTemplate_8f5c808048df162e90c5727376d6dfc5322b1b9dbda3f1b3d5e824d5f4b
 
     {{ show_source_code(_self) }}
 {% endblock %}
-", "admin/blog/index.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\blog\\index.html.twig");
+", "admin/crud/index.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\crud\\index.html.twig");
     }
 }

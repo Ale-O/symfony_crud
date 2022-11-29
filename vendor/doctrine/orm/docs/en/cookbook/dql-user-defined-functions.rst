@@ -157,7 +157,7 @@ We can do fancy stuff like:
 
 .. code-block:: sql
 
-    SELECT p FROM DoctrineExtensions\Query\BlogPost p WHERE DATEDIFF(CURRENT_TIME(), p.created) < 7
+    SELECT p FROM DoctrineExtensions\Query\CrudPost p WHERE DATEDIFF(CURRENT_TIME(), p.created) < 7
 
 Date Add
 --------
@@ -218,7 +218,7 @@ MONTH in:
 
 .. code-block:: sql
 
-    SELECT p FROM DoctrineExtensions\Query\BlogPost p WHERE DATE_ADD(CURRENT_TIME(), INTERVAL 4 MONTH) > p.created
+    SELECT p FROM DoctrineExtensions\Query\CrudPost p WHERE DATE_ADD(CURRENT_TIME(), INTERVAL 4 MONTH) > p.created
 
 The above method now only supports the specification using
 ``INTERVAL``, to also allow a real date in DATE\_ADD we need to add

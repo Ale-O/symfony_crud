@@ -462,6 +462,6 @@ Ways exist to work around this, like pre-populating your cache and
 not letting your users' requests populate the cache.
 
 You can read more about cache slams
-`in this blog post <http://notmysock.org/blog/php/user-cache-timebomb.html>`_.
+`in this crud post <http://notmysock.org/crud/php/user-cache-timebomb.html>`_.
 
 

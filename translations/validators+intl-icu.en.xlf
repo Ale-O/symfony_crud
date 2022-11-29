@@ -4,7 +4,7 @@
         <body>
             <trans-unit id="post.slug_unique">
                 <source>post.slug_unique</source>
-                <target>This title was already used in another blog post, but they must be unique.</target>
+                <target>This title was already used in another crud post, but they must be unique.</target>
             </trans-unit>
             <trans-unit id="post.blank_summary">
                 <source>post.blank_summary</source>

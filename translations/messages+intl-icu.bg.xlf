@@ -234,8 +234,8 @@
                 <source>menu.post_list</source>
                 <target>Списък с публикации</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
                 <target>Назад към блога</target>
             </trans-unit>
             <trans-unit id="menu.homepage">

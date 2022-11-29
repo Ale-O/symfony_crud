@@ -239,9 +239,9 @@
                 <source>menu.post_list</source>
                 <target>Gönderi listesi</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
-                <target>Blog'a dön</target>
+            <trans-unit id="menu.back_to_crud">
+                <source>menu.back_to_crud</source>
+                <target>Crud'a dön</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>
@@ -257,7 +257,7 @@
             </trans-unit>
             <trans-unit id="menu.rss">
                 <source>menu.rss</source>
-                <target>Blog Yazıları RSS</target>
+                <target>Crud Yazıları RSS</target>
             </trans-unit>
             <trans-unit id="menu.search">
                 <source>menu.search</source>
@@ -357,11 +357,11 @@
 
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Symfony Demo blogu</target>
+                <target>Symfony Demo crudu</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>Symfony Demo blogunda yayınlanan son yazılar</target>
+                <target>Symfony Demo crudunda yayınlanan son yazılar</target>
             </trans-unit>
         </body>
     </file>

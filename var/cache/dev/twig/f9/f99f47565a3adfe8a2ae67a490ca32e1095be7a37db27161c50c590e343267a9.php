@@ -99,7 +99,7 @@ class __TwigTemplate_169cb8566d3845f84456200ebec18f6b5b93fedfb128d7ccfe0ca02c00c
     <p>
         ";
         // line 22
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("http_error.suggestion", ["%url%" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_index")]);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("http_error.suggestion", ["%url%" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index")]);
         echo "
     </p>
 ";
@@ -177,7 +177,7 @@ class __TwigTemplate_169cb8566d3845f84456200ebec18f6b5b93fedfb128d7ccfe0ca02c00c
         {{ 'http_error.description'|trans({ '%status_code%': status_code }) }}
     </p>
     <p>
-        {{ 'http_error.suggestion'|trans({ '%url%': path('blog_index') })|raw }}
+        {{ 'http_error.suggestion'|trans({ '%url%': path('crud_index') })|raw }}
     </p>
 {% endblock %}
 

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* blog/about.html.twig */
+/* crud/about.html.twig */
 class __TwigTemplate_5637c7b2e81d32479f49a1eae7f79fa00c78f597326409c6c94320d9202bebf1 extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_5637c7b2e81d32479f49a1eae7f79fa00c78f597326409c6c94320d9202
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/about.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/about.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/about.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/about.html.twig"));
 
         // line 13
         echo "
@@ -57,7 +57,7 @@ class __TwigTemplate_5637c7b2e81d32479f49a1eae7f79fa00c78f597326409c6c94320d9202
 
     public function getTemplateName()
     {
-        return "blog/about.html.twig";
+        return "crud/about.html.twig";
     }
 
     public function isTraitable()
@@ -89,6 +89,6 @@ class __TwigTemplate_5637c7b2e81d32479f49a1eae7f79fa00c78f597326409c6c94320d9202
    avoid errors when the 'intl' PHP extension is not available and the application
    is forced to use the limited \"intl polyfill\", which only supports UTC and GMT #}
 <!-- Fragment rendered on {{ 'now'|format_datetime('long', 'long', '', 'UTC') }} -->
-", "blog/about.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\blog\\about.html.twig");
+", "crud/about.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\about.html.twig");
     }
 }
