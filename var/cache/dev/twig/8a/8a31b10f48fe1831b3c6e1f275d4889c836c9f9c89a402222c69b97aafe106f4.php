@@ -39,38 +39,36 @@ class __TwigTemplate_ea1bd23d8f539d341c2e2ffdc45ac028d079cd85c71fdcebd741490ed3d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "default/_flash_messages.html.twig"));
 
-        // line 9
+        // line 1
         echo "
 ";
-        // line 17
-        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "request", [], "any", false, false, false, 17), "hasPreviousSession", [], "any", false, false, false, 17)) {
-            // line 18
+        // line 2
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 2, $this->source); })()), "request", [], "any", false, false, false, 2), "hasPreviousSession", [], "any", false, false, false, 2)) {
+            // line 3
             echo "    <div class=\"messages\">
         ";
-            // line 19
+            // line 4
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "flashes", [], "any", false, false, false, 19));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 4, $this->source); })()), "flashes", [], "any", false, false, false, 4));
             foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-                // line 20
+                // line 5
                 echo "            ";
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($context["messages"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                    // line 21
-                    echo "                ";
-                    // line 22
+                    // line 6
                     echo "                <div class=\"alert alert-dismissible alert-";
                     echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                     echo " fade in\" role=\"alert\">
                     <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"";
-                    // line 23
+                    // line 7
                     echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.close"), "html", null, true);
                     echo "\">
                         <span aria-hidden=\"true\">&times;</span>
                     </button>
 
                     ";
-                    // line 27
+                    // line 11
                     echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans($context["message"]), "html", null, true);
                     echo "
                 </div>
@@ -79,13 +77,13 @@ class __TwigTemplate_ea1bd23d8f539d341c2e2ffdc45ac028d079cd85c71fdcebd741490ed3d
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 30
+                // line 14
                 echo "        ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 31
+            // line 15
             echo "    </div>
 ";
         }
@@ -109,32 +107,16 @@ class __TwigTemplate_ea1bd23d8f539d341c2e2ffdc45ac028d079cd85c71fdcebd741490ed3d
 
     public function getDebugInfo()
     {
-        return array (  89 => 31,  83 => 30,  74 => 27,  67 => 23,  62 => 22,  60 => 21,  55 => 20,  51 => 19,  48 => 18,  46 => 17,  43 => 9,);
+        return array (  87 => 15,  81 => 14,  72 => 11,  65 => 7,  60 => 6,  55 => 5,  51 => 4,  48 => 3,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{#
-   This is a template fragment designed to be included in other templates
-   See https://symfony.com/doc/current/templates.html#including-templates
-
-   A common practice to better distinguish between templates and fragments is to
-   prefix fragments with an underscore. That's why this template is called
-   '_flash_messages.html.twig' instead of 'flash_messages.html.twig'
-#}
-
-{#
-   The check is needed to prevent starting the session when looking for \"flash messages\":
-   https://symfony.com/doc/current/session.html#avoid-starting-sessions-for-anonymous-users
-
-   TIP: With FOSHttpCache you can also adapt this to make it cache safe:
-   https://foshttpcachebundle.readthedocs.io/en/latest/features/helpers/flash-message.html
-#}
+        return new Source("
 {% if app.request.hasPreviousSession %}
     <div class=\"messages\">
         {% for type, messages in app.flashes %}
             {% for message in messages %}
-                {# Bootstrap alert, see https://getbootstrap.com/docs/3.4/components/#alerts #}
                 <div class=\"alert alert-dismissible alert-{{ type }} fade in\" role=\"alert\">
                     <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"{{ 'action.close'|trans }}\">
                         <span aria-hidden=\"true\">&times;</span>

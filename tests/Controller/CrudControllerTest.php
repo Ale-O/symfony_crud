@@ -1,30 +1,10 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Tests\Controller;
 
-use App\Entity\Element;
 use App\Pagination\Paginator;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-/**
- * Functional test for the controllers defined inside CrudController.
- *
- * See https://symfony.com/doc/current/testing.html#functional-tests
- *
- * Execute the application tests using this command (requires PHPUnit to be installed):
- *
- *     $ cd your-symfony-project/
- *     $ ./vendor/bin/phpunit
- */
 class CrudControllerTest extends WebTestCase
 {
     public function testIndex(): void
@@ -55,12 +35,6 @@ class CrudControllerTest extends WebTestCase
         );
     }
 
-    /**
-     * This test changes the database contents by creating a new comment. However,
-     * thanks to the DAMADoctrineTestBundle and its PHPUnit listener, all changes
-     * to the database are rolled back when this test completes. This means that
-     * all the application tests begin with the same database contents.
-     */
     public function testNewComment(): void
     {
         $client = static::createClient([], [
@@ -69,7 +43,6 @@ class CrudControllerTest extends WebTestCase
         ]);
         $client->followRedirects();
 
-        // Find first crud element
         $crawler = $client->request('GET', '/en/crud/');
         $elementLink = $crawler->filter('article.element > h2 a')->link();
 

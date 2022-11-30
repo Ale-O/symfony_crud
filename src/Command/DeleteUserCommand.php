@@ -13,19 +13,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-/**
- * A console command that deletes users from the database.
- *
- * To use this command, open a terminal window, enter into your project
- * directory and execute the following:
- *
- *     $ php bin/console app:delete-user
- *
- * Check out the code of the src/Command/AddUserCommand.php file for
- * the full explanation about Symfony commands.
- *
- * See https://symfony.com/doc/current/console.html
- */
 class DeleteUserCommand extends Command
 {
     protected static $defaultName = 'app:delete-user';
@@ -68,9 +55,6 @@ HELP
 
     protected function initialize(InputInterface $input, OutputInterface $output): void
     {
-        // SymfonyStyle is an optional feature that Symfony provides so you can
-        // apply a consistent look to the commands of your application.
-        // See https://symfony.com/doc/current/console/style.html
         $this->io = new SymfonyStyle($input, $output);
     }
 
@@ -106,9 +90,6 @@ HELP
             throw new RuntimeException(sprintf('User with username "%s" not found.', $username));
         }
 
-        // After an entity has been removed its in-memory state is the same
-        // as before the removal, except for generated identifiers.
-        // See https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/working-with-objects.html#removing-entities
         $userId = $user->getId();
 
         $this->entityManager->remove($user);

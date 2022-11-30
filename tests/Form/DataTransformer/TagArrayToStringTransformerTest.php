@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Tests\Form\DataTransformer;
 
 use App\Entity\Tag;
@@ -16,16 +7,8 @@ use App\Form\DataTransformer\TagArrayToStringTransformer;
 use App\Repository\TagRepository;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Tests that tags are transformed correctly using the data transformer.
- *
- * See https://symfony.com/doc/current/testing/database.html
- */
 class TagArrayToStringTransformerTest extends TestCase
 {
-    /**
-     * Ensures that tags are created correctly.
-     */
     public function testCreateTheRightAmountOfTags(): void
     {
         $tags = $this->getMockedTransformer()->reverseTransform('Hello, Demo, How');
@@ -34,10 +17,6 @@ class TagArrayToStringTransformerTest extends TestCase
         $this->assertSame('Hello', $tags[0]->getName());
     }
 
-    /**
-     * Ensures that empty tags and errors in the number of commas are
-     * dealt correctly.
-     */
     public function testCreateTheRightAmountOfTagsWithTooManyCommas(): void
     {
         $transformer = $this->getMockedTransformer();
@@ -46,9 +25,6 @@ class TagArrayToStringTransformerTest extends TestCase
         $this->assertCount(3, $transformer->reverseTransform('Hello, Demo, How,'));
     }
 
-    /**
-     * Ensures that leading/trailing spaces are ignored for tag names.
-     */
     public function testTrimNames(): void
     {
         $tags = $this->getMockedTransformer()->reverseTransform('   Hello   ');
@@ -56,9 +32,6 @@ class TagArrayToStringTransformerTest extends TestCase
         $this->assertSame('Hello', $tags[0]->getName());
     }
 
-    /**
-     * Ensures that duplicated tag names are ignored.
-     */
     public function testDuplicateNames(): void
     {
         $tags = $this->getMockedTransformer()->reverseTransform('Hello, Hello, Hello');
@@ -66,9 +39,6 @@ class TagArrayToStringTransformerTest extends TestCase
         $this->assertCount(1, $tags);
     }
 
-    /**
-     * Ensures that the transformer uses tags already persisted in the database.
-     */
     public function testUsesAlreadyDefinedTags(): void
     {
         $persistedTags = [
@@ -82,10 +52,6 @@ class TagArrayToStringTransformerTest extends TestCase
         $this->assertSame($persistedTags[1], $tags[1]);
     }
 
-    /**
-     * Ensures that the transformation from Tag instances to a simple string
-     * works as expected.
-     */
     public function testTransform(): void
     {
         $persistedTags = [
@@ -98,9 +64,6 @@ class TagArrayToStringTransformerTest extends TestCase
     }
 
     /**
-     * This helper method mocks the real TagArrayToStringTransformer class to
-     * simplify the tests. See https://phpunit.de/manual/current/en/test-doubles.html.
-     *
      * @param array $findByReturnValues The values returned when calling to the findBy() method
      */
     private function getMockedTransformer(array $findByReturnValues = []): TagArrayToStringTransformer
@@ -115,9 +78,6 @@ class TagArrayToStringTransformerTest extends TestCase
         return new TagArrayToStringTransformer($tagRepository);
     }
 
-    /**
-     * This helper method creates a Tag instance for the given tag name.
-     */
     private function createTag(string $name): Tag
     {
         $tag = new Tag();

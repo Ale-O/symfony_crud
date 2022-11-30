@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Tests\Controller\Admin;
 
 use App\Repository\ElementRepository;
@@ -16,16 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Functional test for the controllers defined inside the CrudController used
- * for managing the crud in the backend.
- *
- * See https://symfony.com/doc/current/testing.html#functional-tests
- *
- * Whenever you test resources protected by a firewall, consider using the
- * technique explained in:
- * https://symfony.com/doc/current/testing/http_authentication.html
- *
- * Execute the application tests using this command (requires PHPUnit to be installed):
+ * Execute the application tests using this command (requires PHPUnit to be installed):.
  *
  *     $ cd your-symfony-project/
  *     $ ./vendor/bin/phpunit

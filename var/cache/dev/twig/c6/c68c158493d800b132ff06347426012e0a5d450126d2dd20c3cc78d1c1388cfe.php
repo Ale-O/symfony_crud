@@ -76,7 +76,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
 
     }
 
-    // line 9
+    // line 5
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -94,7 +94,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
 
     }
 
-    // line 10
+    // line 6
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -112,7 +112,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
 
     }
 
-    // line 12
+    // line 8
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -122,10 +122,10 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 13
+        // line 9
         echo "    <div class=\"page-header\">
         <h1>";
-        // line 14
+        // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.homepage");
         echo "</h1>
     </div>
@@ -135,17 +135,17 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
             <div class=\"jumbotron\">
                 <p>
                     ";
-        // line 21
+        // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("help.browse_app");
         echo "
                 </p>
                 <p>
                     <a class=\"btn btn-primary btn-lg\" href=\"";
-        // line 24
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
         echo "\">
                         <i class=\"fa fa-users\" aria-hidden=\"true\"></i> ";
-        // line 25
+        // line 21
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.browse_app"), "html", null, true);
         echo "
                     </a>
@@ -157,17 +157,17 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
             <div class=\"jumbotron\">
                 <p>
                     ";
-        // line 34
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("help.browse_admin");
         echo "
                 </p>
                 <p>
                     <a class=\"btn btn-primary btn-lg\" href=\"";
-        // line 37
+        // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_index");
         echo "\">
                         <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> ";
-        // line 38
+        // line 34
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.browse_admin"), "html", null, true);
         echo "
                     </a>
@@ -196,7 +196,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
 
     public function getDebugInfo()
     {
-        return array (  171 => 38,  167 => 37,  161 => 34,  149 => 25,  145 => 24,  139 => 21,  129 => 14,  126 => 13,  116 => 12,  98 => 10,  80 => 9,  61 => 3,  38 => 1,);
+        return array (  171 => 34,  167 => 33,  161 => 30,  149 => 21,  145 => 20,  139 => 17,  129 => 10,  126 => 9,  116 => 8,  98 => 6,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -205,10 +205,6 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
 
 {% block body_id 'homepage' %}
 
-{#
-    the homepage is a special page which displays neither a header nor a footer.
-    this is done with the 'trick' of defining empty Twig blocks without any content
-#}
 {% block header %}{% endblock %}
 {% block footer %}{% endblock %}
 
