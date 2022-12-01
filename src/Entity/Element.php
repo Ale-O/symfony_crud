@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ElementRepository")
- * @ORM\Table(name="symfony_demo_element")
+ * @ORM\Table(name="symfony_element")
  * @UniqueEntity(fields={"slug"}, errorPath="title", message="element.slug_unique")
  */
 class Element
@@ -89,7 +89,7 @@ class Element
      * @var Tag[]|Collection
      *
      * @ORM\ManyToMany(targetEntity="App\Entity\Tag", cascade={"persist"})
-     * @ORM\JoinTable(name="symfony_demo_element_tag")
+     * @ORM\JoinTable(name="symfony_element_tag")
      * @ORM\OrderBy({"name": "ASC"})
      * @Assert\Count(max="4", maxMessage="element.too_many_tags")
      */

@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
- * @ORM\Table(name="symfony_demo_tag")
+ * @ORM\Table(name="symfony_tag")
  */
 class Tag implements \JsonSerializable
 {
