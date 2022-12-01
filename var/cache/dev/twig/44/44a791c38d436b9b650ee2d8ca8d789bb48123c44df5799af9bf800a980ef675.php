@@ -41,15 +41,15 @@ class __TwigTemplate_43954fd23d4d07e608544393b465d9132c26712ec3591ccf724dcaaaef8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "form/fields.html.twig"));
 
-        // line 9
+        // line 1
         echo "
 ";
-        // line 10
+        // line 2
         $this->displayBlock('date_time_picker_widget', $context, $blocks);
-        // line 18
+        // line 10
         echo "
 ";
-        // line 19
+        // line 11
         $this->displayBlock('tags_input_widget', $context, $blocks);
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -59,7 +59,7 @@ class __TwigTemplate_43954fd23d4d07e608544393b465d9132c26712ec3591ccf724dcaaaef8
 
     }
 
-    // line 10
+    // line 2
     public function block_date_time_picker_widget($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -69,10 +69,10 @@ class __TwigTemplate_43954fd23d4d07e608544393b465d9132c26712ec3591ccf724dcaaaef8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "date_time_picker_widget"));
 
-        // line 11
+        // line 3
         echo "    <div class=\"input-group date\" data-toggle=\"datetimepicker\">
         ";
-        // line 12
+        // line 4
         $this->displayBlock("datetime_widget", $context, $blocks);
         echo "
         <span class=\"input-group-addon\">
@@ -88,7 +88,7 @@ class __TwigTemplate_43954fd23d4d07e608544393b465d9132c26712ec3591ccf724dcaaaef8
 
     }
 
-    // line 19
+    // line 11
     public function block_tags_input_widget($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -98,11 +98,11 @@ class __TwigTemplate_43954fd23d4d07e608544393b465d9132c26712ec3591ccf724dcaaaef8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "tags_input_widget"));
 
-        // line 20
+        // line 12
         echo "    <div class=\"input-group\">
         ";
-        // line 21
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'widget', ["attr" => ["data-toggle" => "tagsinput", "data-tags" => json_encode((isset($context["tags"]) || array_key_exists("tags", $context) ? $context["tags"] : (function () { throw new RuntimeError('Variable "tags" does not exist.', 21, $this->source); })()))]]);
+        // line 13
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'widget', ["attr" => ["data-toggle" => "tagsinput", "data-tags" => json_encode((isset($context["tags"]) || array_key_exists("tags", $context) ? $context["tags"] : (function () { throw new RuntimeError('Variable "tags" does not exist.', 13, $this->source); })()))]]);
         echo "
         <span class=\"input-group-addon\">
             <span class=\"fa fa-tags\" aria-hidden=\"true\"></span>
@@ -124,20 +124,12 @@ class __TwigTemplate_43954fd23d4d07e608544393b465d9132c26712ec3591ccf724dcaaaef8
 
     public function getDebugInfo()
     {
-        return array (  105 => 21,  102 => 20,  92 => 19,  76 => 12,  73 => 11,  63 => 10,  53 => 19,  50 => 18,  48 => 10,  45 => 9,);
+        return array (  105 => 13,  102 => 12,  92 => 11,  76 => 4,  73 => 3,  63 => 2,  53 => 11,  50 => 10,  48 => 2,  45 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{#
-   Each field type is rendered by a template fragment, which is determined
-   by the name of your form type class (DateTimePickerType -> date_time_picker)
-   and the suffix \"_widget\". This can be controlled by overriding getBlockPrefix()
-   in DateTimePickerType.
-
-   See https://symfony.com/doc/current/form/create_custom_field_type.html#creating-the-form-type-template
-#}
-
+        return new Source("
 {% block date_time_picker_widget %}
     <div class=\"input-group date\" data-toggle=\"datetimepicker\">
         {{ block('datetime_widget') }}

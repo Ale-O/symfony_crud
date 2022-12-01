@@ -33,7 +33,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 
     protected function doGetParent(array $context)
     {
-        // line 8
+        // line 2
         return "base.html.twig";
     }
 
@@ -46,7 +46,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/layout.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "admin/layout.html.twig", 8);
+        $this->parent = $this->loadTemplate("base.html.twig", "admin/layout.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -56,7 +56,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 
     }
 
-    // line 10
+    // line 4
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -66,12 +66,12 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 11
+        // line 5
         echo "    ";
         $this->displayParentBlock("stylesheets", $context, $blocks);
         echo "
     ";
-        // line 12
+        // line 6
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("admin");
         echo "
 ";
@@ -83,7 +83,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 
     }
 
-    // line 15
+    // line 9
     public function block_header_navigation_links($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -93,25 +93,25 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header_navigation_links"));
 
-        // line 16
+        // line 10
         echo "    <li>
         <a href=\"";
-        // line 17
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
         echo "\">
             <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> ";
-        // line 18
+        // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.element_list"), "html", null, true);
         echo "
         </a>
     </li>
     <li>
         <a href=\"";
-        // line 22
+        // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
         echo "\">
             <i class=\"fa fa-home\" aria-hidden=\"true\"></i> ";
-        // line 23
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.back_to_crud"), "html", null, true);
         echo "
         </a>
@@ -125,7 +125,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 
     }
 
-    // line 28
+    // line 22
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -135,12 +135,12 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 29
+        // line 23
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     ";
-        // line 30
+        // line 24
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("admin");
         echo "
 ";
@@ -164,18 +164,12 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 
     public function getDebugInfo()
     {
-        return array (  144 => 30,  139 => 29,  129 => 28,  115 => 23,  111 => 22,  104 => 18,  100 => 17,  97 => 16,  87 => 15,  75 => 12,  70 => 11,  60 => 10,  37 => 8,);
+        return array (  144 => 24,  139 => 23,  129 => 22,  115 => 17,  111 => 16,  104 => 12,  100 => 11,  97 => 10,  87 => 9,  75 => 6,  70 => 5,  60 => 4,  37 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{#
-   This is the base template of the all backend pages. Since this layout is similar
-   to the global layout, we inherit from it to just change the contents of some
-   blocks. In practice, backend templates are using a three-level inheritance,
-   showing how powerful, yet easy to use, is Twig's inheritance mechanism.
-   See https://symfony.com/doc/current/templates.html#template-inheritance-and-layouts
-#}
+        return new Source("
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}

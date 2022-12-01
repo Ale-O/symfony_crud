@@ -164,7 +164,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
                 <p>
                     <a class=\"btn btn-primary btn-lg\" href=\"";
         // line 33
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
         echo "\">
                         <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> ";
         // line 34
@@ -233,7 +233,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
                     {{ 'help.browse_admin'|trans|raw }}
                 </p>
                 <p>
-                    <a class=\"btn btn-primary btn-lg\" href=\"{{ path('admin_index') }}\">
+                    <a class=\"btn btn-primary btn-lg\" href=\"{{ path('security_login') }}\">
                         <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> {{ 'action.browse_admin'|trans }}
                     </a>
                 </p>

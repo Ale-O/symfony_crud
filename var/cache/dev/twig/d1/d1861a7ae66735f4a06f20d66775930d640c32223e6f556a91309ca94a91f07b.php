@@ -33,7 +33,7 @@ class __TwigTemplate_9eb53be1770235a48228823f5a47aef41cef98466200940fe960086781b
 
     protected function doGetParent(array $context)
     {
-        // line 11
+        // line 2
         return "base.html.twig";
     }
 
@@ -46,7 +46,7 @@ class __TwigTemplate_9eb53be1770235a48228823f5a47aef41cef98466200940fe960086781b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@Twig/Exception/error404.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "@Twig/Exception/error404.html.twig", 11);
+        $this->parent = $this->loadTemplate("base.html.twig", "@Twig/Exception/error404.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -56,7 +56,7 @@ class __TwigTemplate_9eb53be1770235a48228823f5a47aef41cef98466200940fe960086781b
 
     }
 
-    // line 13
+    // line 4
     public function block_body_id($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -75,7 +75,7 @@ class __TwigTemplate_9eb53be1770235a48228823f5a47aef41cef98466200940fe960086781b
 
     }
 
-    // line 15
+    // line 6
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -85,20 +85,20 @@ class __TwigTemplate_9eb53be1770235a48228823f5a47aef41cef98466200940fe960086781b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
-        // line 16
+        // line 7
         echo "    <h1 class=\"text-danger\">";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("http_error.name", ["%status_code%" => 404]), "html", null, true);
         echo "</h1>
 
     <p class=\"lead\">
         ";
-        // line 19
+        // line 10
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("http_error_404.description"), "html", null, true);
         echo "
     </p>
     <p>
         ";
-        // line 22
+        // line 13
         echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("http_error_404.suggestion", ["%url%" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index")]);
         echo "
     </p>
@@ -111,7 +111,7 @@ class __TwigTemplate_9eb53be1770235a48228823f5a47aef41cef98466200940fe960086781b
 
     }
 
-    // line 26
+    // line 17
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -121,13 +121,13 @@ class __TwigTemplate_9eb53be1770235a48228823f5a47aef41cef98466200940fe960086781b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 27
+        // line 18
         echo "    ";
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 29
+        // line 20
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -151,21 +151,12 @@ class __TwigTemplate_9eb53be1770235a48228823f5a47aef41cef98466200940fe960086781b
 
     public function getDebugInfo()
     {
-        return array (  131 => 29,  125 => 27,  115 => 26,  102 => 22,  96 => 19,  89 => 16,  79 => 15,  60 => 13,  37 => 11,);
+        return array (  131 => 20,  125 => 18,  115 => 17,  102 => 13,  96 => 10,  89 => 7,  79 => 6,  60 => 4,  37 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{#
-    This template is used to render errors of type HTTP 404 (Not Found)
-
-    This is the simplest way to customize error pages in Symfony applications.
-    In case you need it, you can also hook into the internal exception handling
-    made by Symfony. This allows you to perform advanced tasks and even recover
-    your application from some errors.
-    See https://symfony.com/doc/current/controller/error_pages.html
-#}
-
+        return new Source("
 {% extends 'base.html.twig' %}
 
 {% block body_id 'error' %}

@@ -54,7 +54,7 @@ class __TwigTemplate_a329bb658be264ec8abfe85cdb035c2a654ed4bb12df31db0afc09573d6
 
     }
 
-    // line 5
+    // line 3
     public function block_form_errors($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -64,33 +64,33 @@ class __TwigTemplate_a329bb658be264ec8abfe85cdb035c2a654ed4bb12df31db0afc09573d6
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "form_errors"));
 
-        // line 6
-        if ((1 === twig_compare(twig_length_filter($this->env, (isset($context["errors"]) || array_key_exists("errors", $context) ? $context["errors"] : (function () { throw new RuntimeError('Variable "errors" does not exist.', 6, $this->source); })())), 0))) {
-            // line 7
-            if ( !Symfony\Bridge\Twig\Extension\twig_is_root_form((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()))) {
+        // line 4
+        if ((1 === twig_compare(twig_length_filter($this->env, (isset($context["errors"]) || array_key_exists("errors", $context) ? $context["errors"] : (function () { throw new RuntimeError('Variable "errors" does not exist.', 4, $this->source); })())), 0))) {
+            // line 5
+            if ( !Symfony\Bridge\Twig\Extension\twig_is_root_form((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()))) {
                 echo "<span class=\"help-block\">";
             } else {
                 echo "<div class=\"alert alert-danger\">";
             }
-            // line 8
+            // line 6
             echo "        <ul class=\"list-unstyled\">";
-            // line 9
+            // line 7
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["errors"]) || array_key_exists("errors", $context) ? $context["errors"] : (function () { throw new RuntimeError('Variable "errors" does not exist.', 9, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["errors"]) || array_key_exists("errors", $context) ? $context["errors"] : (function () { throw new RuntimeError('Variable "errors" does not exist.', 7, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["error"]) {
-                // line 11
-                echo "            <li><span class=\"fa fa-exclamation-triangle\"></span> ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["error"], "message", [], "any", false, false, false, 11), "html", null, true);
+                // line 8
+                echo "<li><span class=\"fa fa-exclamation-triangle\"></span> ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["error"], "message", [], "any", false, false, false, 8), "html", null, true);
                 echo "</li>";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['error'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 13
+            // line 10
             echo "</ul>
         ";
-            // line 14
-            if ( !Symfony\Bridge\Twig\Extension\twig_is_root_form((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()))) {
+            // line 11
+            if ( !Symfony\Bridge\Twig\Extension\twig_is_root_form((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()))) {
                 echo "</span>";
             } else {
                 echo "</div>";
@@ -116,21 +116,18 @@ class __TwigTemplate_a329bb658be264ec8abfe85cdb035c2a654ed4bb12df31db0afc09573d6
 
     public function getDebugInfo()
     {
-        return array (  93 => 14,  90 => 13,  82 => 11,  78 => 9,  76 => 8,  70 => 7,  68 => 6,  58 => 5,  35 => 1,);
+        return array (  93 => 11,  90 => 10,  82 => 8,  78 => 7,  76 => 6,  70 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'bootstrap_3_layout.html.twig' %}
 
-{# Errors #}
-
 {% block form_errors -%}
     {% if errors|length > 0 -%}
         {% if form is not rootform %}<span class=\"help-block\">{% else %}<div class=\"alert alert-danger\">{% endif %}
         <ul class=\"list-unstyled\">
         {%- for error in errors -%}
-            {# use font-awesome icon library #}
             <li><span class=\"fa fa-exclamation-triangle\"></span> {{ error.message }}</li>
         {%- endfor -%}
         </ul>

@@ -39,8 +39,9 @@ class __TwigTemplate_5237ae935a2de6ac65a6a0996cb8682e076e1750b10c3334c8676f14f26
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/_delete_element_confirmation.html.twig"));
 
-        // line 2
-        echo "<div class=\"modal fade\" id=\"confirmationModal\" tabindex=\"-1\">
+        // line 1
+        echo "
+<div class=\"modal fade\" id=\"confirmationModal\" tabindex=\"-1\">
     <div class=\"modal-dialog\">
         <div class=\"modal-content\">
             <div class=\"modal-body\">
@@ -91,12 +92,12 @@ class __TwigTemplate_5237ae935a2de6ac65a6a0996cb8682e076e1750b10c3334c8676f14f26
 
     public function getDebugInfo()
     {
-        return array (  66 => 14,  60 => 11,  53 => 7,  49 => 6,  43 => 2,);
+        return array (  67 => 14,  61 => 11,  54 => 7,  50 => 6,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{# Bootstrap modal, see https://getbootstrap.com/docs/3.4/javascript/#modals #}
+        return new Source("
 <div class=\"modal fade\" id=\"confirmationModal\" tabindex=\"-1\">
     <div class=\"modal-dialog\">
         <div class=\"modal-content\">

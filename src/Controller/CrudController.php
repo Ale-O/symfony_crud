@@ -105,7 +105,7 @@ class CrudController extends AbstractController
     /**
      * @Route("/search", methods="GET", name="crud_search")
      */
-    public function search(Request $request, ElementRepository $elements): Response
+    public function search(Request $request, ElementRepository $elements, TagRepository $tags): Response
     {
         $query = $request->query->get('q', '');
         $limit = $request->query->get('l', 10);
@@ -116,6 +116,13 @@ class CrudController extends AbstractController
 
         $foundElements = $elements->findBySearchQuery($query, $limit);
 
+        /*
+        $tag = null;
+        if ($request->query->has('tag')) {
+            $tag = $tags->findOneBy(['name' => $request->query->get('tag')]);
+        }
+        */
+
         $results = [];
         foreach ($foundElements as $element) {
             $results[] = [
@@ -123,6 +130,7 @@ class CrudController extends AbstractController
                 'date' => $element->getPublishedAt()->format('M d, Y'),
                 'author' => htmlspecialchars($element->getAuthor()->getFullName(), ENT_COMPAT | ENT_HTML5),
                 'summary' => htmlspecialchars($element->getSummary(), ENT_COMPAT | ENT_HTML5),
+                // 'summary' => $element->getTags(),
                 'url' => $this->generateUrl('crud_element', ['slug' => $element->getSlug()]),
             ];
         }
