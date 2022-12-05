@@ -45,9 +45,6 @@
                 {{ subelement.content|markdown_to_html|sanitize_html }}
             </div>
 
-            <h1>{{ subelement.id }}</h1>
-            <h1>{{ subelement.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
-
             <div class="col-sm-9">
                 <a href="{{ path('crud_show', {id: subelement.id}) }}" class="btn btn-sm btn-default">
                     <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show'|trans }}
