@@ -20,8 +20,8 @@ class CrudControllerTest extends WebTestCase
     public function testAccessDeniedForRegularUsers(string $httpMethod, string $url): void
     {
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'john_user',
-            'PHP_AUTH_PW' => 'kitten',
+            'PHP_AUTH_USER' => 'user_test',
+            'PHP_AUTH_PW' => 'user_1',
         ]);
 
         $client->request($httpMethod, $url);
@@ -40,8 +40,8 @@ class CrudControllerTest extends WebTestCase
     public function testAdminBackendHomePage(): void
     {
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'jane_admin',
-            'PHP_AUTH_PW' => 'kitten',
+            'PHP_AUTH_USER' => 'admin_test',
+            'PHP_AUTH_PW' => 'admin1',
         ]);
         $client->request('GET', '/en/admin/element/');
 
@@ -65,8 +65,8 @@ class CrudControllerTest extends WebTestCase
         $elementContent = $this->generateRandomString(1024);
 
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'jane_admin',
-            'PHP_AUTH_PW' => 'kitten',
+            'PHP_AUTH_USER' => 'admin_test',
+            'PHP_AUTH_PW' => 'admin1',
         ]);
         $client->request('GET', '/en/admin/element/new');
         $client->submitForm('Create element', [
@@ -91,8 +91,8 @@ class CrudControllerTest extends WebTestCase
         $elementContent = $this->generateRandomString(1024);
 
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'jane_admin',
-            'PHP_AUTH_PW' => 'kitten',
+            'PHP_AUTH_USER' => 'admin_test',
+            'PHP_AUTH_PW' => 'admin1',
         ]);
         $crawler = $client->request('GET', '/en/admin/element/new');
         $form = $crawler->selectButton('Create element')->form([
@@ -112,8 +112,8 @@ class CrudControllerTest extends WebTestCase
     public function testAdminShowElement(): void
     {
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'jane_admin',
-            'PHP_AUTH_PW' => 'kitten',
+            'PHP_AUTH_USER' => 'admin_test',
+            'PHP_AUTH_PW' => 'admin1',
         ]);
         $client->request('GET', '/en/admin/element/1');
 
@@ -131,8 +131,8 @@ class CrudControllerTest extends WebTestCase
         $newCrudElementTitle = 'Crud Element Title '.mt_rand();
 
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'jane_admin',
-            'PHP_AUTH_PW' => 'kitten',
+            'PHP_AUTH_USER' => 'admin_test',
+            'PHP_AUTH_PW' => 'admin1',
         ]);
         $client->request('GET', '/en/admin/element/1/edit');
         $client->submitForm('Save changes', [
@@ -155,8 +155,8 @@ class CrudControllerTest extends WebTestCase
     public function testAdminDeleteElement(): void
     {
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'jane_admin',
-            'PHP_AUTH_PW' => 'kitten',
+            'PHP_AUTH_USER' => 'admin_test',
+            'PHP_AUTH_PW' => 'admin1',
         ]);
         $crawler = $client->request('GET', '/en/admin/element/1');
         $client->submit($crawler->filter('#delete-form')->form());

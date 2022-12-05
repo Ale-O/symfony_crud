@@ -74,7 +74,7 @@ class AppFixtures extends Fixture
 
             foreach (range(1, 5) as $i) {
                 $subelement = new Subelement();
-                $subelement->setAuthor($this->getReference('john_user'));
+                $subelement->setAuthor($this->getReference('user_test'));
                 $subelement->setContent($this->getRandomText(random_int(255, 512)));
                 $subelement->setPublishedAt(new \DateTime('now + '.$i.'seconds'));
 
@@ -91,9 +91,8 @@ class AppFixtures extends Fixture
     {
         return [
             // $userData = [$fullname, $username, $password, $email, $roles];
-            ['Jane Doe', 'jane_admin', 'kitten', 'jane_admin@symfony.com', ['ROLE_ADMIN']],
-            ['Tom Doe', 'tom_admin', 'kitten', 'tom_admin@symfony.com', ['ROLE_ADMIN']],
-            ['John Doe', 'john_user', 'kitten', 'john_user@symfony.com', ['ROLE_USER']],
+            ['Admin Test', 'admin_test', 'admin1', 'admin_test@example.com', ['ROLE_ADMIN']],
+            ['User Test', 'user_test', 'user_1', 'user_test@example.com', ['ROLE_USER']],
         ];
     }
 
@@ -115,7 +114,7 @@ class AppFixtures extends Fixture
                 $this->getRandomText(),
                 $this->getElementContent(),
                 new \DateTime('now - '.$i.'days'),
-                $this->getReference(['jane_admin', 'tom_admin'][0 === $i ? 0 : random_int(0, 1)]),
+                $this->getReference(['admin_test'][0 === $i ? 0 : random_int(0, 1)]),
                 $this->getRandomTags(),
             ];
         }

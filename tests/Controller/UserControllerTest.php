@@ -31,11 +31,11 @@ class UserControllerTest extends WebTestCase
 
     public function testEditUser(): void
     {
-        $newUserEmail = 'admin_jane@symfony.com';
+        $newUserEmail = 'admin_test@example.com';
 
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'jane_admin',
-            'PHP_AUTH_PW' => 'kitten',
+            'PHP_AUTH_USER' => 'admin_test',
+            'PHP_AUTH_PW' => 'admin1',
         ]);
         $client->request('GET', '/en/profile/edit');
         $client->submitForm('Save changes', [
@@ -56,12 +56,12 @@ class UserControllerTest extends WebTestCase
         $newUserPassword = 'new-password';
 
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'jane_admin',
-            'PHP_AUTH_PW' => 'kitten',
+            'PHP_AUTH_USER' => 'admin_test',
+            'PHP_AUTH_PW' => 'admin1',
         ]);
         $client->request('GET', '/en/profile/change-password');
         $client->submitForm('Save changes', [
-            'change_password[currentPassword]' => 'kitten',
+            'change_password[currentPassword]' => 'admin1',
             'change_password[newPassword][first]' => $newUserPassword,
             'change_password[newPassword][second]' => $newUserPassword,
         ]);

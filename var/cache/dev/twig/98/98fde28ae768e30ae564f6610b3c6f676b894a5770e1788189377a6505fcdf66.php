@@ -261,13 +261,13 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
                 </thead>
                 <tbody>
                     <tr>
-                        <td>john_user</td>
-                        <td>kitten</td>
+                        <td>user_test</td>
+                        <td>user_1</td>
                         <td><code>ROLE_USER</code> ({{ 'help.role_user'|trans }})</td>
                     </tr>
                     <tr>
-                        <td>jane_admin</td>
-                        <td>kitten</td>
+                        <td>admin_test</td>
+                        <td>admin1</td>
                         <td><code>ROLE_ADMIN</code> ({{ 'help.role_admin'|trans }})</td>
                     </tr>
                 </tbody>

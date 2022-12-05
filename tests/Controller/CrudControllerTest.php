@@ -38,8 +38,8 @@ class CrudControllerTest extends WebTestCase
     public function testNewComment(): void
     {
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'john_user',
-            'PHP_AUTH_PW' => 'kitten',
+            'PHP_AUTH_USER' => 'user_test',
+            'PHP_AUTH_PW' => 'user_1',
         ]);
         $client->followRedirects();
 
@@ -48,24 +48,24 @@ class CrudControllerTest extends WebTestCase
 
         $client->click($elementLink);
         $crawler = $client->submitForm('Publish comment', [
-            'comment[content]' => 'Hi, Symfony!',
+            'comment[content]' => 'Welcome in this crud!',
         ]);
 
         $newComment = $crawler->filter('.element-comment')->first()->filter('div > p')->text();
 
-        $this->assertSame('Hi, Symfony!', $newComment);
+        $this->assertSame('Welcome in this crud!', $newComment);
     }
 
     public function testAjaxSearch(): void
     {
         $client = static::createClient();
-        $client->xmlHttpRequest('GET', '/en/crud/search', ['q' => 'lorem']);
+        $client->xmlHttpRequest('GET', '/en/crud/search', ['q' => 'test']);
 
         $results = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertResponseHeaderSame('Content-Type', 'application/json');
         $this->assertCount(1, $results);
-        $this->assertSame('Lorem ipsum dolor sit amet consectetur adipiscing elit', $results[0]['title']);
-        $this->assertSame('Jane Doe', $results[0]['author']);
+        $this->assertSame('Paragraph test', $results[0]['title']);
+        $this->assertSame('Admin Test', $results[0]['author']);
     }
 }
