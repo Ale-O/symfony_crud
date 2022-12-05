@@ -22,6 +22,8 @@ class AddUserCommand extends Command
     protected static $defaultName = 'app:add-user';
 
     /**
+     * command : php bin/console app:add-user.
+     *
      * @var SymfonyStyle
      */
     private $io;
