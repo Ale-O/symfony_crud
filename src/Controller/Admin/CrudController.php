@@ -101,8 +101,8 @@ class CrudController extends AbstractController
 
     /**
      * @Route("/{id}/delete", methods="POST", name="admin_element_delete")
-     * @IsGranted("delete", subject="element")
      */
+    // @IsGranted("delete", subject="element")
     public function delete(Request $request, Element $element): Response
     {
         if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
