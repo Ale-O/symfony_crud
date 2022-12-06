@@ -1,11 +1,2 @@
-1af88f,::1,GET,http://localhost:8000/_fragment?_path=_locale%3Dfr%26_format%3Dhtml%26_controller%3DSymfony%255CBundle%255CFrameworkBundle%255CController%255CTemplateController%253A%253AtemplateAction,1670260731,af7958,200
-af7958,::1,GET,http://localhost:8000/fr/login,1670260731,,200
-dcf5bd,::1,POST,http://localhost:8000/fr/login,1670260736,,302
-98125e,::1,GET,http://localhost:8000/_fragment?_path=_locale%3Dfr%26_format%3Dhtml%26_controller%3DSymfony%255CBundle%255CFrameworkBundle%255CController%255CTemplateController%253A%253AtemplateAction,1670260737,d4e5cc,200
-d4e5cc,::1,GET,http://localhost:8000/fr/crud/,1670260737,,200
-9e2fc6,::1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DApp%255CController%255CCrudController%253A%253AsubelementForm,1670260739,ed0c19,200
-a19fab,::1,GET,http://localhost:8000/_fragment?_path=_locale%3Dfr%26_format%3Dhtml%26_controller%3DSymfony%255CBundle%255CFrameworkBundle%255CController%255CTemplateController%253A%253AtemplateAction,1670260739,ed0c19,200
-ed0c19,::1,GET,http://localhost:8000/fr/crud/elements/element-2,1670260739,,200
-effa98,::1,GET,http://localhost:8000/_fragment?_path=_locale%3Dfr%26_format%3Dhtml%26_controller%3DSymfony%255CBundle%255CFrameworkBundle%255CController%255CTemplateController%253A%253AtemplateAction,1670260750,96d01c,200
-96d01c,::1,GET,http://localhost:8000/fr/crud/12,1670260750,,200
-7dfb78,::1,GET,http://localhost:8000/fr,1670260753,,200
+28bb61,127.0.0.1,GET,http://localhost:8000/,1670330900,,302
+365865,127.0.0.1,GET,http://localhost:8000/fr,1670330900,,200
