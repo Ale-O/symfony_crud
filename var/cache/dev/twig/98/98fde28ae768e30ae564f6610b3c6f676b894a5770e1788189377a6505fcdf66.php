@@ -127,8 +127,8 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
         // line 16
         echo "
     <div class=\"row\">
-        <div class=\"col-sm-5\">
-            <div class=\"well\">
+        <div class=\"col-md-6 col-md-offset-5\">
+            <div class=\"alert alert-success\">
                 <form action=\"";
         // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
@@ -221,8 +221,8 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
     {% endif %}
 
     <div class=\"row\">
-        <div class=\"col-sm-5\">
-            <div class=\"well\">
+        <div class=\"col-md-6 col-md-offset-5\">
+            <div class=\"alert alert-success\">
                 <form action=\"{{ path('security_login') }}\" method=\"post\">
                     <fieldset>
                         <legend><i class=\"fa fa-lock\" aria-hidden=\"true\"></i> {{ 'title.login'|trans }}</legend>

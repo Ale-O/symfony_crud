@@ -21,7 +21,7 @@
                     <div class="container">
                         <div class="navbar-header col-md-3 col-lg-2">
                             <a class="navbar-brand" href="{{ path('homepage') }}">
-                                Crud
+                                {{ 'title.homepage'|trans|raw }}
                             </a>
 
                             <button type="button" class="navbar-toggle"
@@ -132,7 +132,7 @@
                 <div class="container">
                     <div class="row">
                         <div id="footer-copyright" class="col-md-6">
-                            <p>&copy; {{ 'now'|date('Y') }} - The Crud Project</p>
+                            <p>&copy; {{ 'now'|date('Y') }} - Application Crud</p>
                             <p>{{ 'mit_license'|trans }}</p>
                         </div>
                         {#

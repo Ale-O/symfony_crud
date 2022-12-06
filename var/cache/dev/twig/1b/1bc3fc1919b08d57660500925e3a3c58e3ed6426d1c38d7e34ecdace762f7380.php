@@ -202,7 +202,10 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
         // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
         echo "\">
-                                Crud
+                                ";
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.homepage");
+        echo "
                             </a>
 
                             <button type=\"button\" class=\"navbar-toggle\"
@@ -454,7 +457,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
                             <p>&copy; ";
         // line 135
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
-        echo " - The Crud Project</p>
+        echo " - Application Crud</p>
                             <p>";
         // line 136
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("mit_license"), "html", null, true);
@@ -509,7 +512,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
 
     public function getDebugInfo()
     {
-        return array (  488 => 159,  478 => 158,  465 => 153,  460 => 136,  456 => 135,  450 => 131,  440 => 130,  429 => 121,  427 => 120,  425 => 117,  415 => 116,  397 => 111,  383 => 123,  381 => 116,  375 => 112,  373 => 111,  368 => 109,  364 => 107,  354 => 106,  344 => 53,  337 => 49,  333 => 48,  330 => 47,  328 => 46,  321 => 42,  317 => 41,  314 => 40,  304 => 39,  289 => 98,  286 => 83,  277 => 77,  273 => 76,  265 => 71,  261 => 70,  254 => 66,  248 => 62,  246 => 61,  243 => 60,  235 => 57,  232 => 56,  230 => 55,  227 => 54,  225 => 39,  213 => 30,  203 => 23,  197 => 19,  187 => 18,  169 => 16,  156 => 10,  146 => 9,  127 => 7,  112 => 165,  109 => 161,  107 => 158,  104 => 157,  102 => 130,  98 => 128,  96 => 106,  92 => 104,  90 => 18,  85 => 16,  79 => 13,  76 => 12,  74 => 9,  68 => 8,  64 => 7,  57 => 3,  53 => 1,);
+        return array (  491 => 159,  481 => 158,  468 => 153,  463 => 136,  459 => 135,  453 => 131,  443 => 130,  432 => 121,  430 => 120,  428 => 117,  418 => 116,  400 => 111,  386 => 123,  384 => 116,  378 => 112,  376 => 111,  371 => 109,  367 => 107,  357 => 106,  347 => 53,  340 => 49,  336 => 48,  333 => 47,  331 => 46,  324 => 42,  320 => 41,  317 => 40,  307 => 39,  292 => 98,  289 => 83,  280 => 77,  276 => 76,  268 => 71,  264 => 70,  257 => 66,  251 => 62,  249 => 61,  246 => 60,  238 => 57,  235 => 56,  233 => 55,  230 => 54,  228 => 39,  216 => 30,  207 => 24,  203 => 23,  197 => 19,  187 => 18,  169 => 16,  156 => 10,  146 => 9,  127 => 7,  112 => 165,  109 => 161,  107 => 158,  104 => 157,  102 => 130,  98 => 128,  96 => 106,  92 => 104,  90 => 18,  85 => 16,  79 => 13,  76 => 12,  74 => 9,  68 => 8,  64 => 7,  57 => 3,  53 => 1,);
     }
 
     public function getSourceContext()
@@ -537,7 +540,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
                     <div class=\"container\">
                         <div class=\"navbar-header col-md-3 col-lg-2\">
                             <a class=\"navbar-brand\" href=\"{{ path('homepage') }}\">
-                                Crud
+                                {{ 'title.homepage'|trans|raw }}
                             </a>
 
                             <button type=\"button\" class=\"navbar-toggle\"
@@ -648,7 +651,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
                 <div class=\"container\">
                     <div class=\"row\">
                         <div id=\"footer-copyright\" class=\"col-md-6\">
-                            <p>&copy; {{ 'now'|date('Y') }} - The Crud Project</p>
+                            <p>&copy; {{ 'now'|date('Y') }} - Application Crud</p>
                             <p>{{ 'mit_license'|trans }}</p>
                         </div>
                         {#
