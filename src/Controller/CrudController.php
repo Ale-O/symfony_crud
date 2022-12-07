@@ -105,7 +105,7 @@ class CrudController extends AbstractController
     /**
      * @Route("/search", methods="GET", name="crud_search")
      */
-    public function search(Request $request, ElementRepository $elements, TagRepository $tags): Response
+    public function search(Request $request, ElementRepository $elements): Response
     {
         $query = $request->query->get('q', '');
         $limit = $request->query->get('l', 10);
@@ -116,23 +116,29 @@ class CrudController extends AbstractController
 
         $foundElements = $elements->findBySearchQuery($query, $limit);
 
-        /*
-        $tag = null;
-        if ($request->query->has('tag')) {
-            $tag = $tags->findOneBy(['name' => $request->query->get('tag')]);
-        }
-        */
-
         $results = [];
         foreach ($foundElements as $element) {
-            $results[] = [
+            $user = $this->getUser();
+            isset($user) ? $userFullName = $user->getFullName() : $userFullName = '';
+
+            $tags = $element->getTags();
+            $tagsList = '';
+            $allowed = false;
+            foreach ($tags as $tag) {
+                if (strval($tag) === strval($userFullName)) {
+                    $tagsList = $tagsList.' '.$tag;
+                    $allowed = true;
+                }
+            }
+
+            $allowed ? $results[] = [
                 'title' => htmlspecialchars($element->getTitle(), ENT_COMPAT | ENT_HTML5),
                 'date' => $element->getPublishedAt()->format('M d, Y'),
                 'author' => htmlspecialchars($element->getAuthor()->getFullName(), ENT_COMPAT | ENT_HTML5),
                 'summary' => htmlspecialchars($element->getSummary(), ENT_COMPAT | ENT_HTML5),
-                'tags' => $element->getTags(),
+                'tags' => $tagsList,
                 'url' => $this->generateUrl('crud_element', ['slug' => $element->getSlug()]),
-            ];
+            ] : $results;
         }
 
         return $this->json($results);

@@ -228,22 +228,17 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
         $this->displayBlock('header_navigation_links', $context, $blocks);
         // line 54
         echo "
-                                ";
-        // line 55
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 56
-            echo "                                    <li>
-                                        <a href=\"";
-            // line 57
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_search");
-            echo "\"> <i class=\"fa fa-search\"></i> ";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.search"), "html", null, true);
-            echo "</a>
-                                    </li>
-                                ";
-        }
-        // line 60
-        echo "                                
+
+                                <li>
+                                    <a href=\"";
+        // line 57
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_search");
+        echo "\"> <i class=\"fa fa-search\"></i> ";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.search"), "html", null, true);
+        echo "</a>
+                                </li>
+
+                                
                                 ";
         // line 61
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "user", [], "any", false, false, false, 61)) {
@@ -512,7 +507,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
 
     public function getDebugInfo()
     {
-        return array (  491 => 159,  481 => 158,  468 => 153,  463 => 136,  459 => 135,  453 => 131,  443 => 130,  432 => 121,  430 => 120,  428 => 117,  418 => 116,  400 => 111,  386 => 123,  384 => 116,  378 => 112,  376 => 111,  371 => 109,  367 => 107,  357 => 106,  347 => 53,  340 => 49,  336 => 48,  333 => 47,  331 => 46,  324 => 42,  320 => 41,  317 => 40,  307 => 39,  292 => 98,  289 => 83,  280 => 77,  276 => 76,  268 => 71,  264 => 70,  257 => 66,  251 => 62,  249 => 61,  246 => 60,  238 => 57,  235 => 56,  233 => 55,  230 => 54,  228 => 39,  216 => 30,  207 => 24,  203 => 23,  197 => 19,  187 => 18,  169 => 16,  156 => 10,  146 => 9,  127 => 7,  112 => 165,  109 => 161,  107 => 158,  104 => 157,  102 => 130,  98 => 128,  96 => 106,  92 => 104,  90 => 18,  85 => 16,  79 => 13,  76 => 12,  74 => 9,  68 => 8,  64 => 7,  57 => 3,  53 => 1,);
+        return array (  486 => 159,  476 => 158,  463 => 153,  458 => 136,  454 => 135,  448 => 131,  438 => 130,  427 => 121,  425 => 120,  423 => 117,  413 => 116,  395 => 111,  381 => 123,  379 => 116,  373 => 112,  371 => 111,  366 => 109,  362 => 107,  352 => 106,  342 => 53,  335 => 49,  331 => 48,  328 => 47,  326 => 46,  319 => 42,  315 => 41,  312 => 40,  302 => 39,  287 => 98,  284 => 83,  275 => 77,  271 => 76,  263 => 71,  259 => 70,  252 => 66,  246 => 62,  244 => 61,  235 => 57,  230 => 54,  228 => 39,  216 => 30,  207 => 24,  203 => 23,  197 => 19,  187 => 18,  169 => 16,  156 => 10,  146 => 9,  127 => 7,  112 => 165,  109 => 161,  107 => 158,  104 => 157,  102 => 130,  98 => 128,  96 => 106,  92 => 104,  90 => 18,  85 => 16,  79 => 13,  76 => 12,  74 => 9,  68 => 8,  64 => 7,  57 => 3,  53 => 1,);
     }
 
     public function getSourceContext()
@@ -571,11 +566,11 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
                                     {% endif %}
                                 {% endblock %}
 
-                                {% if is_granted('ROLE_ADMIN') %}
-                                    <li>
-                                        <a href=\"{{ path('crud_search') }}\"> <i class=\"fa fa-search\"></i> {{ 'menu.search'|trans }}</a>
-                                    </li>
-                                {% endif %}
+
+                                <li>
+                                    <a href=\"{{ path('crud_search') }}\"> <i class=\"fa fa-search\"></i> {{ 'menu.search'|trans }}</a>
+                                </li>
+
                                 
                                 {% if app.user %}
                                     <li class=\"dropdown\">
