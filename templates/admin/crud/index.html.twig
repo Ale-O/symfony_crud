@@ -9,8 +9,8 @@
         <thead>
             <tr>
                 <th scope="col">{{ 'label.title'|trans }}</th>
-                <th scope="col"><i class="fa fa-calendar" aria-hidden="true"></i> {{ 'label.published_at'|trans }}</th>
-                <th scope="col" class="text-center"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'label.actions'|trans }}</th>
+                <th scope="col"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{ 'label.published_at'|trans }}</th>
+                <th scope="col" class="text-center"><i class="fa fa-cog" aria-hidden="true"></i> {{ 'label.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -28,7 +28,7 @@
                         </a>
 
                         <a href="{{ path('admin_element_edit', {id: element.id}) }}" class="btn btn-sm btn-primary">
-                            <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+                            <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit'|trans }}
                         </a>
                     </div>
                 </td>

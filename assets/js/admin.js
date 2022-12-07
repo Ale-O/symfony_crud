@@ -10,7 +10,7 @@ $(function() {
     $('[data-toggle="datetimepicker"]').datetimepicker({
         icons: {
             time: 'fa fa-clock-o',
-            date: 'fa fa-calendar',
+            date: 'fa fa-calendar-o',
             up: 'fa fa-chevron-up',
             down: 'fa fa-chevron-down',
             previous: 'fa fa-chevron-left',

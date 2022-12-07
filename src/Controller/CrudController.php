@@ -130,7 +130,7 @@ class CrudController extends AbstractController
                 'date' => $element->getPublishedAt()->format('M d, Y'),
                 'author' => htmlspecialchars($element->getAuthor()->getFullName(), ENT_COMPAT | ENT_HTML5),
                 'summary' => htmlspecialchars($element->getSummary(), ENT_COMPAT | ENT_HTML5),
-                // 'summary' => $element->getTags(),
+                'tags' => $element->getTags(),
                 'url' => $this->generateUrl('crud_element', ['slug' => $element->getSlug()]),
             ];
         }

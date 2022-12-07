@@ -139,7 +139,7 @@ class __TwigTemplate_2d835a3bdca7c97973326def80ee3d86195fe52d938c872e12e5dbfcb3a
         // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit");
         echo "\" class=\"btn btn-lg btn-block btn-danger\">
-            <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
+            <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
         // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit_user"), "html", null, true);
         echo "
@@ -202,7 +202,7 @@ class __TwigTemplate_2d835a3bdca7c97973326def80ee3d86195fe52d938c872e12e5dbfcb3a
 {% block sidebar %}
     <div class=\"section\">
         <a href=\"{{ path('user_edit') }}\" class=\"btn btn-lg btn-block btn-danger\">
-            <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'action.edit_user'|trans }}
+            <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit_user'|trans }}
         </a>
     </div>
 

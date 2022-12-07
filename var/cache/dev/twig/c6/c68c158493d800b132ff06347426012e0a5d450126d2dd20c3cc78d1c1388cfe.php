@@ -106,7 +106,10 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
         // line 15
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
         echo "\">
-                        <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>
+                        <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> ";
+        // line 16
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.browse_admin"), "html", null, true);
+        echo "
                     </a>
                 </div>
             </div>
@@ -197,7 +200,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
 
     public function getDebugInfo()
     {
-        return array (  171 => 44,  153 => 35,  149 => 34,  142 => 30,  135 => 25,  125 => 24,  107 => 15,  100 => 11,  96 => 10,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  174 => 44,  156 => 35,  152 => 34,  145 => 30,  138 => 25,  128 => 24,  111 => 16,  107 => 15,  100 => 11,  96 => 10,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -217,7 +220,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
                 </div>
                 <div class=\"col-sm-2\">
                     <a class=\"navbar-brand\" href=\"{{ path('security_login') }}\">
-                        <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>
+                        <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> {{ 'action.browse_admin'|trans }}
                     </a>
                 </div>
             </div>

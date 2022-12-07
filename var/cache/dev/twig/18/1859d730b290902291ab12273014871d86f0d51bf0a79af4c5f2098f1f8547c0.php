@@ -91,11 +91,11 @@ class __TwigTemplate_1835fbdc36b67b246f78727f26bf247ce917d9a9e62182ce21b2f9741f2
         echo "</h1>
 
     <p class=\"element-metadata\">
-        <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> ";
+        <span class=\"metadata\"><i class=\"fa fa-calendar-o\"></i> ";
         // line 9
         echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 9, $this->source); })()), "publishedAt", [], "any", false, false, false, 9), "long", "medium", "", "UTC"), "html", null, true);
         echo "</span>
-        <span class=\"metadata\"><i class=\"fa fa-user\"></i> ";
+        <span class=\"metadata\"><i class=\"fa fa-user-circle-o\"></i> ";
         // line 10
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 10, $this->source); })()), "author", [], "any", false, false, false, 10), "fullName", [], "any", false, false, false, 10), "html", null, true);
         echo "</span>
@@ -237,7 +237,7 @@ class __TwigTemplate_1835fbdc36b67b246f78727f26bf247ce917d9a9e62182ce21b2f9741f2
             // line 65
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 65, $this->source); })()), "id", [], "any", false, false, false, 65)]), "html", null, true);
             echo "\">
-                <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
+                <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
             // line 66
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit_element"), "html", null, true);
             echo "
@@ -294,8 +294,8 @@ class __TwigTemplate_1835fbdc36b67b246f78727f26bf247ce917d9a9e62182ce21b2f9741f2
     <h1>{{ element.title }}</h1>
 
     <p class=\"element-metadata\">
-        <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> {{ element.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-        <span class=\"metadata\"><i class=\"fa fa-user\"></i> {{ element.author.fullName }}</span>
+        <span class=\"metadata\"><i class=\"fa fa-calendar-o\"></i> {{ element.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+        <span class=\"metadata\"><i class=\"fa fa-user-circle-o\"></i> {{ element.author.fullName }}</span>
     </p>
 
     {{ element.content|markdown_to_html|sanitize_html }}
@@ -351,7 +351,7 @@ class __TwigTemplate_1835fbdc36b67b246f78727f26bf247ce917d9a9e62182ce21b2f9741f2
     {% if is_granted('edit', element) %}
         <div class=\"section\">
             <a class=\"btn btn-lg btn-block btn-success\" href=\"{{ path('admin_element_edit', {id: element.id}) }}\">
-                <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'action.edit_element'|trans }}
+                <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit_element'|trans }}
             </a>
         </div>
     {% endif %}

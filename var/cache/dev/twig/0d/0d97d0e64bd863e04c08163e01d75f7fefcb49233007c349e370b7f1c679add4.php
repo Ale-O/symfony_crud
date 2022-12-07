@@ -99,9 +99,9 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
         echo "\">
-            <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> ";
+            <i class=\"fa fa-database\" aria-hidden=\"true\"></i> ";
         // line 12
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.element_list"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.admin"), "html", null, true);
         echo "
         </a>
     </li>
@@ -110,7 +110,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
         echo "\">
-            <i class=\"fa fa-home\" aria-hidden=\"true\"></i> ";
+            <i class=\"fa fa-door-open\" aria-hidden=\"true\"></i> ";
         // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.back_to_crud"), "html", null, true);
         echo "
@@ -180,12 +180,12 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 {% block header_navigation_links %}
     <li>
         <a href=\"{{ path('admin_element_index') }}\">
-            <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> {{ 'menu.element_list'|trans }}
+            <i class=\"fa fa-database\" aria-hidden=\"true\"></i> {{ 'menu.admin'|trans }}
         </a>
     </li>
     <li>
         <a href=\"{{ path('crud_index') }}\">
-            <i class=\"fa fa-home\" aria-hidden=\"true\"></i> {{ 'menu.back_to_crud'|trans }}
+            <i class=\"fa fa-door-open\" aria-hidden=\"true\"></i> {{ 'menu.back_to_crud'|trans }}
         </a>
     </li>
 {% endblock %}

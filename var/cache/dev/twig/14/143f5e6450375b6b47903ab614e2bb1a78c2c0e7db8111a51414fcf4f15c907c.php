@@ -81,9 +81,9 @@ class __TwigTemplate_4581a17572748eba54bfe82c3bcffa91f95a43c4262e485940a539157e7
             echo "        <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
             echo "\" class=\"btn btn-link\">
-            <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> ";
+            <i class=\"fa fa-database\" aria-hidden=\"true\"></i> ";
             // line 23
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.back_to_list"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.admin"), "html", null, true);
             echo "
         </a>
     ";
@@ -139,7 +139,7 @@ class __TwigTemplate_4581a17572748eba54bfe82c3bcffa91f95a43c4262e485940a539157e7
 
     {% if include_back_to_home_link|default(false) %}
         <a href=\"{{ path('admin_element_index') }}\" class=\"btn btn-link\">
-            <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i> {{ 'action.back_to_list'|trans }}
+            <i class=\"fa fa-database\" aria-hidden=\"true\"></i> {{ 'menu.admin'|trans }}
         </a>
     {% endif %}
 {{ form_end(form) }}

@@ -76,7 +76,7 @@ class __TwigTemplate_43954fd23d4d07e608544393b465d9132c26712ec3591ccf724dcaaaef8
         $this->displayBlock("datetime_widget", $context, $blocks);
         echo "
         <span class=\"input-group-addon\">
-            <span class=\"fa fa-calendar\" aria-hidden=\"true\"></span>
+            <span class=\"fa fa-calendar-o\" aria-hidden=\"true\"></span>
         </span>
     </div>
 ";
@@ -134,7 +134,7 @@ class __TwigTemplate_43954fd23d4d07e608544393b465d9132c26712ec3591ccf724dcaaaef8
     <div class=\"input-group date\" data-toggle=\"datetimepicker\">
         {{ block('datetime_widget') }}
         <span class=\"input-group-addon\">
-            <span class=\"fa fa-calendar\" aria-hidden=\"true\"></span>
+            <span class=\"fa fa-calendar-o\" aria-hidden=\"true\"></span>
         </span>
     </div>
 {% endblock %}

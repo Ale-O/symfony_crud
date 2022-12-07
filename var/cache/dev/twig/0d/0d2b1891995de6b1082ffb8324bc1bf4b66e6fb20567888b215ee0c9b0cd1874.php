@@ -96,11 +96,11 @@ class __TwigTemplate_e37fabe7b17fd32a5dd64aa4fb59a7809824e0ea03515e6bdbe16fa30d8
         echo "</h1>
 
     <p class=\"element-metadata\">
-        <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> ";
+        <span class=\"metadata\"><i class=\"fa fa-calendar-o\"></i> ";
         // line 11
         echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 11, $this->source); })()), "publishedAt", [], "any", false, false, false, 11), "long", "medium", "", "UTC"), "html", null, true);
         echo "</span>
-        <span class=\"metadata\"><i class=\"fa fa-user\"></i> ";
+        <span class=\"metadata\"><i class=\"fa fa-user-circle-o\"></i> ";
         // line 12
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 12, $this->source); })()), "author", [], "any", false, false, false, 12), "fullName", [], "any", false, false, false, 12), "html", null, true);
         echo "</span>
@@ -147,8 +147,8 @@ class __TwigTemplate_e37fabe7b17fd32a5dd64aa4fb59a7809824e0ea03515e6bdbe16fa30d8
     <h1>{{ subelement.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
 
     <p class=\"element-metadata\">
-        <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-        <span class=\"metadata\"><i class=\"fa fa-user\"></i> {{ subelement.author.fullName }}</span>
+        <span class=\"metadata\"><i class=\"fa fa-calendar-o\"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+        <span class=\"metadata\"><i class=\"fa fa-user-circle-o\"></i> {{ subelement.author.fullName }}</span>
     </p>
 
     {{ subelement.content|markdown_to_html|sanitize_html }}

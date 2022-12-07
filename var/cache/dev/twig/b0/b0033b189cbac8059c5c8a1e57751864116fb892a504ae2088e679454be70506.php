@@ -130,11 +130,11 @@ class __TwigTemplate_6cd2faa37aaa30cbcb8f6c7917555f7caa5d96e32562ae0d31ac8bc6c80
                     </h2>
 
                     <p class=\"element-metadata\">
-                        <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> ";
+                        <span class=\"metadata\"><i class=\"fa fa-calendar-o\"></i> ";
                     // line 20
                     echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["element"], "publishedAt", [], "any", false, false, false, 20), "long", "medium", "", "UTC"), "html", null, true);
                     echo "</span>
-                        <span class=\"metadata\"><i class=\"fa fa-user\"></i> ";
+                        <span class=\"metadata\"><i class=\"fa fa-user-circle-o\"></i> ";
                     // line 21
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["element"], "author", [], "any", false, false, false, 21), "fullName", [], "any", false, false, false, 21), "html", null, true);
                     echo "</span>
@@ -338,8 +338,8 @@ class __TwigTemplate_6cd2faa37aaa30cbcb8f6c7917555f7caa5d96e32562ae0d31ac8bc6c80
                     </h2>
 
                     <p class=\"element-metadata\">
-                        <span class=\"metadata\"><i class=\"fa fa-calendar\"></i> {{ element.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-                        <span class=\"metadata\"><i class=\"fa fa-user\"></i> {{ element.author.fullName }}</span>
+                        <span class=\"metadata\"><i class=\"fa fa-calendar-o\"></i> {{ element.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+                        <span class=\"metadata\"><i class=\"fa fa-user-circle-o\"></i> {{ element.author.fullName }}</span>
                     </p>
 
                     <p>{{ element.summary }}</p>

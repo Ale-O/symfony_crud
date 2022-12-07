@@ -50,7 +50,7 @@ class __TwigTemplate_34c324b02c5419fd6c3c68ecc725c45e20d0aa559f5747a0f3179bf1e0c
         echo "
     <fieldset>
         <legend>
-            <i class=\"fa fa-subelement\" aria-hidden=\"true\"></i> ";
+            <i class=\"fa fa-list\" aria-hidden=\"true\"></i> ";
         // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.add_subelement"), "html", null, true);
         echo "
@@ -89,7 +89,7 @@ class __TwigTemplate_34c324b02c5419fd6c3c68ecc725c45e20d0aa559f5747a0f3179bf1e0c
 
         <div class=\"form-group\">
             <button class=\"btn btn-primary pull-right\" type=\"submit\">
-                <i class=\"fa fa-paper-plane\" aria-hidden=\"true\"></i> ";
+                <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> ";
         // line 34
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.publish_subelement"), "html", null, true);
         echo "
@@ -143,7 +143,7 @@ class __TwigTemplate_34c324b02c5419fd6c3c68ecc725c45e20d0aa559f5747a0f3179bf1e0c
 
     <fieldset>
         <legend>
-            <i class=\"fa fa-subelement\" aria-hidden=\"true\"></i> {{ 'title.add_subelement'|trans }}
+            <i class=\"fa fa-list\" aria-hidden=\"true\"></i> {{ 'title.add_subelement'|trans }}
         </legend>
 
         {{ form_errors(form) }}
@@ -159,7 +159,7 @@ class __TwigTemplate_34c324b02c5419fd6c3c68ecc725c45e20d0aa559f5747a0f3179bf1e0c
 
         <div class=\"form-group\">
             <button class=\"btn btn-primary pull-right\" type=\"submit\">
-                <i class=\"fa fa-paper-plane\" aria-hidden=\"true\"></i> {{ 'action.publish_subelement'|trans }}
+                <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> {{ 'action.publish_subelement'|trans }}
             </button>
         </div>
     </fieldset>

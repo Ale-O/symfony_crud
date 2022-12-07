@@ -97,11 +97,11 @@ class __TwigTemplate_d47d73f1a2dfdaa5ee05a53bd9d2ff363cbf9191e0caf34015336db8605
         // line 11
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.title"), "html", null, true);
         echo "</th>
-                <th scope=\"col\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i> ";
+                <th scope=\"col\"><i class=\"fa fa-calendar-o\" aria-hidden=\"true\"></i> ";
         // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.published_at"), "html", null, true);
         echo "</th>
-                <th scope=\"col\" class=\"text-center\"><i class=\"fa fa-cogs\" aria-hidden=\"true\"></i> ";
+                <th scope=\"col\" class=\"text-center\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> ";
         // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.actions"), "html", null, true);
         echo "</th>
@@ -141,7 +141,7 @@ class __TwigTemplate_d47d73f1a2dfdaa5ee05a53bd9d2ff363cbf9191e0caf34015336db8605
             // line 30
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["element"], "id", [], "any", false, false, false, 30)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-primary\">
-                            <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
+                            <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
             // line 31
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
             echo "
@@ -246,8 +246,8 @@ class __TwigTemplate_d47d73f1a2dfdaa5ee05a53bd9d2ff363cbf9191e0caf34015336db8605
         <thead>
             <tr>
                 <th scope=\"col\">{{ 'label.title'|trans }}</th>
-                <th scope=\"col\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i> {{ 'label.published_at'|trans }}</th>
-                <th scope=\"col\" class=\"text-center\"><i class=\"fa fa-cogs\" aria-hidden=\"true\"></i> {{ 'label.actions'|trans }}</th>
+                <th scope=\"col\"><i class=\"fa fa-calendar-o\" aria-hidden=\"true\"></i> {{ 'label.published_at'|trans }}</th>
+                <th scope=\"col\" class=\"text-center\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> {{ 'label.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -265,7 +265,7 @@ class __TwigTemplate_d47d73f1a2dfdaa5ee05a53bd9d2ff363cbf9191e0caf34015336db8605
                         </a>
 
                         <a href=\"{{ path('admin_element_edit', {id: element.id}) }}\" class=\"btn btn-sm btn-primary\">
-                            <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
+                            <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
                         </a>
                     </div>
                 </td>

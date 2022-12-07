@@ -171,7 +171,7 @@
             </trans-unit>
             <trans-unit id="action.browse_app">
                 <source>action.browse_app</source>
-                <target>Navigation libre</target>
+                <target>Navigation</target>
             </trans-unit>
             <trans-unit id="action.browse_admin">
                 <source>action.browse_admin</source>
@@ -277,15 +277,15 @@
             </trans-unit>
             <trans-unit id="menu.back_to_crud">
                 <source>menu.back_to_crud</source>
-                <target>Retour à l'accueil</target>
+                <target>Retour à la navigation</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>
-                <target>Accueil</target>
+                <target>Navigation</target>
             </trans-unit>
             <trans-unit id="menu.admin">
                 <source>menu.admin</source>
-                <target>Admin</target>
+                <target>Base de donnée</target>
             </trans-unit>
             <trans-unit id="menu.user">
                 <source>menu.user</source>

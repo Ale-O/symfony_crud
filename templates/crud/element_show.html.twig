@@ -6,8 +6,8 @@
     <h1>{{ element.title }}</h1>
 
     <p class="element-metadata">
-        <span class="metadata"><i class="fa fa-calendar"></i> {{ element.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-        <span class="metadata"><i class="fa fa-user"></i> {{ element.author.fullName }}</span>
+        <span class="metadata"><i class="fa fa-calendar-o"></i> {{ element.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+        <span class="metadata"><i class="fa fa-user-circle-o"></i> {{ element.author.fullName }}</span>
     </p>
 
     {{ element.content|markdown_to_html|sanitize_html }}
@@ -63,7 +63,7 @@
     {% if is_granted('edit', element) %}
         <div class="section">
             <a class="btn btn-lg btn-block btn-success" href="{{ path('admin_element_edit', {id: element.id}) }}">
-                <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit_element'|trans }}
+                <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit_element'|trans }}
             </a>
         </div>
     {% endif %}

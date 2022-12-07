@@ -79,7 +79,7 @@ class __TwigTemplate_a329bb658be264ec8abfe85cdb035c2a654ed4bb12df31db0afc09573d6
             $context['_seq'] = twig_ensure_traversable((isset($context["errors"]) || array_key_exists("errors", $context) ? $context["errors"] : (function () { throw new RuntimeError('Variable "errors" does not exist.', 7, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["error"]) {
                 // line 8
-                echo "<li><span class=\"fa fa-exclamation-triangle\"></span> ";
+                echo "<li><span class=\"fa fa-exclamation-circle\"></span> ";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["error"], "message", [], "any", false, false, false, 8), "html", null, true);
                 echo "</li>";
             }
@@ -128,7 +128,7 @@ class __TwigTemplate_a329bb658be264ec8abfe85cdb035c2a654ed4bb12df31db0afc09573d6
         {% if form is not rootform %}<span class=\"help-block\">{% else %}<div class=\"alert alert-danger\">{% endif %}
         <ul class=\"list-unstyled\">
         {%- for error in errors -%}
-            <li><span class=\"fa fa-exclamation-triangle\"></span> {{ error.message }}</li>
+            <li><span class=\"fa fa-exclamation-circle\"></span> {{ error.message }}</li>
         {%- endfor -%}
         </ul>
         {% if form is not rootform %}</span>{% else %}</div>{% endif %}

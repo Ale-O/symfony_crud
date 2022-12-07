@@ -8,8 +8,8 @@
     <h1>{{ subelement.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
 
     <p class="element-metadata">
-        <span class="metadata"><i class="fa fa-calendar"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-        <span class="metadata"><i class="fa fa-user"></i> {{ subelement.author.fullName }}</span>
+        <span class="metadata"><i class="fa fa-calendar-o"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+        <span class="metadata"><i class="fa fa-user-circle-o"></i> {{ subelement.author.fullName }}</span>
     </p>
 
     {{ subelement.content|markdown_to_html|sanitize_html }}

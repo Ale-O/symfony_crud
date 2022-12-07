@@ -250,7 +250,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
             // line 62
             echo "                                    <li class=\"dropdown\">
                                         <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" id=\"user\">
-                                            <i class=\"fa fa-user\" aria-hidden=\"true\"></i>
+                                            <i class=\"fa fa-user-circle-o\" aria-hidden=\"true\"></i>
                                             <span class=\"caret\"></span>
                                             <span class=\"sr-only\">";
             // line 66
@@ -263,7 +263,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
             // line 70
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit");
             echo "\">
-                                                    <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
+                                                    <i class=\"fa fa-bank\" aria-hidden=\"true\"></i> ";
             // line 71
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.user"), "html", null, true);
             echo "
@@ -319,7 +319,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
         // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
         echo "\">
-                                            <i class=\"fa fa-home\" aria-hidden=\"true\"></i> ";
+                                            <i class=\"fa fa-door-open\" aria-hidden=\"true\"></i> ";
         // line 42
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.homepage"), "html", null, true);
         echo "
@@ -335,7 +335,7 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
             // line 48
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
             echo "\">
-                                                <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> ";
+                                                <i class=\"fa fa-database\" aria-hidden=\"true\"></i> ";
             // line 49
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.admin"), "html", null, true);
             echo "
@@ -558,14 +558,14 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
                                 {% block header_navigation_links %}
                                     <li>
                                         <a href=\"{{ path('crud_index') }}\">
-                                            <i class=\"fa fa-home\" aria-hidden=\"true\"></i> {{ 'menu.homepage'|trans }}
+                                            <i class=\"fa fa-door-open\" aria-hidden=\"true\"></i> {{ 'menu.homepage'|trans }}
                                         </a>
                                     </li>
 
                                     {% if is_granted('ROLE_ADMIN') %}
                                         <li>
                                             <a href=\"{{ path('admin_element_index') }}\">
-                                                <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> {{ 'menu.admin'|trans }}
+                                                <i class=\"fa fa-database\" aria-hidden=\"true\"></i> {{ 'menu.admin'|trans }}
                                             </a>
                                         </li>
                                     {% endif %}
@@ -580,14 +580,14 @@ class __TwigTemplate_c20afa0c68292debac70f40f8f4c69117dab601f35474db8b0639449278
                                 {% if app.user %}
                                     <li class=\"dropdown\">
                                         <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" id=\"user\">
-                                            <i class=\"fa fa-user\" aria-hidden=\"true\"></i>
+                                            <i class=\"fa fa-user-circle-o\" aria-hidden=\"true\"></i>
                                             <span class=\"caret\"></span>
                                             <span class=\"sr-only\">{{ app.user.fullname }}</span>
                                         </a>
                                         <ul class=\"dropdown-menu user\" role=\"menu\" aria-labelledby=\"user\">
                                             <li>
                                                 <a href=\"{{ path('user_edit') }}\">
-                                                    <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'menu.user'|trans }}
+                                                    <i class=\"fa fa-bank\" aria-hidden=\"true\"></i> {{ 'menu.user'|trans }}
                                                 </a>
                                             </li>
                                             <li class=\"divider\"></li>
