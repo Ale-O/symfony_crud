@@ -97,24 +97,48 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         echo "    <li>
         <a href=\"";
         // line 11
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
-        echo "\">
-            <i class=\"fa fa-database\" aria-hidden=\"true\"></i> ";
-        // line 12
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.admin"), "html", null, true);
-        echo "
-        </a>
-    </li>
-    <li>
-        <a href=\"";
-        // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
         echo "\">
             <i class=\"fa fa-door-open\" aria-hidden=\"true\"></i> ";
-        // line 17
+        // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.back_to_crud"), "html", null, true);
         echo "
         </a>
+    </li>
+    <li class=\"dropdown\">
+        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" id=\"user\">
+            <i class=\"fa fa-cogs\" aria-hidden=\"true\"></i>
+            <span class=\"caret\"></span>
+            <span class=\"sr-only\">";
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "fullname", [], "any", false, false, false, 19), "html", null, true);
+        echo "</span>
+        </a>
+        <ul class=\"dropdown-menu user\" role=\"menu\" aria-labelledby=\"user\">
+            <li>
+                <a href=\"";
+        // line 23
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
+        echo "\">
+                    <i class=\"fa fa-tags\" aria-hidden=\"true\"></i> ";
+        // line 24
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.tags"), "html", null, true);
+        echo "
+                </a>
+            </li>
+            <li class=\"divider\"></li>
+            <li>
+                <a href=\"";
+        // line 29
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
+        echo "\">
+                    <i class=\"fa fa-database\" aria-hidden=\"true\"></i> ";
+        // line 30
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.admin"), "html", null, true);
+        echo "
+                </a>
+            </li>
+        </ul>
     </li>
 ";
         
@@ -125,7 +149,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 
     }
 
-    // line 22
+    // line 37
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -135,12 +159,12 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 23
+        // line 38
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     ";
-        // line 24
+        // line 39
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("admin");
         echo "
 ";
@@ -164,7 +188,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 
     public function getDebugInfo()
     {
-        return array (  144 => 24,  139 => 23,  129 => 22,  115 => 17,  111 => 16,  104 => 12,  100 => 11,  97 => 10,  87 => 9,  75 => 6,  70 => 5,  60 => 4,  37 => 2,);
+        return array (  168 => 39,  163 => 38,  153 => 37,  137 => 30,  133 => 29,  125 => 24,  121 => 23,  114 => 19,  104 => 12,  100 => 11,  97 => 10,  87 => 9,  75 => 6,  70 => 5,  60 => 4,  37 => 2,);
     }
 
     public function getSourceContext()
@@ -179,14 +203,29 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 
 {% block header_navigation_links %}
     <li>
-        <a href=\"{{ path('admin_element_index') }}\">
-            <i class=\"fa fa-database\" aria-hidden=\"true\"></i> {{ 'menu.admin'|trans }}
-        </a>
-    </li>
-    <li>
         <a href=\"{{ path('crud_index') }}\">
             <i class=\"fa fa-door-open\" aria-hidden=\"true\"></i> {{ 'menu.back_to_crud'|trans }}
         </a>
+    </li>
+    <li class=\"dropdown\">
+        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" id=\"user\">
+            <i class=\"fa fa-cogs\" aria-hidden=\"true\"></i>
+            <span class=\"caret\"></span>
+            <span class=\"sr-only\">{{ app.user.fullname }}</span>
+        </a>
+        <ul class=\"dropdown-menu user\" role=\"menu\" aria-labelledby=\"user\">
+            <li>
+                <a href=\"{{ path('admin_element_index') }}\">
+                    <i class=\"fa fa-tags\" aria-hidden=\"true\"></i> {{ 'menu.tags'|trans }}
+                </a>
+            </li>
+            <li class=\"divider\"></li>
+            <li>
+                <a href=\"{{ path('admin_element_index') }}\">
+                    <i class=\"fa fa-database\" aria-hidden=\"true\"></i> {{ 'menu.admin'|trans }}
+                </a>
+            </li>
+        </ul>
     </li>
 {% endblock %}
 

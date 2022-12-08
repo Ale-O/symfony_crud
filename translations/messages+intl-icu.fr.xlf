@@ -327,6 +327,10 @@
                 <source>menu.homepage</source>
                 <target>Navigation</target>
             </trans-unit>
+            <trans-unit id="menu.tags">
+                <source>menu.tags</source>
+                <target>Gestion des tags</target>
+            </trans-unit>
             <trans-unit id="menu.admin">
                 <source>menu.admin</source>
                 <target>Base de donnée</target>

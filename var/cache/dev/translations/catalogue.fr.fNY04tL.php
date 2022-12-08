@@ -247,6 +247,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'menu.element_list' => 'Liste des éléments',
     'menu.back_to_crud' => 'Retour à la navigation',
     'menu.homepage' => 'Navigation',
+    'menu.tags' => 'Gestion des tags',
     'menu.admin' => 'Base de donnée',
     'menu.user' => 'Compte',
     'menu.logout' => 'Déconnexion',
