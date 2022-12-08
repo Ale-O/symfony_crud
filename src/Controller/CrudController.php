@@ -103,6 +103,28 @@ class CrudController extends AbstractController
     }
 
     /**
+     * @Route("/{id}/delete", methods="POST", name="subelement_delete")
+     */
+    // @IsGranted("delete", subject="subelement")
+    public function subelementDelete(Request $request, Subelement $subelement): Response
+    {
+        $element = $subelement->getElement();
+        $slugElement = $element->getSlug();
+
+        if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
+            return $this->redirectToRoute('crud_element', ['slug' => $slugElement]);
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($subelement);
+        $em->flush();
+
+        $this->addFlash('success', 'action.deleted_successfully');
+
+        return $this->redirectToRoute('crud_element', ['slug' => $slugElement]);
+    }
+
+    /**
      * @Route("/search", methods="GET", name="crud_search")
      */
     public function search(Request $request, ElementRepository $elements): Response

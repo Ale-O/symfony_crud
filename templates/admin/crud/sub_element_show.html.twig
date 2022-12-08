@@ -16,22 +16,22 @@
 
 {% endblock %}
 
-{#
+
 {% block sidebar %}
+
+    {#
     <div class="section">
         <a href="{{ path('admin_element_edit', {id: element.id}) }}" class="btn btn-lg btn-block btn-success">
             <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit_contents'|trans }}
         </a>
     </div>
-
+    #}
     
     <div class="section">
-        {{ include('admin/crud/_delete_form.html.twig', {element: element}, with_context = false) }}
+        {{ include('admin/crud/_delete_subelement_form.html.twig', {subelement: subelement}, with_context = false) }}
     </div>
-    
 
     {{ parent() }}
 
     {{ show_source_code(_self) }}
 {% endblock %}
-#}

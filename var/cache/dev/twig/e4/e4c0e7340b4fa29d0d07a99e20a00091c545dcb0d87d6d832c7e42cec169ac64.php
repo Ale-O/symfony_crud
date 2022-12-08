@@ -54,7 +54,7 @@ class __TwigTemplate_762b3c413f8206d4e13cb64b391c88b899fcaff8060fb2556a7b37c53b5
         <i class=\"fa fa-trash\" aria-hidden=\"true\"></i>
         ";
         // line 6
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.delete_element"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.delete"), "html", null, true);
         echo "
     </button>
 </form>
@@ -89,7 +89,7 @@ class __TwigTemplate_762b3c413f8206d4e13cb64b391c88b899fcaff8060fb2556a7b37c53b5
     <input type=\"hidden\" name=\"token\" value=\"{{ csrf_token('delete') }}\" />
     <button type=\"submit\" class=\"btn btn-lg btn-block btn-danger\">
         <i class=\"fa fa-trash\" aria-hidden=\"true\"></i>
-        {{ 'action.delete_element'|trans }}
+        {{ 'action.delete'|trans }}
     </button>
 </form>
 ", "admin/crud/_delete_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\crud\\_delete_form.html.twig");

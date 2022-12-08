@@ -239,7 +239,7 @@ class __TwigTemplate_1835fbdc36b67b246f78727f26bf247ce917d9a9e62182ce21b2f9741f2
             echo "\">
                 <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
             // line 66
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit_element"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
             echo "
             </a>
         </div>
@@ -351,7 +351,7 @@ class __TwigTemplate_1835fbdc36b67b246f78727f26bf247ce917d9a9e62182ce21b2f9741f2
     {% if is_granted('edit', element) %}
         <div class=\"section\">
             <a class=\"btn btn-lg btn-block btn-success\" href=\"{{ path('admin_element_edit', {id: element.id}) }}\">
-                <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit_element'|trans }}
+                <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
             </a>
         </div>
     {% endif %}

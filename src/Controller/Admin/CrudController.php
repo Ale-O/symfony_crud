@@ -49,7 +49,7 @@ class CrudController extends AbstractController
             $em->persist($element);
             $em->flush();
 
-            $this->addFlash('success', 'element.created_successfully');
+            $this->addFlash('success', 'action.created_successfully');
 
             if ($form->get('saveAndCreateNew')->isClicked()) {
                 return $this->redirectToRoute('admin_element_new');
@@ -88,7 +88,7 @@ class CrudController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'element.updated_successfully');
+            $this->addFlash('success', 'action.updated_successfully');
 
             return $this->redirectToRoute('admin_element_edit', ['id' => $element->getId()]);
         }
@@ -115,7 +115,7 @@ class CrudController extends AbstractController
         $em->remove($element);
         $em->flush();
 
-        $this->addFlash('success', 'element.deleted_successfully');
+        $this->addFlash('success', 'action.deleted_successfully');
 
         return $this->redirectToRoute('admin_element_index');
     }

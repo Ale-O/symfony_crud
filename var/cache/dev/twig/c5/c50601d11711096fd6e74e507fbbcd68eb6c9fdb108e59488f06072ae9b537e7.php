@@ -195,7 +195,7 @@ class __TwigTemplate_d47d73f1a2dfdaa5ee05a53bd9d2ff363cbf9191e0caf34015336db8605
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> ";
         // line 48
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.create_element"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.create"), "html", null, true);
         echo "
         </a>
     </div>
@@ -282,7 +282,7 @@ class __TwigTemplate_d47d73f1a2dfdaa5ee05a53bd9d2ff363cbf9191e0caf34015336db8605
 {% block sidebar %}
     <div class=\"section actions\">
         <a href=\"{{ path('admin_element_new') }}\" class=\"btn btn-lg btn-block btn-success\">
-            <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> {{ 'action.create_element'|trans }}
+            <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> {{ 'action.create'|trans }}
         </a>
     </div>
 

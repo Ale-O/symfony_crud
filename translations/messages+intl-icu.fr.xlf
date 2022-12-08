@@ -115,7 +115,7 @@
             </trans-unit>
             <trans-unit id="action.edit">
                 <source>action.edit</source>
-                <target>Editer</target>
+                <target>Modifier</target>
             </trans-unit>
             <trans-unit id="action.edit_element">
                 <source>action.edit_element</source>
@@ -125,21 +125,49 @@
                 <source>action.save</source>
                 <target>Enregistrer</target>
             </trans-unit>
+            <trans-unit id="action.delete">
+                <source>action.delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
             <trans-unit id="action.delete_element">
                 <source>action.delete_element</source>
                 <target>Supprimer l'élément</target>
             </trans-unit>
+            <trans-unit id="action.delete_subelement">
+                <source>action.delete_subelement</source>
+                <target>Supprimer le sous-élément</target>
+            </trans-unit>
+            <trans-unit id="delete_modal.title">
+                <source>delete_modal.title</source>
+                <target>Êtes-vous sûr de vouloir supprimer ?</target>
+            </trans-unit>
             <trans-unit id="delete_element_modal.title">
                 <source>delete_element_modal.title</source>
+                <target>Êtes-vous sûr de vouloir supprimer cet élément ?</target>
+            </trans-unit>
+            <trans-unit id="delete_subelement_modal.title">
+                <source>delete_subelement_modal.title</source>
                 <target>Êtes-vous sûr de vouloir supprimer ce sous-élément ?</target>
+            </trans-unit>
+            <trans-unit id="delete_modal.body">
+                <source>delete_modal.body</source>
+                <target>Cette action ne peut pas être annulée.</target>
             </trans-unit>
             <trans-unit id="delete_element_modal.body">
                 <source>delete_element_modal.body</source>
-                <target>Cette action ne peut pas être annulée.</target>
+                <target>La suppression de l'élément ne peut pas être annulée.</target>
+            </trans-unit>
+            <trans-unit id="label.delete">
+                <source>label.delete</source>
+                <target>Supprimer</target>
             </trans-unit>
             <trans-unit id="label.delete_element">
                 <source>label.delete_element</source>
                 <target>Supprimer l'élément</target>
+            </trans-unit>
+            <trans-unit id="label.delete_subelement">
+                <source>label.delete_subelement</source>
+                <target>Supprimer le sous-élément</target>
             </trans-unit>
             <trans-unit id="label.cancel">
                 <source>label.cancel</source>
@@ -148,6 +176,10 @@
             <trans-unit id="label.create_element">
                 <source>label.create_element</source>
                 <target>Créer un élément</target>
+            </trans-unit>
+            <trans-unit id="action.create">
+                <source>action.create</source>
+                <target>Créer</target>
             </trans-unit>
             <trans-unit id="action.create_element">
                 <source>action.create_element</source>
@@ -160,6 +192,10 @@
             <trans-unit id="action.back_to_list">
                 <source>action.back_to_list</source>
                 <target>Retour à la liste des éléments</target>
+            </trans-unit>
+            <trans-unit id="action.back">
+                <source>action.back</source>
+                <target>Retour</target>
             </trans-unit>
             <trans-unit id="action.publish_subelement">
                 <source>action.publish_subelement</source>
@@ -324,17 +360,33 @@
                 <source>element.no_elements_found</source>
                 <target>Aucun élément trouvé.</target>
             </trans-unit>
+            <trans-unit id="action.created_successfully">
+                <source>action.created_successfully</source>
+                <target>Création réussie !</target>
+            </trans-unit>
             <trans-unit id="element.created_successfully">
                 <source>element.created_successfully</source>
                 <target>Elément créé avec succès !</target>
+            </trans-unit>
+            <trans-unit id="action.updated_successfully">
+                <source>action.updated_successfully</source>
+                <target>Mise à jour réussie !</target>
             </trans-unit>
             <trans-unit id="element.updated_successfully">
                 <source>element.updated_successfully</source>
                 <target>Elément mis à jour avec succès !</target>
             </trans-unit>
+            <trans-unit id="action.deleted_successfully">
+                <source>action.deleted_successfully</source>
+                <target>Suppression réussie !</target>
+            </trans-unit>
             <trans-unit id="element.deleted_successfully">
                 <source>element.deleted_successfully</source>
                 <target>Elément supprimé avec succès !</target>
+            </trans-unit>
+            <trans-unit id="subelement.deleted_successfully">
+                <source>subelement.deleted_successfully</source>
+                <target>Sous-élément supprimé avec succès !</target>
             </trans-unit>
             <trans-unit id="element.search_for">
                 <source>element.search_for</source>

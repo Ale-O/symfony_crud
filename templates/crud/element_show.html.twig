@@ -63,7 +63,7 @@
     {% if is_granted('edit', element) %}
         <div class="section">
             <a class="btn btn-lg btn-block btn-success" href="{{ path('admin_element_edit', {id: element.id}) }}">
-                <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit_element'|trans }}
+                <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit'|trans }}
             </a>
         </div>
     {% endif %}

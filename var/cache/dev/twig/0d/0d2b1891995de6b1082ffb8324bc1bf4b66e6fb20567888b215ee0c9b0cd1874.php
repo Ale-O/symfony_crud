@@ -27,6 +27,7 @@ class __TwigTemplate_e37fabe7b17fd32a5dd64aa4fb59a7809824e0ea03515e6bdbe16fa30d8
         $this->blocks = [
             'body_id' => [$this, 'block_body_id'],
             'main' => [$this, 'block_main'],
+            'sidebar' => [$this, 'block_sidebar'],
         ];
     }
 
@@ -120,6 +121,46 @@ class __TwigTemplate_e37fabe7b17fd32a5dd64aa4fb59a7809824e0ea03515e6bdbe16fa30d8
 
     }
 
+    // line 20
+    public function block_sidebar($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
+
+        // line 21
+        echo "
+    ";
+        // line 29
+        echo "    
+    <div class=\"section\">
+        ";
+        // line 31
+        echo twig_include($this->env, $context, "admin/crud/_delete_subelement_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 31, $this->source); })())], false);
+        echo "
+    </div>
+
+    ";
+        // line 34
+        $this->displayParentBlock("sidebar", $context, $blocks);
+        echo "
+
+    ";
+        // line 36
+        echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
+        echo "
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "admin/crud/sub_element_show.html.twig";
@@ -132,7 +173,7 @@ class __TwigTemplate_e37fabe7b17fd32a5dd64aa4fb59a7809824e0ea03515e6bdbe16fa30d8
 
     public function getDebugInfo()
     {
-        return array (  111 => 15,  105 => 12,  101 => 11,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  153 => 36,  148 => 34,  142 => 31,  138 => 29,  135 => 21,  125 => 20,  112 => 15,  106 => 12,  102 => 11,  96 => 8,  92 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -155,24 +196,25 @@ class __TwigTemplate_e37fabe7b17fd32a5dd64aa4fb59a7809824e0ea03515e6bdbe16fa30d8
 
 {% endblock %}
 
-{#
+
 {% block sidebar %}
+
+    {#
     <div class=\"section\">
         <a href=\"{{ path('admin_element_edit', {id: element.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'action.edit_contents'|trans }}
         </a>
     </div>
-
+    #}
     
     <div class=\"section\">
-        {{ include('admin/crud/_delete_form.html.twig', {element: element}, with_context = false) }}
+        {{ include('admin/crud/_delete_subelement_form.html.twig', {subelement: subelement}, with_context = false) }}
     </div>
-    
 
     {{ parent() }}
 
     {{ show_source_code(_self) }}
 {% endblock %}
-#}", "admin/crud/sub_element_show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\crud\\sub_element_show.html.twig");
+", "admin/crud/sub_element_show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\crud\\sub_element_show.html.twig");
     }
 }

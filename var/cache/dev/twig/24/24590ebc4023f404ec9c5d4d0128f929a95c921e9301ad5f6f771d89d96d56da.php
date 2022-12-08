@@ -123,7 +123,7 @@ class __TwigTemplate_e30e92c60779734f132f3be4a433fc0e8ee30abc5e12df7cdfc67573065
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
         // line 18
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.show_element"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.show"), "html", null, true);
         echo "
         </a>
     </div>
@@ -187,7 +187,7 @@ class __TwigTemplate_e30e92c60779734f132f3be4a433fc0e8ee30abc5e12df7cdfc67573065
 {% block sidebar %}
     <div class=\"section\">
         <a href=\"{{ path('admin_element_show', {id: element.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
-            <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show_element'|trans }}
+            <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
         </a>
     </div>
 

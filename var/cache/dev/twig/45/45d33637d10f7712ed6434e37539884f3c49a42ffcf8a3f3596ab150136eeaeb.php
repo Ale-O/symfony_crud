@@ -47,11 +47,11 @@ class __TwigTemplate_5237ae935a2de6ac65a6a0996cb8682e076e1750b10c3334c8676f14f26
             <div class=\"modal-body\">
                 <h4>";
         // line 6
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("delete_element_modal.title"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("delete_modal.title"), "html", null, true);
         echo "</h4>
                 <p>";
         // line 7
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("delete_element_modal.body"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("delete_modal.body"), "html", null, true);
         echo "</p>
             </div>
             <div class=\"modal-footer\">
@@ -64,7 +64,7 @@ class __TwigTemplate_5237ae935a2de6ac65a6a0996cb8682e076e1750b10c3334c8676f14f26
                 <button type=\"button\" class=\"btn btn-danger\" id=\"btnYes\" data-dismiss=\"modal\">
                     <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> ";
         // line 14
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.delete_element"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.delete"), "html", null, true);
         echo "
                 </button>
             </div>
@@ -102,15 +102,15 @@ class __TwigTemplate_5237ae935a2de6ac65a6a0996cb8682e076e1750b10c3334c8676f14f26
     <div class=\"modal-dialog\">
         <div class=\"modal-content\">
             <div class=\"modal-body\">
-                <h4>{{ 'delete_element_modal.title'|trans }}</h4>
-                <p>{{ 'delete_element_modal.body'|trans }}</p>
+                <h4>{{ 'delete_modal.title'|trans }}</h4>
+                <p>{{ 'delete_modal.body'|trans }}</p>
             </div>
             <div class=\"modal-footer\">
                 <button type=\"button\" class=\"btn btn-default\" id=\"btnNo\" data-dismiss=\"modal\">
                     <i class=\"fa fa-ban\" aria-hidden=\"true\"></i> {{ 'label.cancel'|trans }}
                 </button>
                 <button type=\"button\" class=\"btn btn-danger\" id=\"btnYes\" data-dismiss=\"modal\">
-                    <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{ 'label.delete_element'|trans }}
+                    <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{ 'label.delete'|trans }}
                 </button>
             </div>
         </div>
