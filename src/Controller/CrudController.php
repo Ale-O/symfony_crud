@@ -103,6 +103,29 @@ class CrudController extends AbstractController
     }
 
     /**
+     * @Route("/{id<\d+>}/edit", methods="GET|POST", name="subelement_edit")
+     */
+    // @IsGranted("edit", subject="subelement", message="Subelements can only be edited by their authors.")
+    public function subelementEdit(Request $request, Subelement $subelement): Response
+    {
+        $form = $this->createForm(SubelementType::class, $subelement);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('success', 'action.updated_successfully');
+
+            return $this->redirectToRoute('subelement_edit', ['id' => $subelement->getId()]);
+        }
+
+        return $this->render('admin/crud/subelement_edit.html.twig', [
+            'subelement' => $subelement,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
      * @Route("/{id}/delete", methods="POST", name="subelement_delete")
      */
     // @IsGranted("delete", subject="subelement")

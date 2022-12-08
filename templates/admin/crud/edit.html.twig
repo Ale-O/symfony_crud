@@ -3,7 +3,7 @@
 {% block body_id 'admin_element_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit_element'|trans({'%id%': element.id}) }}</h1>
+    <h1>{{ 'title.edit'|trans({'%id%': element.id}) }}</h1>
 
     {{ include('admin/crud/_form.html.twig', {
         form: form,

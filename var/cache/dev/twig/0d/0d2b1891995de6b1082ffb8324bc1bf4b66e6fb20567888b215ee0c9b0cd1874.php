@@ -133,23 +133,32 @@ class __TwigTemplate_e37fabe7b17fd32a5dd64aa4fb59a7809824e0ea03515e6bdbe16fa30d8
 
         // line 21
         echo "
-    ";
-        // line 29
-        echo "    
+    <div class=\"section\">
+        <a href=\"";
+        // line 23
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
+        echo "\" class=\"btn btn-lg btn-block btn-success\">
+            <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
+        // line 24
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
+        echo "
+        </a>
+    </div>
+    
     <div class=\"section\">
         ";
-        // line 31
-        echo twig_include($this->env, $context, "admin/crud/_delete_subelement_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 31, $this->source); })())], false);
+        // line 29
+        echo twig_include($this->env, $context, "admin/crud/_delete_subelement_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 29, $this->source); })())], false);
         echo "
     </div>
 
     ";
-        // line 34
+        // line 32
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 36
+        // line 34
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -173,7 +182,7 @@ class __TwigTemplate_e37fabe7b17fd32a5dd64aa4fb59a7809824e0ea03515e6bdbe16fa30d8
 
     public function getDebugInfo()
     {
-        return array (  153 => 36,  148 => 34,  142 => 31,  138 => 29,  135 => 21,  125 => 20,  112 => 15,  106 => 12,  102 => 11,  96 => 8,  92 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  162 => 34,  157 => 32,  151 => 29,  143 => 24,  139 => 23,  135 => 21,  125 => 20,  112 => 15,  106 => 12,  102 => 11,  96 => 8,  92 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -199,13 +208,11 @@ class __TwigTemplate_e37fabe7b17fd32a5dd64aa4fb59a7809824e0ea03515e6bdbe16fa30d8
 
 {% block sidebar %}
 
-    {#
     <div class=\"section\">
-        <a href=\"{{ path('admin_element_edit', {id: element.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
-            <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'action.edit_contents'|trans }}
+        <a href=\"{{ path('subelement_edit', {id: subelement.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
+            <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
         </a>
     </div>
-    #}
     
     <div class=\"section\">
         {{ include('admin/crud/_delete_subelement_form.html.twig', {subelement: subelement}, with_context = false) }}

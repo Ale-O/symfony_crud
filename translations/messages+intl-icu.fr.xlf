@@ -80,6 +80,10 @@
                 <source>title.element_list</source>
                 <target>Liste des éléments</target>
             </trans-unit>
+            <trans-unit id="title.edit">
+                <source>title.edit</source>
+                <target>Modifier {id, number}</target>
+            </trans-unit>
             <trans-unit id="title.edit_element">
                 <source>title.edit_element</source>
                 <target>Modifier l'élément #{id, number}</target>
@@ -172,6 +176,10 @@
             <trans-unit id="label.cancel">
                 <source>label.cancel</source>
                 <target>Annuler</target>
+            </trans-unit>
+            <trans-unit id="label.create">
+                <source>label.create</source>
+                <target>Créer</target>
             </trans-unit>
             <trans-unit id="label.create_element">
                 <source>label.create_element</source>

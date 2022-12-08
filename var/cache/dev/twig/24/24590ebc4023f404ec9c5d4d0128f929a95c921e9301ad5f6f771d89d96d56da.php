@@ -87,7 +87,7 @@ class __TwigTemplate_e30e92c60779734f132f3be4a433fc0e8ee30abc5e12df7cdfc67573065
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit_element", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
         echo "</h1>
 
     ";
@@ -175,7 +175,7 @@ class __TwigTemplate_e30e92c60779734f132f3be4a433fc0e8ee30abc5e12df7cdfc67573065
 {% block body_id 'admin_element_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit_element'|trans({'%id%': element.id}) }}</h1>
+    <h1>{{ 'title.edit'|trans({'%id%': element.id}) }}</h1>
 
     {{ include('admin/crud/_form.html.twig', {
         form: form,
