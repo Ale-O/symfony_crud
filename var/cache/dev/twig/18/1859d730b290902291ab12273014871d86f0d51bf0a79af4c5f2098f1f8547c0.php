@@ -184,7 +184,7 @@ class __TwigTemplate_1835fbdc36b67b246f78727f26bf247ce917d9a9e62182ce21b2f9741f2
             <div class=\"col-sm-9\">
                 <a href=\"";
             // line 49
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_show", ["id" => twig_get_attribute($this->env, $this->source, $context["subelement"], "id", [], "any", false, false, false, 49)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_show", ["id" => twig_get_attribute($this->env, $this->source, $context["subelement"], "id", [], "any", false, false, false, 49)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-default\">
                     <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
             // line 50
@@ -334,7 +334,7 @@ class __TwigTemplate_1835fbdc36b67b246f78727f26bf247ce917d9a9e62182ce21b2f9741f2
             </div>
 
             <div class=\"col-sm-9\">
-                <a href=\"{{ path('crud_show', {id: subelement.id}) }}\" class=\"btn btn-sm btn-default\">
+                <a href=\"{{ path('subelement_show', {id: subelement.id}) }}\" class=\"btn btn-sm btn-default\">
                     <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
                 </a>
             </div>

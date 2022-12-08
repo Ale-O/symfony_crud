@@ -91,7 +91,7 @@ class CrudController extends AbstractController
     }
 
     /**
-     * @Route("/{id<\d+>}", methods="GET", name="crud_show")
+     * @Route("/{id<\d+>}", methods="GET", name="subelement_show")
      */
     public function subelementShow(Subelement $subelement): Response
     {
