@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* admin/crud/tag_edit.html.twig */
-class __TwigTemplate_f9a99afec80ec406365c8a93b181b22bb97687753b12100c1f6eed98a247e66b extends Template
+/* admin/tag/tag_edit.html.twig */
+class __TwigTemplate_70fd633ca580b4e3c82823759b919e77b184693d376da663ffcad7e79deb4080 extends Template
 {
     private $source;
     private $macros = [];
@@ -41,12 +41,12 @@ class __TwigTemplate_f9a99afec80ec406365c8a93b181b22bb97687753b12100c1f6eed98a24
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/tag_edit.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/tag/tag_edit.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/tag_edit.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/tag/tag_edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("admin/layout.html.twig", "admin/crud/tag_edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/layout.html.twig", "admin/tag/tag_edit.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -92,7 +92,7 @@ class __TwigTemplate_f9a99afec80ec406365c8a93b181b22bb97687753b12100c1f6eed98a24
 
     ";
         // line 8
-        echo twig_include($this->env, $context, "admin/crud/_tag_form.html.twig", ["form" =>         // line 9
+        echo twig_include($this->env, $context, "admin/tag/_tag_form.html.twig", ["form" =>         // line 9
 (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "button_label" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.save"), "include_back_to_home_link" => true], false);
         // line 12
         echo "
@@ -131,7 +131,7 @@ class __TwigTemplate_f9a99afec80ec406365c8a93b181b22bb97687753b12100c1f6eed98a24
     <div class=\"section actions\">
         ";
         // line 23
-        echo twig_include($this->env, $context, "admin/crud/_delete_tag_form.html.twig", ["tag" => (isset($context["tag"]) || array_key_exists("tag", $context) ? $context["tag"] : (function () { throw new RuntimeError('Variable "tag" does not exist.', 23, $this->source); })())], false);
+        echo twig_include($this->env, $context, "admin/tag/_tag_delete_form.html.twig", ["tag" => (isset($context["tag"]) || array_key_exists("tag", $context) ? $context["tag"] : (function () { throw new RuntimeError('Variable "tag" does not exist.', 23, $this->source); })())], false);
         echo "
     </div>
 
@@ -155,7 +155,7 @@ class __TwigTemplate_f9a99afec80ec406365c8a93b181b22bb97687753b12100c1f6eed98a24
 
     public function getTemplateName()
     {
-        return "admin/crud/tag_edit.html.twig";
+        return "admin/tag/tag_edit.html.twig";
     }
 
     public function isTraitable()
@@ -177,7 +177,7 @@ class __TwigTemplate_f9a99afec80ec406365c8a93b181b22bb97687753b12100c1f6eed98a24
 {% block main %}
     <h1>{{ 'title.edit'|trans({'%id%': tag.id}) }}</h1>
 
-    {{ include('admin/crud/_tag_form.html.twig', {
+    {{ include('admin/tag/_tag_form.html.twig', {
         form: form,
         button_label: 'action.save'|trans,
         include_back_to_home_link: true,
@@ -192,13 +192,13 @@ class __TwigTemplate_f9a99afec80ec406365c8a93b181b22bb97687753b12100c1f6eed98a24
     </div>
 
     <div class=\"section actions\">
-        {{ include('admin/crud/_delete_tag_form.html.twig', {tag: tag}, with_context = false) }}
+        {{ include('admin/tag/_tag_delete_form.html.twig', {tag: tag}, with_context = false) }}
     </div>
 
     {{ parent() }}
 
     {{ show_source_code(_self) }}
 {% endblock %}
-", "admin/crud/tag_edit.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\crud\\tag_edit.html.twig");
+", "admin/tag/tag_edit.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\tag\\tag_edit.html.twig");
     }
 }

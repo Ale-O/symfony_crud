@@ -97,7 +97,7 @@ class CrudController extends AbstractController
     {
         // $this->denyAccessUnlessGranted(ElementVoter::SHOW, $element, 'Elements can only be shown to their authors.');
 
-        return $this->render('admin/crud/sub_element_show.html.twig', [
+        return $this->render('admin/crud/subelement_show.html.twig', [
             'subelement' => $subelement,
         ]);
     }

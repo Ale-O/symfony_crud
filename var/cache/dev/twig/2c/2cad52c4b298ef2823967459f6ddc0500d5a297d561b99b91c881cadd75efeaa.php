@@ -131,7 +131,7 @@ class __TwigTemplate_019fa2e5cb9561cac9614620675ca52271e8314c118d8ec1e120826ba3f
     <div class=\"section actions\">
         ";
         // line 23
-        echo twig_include($this->env, $context, "admin/crud/_delete_subelement_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 23, $this->source); })())], false);
+        echo twig_include($this->env, $context, "admin/crud/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 23, $this->source); })())], false);
         echo "
     </div>
 
@@ -192,7 +192,7 @@ class __TwigTemplate_019fa2e5cb9561cac9614620675ca52271e8314c118d8ec1e120826ba3f
     </div>
 
     <div class=\"section actions\">
-        {{ include('admin/crud/_delete_subelement_form.html.twig', {subelement: subelement}, with_context = false) }}
+        {{ include('admin/crud/_subelement_delete_form.html.twig', {subelement: subelement}, with_context = false) }}
     </div>
 
     {{ parent() }}

@@ -5,7 +5,7 @@
 {% block main %}
     <h1>{{ 'title.edit'|trans({'%id%': tag.id}) }}</h1>
 
-    {{ include('admin/crud/_tag_form.html.twig', {
+    {{ include('admin/tag/_tag_form.html.twig', {
         form: form,
         button_label: 'action.save'|trans,
         include_back_to_home_link: true,
@@ -20,7 +20,7 @@
     </div>
 
     <div class="section actions">
-        {{ include('admin/crud/_delete_tag_form.html.twig', {tag: tag}, with_context = false) }}
+        {{ include('admin/tag/_tag_delete_form.html.twig', {tag: tag}, with_context = false) }}
     </div>
 
     {{ parent() }}

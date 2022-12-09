@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* admin/crud/tags_list.html.twig */
-class __TwigTemplate_f2856e22fc9461db0b85e42c5d2b93cab122e850418207f6f5ded40c3f22f05a extends Template
+/* admin/tag/tags_list.html.twig */
+class __TwigTemplate_f95060f987507a7d2ed04b52aabfbbe726c321b4620680da79bd32f600f58ec8 extends Template
 {
     private $source;
     private $macros = [];
@@ -41,12 +41,12 @@ class __TwigTemplate_f2856e22fc9461db0b85e42c5d2b93cab122e850418207f6f5ded40c3f2
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/tags_list.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/tag/tags_list.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/tags_list.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/tag/tags_list.html.twig"));
 
-        $this->parent = $this->loadTemplate("admin/layout.html.twig", "admin/crud/tags_list.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/layout.html.twig", "admin/tag/tags_list.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -211,7 +211,7 @@ class __TwigTemplate_f2856e22fc9461db0b85e42c5d2b93cab122e850418207f6f5ded40c3f2
 
     public function getTemplateName()
     {
-        return "admin/crud/tags_list.html.twig";
+        return "admin/tag/tags_list.html.twig";
     }
 
     public function isTraitable()
@@ -276,6 +276,6 @@ class __TwigTemplate_f2856e22fc9461db0b85e42c5d2b93cab122e850418207f6f5ded40c3f2
 
     {{ show_source_code(_self) }}
 {% endblock %}
-", "admin/crud/tags_list.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\crud\\tags_list.html.twig");
+", "admin/tag/tags_list.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\tag\\tags_list.html.twig");
     }
 }
