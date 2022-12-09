@@ -1,0 +1,25 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_tag_show' %}
+
+{% block main %}
+    <h1>{{ tag.name }}</h1>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('admin_tag_edit', {id: tag.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+        </a>
+    </div>
+
+    
+    <div class="section">
+        {{ include('admin/crud/_delete_tag_form.html.twig', {tag: tag}, with_context = false) }}
+    </div>
+    
+
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}

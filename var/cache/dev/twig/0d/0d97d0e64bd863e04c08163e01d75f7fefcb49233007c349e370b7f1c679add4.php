@@ -118,7 +118,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
             <li>
                 <a href=\"";
         // line 23
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_tag_index");
         echo "\">
                     <i class=\"fa fa-tags\" aria-hidden=\"true\"></i> ";
         // line 24
@@ -215,7 +215,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         </a>
         <ul class=\"dropdown-menu user\" role=\"menu\" aria-labelledby=\"user\">
             <li>
-                <a href=\"{{ path('admin_element_index') }}\">
+                <a href=\"{{ path('admin_tag_index') }}\">
                     <i class=\"fa fa-tags\" aria-hidden=\"true\"></i> {{ 'menu.tags'|trans }}
                 </a>
             </li>

@@ -25,7 +25,7 @@ class TagsController extends AbstractController
     {
         $allTags = $tags->findAll();
 
-        return $this->render('admin/crud/index.html.twig', ['tags' => $allTags]);
+        return $this->render('admin/crud/tags_list.html.twig', ['tags' => $allTags]);
     }
 
     /**
@@ -54,7 +54,7 @@ class TagsController extends AbstractController
             return $this->redirectToRoute('admin_tag_index');
         }
 
-        return $this->render('admin/crud/new.html.twig', [
+        return $this->render('admin/crud/new_tag.html.twig', [
             'tag' => $tag,
             'form' => $form->createView(),
         ]);
@@ -65,7 +65,7 @@ class TagsController extends AbstractController
      */
     public function show(Tag $tag): Response
     {
-        return $this->render('admin/crud/show.html.twig', [
+        return $this->render('admin/crud/show_tag.html.twig', [
             'tag' => $tag,
         ]);
     }
@@ -87,7 +87,7 @@ class TagsController extends AbstractController
             return $this->redirectToRoute('admin_tag_edit', ['id' => $tag->getId()]);
         }
 
-        return $this->render('admin/crud/edit.html.twig', [
+        return $this->render('admin/crud/tag_edit.html.twig', [
             'tag' => $tag,
             'form' => $form->createView(),
         ]);
