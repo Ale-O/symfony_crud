@@ -118,11 +118,11 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
             <li>
                 <a href=\"";
         // line 23
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_tag_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
         echo "\">
-                    <i class=\"fa fa-tags\" aria-hidden=\"true\"></i> ";
+                    <i class=\"fa fa-database\" aria-hidden=\"true\"></i> ";
         // line 24
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.tags"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.admin"), "html", null, true);
         echo "
                 </a>
             </li>
@@ -130,11 +130,23 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
             <li>
                 <a href=\"";
         // line 29
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_tag_index");
         echo "\">
-                    <i class=\"fa fa-database\" aria-hidden=\"true\"></i> ";
+                    <i class=\"fa fa-tags\" aria-hidden=\"true\"></i> ";
         // line 30
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.admin"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.tags"), "html", null, true);
+        echo "
+                </a>
+            </li>
+            <li class=\"divider\"></li>
+            <li>
+                <a href=\"";
+        // line 35
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_index");
+        echo "\">
+                    <i class=\"fa fa-users\" aria-hidden=\"true\"></i> ";
+        // line 36
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.users"), "html", null, true);
         echo "
                 </a>
             </li>
@@ -149,7 +161,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 
     }
 
-    // line 37
+    // line 43
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -159,12 +171,12 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 38
+        // line 44
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     ";
-        // line 39
+        // line 45
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("admin");
         echo "
 ";
@@ -188,7 +200,7 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
 
     public function getDebugInfo()
     {
-        return array (  168 => 39,  163 => 38,  153 => 37,  137 => 30,  133 => 29,  125 => 24,  121 => 23,  114 => 19,  104 => 12,  100 => 11,  97 => 10,  87 => 9,  75 => 6,  70 => 5,  60 => 4,  37 => 2,);
+        return array (  180 => 45,  175 => 44,  165 => 43,  149 => 36,  145 => 35,  137 => 30,  133 => 29,  125 => 24,  121 => 23,  114 => 19,  104 => 12,  100 => 11,  97 => 10,  87 => 9,  75 => 6,  70 => 5,  60 => 4,  37 => 2,);
     }
 
     public function getSourceContext()
@@ -215,14 +227,20 @@ class __TwigTemplate_b538ede43f1c63c1921fe0d89fd131f3981f1b61cc622e55eece95ff138
         </a>
         <ul class=\"dropdown-menu user\" role=\"menu\" aria-labelledby=\"user\">
             <li>
+                <a href=\"{{ path('admin_element_index') }}\">
+                    <i class=\"fa fa-database\" aria-hidden=\"true\"></i> {{ 'menu.admin'|trans }}
+                </a>
+            </li>
+            <li class=\"divider\"></li>
+            <li>
                 <a href=\"{{ path('admin_tag_index') }}\">
                     <i class=\"fa fa-tags\" aria-hidden=\"true\"></i> {{ 'menu.tags'|trans }}
                 </a>
             </li>
             <li class=\"divider\"></li>
             <li>
-                <a href=\"{{ path('admin_element_index') }}\">
-                    <i class=\"fa fa-database\" aria-hidden=\"true\"></i> {{ 'menu.admin'|trans }}
+                <a href=\"{{ path('admin_user_index') }}\">
+                    <i class=\"fa fa-users\" aria-hidden=\"true\"></i> {{ 'menu.users'|trans }}
                 </a>
             </li>
         </ul>

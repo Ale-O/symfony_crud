@@ -20,14 +20,20 @@
         </a>
         <ul class="dropdown-menu user" role="menu" aria-labelledby="user">
             <li>
+                <a href="{{ path('admin_element_index') }}">
+                    <i class="fa fa-database" aria-hidden="true"></i> {{ 'menu.admin'|trans }}
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li>
                 <a href="{{ path('admin_tag_index') }}">
                     <i class="fa fa-tags" aria-hidden="true"></i> {{ 'menu.tags'|trans }}
                 </a>
             </li>
             <li class="divider"></li>
             <li>
-                <a href="{{ path('admin_element_index') }}">
-                    <i class="fa fa-database" aria-hidden="true"></i> {{ 'menu.admin'|trans }}
+                <a href="{{ path('admin_user_index') }}">
+                    <i class="fa fa-users" aria-hidden="true"></i> {{ 'menu.users'|trans }}
                 </a>
             </li>
         </ul>

@@ -84,6 +84,10 @@
                 <source>title.tag_list</source>
                 <target>Liste des tags</target>
             </trans-unit>
+            <trans-unit id="title.user_list">
+                <source>title.user_list</source>
+                <target>Liste des utilisateurs</target>
+            </trans-unit>
             <trans-unit id="title.edit">
                 <source>title.edit</source>
                 <target>Modifier {id, number}</target>
@@ -197,6 +201,10 @@
                 <source>label.create_tag</source>
                 <target>Créer un tag</target>
             </trans-unit>
+            <trans-unit id="label.create_user">
+                <source>label.create_user</source>
+                <target>Créer un utilisateur</target>
+            </trans-unit>
             <trans-unit id="action.create">
                 <source>action.create</source>
                 <target>Créer</target>
@@ -268,7 +276,7 @@
             </trans-unit>
             <trans-unit id="label.fullname">
                 <source>label.fullname</source>
-                <target>Nom complet</target>
+                <target>Nom</target>
             </trans-unit>
             <trans-unit id="label.email">
                 <source>label.email</source>
@@ -322,6 +330,10 @@
                 <source>title.tag_new</source>
                 <target>Ajouter un nouveau tag</target>
             </trans-unit>
+            <trans-unit id="title.user_new">
+                <source>title.user_new</source>
+                <target>Ajouter un nouvel utilisateur</target>
+            </trans-unit>
             <trans-unit id="action.edit_contents">
                 <source>action.edit_contents</source>
                 <target>Modifier le contenu</target>
@@ -359,6 +371,10 @@
                 <source>menu.user</source>
                 <target>Compte</target>
             </trans-unit>
+            <trans-unit id="menu.users">
+                <source>menu.users</source>
+                <target>Gestion des utilisateurs</target>
+            </trans-unit>
             <trans-unit id="menu.logout">
                 <source>menu.logout</source>
                 <target>Déconnexion</target>
@@ -395,6 +411,10 @@
             <trans-unit id="tag.no_tags_found">
                 <source>tag.no_tags_found</source>
                 <target>Aucun tag trouvé.</target>
+            </trans-unit>
+            <trans-unit id="user.no_users_found">
+                <source>user.no_users_found</source>
+                <target>Aucun utilisateurs trouvés.</target>
             </trans-unit>
             <trans-unit id="action.created_successfully">
                 <source>action.created_successfully</source>
