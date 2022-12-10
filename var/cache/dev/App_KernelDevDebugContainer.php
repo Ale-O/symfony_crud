@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerAGVG16W\App_KernelDevDebugContainer([
     'container.build_hash' => 'AGVG16W',
-    'container.build_id' => '0a92dd63',
-    'container.build_time' => 1670628385,
+    'container.build_id' => '91c7e6ac',
+    'container.build_time' => 1670666595,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerAGVG16W');

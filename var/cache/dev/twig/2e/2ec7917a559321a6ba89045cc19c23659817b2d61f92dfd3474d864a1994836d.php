@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* crud/_subelement_form.html.twig */
-class __TwigTemplate_34c324b02c5419fd6c3c68ecc725c45e20d0aa559f5747a0f3179bf1e0cb1849 extends Template
+/* crud/subelement/_subelement_form.html.twig */
+class __TwigTemplate_418416b8593a824accf39f92a41fb828b5cf44bde5d98bce2b6bc20964d8b751 extends Template
 {
     private $source;
     private $macros = [];
@@ -34,10 +34,10 @@ class __TwigTemplate_34c324b02c5419fd6c3c68ecc725c45e20d0aa559f5747a0f3179bf1e0c
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/_subelement_form.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/_subelement_form.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/_subelement_form.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/_subelement_form.html.twig"));
 
         // line 8
         echo "
@@ -111,7 +111,7 @@ class __TwigTemplate_34c324b02c5419fd6c3c68ecc725c45e20d0aa559f5747a0f3179bf1e0c
 
     public function getTemplateName()
     {
-        return "crud/_subelement_form.html.twig";
+        return "crud/subelement/_subelement_form.html.twig";
     }
 
     public function isTraitable()
@@ -164,6 +164,6 @@ class __TwigTemplate_34c324b02c5419fd6c3c68ecc725c45e20d0aa559f5747a0f3179bf1e0c
         </div>
     </fieldset>
 {{ form_end(form) }}
-", "crud/_subelement_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\_subelement_form.html.twig");
+", "crud/subelement/_subelement_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\subelement\\_subelement_form.html.twig");
     }
 }

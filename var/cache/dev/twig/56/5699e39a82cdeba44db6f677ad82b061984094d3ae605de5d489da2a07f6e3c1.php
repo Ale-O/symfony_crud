@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* admin/crud/_subelement_delete_form.html.twig */
-class __TwigTemplate_3bbe20356bd7ff0e9a0a0cc7af4fbca0fb76f2d32d2116bef8f63b86d618a291 extends Template
+/* crud/subelement/_subelement_delete_form.html.twig */
+class __TwigTemplate_26e8bc458ecdc4e9f5347b9fe7d0bd3de0b7650efaed4d4c666040f2ae8c1050 extends Template
 {
     private $source;
     private $macros = [];
@@ -34,13 +34,13 @@ class __TwigTemplate_3bbe20356bd7ff0e9a0a0cc7af4fbca0fb76f2d32d2116bef8f63b86d61
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/_subelement_delete_form.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/_subelement_delete_form.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/_subelement_delete_form.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/_subelement_delete_form.html.twig"));
 
         // line 1
-        echo twig_include($this->env, $context, "crud/_subelement_delete_confirmation.html.twig");
+        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_confirmation.html.twig");
         echo "
 <form action=\"";
         // line 2
@@ -69,7 +69,7 @@ class __TwigTemplate_3bbe20356bd7ff0e9a0a0cc7af4fbca0fb76f2d32d2116bef8f63b86d61
 
     public function getTemplateName()
     {
-        return "admin/crud/_subelement_delete_form.html.twig";
+        return "crud/subelement/_subelement_delete_form.html.twig";
     }
 
     public function isTraitable()
@@ -84,7 +84,7 @@ class __TwigTemplate_3bbe20356bd7ff0e9a0a0cc7af4fbca0fb76f2d32d2116bef8f63b86d61
 
     public function getSourceContext()
     {
-        return new Source("{{ include('crud/_subelement_delete_confirmation.html.twig') }}
+        return new Source("{{ include('crud/subelement/_subelement_delete_confirmation.html.twig') }}
 <form action=\"{{ url('subelement_delete', {id: subelement.id}) }}\" method=\"post\" data-confirmation=\"true\" id=\"delete-form\">
     <input type=\"hidden\" name=\"token\" value=\"{{ csrf_token('delete') }}\" />
     <button type=\"submit\" class=\"btn btn-lg btn-block btn-danger\">
@@ -92,6 +92,6 @@ class __TwigTemplate_3bbe20356bd7ff0e9a0a0cc7af4fbca0fb76f2d32d2116bef8f63b86d61
         {{ 'action.delete'|trans }}
     </button>
 </form>
-", "admin/crud/_subelement_delete_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\crud\\_subelement_delete_form.html.twig");
+", "crud/subelement/_subelement_delete_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\subelement\\_subelement_delete_form.html.twig");
     }
 }

@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* admin/crud/subelement_show.html.twig */
-class __TwigTemplate_c4dd3d6b6cdd895c2c4fbd2fc817a70ebd3ff3ce48e0104d5817d6f3b6fd17d2 extends Template
+/* crud/subelement/subelement_edit.html.twig */
+class __TwigTemplate_0696592c2f32f19e83029b87d756b07210bfc9d839724e49d7c42d6dc330a241 extends Template
 {
     private $source;
     private $macros = [];
@@ -41,12 +41,12 @@ class __TwigTemplate_c4dd3d6b6cdd895c2c4fbd2fc817a70ebd3ff3ce48e0104d5817d6f3b6f
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/subelement_show.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/subelement_edit.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/subelement_show.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/subelement_edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "admin/crud/subelement_show.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "crud/subelement/subelement_edit.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -66,7 +66,7 @@ class __TwigTemplate_c4dd3d6b6cdd895c2c4fbd2fc817a70ebd3ff3ce48e0104d5817d6f3b6f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body_id"));
 
-        echo "crud_show";
+        echo "subelement_edit";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -86,32 +86,16 @@ class __TwigTemplate_c4dd3d6b6cdd895c2c4fbd2fc817a70ebd3ff3ce48e0104d5817d6f3b6f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         // line 6
-        echo "
-    <h1>";
-        // line 7
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 7, $this->source); })()), "id", [], "any", false, false, false, 7), "html", null, true);
+        echo "    <h1>";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
         echo "</h1>
-    <h1>";
-        // line 8
-        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 8, $this->source); })()), "publishedAt", [], "any", false, false, false, 8), "medium", "short", "", "UTC"), "html", null, true);
-        echo "</h1>
-
-    <p class=\"element-metadata\">
-        <span class=\"metadata\"><i class=\"fa fa-calendar-o\"></i> ";
-        // line 11
-        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 11, $this->source); })()), "publishedAt", [], "any", false, false, false, 11), "long", "medium", "", "UTC"), "html", null, true);
-        echo "</span>
-        <span class=\"metadata\"><i class=\"fa fa-user-circle-o\"></i> ";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 12, $this->source); })()), "author", [], "any", false, false, false, 12), "fullName", [], "any", false, false, false, 12), "html", null, true);
-        echo "</span>
-    </p>
 
     ";
-        // line 15
-        echo $this->extensions['HtmlSanitizer\Bundle\Twig\TwigExtension']->sanitize($this->env->getRuntime('Twig\Extra\Markdown\MarkdownRuntime')->convert(twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 15, $this->source); })()), "content", [], "any", false, false, false, 15)));
+        // line 8
+        echo twig_include($this->env, $context, "crud/subelement/_subelement_edit_form.html.twig", ["form" =>         // line 9
+(isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "button_label" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.save"), "include_back_to_home_link" => true], false);
+        // line 12
         echo "
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -121,7 +105,7 @@ class __TwigTemplate_c4dd3d6b6cdd895c2c4fbd2fc817a70ebd3ff3ce48e0104d5817d6f3b6f
 
     }
 
-    // line 20
+    // line 15
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -131,34 +115,33 @@ class __TwigTemplate_c4dd3d6b6cdd895c2c4fbd2fc817a70ebd3ff3ce48e0104d5817d6f3b6f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 21
-        echo "
-    <div class=\"section\">
+        // line 16
+        echo "    <div class=\"section\">
         <a href=\"";
-        // line 23
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
+        // line 17
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 17, $this->source); })()), "id", [], "any", false, false, false, 17)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
-            <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
-        // line 24
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
+            <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
+        // line 18
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.show"), "html", null, true);
         echo "
         </a>
     </div>
-    
-    <div class=\"section\">
+
+    <div class=\"section actions\">
         ";
-        // line 29
-        echo twig_include($this->env, $context, "admin/crud/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 29, $this->source); })())], false);
+        // line 23
+        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 23, $this->source); })())], false);
         echo "
     </div>
 
     ";
-        // line 32
+        // line 26
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 34
+        // line 28
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -172,7 +155,7 @@ class __TwigTemplate_c4dd3d6b6cdd895c2c4fbd2fc817a70ebd3ff3ce48e0104d5817d6f3b6f
 
     public function getTemplateName()
     {
-        return "admin/crud/subelement_show.html.twig";
+        return "crud/subelement/subelement_edit.html.twig";
     }
 
     public function isTraitable()
@@ -182,46 +165,40 @@ class __TwigTemplate_c4dd3d6b6cdd895c2c4fbd2fc817a70ebd3ff3ce48e0104d5817d6f3b6f
 
     public function getDebugInfo()
     {
-        return array (  162 => 34,  157 => 32,  151 => 29,  143 => 24,  139 => 23,  135 => 21,  125 => 20,  112 => 15,  106 => 12,  102 => 11,  96 => 8,  92 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  145 => 28,  140 => 26,  134 => 23,  126 => 18,  122 => 17,  119 => 16,  109 => 15,  98 => 12,  96 => 9,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block body_id 'crud_show' %}
+{% block body_id 'subelement_edit' %}
 
 {% block main %}
+    <h1>{{ 'title.edit'|trans({'%id%': subelement.id}) }}</h1>
 
-    <h1>{{ subelement.id }}</h1>
-    <h1>{{ subelement.publishedAt|format_datetime('medium', 'short', '', 'UTC')  }}</h1>
-
-    <p class=\"element-metadata\">
-        <span class=\"metadata\"><i class=\"fa fa-calendar-o\"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
-        <span class=\"metadata\"><i class=\"fa fa-user-circle-o\"></i> {{ subelement.author.fullName }}</span>
-    </p>
-
-    {{ subelement.content|markdown_to_html|sanitize_html }}
-
+    {{ include('crud/subelement/_subelement_edit_form.html.twig', {
+        form: form,
+        button_label: 'action.save'|trans,
+        include_back_to_home_link: true,
+    }, with_context = false) }}
 {% endblock %}
 
-
 {% block sidebar %}
-
     <div class=\"section\">
-        <a href=\"{{ path('subelement_edit', {id: subelement.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
-            <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
+        <a href=\"{{ path('subelement_show', {id: subelement.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
+            <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
         </a>
     </div>
-    
-    <div class=\"section\">
-        {{ include('admin/crud/_subelement_delete_form.html.twig', {subelement: subelement}, with_context = false) }}
+
+    <div class=\"section actions\">
+        {{ include('crud/subelement/_subelement_delete_form.html.twig', {subelement: subelement}, with_context = false) }}
     </div>
 
     {{ parent() }}
 
     {{ show_source_code(_self) }}
 {% endblock %}
-", "admin/crud/subelement_show.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\crud\\subelement_show.html.twig");
+", "crud/subelement/subelement_edit.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\subelement\\subelement_edit.html.twig");
     }
 }

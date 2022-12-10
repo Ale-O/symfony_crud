@@ -96,6 +96,10 @@
                 <source>title.add_subelement</source>
                 <target>Ajouter un sous-élément</target>
             </trans-unit>
+            <trans-unit id="subelement.too_short">
+                <source>subelement.too_short</source>
+                <target>Contenu du sous-élément trop court</target>
+            </trans-unit>
             <trans-unit id="title.subelement_error">
                 <source>title.subelement_error</source>
                 <target>Il y a eu une erreur lors de l'ajout du sous-élément.</target>

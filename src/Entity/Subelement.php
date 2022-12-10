@@ -36,9 +36,9 @@ class Subelement
      * @Assert\NotBlank(message="subelement.blank")
      * @Assert\Length(
      *     min=5,
-     *     minMessage="subelement.too_short",
+     *     minMessage="too_short",
      *     max=10000,
-     *     maxMessage="subelement.too_long"
+     *     maxMessage="too_long"
      * )
      */
     private $content;

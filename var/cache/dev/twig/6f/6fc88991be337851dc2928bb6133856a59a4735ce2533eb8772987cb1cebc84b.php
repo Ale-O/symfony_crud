@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* crud/_subelement_delete_confirmation.html.twig */
-class __TwigTemplate_47e543b1a448c4e03e0850c5f4ccf73f5fd856e7ca14e289b9fe57905f7a571a extends Template
+/* crud/subelement/_subelement_delete_confirmation.html.twig */
+class __TwigTemplate_4b0ff1958baab0fd84602efc828ed78a18e88be56bcec9278f402a6c5ac1d43f extends Template
 {
     private $source;
     private $macros = [];
@@ -34,10 +34,10 @@ class __TwigTemplate_47e543b1a448c4e03e0850c5f4ccf73f5fd856e7ca14e289b9fe57905f7
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/_subelement_delete_confirmation.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/_subelement_delete_confirmation.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/_subelement_delete_confirmation.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/_subelement_delete_confirmation.html.twig"));
 
         // line 1
         echo "
@@ -82,7 +82,7 @@ class __TwigTemplate_47e543b1a448c4e03e0850c5f4ccf73f5fd856e7ca14e289b9fe57905f7
 
     public function getTemplateName()
     {
-        return "crud/_subelement_delete_confirmation.html.twig";
+        return "crud/subelement/_subelement_delete_confirmation.html.twig";
     }
 
     public function isTraitable()
@@ -116,6 +116,6 @@ class __TwigTemplate_47e543b1a448c4e03e0850c5f4ccf73f5fd856e7ca14e289b9fe57905f7
         </div>
     </div>
 </div>
-", "crud/_subelement_delete_confirmation.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\_subelement_delete_confirmation.html.twig");
+", "crud/subelement/_subelement_delete_confirmation.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\subelement\\_subelement_delete_confirmation.html.twig");
     }
 }

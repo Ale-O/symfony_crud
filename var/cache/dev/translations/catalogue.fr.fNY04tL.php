@@ -190,6 +190,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'title.edit' => 'Modifier {id, number}',
     'title.edit_element' => 'Modifier l\'élément #{id, number}',
     'title.add_subelement' => 'Ajouter un sous-élément',
+    'subelement.too_short' => 'Contenu du sous-élément trop court',
     'title.subelement_error' => 'Il y a eu une erreur lors de l\'ajout du sous-élément.',
     'title.edit_user' => 'Modifier l\'utilisateur',
     'title.change_password' => 'Modifier le mot de passe',

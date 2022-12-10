@@ -74,7 +74,7 @@ class CrudController extends AbstractController
             return $this->redirectToRoute('crud_element', ['slug' => $element->getSlug()]);
         }
 
-        return $this->render('crud/subelement_form_error.html.twig', [
+        return $this->render('crud/subelement/subelement_form_error.html.twig', [
             'element' => $element,
             'form' => $form->createView(),
         ]);
@@ -84,7 +84,7 @@ class CrudController extends AbstractController
     {
         $form = $this->createForm(SubelementType::class);
 
-        return $this->render('crud/_subelement_form.html.twig', [
+        return $this->render('crud/subelement/_subelement_form.html.twig', [
             'element' => $element,
             'form' => $form->createView(),
         ]);
@@ -97,7 +97,7 @@ class CrudController extends AbstractController
     {
         // $this->denyAccessUnlessGranted(ElementVoter::SHOW, $element, 'Elements can only be shown to their authors.');
 
-        return $this->render('admin/crud/subelement_show.html.twig', [
+        return $this->render('crud/subelement/subelement_show.html.twig', [
             'subelement' => $subelement,
         ]);
     }
@@ -119,7 +119,7 @@ class CrudController extends AbstractController
             return $this->redirectToRoute('subelement_edit', ['id' => $subelement->getId()]);
         }
 
-        return $this->render('admin/crud/subelement_edit.html.twig', [
+        return $this->render('crud/subelement/subelement_edit.html.twig', [
             'subelement' => $subelement,
             'form' => $form->createView(),
         ]);

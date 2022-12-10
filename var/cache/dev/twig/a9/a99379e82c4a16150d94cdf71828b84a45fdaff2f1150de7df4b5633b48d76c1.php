@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* admin/crud/_subelement_form.html.twig */
-class __TwigTemplate_09ecc8a5e8c6cec2a79deec4fa04ef69d1bc60b14762d00f466aceeb42154fca extends Template
+/* crud/subelement/_subelement_edit_form.html.twig */
+class __TwigTemplate_2fc931ef594848ca134e7fa62cbafd44c9740962f94b9831a8115f86675e28aa extends Template
 {
     private $source;
     private $macros = [];
@@ -34,10 +34,10 @@ class __TwigTemplate_09ecc8a5e8c6cec2a79deec4fa04ef69d1bc60b14762d00f466aceeb421
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/_subelement_form.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/_subelement_edit_form.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/_subelement_form.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/_subelement_edit_form.html.twig"));
 
         // line 1
         echo "
@@ -49,7 +49,7 @@ class __TwigTemplate_09ecc8a5e8c6cec2a79deec4fa04ef69d1bc60b14762d00f466aceeb421
             $context["attr"] = ["data-confirmation" => "true"];
             // line 4
             echo "    ";
-            echo twig_include($this->env, $context, "crud/_delete_subelement_confirmation.html.twig");
+            echo twig_include($this->env, $context, "crud/subelement/_delete_subelement_confirmation.html.twig");
             echo "
 ";
         }
@@ -102,7 +102,7 @@ class __TwigTemplate_09ecc8a5e8c6cec2a79deec4fa04ef69d1bc60b14762d00f466aceeb421
 
     public function getTemplateName()
     {
-        return "admin/crud/_subelement_form.html.twig";
+        return "crud/subelement/_subelement_edit_form.html.twig";
     }
 
     public function isTraitable()
@@ -120,7 +120,7 @@ class __TwigTemplate_09ecc8a5e8c6cec2a79deec4fa04ef69d1bc60b14762d00f466aceeb421
         return new Source("
 {% if show_confirmation|default(false) %}
     {% set attr = {'data-confirmation': 'true'} %}
-    {{ include('crud/_delete_subelement_confirmation.html.twig') }}
+    {{ include('crud/subelement/_delete_subelement_confirmation.html.twig') }}
 {% endif %}
 
 {{ form_start(form, {attr: attr|default({})}) }}
@@ -136,6 +136,6 @@ class __TwigTemplate_09ecc8a5e8c6cec2a79deec4fa04ef69d1bc60b14762d00f466aceeb421
         </a>
     {% endif %}
 {{ form_end(form) }}
-", "admin/crud/_subelement_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\admin\\crud\\_subelement_form.html.twig");
+", "crud/subelement/_subelement_edit_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\subelement\\_subelement_edit_form.html.twig");
     }
 }

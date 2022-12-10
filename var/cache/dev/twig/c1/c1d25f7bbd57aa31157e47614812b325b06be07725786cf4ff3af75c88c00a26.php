@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* crud/subelement_form_error.html.twig */
-class __TwigTemplate_05986d3d364c29917f8513e24ae85cd36e3e619dc9cbf47830788b1f93c795d7 extends Template
+/* crud/subelement/subelement_form_error.html.twig */
+class __TwigTemplate_69149725c04e6437a1ef53b7b0b6d707ec18ace45d3104aec6fa61f2c1e9e7a4 extends Template
 {
     private $source;
     private $macros = [];
@@ -40,12 +40,12 @@ class __TwigTemplate_05986d3d364c29917f8513e24ae85cd36e3e619dc9cbf47830788b1f93c
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement_form_error.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/subelement_form_error.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement_form_error.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/subelement_form_error.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "crud/subelement_form_error.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "crud/subelement/subelement_form_error.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -92,7 +92,7 @@ class __TwigTemplate_05986d3d364c29917f8513e24ae85cd36e3e619dc9cbf47830788b1f93c
     <div class=\"well\">
         ";
         // line 9
-        echo twig_include($this->env, $context, "crud/_subelement_form.html.twig");
+        echo twig_include($this->env, $context, "crud/subelement/_subelement_form.html.twig");
         echo "
     </div>
 ";
@@ -106,7 +106,7 @@ class __TwigTemplate_05986d3d364c29917f8513e24ae85cd36e3e619dc9cbf47830788b1f93c
 
     public function getTemplateName()
     {
-        return "crud/subelement_form_error.html.twig";
+        return "crud/subelement/subelement_form_error.html.twig";
     }
 
     public function isTraitable()
@@ -129,9 +129,9 @@ class __TwigTemplate_05986d3d364c29917f8513e24ae85cd36e3e619dc9cbf47830788b1f93c
     <h1 class=\"text-danger\">{{ 'title.subelement_error'|trans }}</h1>
 
     <div class=\"well\">
-        {{ include('crud/_subelement_form.html.twig') }}
+        {{ include('crud/subelement/_subelement_form.html.twig') }}
     </div>
 {% endblock %}
-", "crud/subelement_form_error.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\subelement_form_error.html.twig");
+", "crud/subelement/subelement_form_error.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\subelement\\subelement_form_error.html.twig");
     }
 }

@@ -1,7 +1,7 @@
 
 {% if show_confirmation|default(false) %}
     {% set attr = {'data-confirmation': 'true'} %}
-    {{ include('crud/_delete_subelement_confirmation.html.twig') }}
+    {{ include('crud/subelement/_delete_subelement_confirmation.html.twig') }}
 {% endif %}
 
 {{ form_start(form, {attr: attr|default({})}) }}
