@@ -21,7 +21,7 @@
                 <td>{{ user.FullName }}</td>
                 <td>{{ user.Username }}</td>
                 <td>{{ user.Email }}</td>
-                <td>{{ user.Roles|json_encode() }}</td>
+                <td>{{ user.Roles[0] is same as('ROLE_ADMIN') ? 'Administrateur' : 'Utilisateur' }}</td>
                 <td class="text-right">
                     <div class="item-actions">
                         <a href="{{ path('admin_user_show', {id: user.id}) }}" class="btn btn-sm btn-default">

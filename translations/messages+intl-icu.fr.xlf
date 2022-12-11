@@ -298,6 +298,10 @@
                 <source>label.new_password_confirm</source>
                 <target>Confirmer le mot de passe</target>
             </trans-unit>
+            <trans-unit id="label.isAdmin">
+                <source>label.isAdmin</source>
+                <target>Profil administrateur</target>
+            </trans-unit>
             <trans-unit id="label.role">
                 <source>label.role</source>
                 <target>Rôle</target>

@@ -7,7 +7,7 @@
     <div class="well">
         <p class="m-b-0"><strong>{{ 'label.username'|trans }}</strong>: {{ user.Username }}</p>
         <p class="m-b-0"><strong>{{ 'label.email'|trans }}</strong>: {{ user.Email }}</p>
-        <p class="m-b-0"><strong>{{ 'label.role'|trans }}</strong>: {{ user.Roles[0] }}</p>
+        <p class="m-b-0"><strong>{{ 'label.role'|trans }}</strong>: {{ user.Roles[0] is same as('ROLE_ADMIN') ? 'Administrateur' : 'Utilisateur' }}</p>
     </div>
 {% endblock %}
 

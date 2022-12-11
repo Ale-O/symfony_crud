@@ -138,7 +138,7 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
             echo "</td>
                 <td>";
             // line 24
-            echo twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, $context["user"], "Roles", [], "any", false, false, false, 24)), "html", null, true);
+            echo (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["user"], "Roles", [], "any", false, false, false, 24), 0, [], "array", false, false, false, 24) === "ROLE_ADMIN")) ? ("Administrateur") : ("Utilisateur"));
             echo "</td>
                 <td class=\"text-right\">
                     <div class=\"item-actions\">
@@ -273,7 +273,7 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
                 <td>{{ user.FullName }}</td>
                 <td>{{ user.Username }}</td>
                 <td>{{ user.Email }}</td>
-                <td>{{ user.Roles|json_encode() }}</td>
+                <td>{{ user.Roles[0] is same as('ROLE_ADMIN') ? 'Administrateur' : 'Utilisateur' }}</td>
                 <td class=\"text-right\">
                     <div class=\"item-actions\">
                         <a href=\"{{ path('admin_user_show', {id: user.id}) }}\" class=\"btn btn-sm btn-default\">

@@ -43,6 +43,7 @@ class UsersController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $user->setPassword($encoder->encodePassword($user, $form->get('password')->getData()));
+            $user->setRoles([($form->get('isAdmin')->getData()) ? 'ROLE_ADMIN' : 'ROLE_USER']);
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
@@ -76,12 +77,14 @@ class UsersController extends AbstractController
      * @Route("/{id<\d+>}/edit", methods="GET|POST", name="admin_user_edit")
      */
     // @IsGranted("edit", subject="user", message="Users can only be edited by their authors.")
-    public function edit(Request $request, User $user): Response
+    public function edit(Request $request, User $user, UserPasswordEncoderInterface $encoder): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user->setPassword($encoder->encodePassword($user, $form->get('password')->getData()));
+            $user->setRoles([($form->get('isAdmin')->getData()) ? 'ROLE_ADMIN' : 'ROLE_USER']);
             $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash('success', 'action.updated_successfully');

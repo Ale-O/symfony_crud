@@ -106,7 +106,7 @@ class __TwigTemplate_50ba9a391145703f3caa2944965831b14635ac295fdd77b97984b171955
         // line 10
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.role"), "html", null, true);
         echo "</strong>: ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 10, $this->source); })()), "Roles", [], "any", false, false, false, 10), 0, [], "array", false, false, false, 10), "html", null, true);
+        echo (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 10, $this->source); })()), "Roles", [], "any", false, false, false, 10), 0, [], "array", false, false, false, 10) === "ROLE_ADMIN")) ? ("Administrateur") : ("Utilisateur"));
         echo "</p>
     </div>
 ";
@@ -194,7 +194,7 @@ class __TwigTemplate_50ba9a391145703f3caa2944965831b14635ac295fdd77b97984b171955
     <div class=\"well\">
         <p class=\"m-b-0\"><strong>{{ 'label.username'|trans }}</strong>: {{ user.Username }}</p>
         <p class=\"m-b-0\"><strong>{{ 'label.email'|trans }}</strong>: {{ user.Email }}</p>
-        <p class=\"m-b-0\"><strong>{{ 'label.role'|trans }}</strong>: {{ user.Roles[0] }}</p>
+        <p class=\"m-b-0\"><strong>{{ 'label.role'|trans }}</strong>: {{ user.Roles[0] is same as('ROLE_ADMIN') ? 'Administrateur' : 'Utilisateur' }}</p>
     </div>
 {% endblock %}
 

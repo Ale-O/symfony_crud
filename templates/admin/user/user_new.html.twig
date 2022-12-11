@@ -6,10 +6,11 @@
     <h1>{{ 'title.user_new'|trans }}</h1>
 
     {{ form_start(form) }}
-        {{ form_row(form.fullName) }}
         {{ form_row(form.username) }}
+        {{ form_row(form.fullName) }}
         {{ form_row(form.email) }}
         {{ form_row(form.password) }}
+        {{ form_row(form.isAdmin) }}
 
         <button type="submit" class="btn btn-primary">
             <i class="fa fa-save" aria-hidden="true"></i> {{ 'label.create_user'|trans }}

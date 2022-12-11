@@ -240,6 +240,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'label.current_password' => 'Mot de passe actuel',
     'label.new_password' => 'Nouveau mot de passe',
     'label.new_password_confirm' => 'Confirmer le mot de passe',
+    'label.isAdmin' => 'Profil administrateur',
     'label.role' => 'Rôle',
     'label.content' => 'Contenu',
     'label.summary' => 'Résumé',
