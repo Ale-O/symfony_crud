@@ -121,6 +121,10 @@
                 <source>action.show</source>
                 <target>Voir</target>
             </trans-unit>
+            <trans-unit id="action.create_account">
+                <source>action.create_account</source>
+                <target>Créer son compte</target>
+            </trans-unit>
             <trans-unit id="action.show_element">
                 <source>action.show_element</source>
                 <target>Voir l'élément</target>
@@ -498,6 +502,10 @@
             <trans-unit id="help.browse_app">
                 <source>help.browse_app</source>
                 <target><![CDATA[Espace <strong>Public</strong> sans connexion]]></target>
+            </trans-unit>
+            <trans-unit id="help.first_connect">
+                <source>help.first_connect</source>
+                <target><![CDATA[Vous n'avez pas de <strong>compte</strong>]]></target>
             </trans-unit>
             <trans-unit id="help.browse_admin">
                 <source>help.browse_admin</source>

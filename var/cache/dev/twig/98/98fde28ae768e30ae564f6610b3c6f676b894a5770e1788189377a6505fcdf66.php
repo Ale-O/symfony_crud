@@ -127,7 +127,7 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
         // line 16
         echo "
     <div class=\"row\">
-        <div class=\"col-md-6 col-md-offset-5\">
+        <div class=\"col-md-5 col-md-offset-3\">
             <div class=\"alert alert-success\">
                 <form action=\"";
         // line 20
@@ -174,9 +174,31 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
             </div>
         </div>
 
-        ";
-        // line 89
+        <div class=\"col-md-4\">
+            <div class=\"alert alert-success\">
+                <br>
+                <p>
+                    ";
+        // line 45
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("help.first_connect");
         echo "
+                </p>
+                <br>
+                <p>
+                    <a class=\"btn btn-primary btn-lg\" href=\"";
+        // line 49
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new");
+        echo "\">
+                        <i class=\"fa fa-door-lock\" aria-hidden=\"true\"></i> ";
+        // line 50
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.create_account"), "html", null, true);
+        echo "
+                    </a>
+                </p>
+                <br>
+            </div>
+        </div>
+
     </div>
 ";
         
@@ -199,7 +221,7 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
 
     public function getDebugInfo()
     {
-        return array (  179 => 89,  169 => 34,  164 => 32,  160 => 31,  154 => 28,  148 => 25,  144 => 24,  139 => 22,  134 => 20,  128 => 16,  122 => 13,  119 => 12,  116 => 11,  106 => 10,  94 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  194 => 50,  190 => 49,  183 => 45,  169 => 34,  164 => 32,  160 => 31,  154 => 28,  148 => 25,  144 => 24,  139 => 22,  134 => 20,  128 => 16,  122 => 13,  119 => 12,  116 => 11,  106 => 10,  94 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -221,7 +243,7 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
     {% endif %}
 
     <div class=\"row\">
-        <div class=\"col-md-6 col-md-offset-5\">
+        <div class=\"col-md-5 col-md-offset-3\">
             <div class=\"alert alert-success\">
                 <form action=\"{{ path('security_login') }}\" method=\"post\">
                     <fieldset>
@@ -244,54 +266,21 @@ class __TwigTemplate_9458c59c6c1ed8f3708a345db4890c720c213bf9f38a4c11bf22fb90ad0
             </div>
         </div>
 
-        {#
-        <div id=\"login-help\" class=\"col-sm-7\">
-            <h3>
-                <i class=\"hidden-xs fa fa-long-arrow-left\" aria-hidden=\"true\"></i>
-                {{ 'help.login_users'|trans }}
-            </h3>
-
-            <table class=\"table table-striped table-bordered table-hover\">
-                <thead>
-                    <tr>
-                        <th scope=\"col\">{{ 'label.username'|trans }}</th>
-                        <th scope=\"col\">{{ 'label.password'|trans }}</th>
-                        <th scope=\"col\">{{ 'label.role'|trans }}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>user_test</td>
-                        <td>user_1</td>
-                        <td><code>ROLE_USER</code> ({{ 'help.role_user'|trans }})</td>
-                    </tr>
-                    <tr>
-                        <td>admin_test</td>
-                        <td>admin1</td>
-                        <td><code>ROLE_ADMIN</code> ({{ 'help.role_admin'|trans }})</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div id=\"login-users-help\" class=\"panel panel-default\">
-                <div class=\"panel-body\">
-                    <p>
-                        <span class=\"label label-success\">{{ 'note'|trans }}</span>
-                        {{ 'help.reload_fixtures'|trans }}<br/>
-
-                        <code class=\"console\">\$ php bin/console doctrine:fixtures:load</code>
-                    </p>
-
-                    <p>
-                        <span class=\"label label-success\">{{ 'tip'|trans }}</span>
-                        {{ 'help.add_user'|trans }}<br/>
-
-                        <code class=\"console\">\$ php bin/console app:add-user</code>
-                    </p>
-                </div>
+        <div class=\"col-md-4\">
+            <div class=\"alert alert-success\">
+                <br>
+                <p>
+                    {{ 'help.first_connect'|trans|raw }}
+                </p>
+                <br>
+                <p>
+                    <a class=\"btn btn-primary btn-lg\" href=\"{{ path('user_new') }}\">
+                        <i class=\"fa fa-door-lock\" aria-hidden=\"true\"></i> {{ 'action.create_account'|trans }}
+                    </a>
+                </p>
+                <br>
             </div>
         </div>
-        #}
 
     </div>
 {% endblock %}

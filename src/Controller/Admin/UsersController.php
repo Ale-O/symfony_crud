@@ -3,7 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
-use App\Form\UserShortType;
+use App\Form\UserEditType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -80,7 +80,7 @@ class UsersController extends AbstractController
     // @IsGranted("edit", subject="user", message="Users can only be edited by their authors.")
     public function edit(Request $request, User $user): Response
     {
-        $form = $this->createForm(UserShortType::class, $user);
+        $form = $this->createForm(UserEditType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
