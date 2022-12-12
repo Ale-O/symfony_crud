@@ -133,6 +133,22 @@
                 <source>action.edit</source>
                 <target>Modifier</target>
             </trans-unit>
+            <trans-unit id="action.level_up">
+                <source>action.level_up</source>
+                <target>Passer administrateur</target>
+            </trans-unit>
+            <trans-unit id="action.level_down">
+                <source>action.level_down</source>
+                <target>Passer utilisateur</target>
+            </trans-unit>
+            <trans-unit id="action.level_up_successfully">
+                <source>action.level_up_successfully</source>
+                <target>Passage administrateur réussie</target>
+            </trans-unit>
+            <trans-unit id="action.level_down_successfully">
+                <source>action.level_down_successfully</source>
+                <target>Passage utilisateur réussie</target>
+            </trans-unit>
             <trans-unit id="action.edit_element">
                 <source>action.edit_element</source>
                 <target>Modifier l'élément</target>

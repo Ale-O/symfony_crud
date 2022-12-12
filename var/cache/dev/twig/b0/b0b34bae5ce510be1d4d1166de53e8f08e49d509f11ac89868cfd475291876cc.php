@@ -141,22 +141,55 @@ class __TwigTemplate_50ba9a391145703f3caa2944965831b14635ac295fdd77b97984b171955
         </a>
     </div>
 
+    ";
+        // line 21
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 21, $this->source); })()), "Roles", [], "any", false, false, false, 21), 0, [], "array", false, false, false, 21) === "ROLE_USER")) {
+            // line 22
+            echo "        <div class=\"section\">
+            <a href=\"";
+            // line 23
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_level_up", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
+            echo "\" class=\"btn btn-lg btn-block btn-success\">
+                <i class=\"fa fa-level-up\" aria-hidden=\"true\"></i> ";
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.level_up"), "html", null, true);
+            echo "
+            </a>
+        </div>
+    ";
+        } else {
+            // line 28
+            echo "        <div class=\"section\">
+            <a href=\"";
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_level_down", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 29, $this->source); })()), "id", [], "any", false, false, false, 29)]), "html", null, true);
+            echo "\" class=\"btn btn-lg btn-block btn-success\">
+                <i class=\"fa fa-level-down\" aria-hidden=\"true\"></i> ";
+            // line 30
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.level_down"), "html", null, true);
+            echo "
+            </a>
+        </div>
+    ";
+        }
+        // line 34
+        echo "
     
     <div class=\"section\">
         ";
-        // line 23
-        echo twig_include($this->env, $context, "admin/user/_user_delete_form.html.twig", ["user" => (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 23, $this->source); })())], false);
+        // line 37
+        echo twig_include($this->env, $context, "admin/user/_user_delete_form.html.twig", ["user" => (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 37, $this->source); })())], false);
         echo "
     </div>
     
 
     ";
-        // line 27
+        // line 41
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 29
+        // line 43
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -180,7 +213,7 @@ class __TwigTemplate_50ba9a391145703f3caa2944965831b14635ac295fdd77b97984b171955
 
     public function getDebugInfo()
     {
-        return array (  160 => 29,  155 => 27,  148 => 23,  139 => 17,  135 => 16,  132 => 15,  122 => 14,  107 => 10,  101 => 9,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  193 => 43,  188 => 41,  181 => 37,  176 => 34,  169 => 30,  165 => 29,  162 => 28,  155 => 24,  151 => 23,  148 => 22,  146 => 21,  139 => 17,  135 => 16,  132 => 15,  122 => 14,  107 => 10,  101 => 9,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -204,6 +237,20 @@ class __TwigTemplate_50ba9a391145703f3caa2944965831b14635ac295fdd77b97984b171955
             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
         </a>
     </div>
+
+    {% if user.Roles[0] is same as('ROLE_USER') %}
+        <div class=\"section\">
+            <a href=\"{{ path('admin_user_level_up', {id: user.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
+                <i class=\"fa fa-level-up\" aria-hidden=\"true\"></i> {{ 'action.level_up'|trans }}
+            </a>
+        </div>
+    {% else %}
+        <div class=\"section\">
+            <a href=\"{{ path('admin_user_level_down', {id: user.id}) }}\" class=\"btn btn-lg btn-block btn-success\">
+                <i class=\"fa fa-level-down\" aria-hidden=\"true\"></i> {{ 'action.level_down'|trans }}
+            </a>
+        </div>
+    {% endif %}
 
     
     <div class=\"section\">

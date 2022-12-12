@@ -151,13 +151,12 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.show"), "html", null, true);
             echo "
                         </a>
-
                         <a href=\"";
-            // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 30)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-primary\">
                             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
-            // line 32
+            // line 31
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
             echo "
                         </a>
@@ -168,10 +167,10 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 38
+            // line 37
             echo "            <tr>
                 <td colspan=\"4\" align=\"center\">";
-            // line 39
+            // line 38
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("user.no_users_found"), "html", null, true);
             echo "</td>
            </tr>
@@ -180,7 +179,7 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
+        // line 41
         echo "        </tbody>
     </table>
 ";
@@ -192,7 +191,7 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
 
     }
 
-    // line 46
+    // line 45
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -202,26 +201,26 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 47
+        // line 46
         echo "    <div class=\"section actions\">
         <a href=\"";
-        // line 48
+        // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_new");
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> ";
-        // line 49
+        // line 48
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.create"), "html", null, true);
         echo "
         </a>
     </div>
 
     ";
-        // line 53
+        // line 52
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 55
+        // line 54
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -245,7 +244,7 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
 
     public function getDebugInfo()
     {
-        return array (  225 => 55,  220 => 53,  213 => 49,  209 => 48,  206 => 47,  196 => 46,  184 => 42,  175 => 39,  172 => 38,  161 => 32,  157 => 31,  151 => 28,  147 => 27,  141 => 24,  137 => 23,  133 => 22,  129 => 21,  126 => 20,  121 => 19,  114 => 15,  110 => 14,  106 => 13,  102 => 12,  98 => 11,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  224 => 54,  219 => 52,  212 => 48,  208 => 47,  205 => 46,  195 => 45,  183 => 41,  174 => 38,  171 => 37,  160 => 31,  156 => 30,  151 => 28,  147 => 27,  141 => 24,  137 => 23,  133 => 22,  129 => 21,  126 => 20,  121 => 19,  114 => 15,  110 => 14,  106 => 13,  102 => 12,  98 => 11,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -279,7 +278,6 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
                         <a href=\"{{ path('admin_user_show', {id: user.id}) }}\" class=\"btn btn-sm btn-default\">
                             <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
                         </a>
-
                         <a href=\"{{ path('admin_user_edit', {id: user.id}) }}\" class=\"btn btn-sm btn-primary\">
                             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
                         </a>

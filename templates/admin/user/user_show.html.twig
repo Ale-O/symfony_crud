@@ -18,6 +18,20 @@
         </a>
     </div>
 
+    {% if user.Roles[0] is same as('ROLE_USER') %}
+        <div class="section">
+            <a href="{{ path('admin_user_level_up', {id: user.id}) }}" class="btn btn-lg btn-block btn-success">
+                <i class="fa fa-level-up" aria-hidden="true"></i> {{ 'action.level_up'|trans }}
+            </a>
+        </div>
+    {% else %}
+        <div class="section">
+            <a href="{{ path('admin_user_level_down', {id: user.id}) }}" class="btn btn-lg btn-block btn-success">
+                <i class="fa fa-level-down" aria-hidden="true"></i> {{ 'action.level_down'|trans }}
+            </a>
+        </div>
+    {% endif %}
+
     
     <div class="section">
         {{ include('admin/user/_user_delete_form.html.twig', {user: user}, with_context = false) }}

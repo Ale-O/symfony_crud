@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
+use App\Form\UserShortType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -77,14 +78,12 @@ class UsersController extends AbstractController
      * @Route("/{id<\d+>}/edit", methods="GET|POST", name="admin_user_edit")
      */
     // @IsGranted("edit", subject="user", message="Users can only be edited by their authors.")
-    public function edit(Request $request, User $user, UserPasswordEncoderInterface $encoder): Response
+    public function edit(Request $request, User $user): Response
     {
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserShortType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $user->setPassword($encoder->encodePassword($user, $form->get('password')->getData()));
-            $user->setRoles([($form->get('isAdmin')->getData()) ? 'ROLE_ADMIN' : 'ROLE_USER']);
             $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash('success', 'action.updated_successfully');
@@ -115,5 +114,41 @@ class UsersController extends AbstractController
         $this->addFlash('success', 'action.deleted_successfully');
 
         return $this->redirectToRoute('admin_user_index');
+    }
+
+    /**
+     * @Route("/{id<\d+>}/level_up", methods="GET|POST", name="admin_user_level_up")
+     */
+    // @IsGranted("level_up", subject="user", message="Users can only be edited by their authors.")
+    public function levelUp(User $user): Response
+    {
+        $user->setRoles(['ROLE_ADMIN']);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();
+
+        $this->addFlash('success', 'action.level_up_successfully');
+
+        return $this->render('admin/user/user_show.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
+    /**
+     * @Route("/{id<\d+>}/level_down", methods="GET|POST", name="admin_user_level_down")
+     */
+    // @IsGranted("level_down", subject="user", message="Users can only be edited by their authors.")
+    public function levelDown(User $user): Response
+    {
+        $user->setRoles(['ROLE_USER']);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();
+
+        $this->addFlash('success', 'action.level_down_successfully');
+
+        return $this->render('admin/user/user_show.html.twig', [
+            'user' => $user,
+        ]);
     }
 }
