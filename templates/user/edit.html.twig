@@ -6,8 +6,8 @@
     <h1>{{ 'title.edit_user'|trans }}</h1>
 
     {{ form_start(form) }}
-        {{ form_row(form.fullName) }}
         {{ form_row(form.username) }}
+        {{ form_row(form.fullName) }}
         {{ form_row(form.email) }}
 
         <button type="submit" class="btn btn-primary">

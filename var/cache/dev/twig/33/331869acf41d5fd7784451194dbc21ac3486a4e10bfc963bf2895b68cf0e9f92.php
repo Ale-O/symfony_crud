@@ -96,11 +96,11 @@ class __TwigTemplate_3493a28f6e0a2735719873ad5e4d3708b73a8d8b8de384f74aaece500b1
         echo "
         ";
         // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "fullName", [], "any", false, false, false, 9), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "username", [], "any", false, false, false, 9), 'row');
         echo "
         ";
         // line 10
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), "username", [], "any", false, false, false, 10), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), "fullName", [], "any", false, false, false, 10), 'row');
         echo "
         ";
         // line 11
@@ -192,8 +192,8 @@ class __TwigTemplate_3493a28f6e0a2735719873ad5e4d3708b73a8d8b8de384f74aaece500b1
     <h1>{{ 'title.edit_user'|trans }}</h1>
 
     {{ form_start(form) }}
-        {{ form_row(form.fullName) }}
         {{ form_row(form.username) }}
+        {{ form_row(form.fullName) }}
         {{ form_row(form.email) }}
 
         <button type=\"submit\" class=\"btn btn-primary\">
