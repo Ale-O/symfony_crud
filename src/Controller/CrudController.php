@@ -163,6 +163,7 @@ class CrudController extends AbstractController
 
         $user = $this->getUser();
         isset($user) ? $username = $user->getUsername() : $username = '';
+        isset($user) ? $roles = $user->getRoles() : $roles = '';
 
         $results = [];
         foreach ($foundElements as $element) {
@@ -174,6 +175,9 @@ class CrudController extends AbstractController
                     $tagsList = $tagsList.' '.$tag;
                     $allowed = true;
                 }
+            }
+            if ($roles[0] === 'ROLE_ADMIN') {
+                $allowed = true;
             }
 
             if ($allowed) {

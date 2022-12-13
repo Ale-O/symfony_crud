@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerPYgRsA8\App_KernelDevDebugContainer([
     'container.build_hash' => 'PYgRsA8',
-    'container.build_id' => 'ac3b38e2',
-    'container.build_time' => 1670942708,
+    'container.build_id' => '48fc7854',
+    'container.build_time' => 1670943595,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerPYgRsA8');
