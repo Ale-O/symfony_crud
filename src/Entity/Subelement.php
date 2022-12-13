@@ -58,6 +58,11 @@ class Subelement
      */
     private $author;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $title;
+
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
@@ -116,5 +121,17 @@ class Subelement
     public function setElement(Element $element): void
     {
         $this->element = $element;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
     }
 }

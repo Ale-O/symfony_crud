@@ -7,6 +7,7 @@
 
     <p class="element-metadata">
         <span class="metadata"><i class="fa fa-calendar-o"></i> {{ element.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+        <br/>
         <span class="metadata"><i class="fa fa-user-circle-o"></i> {{ element.author.fullName }}</span>
     </p>
 
@@ -17,6 +18,7 @@
     {{ element.content|markdown_to_html|sanitize_html }}
 
     {{ include('crud/_element_tags.html.twig') }}
+
 
     <div id="element-add-subelement" class="well">
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -31,6 +33,9 @@
         {% endif %}
     </div>
 
+
+    <hr/>
+
     <h3>
         <i class="fa fa-subelements" aria-hidden="true"></i> {{ 'element.num_subelements'|trans({ 'count': element.subelements|length }) }}
     </h3>
@@ -38,16 +43,14 @@
     <table class="table table-striped table-middle-aligned">
         <thead>
             <tr>
-                <th scope="col">{{ 'label.id'|trans }}</th>
-                <th scope="col">{{ 'label.content'|trans }}</th>
+                <th scope="col">{{ 'label.title'|trans }}</th>
                 <th scope="col" class="text-center"><i class="fa fa-cog" aria-hidden="true"></i> {{ 'label.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
             {% for subelement in element.subelements %}
                 <tr>
-                    <td>{{ subelement.id }}</td>
-                    <td>{{ subelement.content }}</td>
+                    <td>{{ subelement.title }}</td>
                     <td class="text-center">
                         <div class="item-actions">
                             <a href="{{ path('subelement_show', {id: subelement.id}) }}" class="btn btn-sm btn-default">

@@ -245,9 +245,9 @@
                 <source>action.back</source>
                 <target>Retour</target>
             </trans-unit>
-            <trans-unit id="action.publish_subelement">
-                <source>action.publish_subelement</source>
-                <target>Ajouter</target>
+            <trans-unit id="action.quick_add_subelement">
+                <source>action.quick_add_subelement</source>
+                <target>Création rapide</target>
             </trans-unit>
             <trans-unit id="action.sign_in">
                 <source>action.sign_in</source>
@@ -557,7 +557,7 @@
             </trans-unit>
             <trans-unit id="help.subelement_content">
                 <source>help.subelement_content</source>
-                <target>Les sous-éléments non conformes seront modérés.</target>
+                <target>Description du sous-élément.</target>
             </trans-unit>
 
             <trans-unit id="info.change_password">

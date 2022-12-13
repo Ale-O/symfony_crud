@@ -7,6 +7,7 @@
     {{ subelement.content|markdown_to_html|sanitize_html }}
     <p class="element-metadata">
         <span class="metadata"><i class="fa fa-calendar-o"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+        <br/>
         <span class="metadata"><i class="fa fa-user-circle-o"></i> {{ subelement.author.fullName }}</span>
     </p>
 

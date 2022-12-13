@@ -61,44 +61,20 @@ class __TwigTemplate_418416b8593a824accf39f92a41fb828b5cf44bde5d98bce2b6bc20964d
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'errors');
         echo "
 
-        <div class=\"form-group ";
-        // line 23
-        if ( !twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "content", [], "any", false, false, false, 23), "vars", [], "any", false, false, false, 23), "valid", [], "any", false, false, false, 23)) {
-            echo "has-error";
-        }
-        echo "\">
-            ";
-        // line 24
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "content", [], "any", false, false, false, 24), 'label', ["label_attr" => ["class" => "sr-only"], "label" => "label.content"]);
-        echo "
 
-            ";
-        // line 26
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), "content", [], "any", false, false, false, 26), 'errors');
-        echo "
-
-            ";
-        // line 28
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), "content", [], "any", false, false, false, 28), 'widget', ["attr" => ["rows" => 10]]);
-        echo "
-            ";
-        // line 29
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 29, $this->source); })()), "content", [], "any", false, false, false, 29), 'help');
-        echo "
-        </div>
 
         <div class=\"form-group\">
             <button class=\"btn btn-primary pull-right\" type=\"submit\">
                 <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> ";
-        // line 34
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.publish_subelement"), "html", null, true);
+        // line 27
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.quick_add_subelement"), "html", null, true);
         echo "
             </button>
         </div>
     </fieldset>
 ";
-        // line 38
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 38, $this->source); })()), 'form_end');
+        // line 31
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -121,7 +97,7 @@ class __TwigTemplate_418416b8593a824accf39f92a41fb828b5cf44bde5d98bce2b6bc20964d
 
     public function getDebugInfo()
     {
-        return array (  101 => 38,  94 => 34,  86 => 29,  82 => 28,  77 => 26,  72 => 24,  66 => 23,  61 => 21,  55 => 18,  50 => 15,  46 => 9,  43 => 8,);
+        return array (  77 => 31,  70 => 27,  61 => 21,  55 => 18,  50 => 15,  46 => 9,  43 => 8,);
     }
 
     public function getSourceContext()
@@ -148,18 +124,11 @@ class __TwigTemplate_418416b8593a824accf39f92a41fb828b5cf44bde5d98bce2b6bc20964d
 
         {{ form_errors(form) }}
 
-        <div class=\"form-group {% if not form.content.vars.valid %}has-error{% endif %}\">
-            {{ form_label(form.content, 'label.content', {label_attr: {class: 'sr-only'}}) }}
 
-            {{ form_errors(form.content) }}
-
-            {{ form_widget(form.content, {attr: {rows: 10}}) }}
-            {{ form_help(form.content) }}
-        </div>
 
         <div class=\"form-group\">
             <button class=\"btn btn-primary pull-right\" type=\"submit\">
-                <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> {{ 'action.publish_subelement'|trans }}
+                <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> {{ 'action.quick_add_subelement'|trans }}
             </button>
         </div>
     </fieldset>

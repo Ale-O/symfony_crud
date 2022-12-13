@@ -22,8 +22,13 @@ class SubelementType extends AbstractType
         // $builder->add('content', null, ['required' => false]);
 
         $builder
+            ->add('title', null, [
+                'attr' => ['autofocus' => true],
+                'label' => 'label.title',
+            ])
             ->add('content', TextareaType::class, [
                 'help' => 'help.subelement_content',
+                'label' => 'label.content',
             ])
         ;
     }
