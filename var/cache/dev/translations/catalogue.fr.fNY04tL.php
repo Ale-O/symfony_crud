@@ -234,6 +234,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'action.edit_user' => 'Modifier l\'utilisateur',
     'action.change_password' => 'Modifier le mot de passe',
     'label.too_many_tags' => 'Trop de tags',
+    'label.id' => 'Identifiant',
     'label.title' => 'Titre',
     'label.name' => 'Nom',
     'action.close' => 'Fermer',

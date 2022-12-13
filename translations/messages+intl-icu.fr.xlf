@@ -274,6 +274,10 @@
                 <source>label.too_many_tags</source>
                 <target>Trop de tags</target>
             </trans-unit>
+            <trans-unit id="label.id">
+                <source>label.id</source>
+                <target>Identifiant</target>
+            </trans-unit>
             <trans-unit id="label.title">
                 <source>label.title</source>
                 <target>Titre</target>
