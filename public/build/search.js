@@ -71,7 +71,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                        <span class="metadata"><i class="fa fa-user-circle-o"></i> {{ author }}</span>\
                     </p>\
                     <p>{{ summary }}</p>\
-                    <p>{{ tags }}</p>\
                 </article>'
   };
 
