@@ -233,6 +233,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'action.browse_admin' => 'Connexion',
     'action.edit_user' => 'Modifier l\'utilisateur',
     'action.change_password' => 'Modifier le mot de passe',
+    'label.too_many_tags' => 'Trop de tags',
     'label.title' => 'Titre',
     'label.name' => 'Nom',
     'action.close' => 'Fermer',
@@ -307,6 +308,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'rss.description' => 'Derniers éléments ajoutés sur le CRUD',
     'paginator.previous' => 'Précédent',
     'paginator.next' => 'Suivant',
+    'paginator.current' => 'Page actuelle',
   ),
 ));
 

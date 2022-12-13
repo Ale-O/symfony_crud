@@ -49,17 +49,19 @@ class __TwigTemplate_dc224713e4ae1dd12c9386e7da9c5f371a641d5f1eef4760b0994edb4b0
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 3, $this->source); })()), "tags", [], "any", false, false, false, 3));
             foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
                 // line 4
-                echo "            <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index", ["tag" => (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 4), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 4, $this->source); })()), "request", [], "any", false, false, false, 4), "query", [], "any", false, false, false, 4), "get", [0 => "tag"], "method", false, false, false, 4)))) ? (null) : (twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 4)))]), "html", null, true);
+                echo "            <i> </i>
+            <a href=\"";
+                // line 5
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index", ["tag" => (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 5), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 5, $this->source); })()), "request", [], "any", false, false, false, 5), "query", [], "any", false, false, false, 5), "get", [0 => "tag"], "method", false, false, false, 5)))) ? (null) : (twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 5)))]), "html", null, true);
                 echo "\"
                class=\"label label-";
-                // line 5
-                echo (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 5), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 5, $this->source); })()), "request", [], "any", false, false, false, 5), "query", [], "any", false, false, false, 5), "get", [0 => "tag"], "method", false, false, false, 5)))) ? ("success") : ("default"));
+                // line 6
+                echo (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 6), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 6, $this->source); })()), "request", [], "any", false, false, false, 6), "query", [], "any", false, false, false, 6), "get", [0 => "tag"], "method", false, false, false, 6)))) ? ("success") : ("default"));
                 echo "\"
             >
                 <i class=\"fa fa-tag\"></i> ";
-                // line 7
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 7), "html", null, true);
+                // line 8
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 8), "html", null, true);
                 echo "
             </a>
         ";
@@ -67,11 +69,11 @@ class __TwigTemplate_dc224713e4ae1dd12c9386e7da9c5f371a641d5f1eef4760b0994edb4b0
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 10
+            // line 11
             echo "    </p>
 ";
         }
-        // line 12
+        // line 13
         echo "
 ";
         
@@ -94,7 +96,7 @@ class __TwigTemplate_dc224713e4ae1dd12c9386e7da9c5f371a641d5f1eef4760b0994edb4b0
 
     public function getDebugInfo()
     {
-        return array (  75 => 12,  71 => 10,  62 => 7,  57 => 5,  52 => 4,  48 => 3,  45 => 2,  43 => 1,);
+        return array (  77 => 13,  73 => 11,  64 => 8,  59 => 6,  55 => 5,  52 => 4,  48 => 3,  45 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -102,6 +104,7 @@ class __TwigTemplate_dc224713e4ae1dd12c9386e7da9c5f371a641d5f1eef4760b0994edb4b0
         return new Source("{% if not element.tags.empty %}
     <p class=\"element-tags\">
         {% for tag in element.tags %}
+            <i> </i>
             <a href=\"{{ path('crud_index', {'tag': tag.name == app.request.query.get('tag') ? null : tag.name}) }}\"
                class=\"label label-{{ tag.name == app.request.query.get('tag') ? 'success' : 'default' }}\"
             >

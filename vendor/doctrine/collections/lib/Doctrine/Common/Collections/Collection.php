@@ -120,7 +120,7 @@ interface Collection extends Countable, IteratorAggregate, ArrayAccess
      * Gets all keys/indices of the collection.
      *
      * @return int[]|string[] The keys/indices of the collection, in the order of the corresponding
-     *               elements in the collection.
+     *                        elements in the collection.
      *
      * @psalm-return TKey[]
      */

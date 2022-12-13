@@ -10,6 +10,10 @@
         <span class="metadata"><i class="fa fa-user-circle-o"></i> {{ element.author.fullName }}</span>
     </p>
 
+    <div class="well">
+        <p class="m-b-0"><strong>{{ 'label.summary'|trans }}</strong>: {{ element.summary }}</p>
+    </div>
+
     {{ element.content|markdown_to_html|sanitize_html }}
 
     {{ include('crud/_element_tags.html.twig') }}

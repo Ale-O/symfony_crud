@@ -1,6 +1,7 @@
 {% if not element.tags.empty %}
     <p class="element-tags">
         {% for tag in element.tags %}
+            <i> </i>
             <a href="{{ path('crud_index', {'tag': tag.name == app.request.query.get('tag') ? null : tag.name}) }}"
                class="label label-{{ tag.name == app.request.query.get('tag') ? 'success' : 'default' }}"
             >

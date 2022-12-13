@@ -30,10 +30,10 @@ class CrudController extends AbstractController
      */
     public function index(Request $request, int $page, string $_format, ElementRepository $elements, TagRepository $tags): Response
     {
-        $tag = null;
-        if ($request->query->has('tag')) {
-            $tag = $tags->findOneBy(['name' => $request->query->get('tag')]);
-        }
+        $user = $this->getUser();
+        isset($user) ? $username = $user->getUsername() : $username = strval('Public');
+        $tag = $tags->findOneBy(['name' => strval($username)]);
+
         $latestElements = $elements->findLatest($page, $tag);
 
         return $this->render('crud/index.'.$_format.'.twig', [
@@ -161,29 +161,31 @@ class CrudController extends AbstractController
 
         $foundElements = $elements->findBySearchQuery($query, $limit);
 
+        $user = $this->getUser();
+        isset($user) ? $username = $user->getUsername() : $username = '';
+
         $results = [];
         foreach ($foundElements as $element) {
-            $user = $this->getUser();
-            isset($user) ? $userFullName = $user->getFullName() : $userFullName = '';
-
             $tags = $element->getTags();
             $tagsList = '';
             $allowed = false;
             foreach ($tags as $tag) {
-                if (strval($tag) === strval($userFullName)) {
+                if (strval($tag) === strval($username)) {
                     $tagsList = $tagsList.' '.$tag;
                     $allowed = true;
                 }
             }
 
-            $allowed ? $results[] = [
-                'title' => htmlspecialchars($element->getTitle(), ENT_COMPAT | ENT_HTML5),
-                'date' => $element->getPublishedAt()->format('M d, Y'),
-                'author' => htmlspecialchars($element->getAuthor()->getFullName(), ENT_COMPAT | ENT_HTML5),
-                'summary' => htmlspecialchars($element->getSummary(), ENT_COMPAT | ENT_HTML5),
-                'tags' => $tagsList,
-                'url' => $this->generateUrl('crud_element', ['slug' => $element->getSlug()]),
-            ] : $results;
+            if ($allowed) {
+                $results[] = [
+                    'title' => htmlspecialchars($element->getTitle(), ENT_COMPAT | ENT_HTML5),
+                    'date' => $element->getPublishedAt()->format('M d, Y'),
+                    'author' => htmlspecialchars($element->getAuthor()->getFullName(), ENT_COMPAT | ENT_HTML5),
+                    'summary' => htmlspecialchars($element->getSummary(), ENT_COMPAT | ENT_HTML5),
+                    'tags' => $tagsList,
+                    'url' => $this->generateUrl('crud_element', ['slug' => $element->getSlug()]),
+                ];
+            }
         }
 
         return $this->json($results);

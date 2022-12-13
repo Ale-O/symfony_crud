@@ -91,7 +91,7 @@ class Element
      * @ORM\ManyToMany(targetEntity="App\Entity\Tag", cascade={"persist"})
      * @ORM\JoinTable(name="symfony_element_tag")
      * @ORM\OrderBy({"name": "ASC"})
-     * @Assert\Count(max="4", maxMessage="element.too_many_tags")
+     * @Assert\Count(max="4", maxMessage="label.too_many_tags")
      */
     private $tags;
 

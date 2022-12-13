@@ -270,6 +270,10 @@
                 <target>Modifier le mot de passe</target>
             </trans-unit>
 
+            <trans-unit id="label.too_many_tags">
+                <source>label.too_many_tags</source>
+                <target>Trop de tags</target>
+            </trans-unit>
             <trans-unit id="label.title">
                 <source>label.title</source>
                 <target>Titre</target>
@@ -573,6 +577,10 @@
             <trans-unit id="paginator.next">
                 <source>paginator.next</source>
                 <target>Suivant</target>
+            </trans-unit>
+            <trans-unit id="paginator.current">
+                <source>paginator.current</source>
+                <target>Page actuelle</target>
             </trans-unit>
         </body>
     </file>

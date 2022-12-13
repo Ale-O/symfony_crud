@@ -5,7 +5,9 @@ namespace App\Controller\Admin;
 use App\Entity\Element;
 use App\Form\ElementType;
 use App\Repository\ElementRepository;
+use App\Repository\TagRepository;
 use App\Security\ElementVoter;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -20,15 +22,25 @@ use Symfony\Component\Routing\Annotation\Route;
 class CrudController extends AbstractController
 {
     /**
-     * @Route("/", methods="GET", name="admin_index")
-     * @Route("/", methods="GET", name="admin_element_index")
+     * @Route("/", defaults={"page": "1", "_format"="html"}, methods="GET", name="admin_index")
+     * @Route("/", defaults={"page": "1", "_format"="html"}, methods="GET", name="admin_element_index")
+     * @Route("/page/{page<[1-9]\d*>}", defaults={"_format"="html"}, methods="GET", name="admin_index_paginated")
+     * @Cache(smaxage="10")
      */
-    public function index(ElementRepository $elements): Response
+    public function index(Request $request, int $page, string $_format, ElementRepository $elements, TagRepository $tags): Response
     {
-        // $authorElements = $elements->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
-        $allElements = $elements->findAll();
+        $tag = null;
 
-        return $this->render('admin/crud/index.html.twig', ['elements' => $allElements]);
+        if ($request->query->has('tag')) {
+            $tag = $tags->findOneBy(['name' => $request->query->get('tag')]);
+        }
+
+        $latestElements = $elements->findLatest($page, $tag);
+
+        return $this->render('admin/crud/index.'.$_format.'.twig', [
+            'paginator' => $latestElements,
+            'tagName' => $tag ? $tag->getName() : null,
+        ]);
     }
 
     /**

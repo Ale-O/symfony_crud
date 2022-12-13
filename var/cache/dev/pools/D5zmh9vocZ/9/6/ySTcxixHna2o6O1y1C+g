@@ -4,6 +4,8 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     $o = [
         clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
         clone $p['Symfony\\Component\\Routing\\Annotation\\Route'],
+        clone $p['Symfony\\Component\\Routing\\Annotation\\Route'],
+        clone ($p['Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Cache'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Cache')),
     ],
     null,
     [
@@ -11,10 +13,25 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'path' => [
                 '/',
                 '/',
+                '/page/{page<[1-9]\\d*>}',
             ],
             'name' => [
                 'admin_index',
                 'admin_element_index',
+                'admin_index_paginated',
+            ],
+            'defaults' => [
+                [
+                    'page' => '1',
+                    '_format' => 'html',
+                ],
+                [
+                    'page' => '1',
+                    '_format' => 'html',
+                ],
+                [
+                    '_format' => 'html',
+                ],
             ],
             'methods' => [
                 [
@@ -23,12 +40,22 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                 [
                     'GET',
                 ],
+                [
+                    'GET',
+                ],
+            ],
+        ],
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Cache' => [
+            'smaxage' => [
+                3 => '10',
             ],
         ],
     ],
     [
         $o[0],
         $o[1],
+        $o[2],
+        $o[3],
     ],
     []
 ); }];
