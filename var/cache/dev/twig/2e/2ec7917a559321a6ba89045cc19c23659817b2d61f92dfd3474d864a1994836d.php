@@ -39,26 +39,28 @@ class __TwigTemplate_418416b8593a824accf39f92a41fb828b5cf44bde5d98bce2b6bc20964d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "crud/subelement/_subelement_form.html.twig"));
 
-        // line 8
-        echo "
-";
-        // line 9
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form_start', ["method" => "POST", "action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_new", ["elementSlug" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 9, $this->source); })()), "slug", [], "any", false, false, false, 9)])]);
-        echo "
-    ";
-        // line 15
+        // line 1
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 1, $this->source); })()), 'form_start', ["method" => "POST", "action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_new", ["elementSlug" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 1, $this->source); })()), "slug", [], "any", false, false, false, 1)])]);
         echo "
     <fieldset>
         <legend>
             <i class=\"fa fa-list\" aria-hidden=\"true\"></i> ";
-        // line 18
+        // line 4
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.add_subelement"), "html", null, true);
         echo "
         </legend>
 
         ";
-        // line 21
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'errors');
+        // line 7
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'errors');
+        echo "
+        ";
+        // line 8
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), "title", [], "any", false, false, false, 8), 'row');
+        echo "
+        ";
+        // line 9
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "content", [], "any", false, false, false, 9), 'row');
         echo "
 
 
@@ -66,15 +68,15 @@ class __TwigTemplate_418416b8593a824accf39f92a41fb828b5cf44bde5d98bce2b6bc20964d
         <div class=\"form-group\">
             <button class=\"btn btn-primary pull-right\" type=\"submit\">
                 <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> ";
-        // line 27
+        // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.quick_add_subelement"), "html", null, true);
         echo "
             </button>
         </div>
     </fieldset>
 ";
-        // line 31
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), 'form_end');
+        // line 19
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -97,32 +99,20 @@ class __TwigTemplate_418416b8593a824accf39f92a41fb828b5cf44bde5d98bce2b6bc20964d
 
     public function getDebugInfo()
     {
-        return array (  77 => 31,  70 => 27,  61 => 21,  55 => 18,  50 => 15,  46 => 9,  43 => 8,);
+        return array (  79 => 19,  72 => 15,  63 => 9,  59 => 8,  55 => 7,  49 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{#
-    By default, forms enable client-side validation. This means that you can't
-    test the server-side validation errors from the browser. To temporarily
-    disable this validation, add the 'novalidate' attribute:
-
-    {{ form_start(form, {method: ..., action: ..., attr: {novalidate: 'novalidate'}}) }}
-#}
-
-{{ form_start(form, {method: 'POST', action: path('subelement_new', {'elementSlug': element.slug})}) }}
-    {#  instead of displaying form fields one by one, you can also display them
-        all with their default options and styles just by calling to this function:
-
-        {{ form_widget(form) }}
-    #}
-
+        return new Source("{{ form_start(form, {method: 'POST', action: path('subelement_new', {'elementSlug': element.slug})}) }}
     <fieldset>
         <legend>
             <i class=\"fa fa-list\" aria-hidden=\"true\"></i> {{ 'title.add_subelement'|trans }}
         </legend>
 
         {{ form_errors(form) }}
+        {{ form_row(form.title) }}
+        {{ form_row(form.content) }}
 
 
 

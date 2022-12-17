@@ -39,57 +39,54 @@ class __TwigTemplate_4581a17572748eba54bfe82c3bcffa91f95a43c4262e485940a539157e7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/crud/_form.html.twig"));
 
-        // line 8
-        echo "
-";
-        // line 9
-        if ((((isset($context["show_confirmation"]) || array_key_exists("show_confirmation", $context))) ? (_twig_default_filter((isset($context["show_confirmation"]) || array_key_exists("show_confirmation", $context) ? $context["show_confirmation"] : (function () { throw new RuntimeError('Variable "show_confirmation" does not exist.', 9, $this->source); })()), false)) : (false))) {
-            // line 10
+        // line 1
+        if ((((isset($context["show_confirmation"]) || array_key_exists("show_confirmation", $context))) ? (_twig_default_filter((isset($context["show_confirmation"]) || array_key_exists("show_confirmation", $context) ? $context["show_confirmation"] : (function () { throw new RuntimeError('Variable "show_confirmation" does not exist.', 1, $this->source); })()), false)) : (false))) {
+            // line 2
             echo "    ";
             $context["attr"] = ["data-confirmation" => "true"];
-            // line 11
+            // line 3
             echo "    ";
             echo twig_include($this->env, $context, "crud/_delete_element_confirmation.html.twig");
             echo "
 ";
         }
-        // line 13
+        // line 5
         echo "
 ";
-        // line 14
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), 'form_start', ["attr" => (((isset($context["attr"]) || array_key_exists("attr", $context))) ? (_twig_default_filter((isset($context["attr"]) || array_key_exists("attr", $context) ? $context["attr"] : (function () { throw new RuntimeError('Variable "attr" does not exist.', 14, $this->source); })()), [])) : ([]))]);
+        // line 6
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 6, $this->source); })()), 'form_start', ["attr" => (((isset($context["attr"]) || array_key_exists("attr", $context))) ? (_twig_default_filter((isset($context["attr"]) || array_key_exists("attr", $context) ? $context["attr"] : (function () { throw new RuntimeError('Variable "attr" does not exist.', 6, $this->source); })()), [])) : ([]))]);
         echo "
     ";
-        // line 15
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'widget');
+        // line 7
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'widget');
         echo "
 
     <button type=\"submit\" class=\"";
-        // line 17
-        echo twig_escape_filter($this->env, (((isset($context["button_css"]) || array_key_exists("button_css", $context))) ? (_twig_default_filter((isset($context["button_css"]) || array_key_exists("button_css", $context) ? $context["button_css"] : (function () { throw new RuntimeError('Variable "button_css" does not exist.', 17, $this->source); })()), "btn btn-primary")) : ("btn btn-primary")), "html", null, true);
+        // line 9
+        echo twig_escape_filter($this->env, (((isset($context["button_css"]) || array_key_exists("button_css", $context))) ? (_twig_default_filter((isset($context["button_css"]) || array_key_exists("button_css", $context) ? $context["button_css"] : (function () { throw new RuntimeError('Variable "button_css" does not exist.', 9, $this->source); })()), "btn btn-primary")) : ("btn btn-primary")), "html", null, true);
         echo "\">
         <i class=\"fa fa-save\" aria-hidden=\"true\"></i> ";
-        // line 18
-        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 18, $this->source); })()), $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create_element"))) : ($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create_element"))), "html", null, true);
+        // line 10
+        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 10, $this->source); })()), $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create_element"))) : ($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create_element"))), "html", null, true);
         echo "
     </button>
 
     ";
-        // line 21
-        if ((((isset($context["include_back_to_home_link"]) || array_key_exists("include_back_to_home_link", $context))) ? (_twig_default_filter((isset($context["include_back_to_home_link"]) || array_key_exists("include_back_to_home_link", $context) ? $context["include_back_to_home_link"] : (function () { throw new RuntimeError('Variable "include_back_to_home_link" does not exist.', 21, $this->source); })()), false)) : (false))) {
-            // line 22
+        // line 13
+        if ((((isset($context["include_back_to_home_link"]) || array_key_exists("include_back_to_home_link", $context))) ? (_twig_default_filter((isset($context["include_back_to_home_link"]) || array_key_exists("include_back_to_home_link", $context) ? $context["include_back_to_home_link"] : (function () { throw new RuntimeError('Variable "include_back_to_home_link" does not exist.', 13, $this->source); })()), false)) : (false))) {
+            // line 14
             echo "        <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_index");
             echo "\" class=\"btn btn-link\">
             <i class=\"fa fa-database\" aria-hidden=\"true\"></i> ";
-            // line 23
+            // line 15
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.back"), "html", null, true);
             echo "
         </a>
     ";
         }
-        // line 26
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), 'form_end');
+        // line 18
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -112,20 +109,12 @@ class __TwigTemplate_4581a17572748eba54bfe82c3bcffa91f95a43c4262e485940a539157e7
 
     public function getDebugInfo()
     {
-        return array (  92 => 26,  86 => 23,  81 => 22,  79 => 21,  73 => 18,  69 => 17,  64 => 15,  60 => 14,  57 => 13,  51 => 11,  48 => 10,  46 => 9,  43 => 8,);
+        return array (  89 => 18,  83 => 15,  78 => 14,  76 => 13,  70 => 10,  66 => 9,  61 => 7,  57 => 6,  54 => 5,  48 => 3,  45 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{#
-    By default, forms enable client-side validation. This means that you can't
-    test the server-side validation errors from the browser. To temporarily
-    disable this validation, add the 'novalidate' attribute:
-
-    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
-#}
-
-{% if show_confirmation|default(false) %}
+        return new Source("{% if show_confirmation|default(false) %}
     {% set attr = {'data-confirmation': 'true'} %}
     {{ include('crud/_delete_element_confirmation.html.twig') }}
 {% endif %}

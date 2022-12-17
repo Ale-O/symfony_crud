@@ -7,6 +7,7 @@
 
     {{ include('crud/subelement/_subelement_edit_form.html.twig', {
         form: form,
+        id: subelement.id,
         button_label: 'action.save'|trans,
         include_back_to_home_link: true,
     }, with_context = false) }}

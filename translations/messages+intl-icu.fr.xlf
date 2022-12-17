@@ -104,6 +104,10 @@
                 <source>subelement.too_short</source>
                 <target>Contenu du sous-élément trop court</target>
             </trans-unit>
+            <trans-unit id="element.too_short_content">
+                <source>element.too_short_content</source>
+                <target>Contenu de l'élément trop court</target>
+            </trans-unit>
             <trans-unit id="title.subelement_error">
                 <source>title.subelement_error</source>
                 <target>Il y a eu une erreur lors de l'ajout du sous-élément.</target>
@@ -217,6 +221,10 @@
                 <source>label.create_element</source>
                 <target>Créer un élément</target>
             </trans-unit>
+            <trans-unit id="label.create_subelement">
+                <source>label.create_subelement</source>
+                <target>Créer un sous-élément</target>
+            </trans-unit>
             <trans-unit id="label.create_tag">
                 <source>label.create_tag</source>
                 <target>Créer un tag</target>
@@ -232,6 +240,10 @@
             <trans-unit id="action.create_element">
                 <source>action.create_element</source>
                 <target>Créer un nouvel élément</target>
+            </trans-unit>
+            <trans-unit id="action.create_subelement">
+                <source>action.create_subelement</source>
+                <target>Créer sous-élément</target>
             </trans-unit>
             <trans-unit id="label.save_and_create_new">
                 <source>label.save_and_create_new</source>
@@ -357,6 +369,10 @@
             <trans-unit id="title.element_new">
                 <source>title.element_new</source>
                 <target>Ajouter un nouvel élément</target>
+            </trans-unit>
+            <trans-unit id="title.subelement_new">
+                <source>title.subelement_new</source>
+                <target>Ajouter un nouveau sous-élément</target>
             </trans-unit>
             <trans-unit id="title.tag_new">
                 <source>title.tag_new</source>

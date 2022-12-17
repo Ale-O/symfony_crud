@@ -91,14 +91,18 @@ class CrudController extends AbstractController
     }
 
     /**
-     * @Route("/{id<\d+>}", methods="GET", name="subelement_show")
+     * @Route("/{id<\d+>}}", methods="GET", name="subelement_show")
      */
     public function subelementShow(Subelement $subelement): Response
     {
         // $this->denyAccessUnlessGranted(ElementVoter::SHOW, $element, 'Elements can only be shown to their authors.');
 
+        $element = $subelement->getElement();
+        $slugElement = $element->getSlug();
+
         return $this->render('crud/subelement/subelement_show.html.twig', [
             'subelement' => $subelement,
+            'slugElement' => $slugElement,
         ]);
     }
 

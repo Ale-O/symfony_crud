@@ -86,22 +86,36 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         // line 6
-        echo "
-    ";
-        // line 7
-        echo $this->extensions['HtmlSanitizer\Bundle\Twig\TwigExtension']->sanitize($this->env->getRuntime('Twig\Extra\Markdown\MarkdownRuntime')->convert(twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 7, $this->source); })()), "content", [], "any", false, false, false, 7)));
-        echo "
+        echo "    <h1>";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 6, $this->source); })()), "title", [], "any", false, false, false, 6), "html", null, true);
+        echo "</h1>
     <p class=\"element-metadata\">
         <span class=\"metadata\"><i class=\"fa fa-calendar-o\"></i> ";
-        // line 9
-        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 9, $this->source); })()), "publishedAt", [], "any", false, false, false, 9), "long", "medium", "", "UTC"), "html", null, true);
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 8, $this->source); })()), "publishedAt", [], "any", false, false, false, 8), "long", "medium", "", "UTC"), "html", null, true);
         echo "</span>
         <br/>
         <span class=\"metadata\"><i class=\"fa fa-user-circle-o\"></i> ";
-        // line 11
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 11, $this->source); })()), "author", [], "any", false, false, false, 11), "fullName", [], "any", false, false, false, 11), "html", null, true);
+        // line 10
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 10, $this->source); })()), "author", [], "any", false, false, false, 10), "fullName", [], "any", false, false, false, 10), "html", null, true);
         echo "</span>
     </p>
+    ";
+        // line 12
+        echo $this->extensions['HtmlSanitizer\Bundle\Twig\TwigExtension']->sanitize($this->env->getRuntime('Twig\Extra\Markdown\MarkdownRuntime')->convert(twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 12, $this->source); })()), "content", [], "any", false, false, false, 12)));
+        echo "
+
+    <div>
+        <a href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_element", ["slug" => (isset($context["slugElement"]) || array_key_exists("slugElement", $context) ? $context["slugElement"] : (function () { throw new RuntimeError('Variable "slugElement" does not exist.', 15, $this->source); })())]), "html", null, true);
+        echo "\" class=\"btn btn-link\">
+            <i class=\"fa fa-backward\" aria-hidden=\"true\"></i> ";
+        // line 16
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.back"), "html", null, true);
+        echo "
+        </a>
+    </div>
 
 ";
         
@@ -112,7 +126,7 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
 
     }
 
-    // line 17
+    // line 23
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -122,15 +136,15 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 18
+        // line 24
         echo "
     <div class=\"section\">
         <a href=\"";
-        // line 20
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 20, $this->source); })()), "id", [], "any", false, false, false, 20)]), "html", null, true);
+        // line 26
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 26, $this->source); })()), "id", [], "any", false, false, false, 26)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
-        // line 21
+        // line 27
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
         echo "
         </a>
@@ -138,18 +152,18 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
     
     <div class=\"section\">
         ";
-        // line 26
-        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 26, $this->source); })())], false);
+        // line 32
+        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 32, $this->source); })())], false);
         echo "
     </div>
 
     ";
-        // line 29
+        // line 35
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 31
+        // line 37
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -173,7 +187,7 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
 
     public function getDebugInfo()
     {
-        return array (  153 => 31,  148 => 29,  142 => 26,  134 => 21,  130 => 20,  126 => 18,  116 => 17,  102 => 11,  97 => 9,  92 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  167 => 37,  162 => 35,  156 => 32,  148 => 27,  144 => 26,  140 => 24,  130 => 23,  115 => 16,  111 => 15,  105 => 12,  100 => 10,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -183,13 +197,19 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
 {% block body_id 'crud_show' %}
 
 {% block main %}
-
-    {{ subelement.content|markdown_to_html|sanitize_html }}
+    <h1>{{ subelement.title }}</h1>
     <p class=\"element-metadata\">
         <span class=\"metadata\"><i class=\"fa fa-calendar-o\"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
         <br/>
         <span class=\"metadata\"><i class=\"fa fa-user-circle-o\"></i> {{ subelement.author.fullName }}</span>
     </p>
+    {{ subelement.content|markdown_to_html|sanitize_html }}
+
+    <div>
+        <a href=\"{{ path('crud_element', {slug: slugElement}) }}\" class=\"btn btn-link\">
+            <i class=\"fa fa-backward\" aria-hidden=\"true\"></i> {{ 'action.back'|trans }}
+        </a>
+    </div>
 
 {% endblock %}
 

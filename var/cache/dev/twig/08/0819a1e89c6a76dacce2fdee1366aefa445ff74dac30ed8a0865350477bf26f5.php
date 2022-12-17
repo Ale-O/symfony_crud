@@ -93,8 +93,9 @@ class __TwigTemplate_0696592c2f32f19e83029b87d756b07210bfc9d839724e49d7c42d6dc33
     ";
         // line 8
         echo twig_include($this->env, $context, "crud/subelement/_subelement_edit_form.html.twig", ["form" =>         // line 9
-(isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "button_label" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.save"), "include_back_to_home_link" => true], false);
-        // line 12
+(isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "id" => twig_get_attribute($this->env, $this->source,         // line 10
+(isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 10, $this->source); })()), "id", [], "any", false, false, false, 10), "button_label" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.save"), "include_back_to_home_link" => true], false);
+        // line 13
         echo "
 ";
         
@@ -105,7 +106,7 @@ class __TwigTemplate_0696592c2f32f19e83029b87d756b07210bfc9d839724e49d7c42d6dc33
 
     }
 
-    // line 15
+    // line 16
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -115,14 +116,14 @@ class __TwigTemplate_0696592c2f32f19e83029b87d756b07210bfc9d839724e49d7c42d6dc33
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 16
+        // line 17
         echo "    <div class=\"section\">
         <a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 17, $this->source); })()), "id", [], "any", false, false, false, 17)]), "html", null, true);
+        // line 18
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 18, $this->source); })()), "id", [], "any", false, false, false, 18)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.show"), "html", null, true);
         echo "
         </a>
@@ -130,18 +131,18 @@ class __TwigTemplate_0696592c2f32f19e83029b87d756b07210bfc9d839724e49d7c42d6dc33
 
     <div class=\"section actions\">
         ";
-        // line 23
-        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 23, $this->source); })())], false);
+        // line 24
+        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 24, $this->source); })())], false);
         echo "
     </div>
 
     ";
-        // line 26
+        // line 27
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 28
+        // line 29
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -165,7 +166,7 @@ class __TwigTemplate_0696592c2f32f19e83029b87d756b07210bfc9d839724e49d7c42d6dc33
 
     public function getDebugInfo()
     {
-        return array (  145 => 28,  140 => 26,  134 => 23,  126 => 18,  122 => 17,  119 => 16,  109 => 15,  98 => 12,  96 => 9,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  146 => 29,  141 => 27,  135 => 24,  127 => 19,  123 => 18,  120 => 17,  110 => 16,  99 => 13,  97 => 10,  96 => 9,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -179,6 +180,7 @@ class __TwigTemplate_0696592c2f32f19e83029b87d756b07210bfc9d839724e49d7c42d6dc33
 
     {{ include('crud/subelement/_subelement_edit_form.html.twig', {
         form: form,
+        id: subelement.id,
         button_label: 'action.save'|trans,
         include_back_to_home_link: true,
     }, with_context = false) }}

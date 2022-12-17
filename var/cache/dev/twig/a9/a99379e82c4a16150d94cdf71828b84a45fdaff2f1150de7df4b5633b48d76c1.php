@@ -59,37 +59,41 @@ class __TwigTemplate_2fc931ef594848ca134e7fa62cbafd44c9740962f94b9831a8115f86675
         // line 7
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'form_start', ["attr" => (((isset($context["attr"]) || array_key_exists("attr", $context))) ? (_twig_default_filter((isset($context["attr"]) || array_key_exists("attr", $context) ? $context["attr"] : (function () { throw new RuntimeError('Variable "attr" does not exist.', 7, $this->source); })()), [])) : ([]))]);
         echo "
-    ";
+        ";
         // line 8
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), "title", [], "any", false, false, false, 8), 'row');
+        echo "
+        ";
+        // line 9
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "content", [], "any", false, false, false, 9), 'row');
         echo "
 
     <button type=\"submit\" class=\"";
-        // line 10
-        echo twig_escape_filter($this->env, (((isset($context["button_css"]) || array_key_exists("button_css", $context))) ? (_twig_default_filter((isset($context["button_css"]) || array_key_exists("button_css", $context) ? $context["button_css"] : (function () { throw new RuntimeError('Variable "button_css" does not exist.', 10, $this->source); })()), "btn btn-primary")) : ("btn btn-primary")), "html", null, true);
+        // line 11
+        echo twig_escape_filter($this->env, (((isset($context["button_css"]) || array_key_exists("button_css", $context))) ? (_twig_default_filter((isset($context["button_css"]) || array_key_exists("button_css", $context) ? $context["button_css"] : (function () { throw new RuntimeError('Variable "button_css" does not exist.', 11, $this->source); })()), "btn btn-primary")) : ("btn btn-primary")), "html", null, true);
         echo "\">
         <i class=\"fa fa-save\" aria-hidden=\"true\"></i> ";
-        // line 11
-        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 11, $this->source); })()), $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create"))) : ($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create"))), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 12, $this->source); })()), $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create"))) : ($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create"))), "html", null, true);
         echo "
     </button>
 
     ";
-        // line 14
-        if ((((isset($context["include_back_to_home_link"]) || array_key_exists("include_back_to_home_link", $context))) ? (_twig_default_filter((isset($context["include_back_to_home_link"]) || array_key_exists("include_back_to_home_link", $context) ? $context["include_back_to_home_link"] : (function () { throw new RuntimeError('Variable "include_back_to_home_link" does not exist.', 14, $this->source); })()), false)) : (false))) {
-            // line 15
-            echo "        <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
-            echo "\" class=\"btn btn-link\">
-            <i class=\"fa fa-database\" aria-hidden=\"true\"></i> ";
+        // line 15
+        if ((((isset($context["include_back_to_home_link"]) || array_key_exists("include_back_to_home_link", $context))) ? (_twig_default_filter((isset($context["include_back_to_home_link"]) || array_key_exists("include_back_to_home_link", $context) ? $context["include_back_to_home_link"] : (function () { throw new RuntimeError('Variable "include_back_to_home_link" does not exist.', 15, $this->source); })()), false)) : (false))) {
             // line 16
+            echo "        <a href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_show", ["id" => (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 16, $this->source); })())]), "html", null, true);
+            echo "\" class=\"btn btn-link\">
+            <i class=\"fa fa-backward\" aria-hidden=\"true\"></i> ";
+            // line 17
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.back"), "html", null, true);
             echo "
         </a>
     ";
         }
-        // line 19
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'form_end');
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -112,7 +116,7 @@ class __TwigTemplate_2fc931ef594848ca134e7fa62cbafd44c9740962f94b9831a8115f86675
 
     public function getDebugInfo()
     {
-        return array (  92 => 19,  86 => 16,  81 => 15,  79 => 14,  73 => 11,  69 => 10,  64 => 8,  60 => 7,  57 => 6,  51 => 4,  48 => 3,  46 => 2,  43 => 1,);
+        return array (  96 => 20,  90 => 17,  85 => 16,  83 => 15,  77 => 12,  73 => 11,  68 => 9,  64 => 8,  60 => 7,  57 => 6,  51 => 4,  48 => 3,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -124,15 +128,16 @@ class __TwigTemplate_2fc931ef594848ca134e7fa62cbafd44c9740962f94b9831a8115f86675
 {% endif %}
 
 {{ form_start(form, {attr: attr|default({})}) }}
-    {{ form_widget(form) }}
+        {{ form_row(form.title) }}
+        {{ form_row(form.content) }}
 
     <button type=\"submit\" class=\"{{ button_css|default(\"btn btn-primary\") }}\">
         <i class=\"fa fa-save\" aria-hidden=\"true\"></i> {{ button_label|default('label.create'|trans) }}
     </button>
 
     {% if include_back_to_home_link|default(false) %}
-        <a href=\"{{ path('crud_index') }}\" class=\"btn btn-link\">
-            <i class=\"fa fa-database\" aria-hidden=\"true\"></i> {{ 'action.back'|trans }}
+        <a href=\"{{ path('subelement_show', {id: id}) }}\" class=\"btn btn-link\">
+            <i class=\"fa fa-backward\" aria-hidden=\"true\"></i> {{ 'action.back'|trans }}
         </a>
     {% endif %}
 {{ form_end(form) }}
