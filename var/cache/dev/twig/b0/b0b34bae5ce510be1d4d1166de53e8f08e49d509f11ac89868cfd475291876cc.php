@@ -109,6 +109,15 @@ class __TwigTemplate_50ba9a391145703f3caa2944965831b14635ac295fdd77b97984b171955
         echo (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 10, $this->source); })()), "Roles", [], "any", false, false, false, 10), 0, [], "array", false, false, false, 10) === "ROLE_ADMIN")) ? ("Administrateur") : ("Utilisateur"));
         echo "</p>
     </div>
+    <a href=\"";
+        // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_index");
+        echo "\" class=\"btn btn-link\">
+        <i class=\"fa fa-users\" aria-hidden=\"true\"></i> ";
+        // line 13
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.back"), "html", null, true);
+        echo "
+    </a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -118,7 +127,7 @@ class __TwigTemplate_50ba9a391145703f3caa2944965831b14635ac295fdd77b97984b171955
 
     }
 
-    // line 14
+    // line 17
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -128,68 +137,68 @@ class __TwigTemplate_50ba9a391145703f3caa2944965831b14635ac295fdd77b97984b171955
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 15
+        // line 18
         echo "    <div class=\"section\">
         <a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "id", [], "any", false, false, false, 16)]), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 19, $this->source); })()), "id", [], "any", false, false, false, 19)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
-        // line 17
+        // line 20
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
         echo "
         </a>
     </div>
 
     ";
-        // line 21
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 21, $this->source); })()), "Roles", [], "any", false, false, false, 21), 0, [], "array", false, false, false, 21) === "ROLE_USER")) {
-            // line 22
+        // line 24
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 24, $this->source); })()), "Roles", [], "any", false, false, false, 24), 0, [], "array", false, false, false, 24) === "ROLE_USER")) {
+            // line 25
             echo "        <div class=\"section\">
             <a href=\"";
-            // line 23
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_level_up", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_level_up", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 26, $this->source); })()), "id", [], "any", false, false, false, 26)]), "html", null, true);
             echo "\" class=\"btn btn-lg btn-block btn-success\">
                 <i class=\"fa fa-level-up\" aria-hidden=\"true\"></i> ";
-            // line 24
+            // line 27
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.level_up"), "html", null, true);
             echo "
             </a>
         </div>
     ";
         } else {
-            // line 28
+            // line 31
             echo "        <div class=\"section\">
             <a href=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_level_down", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 29, $this->source); })()), "id", [], "any", false, false, false, 29)]), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_level_down", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 32, $this->source); })()), "id", [], "any", false, false, false, 32)]), "html", null, true);
             echo "\" class=\"btn btn-lg btn-block btn-success\">
                 <i class=\"fa fa-level-down\" aria-hidden=\"true\"></i> ";
-            // line 30
+            // line 33
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.level_down"), "html", null, true);
             echo "
             </a>
         </div>
     ";
         }
-        // line 34
+        // line 37
         echo "
     
     <div class=\"section\">
         ";
-        // line 37
-        echo twig_include($this->env, $context, "admin/user/_user_delete_form.html.twig", ["user" => (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 37, $this->source); })())], false);
+        // line 40
+        echo twig_include($this->env, $context, "admin/user/_user_delete_form.html.twig", ["user" => (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 40, $this->source); })())], false);
         echo "
     </div>
     
 
     ";
-        // line 41
+        // line 44
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 43
+        // line 46
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -213,7 +222,7 @@ class __TwigTemplate_50ba9a391145703f3caa2944965831b14635ac295fdd77b97984b171955
 
     public function getDebugInfo()
     {
-        return array (  193 => 43,  188 => 41,  181 => 37,  176 => 34,  169 => 30,  165 => 29,  162 => 28,  155 => 24,  151 => 23,  148 => 22,  146 => 21,  139 => 17,  135 => 16,  132 => 15,  122 => 14,  107 => 10,  101 => 9,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  202 => 46,  197 => 44,  190 => 40,  185 => 37,  178 => 33,  174 => 32,  171 => 31,  164 => 27,  160 => 26,  157 => 25,  155 => 24,  148 => 20,  144 => 19,  141 => 18,  131 => 17,  118 => 13,  114 => 12,  107 => 10,  101 => 9,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -229,6 +238,9 @@ class __TwigTemplate_50ba9a391145703f3caa2944965831b14635ac295fdd77b97984b171955
         <p class=\"m-b-0\"><strong>{{ 'label.email'|trans }}</strong>: {{ user.Email }}</p>
         <p class=\"m-b-0\"><strong>{{ 'label.role'|trans }}</strong>: {{ user.Roles[0] is same as('ROLE_ADMIN') ? 'Administrateur' : 'Utilisateur' }}</p>
     </div>
+    <a href=\"{{ path('admin_user_index') }}\" class=\"btn btn-link\">
+        <i class=\"fa fa-users\" aria-hidden=\"true\"></i> {{ 'action.back'|trans }}
+    </a>
 {% endblock %}
 
 {% block sidebar %}

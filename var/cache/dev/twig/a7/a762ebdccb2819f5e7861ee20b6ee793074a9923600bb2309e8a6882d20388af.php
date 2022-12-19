@@ -89,6 +89,15 @@ class __TwigTemplate_c82f48080848bc173f34987d5b2523a96883584f96285a3ab24fccd369a
         echo "    <h1>";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["tag"]) || array_key_exists("tag", $context) ? $context["tag"] : (function () { throw new RuntimeError('Variable "tag" does not exist.', 6, $this->source); })()), "name", [], "any", false, false, false, 6), "html", null, true);
         echo "</h1>
+    <a href=\"";
+        // line 7
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_tag_index");
+        echo "\" class=\"btn btn-link\">
+        <i class=\"fa fa-tags\" aria-hidden=\"true\"></i> ";
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.back"), "html", null, true);
+        echo "
+    </a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -98,7 +107,7 @@ class __TwigTemplate_c82f48080848bc173f34987d5b2523a96883584f96285a3ab24fccd369a
 
     }
 
-    // line 9
+    // line 12
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -108,14 +117,14 @@ class __TwigTemplate_c82f48080848bc173f34987d5b2523a96883584f96285a3ab24fccd369a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 10
+        // line 13
         echo "    <div class=\"section\">
         <a href=\"";
-        // line 11
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_tag_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["tag"]) || array_key_exists("tag", $context) ? $context["tag"] : (function () { throw new RuntimeError('Variable "tag" does not exist.', 11, $this->source); })()), "id", [], "any", false, false, false, 11)]), "html", null, true);
+        // line 14
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_tag_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["tag"]) || array_key_exists("tag", $context) ? $context["tag"] : (function () { throw new RuntimeError('Variable "tag" does not exist.', 14, $this->source); })()), "id", [], "any", false, false, false, 14)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
-        // line 12
+        // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
         echo "
         </a>
@@ -124,19 +133,19 @@ class __TwigTemplate_c82f48080848bc173f34987d5b2523a96883584f96285a3ab24fccd369a
     
     <div class=\"section\">
         ";
-        // line 18
-        echo twig_include($this->env, $context, "admin/tag/_tag_delete_form.html.twig", ["tag" => (isset($context["tag"]) || array_key_exists("tag", $context) ? $context["tag"] : (function () { throw new RuntimeError('Variable "tag" does not exist.', 18, $this->source); })())], false);
+        // line 21
+        echo twig_include($this->env, $context, "admin/tag/_tag_delete_form.html.twig", ["tag" => (isset($context["tag"]) || array_key_exists("tag", $context) ? $context["tag"] : (function () { throw new RuntimeError('Variable "tag" does not exist.', 21, $this->source); })())], false);
         echo "
     </div>
     
 
     ";
-        // line 22
+        // line 25
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 24
+        // line 27
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -160,7 +169,7 @@ class __TwigTemplate_c82f48080848bc173f34987d5b2523a96883584f96285a3ab24fccd369a
 
     public function getDebugInfo()
     {
-        return array (  140 => 24,  135 => 22,  128 => 18,  119 => 12,  115 => 11,  112 => 10,  102 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  149 => 27,  144 => 25,  137 => 21,  128 => 15,  124 => 14,  121 => 13,  111 => 12,  98 => 8,  94 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -171,6 +180,9 @@ class __TwigTemplate_c82f48080848bc173f34987d5b2523a96883584f96285a3ab24fccd369a
 
 {% block main %}
     <h1>{{ tag.name }}</h1>
+    <a href=\"{{ path('admin_tag_index') }}\" class=\"btn btn-link\">
+        <i class=\"fa fa-tags\" aria-hidden=\"true\"></i> {{ 'action.back'|trans }}
+    </a>
 {% endblock %}
 
 {% block sidebar %}

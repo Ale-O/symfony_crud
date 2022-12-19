@@ -9,6 +9,9 @@
         <p class="m-b-0"><strong>{{ 'label.email'|trans }}</strong>: {{ user.Email }}</p>
         <p class="m-b-0"><strong>{{ 'label.role'|trans }}</strong>: {{ user.Roles[0] is same as('ROLE_ADMIN') ? 'Administrateur' : 'Utilisateur' }}</p>
     </div>
+    <a href="{{ path('admin_user_index') }}" class="btn btn-link">
+        <i class="fa fa-users" aria-hidden="true"></i> {{ 'action.back'|trans }}
+    </a>
 {% endblock %}
 
 {% block sidebar %}
