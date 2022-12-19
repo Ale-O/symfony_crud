@@ -117,6 +117,92 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
         </a>
     </div>
 
+
+    <hr/>
+
+    <div class=\"row\">
+        <div class=\"col-md-4 col-md-offset-2\">
+            <h3>
+                <i class=\"fa fa-subelements\" aria-hidden=\"true\"></i> ";
+        // line 26
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("element.num_subelements", ["count" => twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 26, $this->source); })()), "textfields", [], "any", false, false, false, 26))]), "html", null, true);
+        echo "
+            </h3>
+        </div>
+    </div>
+
+    <table class=\"table table-striped table-middle-aligned\">
+        <thead>
+            <tr>
+                <th scope=\"col\">";
+        // line 34
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.title"), "html", null, true);
+        echo "</th>
+                <th scope=\"col\" class=\"text-center\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> ";
+        // line 35
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.actions"), "html", null, true);
+        echo "</th>
+            </tr>
+        </thead>
+        <tbody>
+            ";
+        // line 39
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 39, $this->source); })()), "textfields", [], "any", false, false, false, 39));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["textfield"]) {
+            // line 40
+            echo "                <tr>
+                    <td>";
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["textfield"], "title", [], "any", false, false, false, 41), "html", null, true);
+            echo "</td>
+                    <td class=\"text-center\">
+                        <div class=\"item-actions\">
+                            <a href=\"";
+            // line 44
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
+            echo "\" class=\"btn btn-sm btn-default\">
+                                <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
+            // line 45
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.show"), "html", null, true);
+            echo "
+                            </a>
+
+                            <a href=\"";
+            // line 48
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
+            echo "\" class=\"btn btn-sm btn-primary\">
+                                <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
+            // line 49
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
+            echo "
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 55
+            echo "                <tr>
+                    <td colspan=\"4\" align=\"center\">";
+            // line 56
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("element.no_subelements"), "html", null, true);
+            echo "</td>
+                </tr>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['textfield'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 59
+        echo "        </tbody>
+    </table>
+
+
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -126,7 +212,7 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
 
     }
 
-    // line 23
+    // line 69
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -136,15 +222,15 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 24
+        // line 70
         echo "
     <div class=\"section\">
         <a href=\"";
-        // line 26
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 26, $this->source); })()), "id", [], "any", false, false, false, 26)]), "html", null, true);
+        // line 72
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 72, $this->source); })()), "id", [], "any", false, false, false, 72)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
-        // line 27
+        // line 73
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
         echo "
         </a>
@@ -152,18 +238,18 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
     
     <div class=\"section\">
         ";
-        // line 32
-        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 32, $this->source); })())], false);
+        // line 78
+        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 78, $this->source); })())], false);
         echo "
     </div>
 
     ";
-        // line 35
+        // line 81
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 37
+        // line 83
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -187,7 +273,7 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
 
     public function getDebugInfo()
     {
-        return array (  167 => 37,  162 => 35,  156 => 32,  148 => 27,  144 => 26,  140 => 24,  130 => 23,  115 => 16,  111 => 15,  105 => 12,  100 => 10,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  253 => 83,  248 => 81,  242 => 78,  234 => 73,  230 => 72,  226 => 70,  216 => 69,  201 => 59,  192 => 56,  189 => 55,  178 => 49,  174 => 48,  168 => 45,  164 => 44,  158 => 41,  155 => 40,  150 => 39,  143 => 35,  139 => 34,  128 => 26,  115 => 16,  111 => 15,  105 => 12,  100 => 10,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -211,7 +297,53 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
         </a>
     </div>
 
+
+    <hr/>
+
+    <div class=\"row\">
+        <div class=\"col-md-4 col-md-offset-2\">
+            <h3>
+                <i class=\"fa fa-subelements\" aria-hidden=\"true\"></i> {{ 'element.num_subelements'|trans({ 'count': subelement.textfields|length }) }}
+            </h3>
+        </div>
+    </div>
+
+    <table class=\"table table-striped table-middle-aligned\">
+        <thead>
+            <tr>
+                <th scope=\"col\">{{ 'label.title'|trans }}</th>
+                <th scope=\"col\" class=\"text-center\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> {{ 'label.actions'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for textfield in subelement.textfields %}
+                <tr>
+                    <td>{{ textfield.title }}</td>
+                    <td class=\"text-center\">
+                        <div class=\"item-actions\">
+                            <a href=\"{{ path('crud_index') }}\" class=\"btn btn-sm btn-default\">
+                                <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
+                            </a>
+
+                            <a href=\"{{ path('crud_index') }}\" class=\"btn btn-sm btn-primary\">
+                                <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan=\"4\" align=\"center\">{{ 'element.no_subelements'|trans }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
 {% endblock %}
+
+
 
 
 {% block sidebar %}

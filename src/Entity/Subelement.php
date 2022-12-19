@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use function Symfony\Component\String\u;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -63,9 +65,23 @@ class Subelement
      */
     private $title;
 
+    /**
+     * @var TextFields[]|Collection
+     *
+     * @ORM\OneToMany(
+     *      targetEntity="TextFields",
+     *      mappedBy="subelement",
+     *      orphanRemoval=true,
+     *      cascade={"persist"}
+     * )
+     * @ORM\OrderBy({"id": "DESC"})
+     */
+    private $textfields;
+
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
+        $this->textfields = new ArrayCollection();
     }
 
     /**
@@ -133,5 +149,23 @@ class Subelement
         $this->title = $title;
 
         return $this;
+    }
+
+    public function getTextFields(): Collection
+    {
+        return $this->textfields;
+    }
+
+    public function addTextField(TextFields $textfield): void
+    {
+        $textfield->setSubelement($this);
+        if (!$this->textfields->contains($textfield)) {
+            $this->textfields->add($textfield);
+        }
+    }
+
+    public function removeTextField(TextFields $textfield): void
+    {
+        $this->textfield->removeSubelement($textfield);
     }
 }

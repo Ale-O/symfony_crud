@@ -95,11 +95,25 @@ class Element
      */
     private $tags;
 
+    /**
+     * @var TextFields[]|Collection
+     *
+     * @ORM\OneToMany(
+     *      targetEntity="TextFields",
+     *      mappedBy="element",
+     *      orphanRemoval=true,
+     *      cascade={"persist"}
+     * )
+     * @ORM\OrderBy({"id": "DESC"})
+     */
+    private $textfields;
+
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
         $this->subelements = new ArrayCollection();
         $this->tags = new ArrayCollection();
+        $this->textfields = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -202,5 +216,23 @@ class Element
     public function getTags(): Collection
     {
         return $this->tags;
+    }
+
+    public function getTextFields(): Collection
+    {
+        return $this->textfields;
+    }
+
+    public function addTextField(TextFields $textfield): void
+    {
+        $textfield->setElement($this);
+        if (!$this->textfields->contains($textfield)) {
+            $this->textfields->add($textfield);
+        }
+    }
+
+    public function removeTextField(TextFields $textfield): void
+    {
+        $this->textfield->removeElement($textfield);
     }
 }
