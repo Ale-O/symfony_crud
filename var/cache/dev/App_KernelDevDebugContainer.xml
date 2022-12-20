@@ -485,6 +485,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\SubelementRepository" class="App\Repository\SubelementRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\TagRepository" class="App\Repository\TagRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -4088,7 +4092,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.PLIQRci"/>
+      <argument type="service" id=".service_locator.NN57Yx8"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5474,6 +5478,8 @@
     <service id=".abstract.instanceof.App\Repository\DateFieldsRepository" class="App\Repository\DateFieldsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ElementRepository" class="App\Repository\ElementRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ElementRepository" class="App\Repository\ElementRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SubelementRepository" class="App\Repository\SubelementRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\SubelementRepository" class="App\Repository\SubelementRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TagRepository" class="App\Repository\TagRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TagRepository" class="App\Repository\TagRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TextFieldsRepository" class="App\Repository\TextFieldsRepository" autowire="true" abstract="true"/>
@@ -5783,6 +5789,13 @@
         <argument key="user" type="service" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
       </argument>
     </service>
+    <service id=".service_locator.SRCoNHU" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="element" type="service" id=".errored..service_locator.SRCoNHU.App\Entity\Element"/>
+        <argument key="subelements" type="service" id="App\Repository\SubelementRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.c5BQ3qw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5815,7 +5828,7 @@
         <argument key="encoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
-    <service id=".service_locator.Ad5Cy5P" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.XR0vjQ7" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CrudController::delete" type="service" id=".service_locator.nfDhB4v"/>
@@ -5833,7 +5846,7 @@
         <argument key="App\Controller\Admin\UsersController::levelUp" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\Admin\UsersController::new" type="service" id=".service_locator.GeY2L1o"/>
         <argument key="App\Controller\Admin\UsersController::show" type="service" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\CrudController::elementShow" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\CrudController::elementShow" type="service" id=".service_locator.SRCoNHU"/>
         <argument key="App\Controller\CrudController::index" type="service" id=".service_locator.G4iNSV6"/>
         <argument key="App\Controller\CrudController::search" type="service" id=".service_locator.MlSflDM"/>
         <argument key="App\Controller\CrudController::subelementDelete" type="service" id=".service_locator.25IZi3d"/>
@@ -5865,7 +5878,7 @@
         <argument key="App\Controller\Admin\UsersController:levelUp" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\Admin\UsersController:new" type="service" id=".service_locator.GeY2L1o"/>
         <argument key="App\Controller\Admin\UsersController:show" type="service" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\CrudController:elementShow" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\CrudController:elementShow" type="service" id=".service_locator.SRCoNHU"/>
         <argument key="App\Controller\CrudController:index" type="service" id=".service_locator.G4iNSV6"/>
         <argument key="App\Controller\CrudController:search" type="service" id=".service_locator.MlSflDM"/>
         <argument key="App\Controller\CrudController:subelementDelete" type="service" id=".service_locator.25IZi3d"/>
@@ -5990,11 +6003,12 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.PLIQRci" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.NN57Yx8" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\DateFieldsRepository" type="service" id="App\Repository\DateFieldsRepository"/>
         <argument key="App\Repository\ElementRepository" type="service" id="App\Repository\ElementRepository"/>
+        <argument key="App\Repository\SubelementRepository" type="service" id="App\Repository\SubelementRepository"/>
         <argument key="App\Repository\TagRepository" type="service" id="App\Repository\TagRepository"/>
         <argument key="App\Repository\TextFieldsRepository" type="service" id="App\Repository\TextFieldsRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
@@ -6367,18 +6381,19 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.Ad5Cy5P"/>
+      <argument type="service" id=".service_locator.XR0vjQ7"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.Ad5Cy5P"/>
+      <argument type="service" id=".service_locator.XR0vjQ7"/>
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.nfDhB4v.App\Entity\Element" class="App\Entity\Element"/>
     <service id=".errored..service_locator.S92MJGp.App\Entity\Tag" class="App\Entity\Tag"/>
     <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
+    <service id=".errored..service_locator.SRCoNHU.App\Entity\Element" class="App\Entity\Element"/>
     <service id=".errored..service_locator.c5BQ3qw.App\Entity\Element" class="App\Entity\Element"/>
     <service id=".errored..service_locator.25IZi3d.App\Entity\Subelement" class="App\Entity\Subelement"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
@@ -6783,7 +6798,7 @@
     <service id="html_sanitizer" alias="html_sanitizer.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Ad5Cy5P"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.XR0vjQ7"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
     <service id="Psr\Log\LoggerInterface $cacheLogger" alias="monolog.logger.cache"/>

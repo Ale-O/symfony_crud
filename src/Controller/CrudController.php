@@ -7,6 +7,7 @@ use App\Entity\Subelement;
 use App\Event\SubelementCreatedEvent;
 use App\Form\SubelementType;
 use App\Repository\ElementRepository;
+use App\Repository\SubelementRepository;
 use App\Repository\TagRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -43,11 +44,18 @@ class CrudController extends AbstractController
     }
 
     /**
-     * @Route("/elements/{slug}", methods="GET", name="crud_element")
+     * @Route("/elements/{slug}", defaults={"page": "1"}, methods="GET", name="crud_element")
+     * @Route("/elements/{slug}/page/{page<[1-9]\d*>}", methods="GET", name="crud_element_paginated")
+     * @Cache(smaxage="10")
      */
-    public function elementShow(Element $element): Response
+    public function elementShow(Element $element, int $page, SubelementRepository $subelements): Response
     {
-        return $this->render('crud/element_show.html.twig', ['element' => $element]);
+        $latestSubelements = $subelements->findLatest($page, $element);
+
+        return $this->render('crud/element_show.html.twig', [
+            'paginator' => $latestSubelements,
+            'element' => $element,
+        ]);
     }
 
     /**
