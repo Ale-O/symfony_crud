@@ -19,13 +19,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class TagsController extends AbstractController
 {
     /**
-     * @Route("/", methods="GET", name="admin_tag_index")
+     * @Route("/", defaults={"page": "1"}, methods="GET", name="admin_tag_index")
+     * @Route("/page/{page<[1-9]\d*>}", methods="GET", name="admin_tag_paginated")
      */
-    public function index(TagRepository $tags): Response
+    public function index(TagRepository $tags, int $page): Response
     {
-        $allTags = $tags->findAll();
+        $allTags = $tags->findOrderByName($page);
 
-        return $this->render('admin/tag/tags_list.html.twig', ['tags' => $allTags]);
+        return $this->render('admin/tag/tags_list.html.twig', [
+            'paginator' => $allTags,
+        ]);
     }
 
     /**

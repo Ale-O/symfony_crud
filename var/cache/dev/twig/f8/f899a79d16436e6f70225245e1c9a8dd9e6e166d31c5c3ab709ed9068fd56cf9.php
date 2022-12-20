@@ -107,7 +107,7 @@ class __TwigTemplate_f95060f987507a7d2ed04b52aabfbbe726c321b4620680da79bd32f600f
         ";
         // line 16
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["tags"]) || array_key_exists("tags", $context) ? $context["tags"] : (function () { throw new RuntimeError('Variable "tags" does not exist.', 16, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 16, $this->source); })()), "results", [], "any", false, false, false, 16));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
             // line 17
@@ -159,7 +159,85 @@ class __TwigTemplate_f95060f987507a7d2ed04b52aabfbbe726c321b4620680da79bd32f600f
         // line 36
         echo "        </tbody>
     </table>
-";
+        ";
+        // line 38
+        if (twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 38, $this->source); })()), "hasToPaginate", [], "any", false, false, false, 38)) {
+            // line 39
+            echo "            <div class=\"navigation text-center\">
+                <ul class=\"pagination\">
+                    ";
+            // line 41
+            if (twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 41, $this->source); })()), "hasPreviousPage", [], "any", false, false, false, 41)) {
+                // line 42
+                echo "                        <li class=\"prev\"><a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_tag_paginated", ["page" => twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 42, $this->source); })()), "previousPage", [], "any", false, false, false, 42)]), "html", null, true);
+                echo "\" rel=\"previous\"><i class=\"fa fw fa-long-arrow-left\"></i> ";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.previous"), "html", null, true);
+                echo "</a></li>
+                    ";
+            } else {
+                // line 44
+                echo "                        <li class=\"prev disabled\"><span><i class=\"fa fw fa-arrow-left\"></i> ";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.previous"), "html", null, true);
+                echo "</span></li>
+                    ";
+            }
+            // line 46
+            echo "
+                    ";
+            // line 47
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(range(1, twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 47, $this->source); })()), "lastPage", [], "any", false, false, false, 47)));
+            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                // line 48
+                echo "                        ";
+                if ((0 === twig_compare($context["i"], twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 48, $this->source); })()), "currentPage", [], "any", false, false, false, 48)))) {
+                    // line 49
+                    echo "                            <li class=\"active\"><span>";
+                    echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                    echo " <span class=\"sr-only\">";
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.current"), "html", null, true);
+                    echo "</span></span></li>
+                        ";
+                } else {
+                    // line 51
+                    echo "                            <li><a href=\"";
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_tag_paginated", ["page" => $context["i"]]), "html", null, true);
+                    echo "\">";
+                    echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                    echo "</a></li>
+                        ";
+                }
+                // line 53
+                echo "                    ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 54
+            echo "
+                    ";
+            // line 55
+            if (twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 55, $this->source); })()), "hasNextPage", [], "any", false, false, false, 55)) {
+                // line 56
+                echo "                        <li class=\"next\"><a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_tag_paginated", ["page" => twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 56, $this->source); })()), "nextPage", [], "any", false, false, false, 56)]), "html", null, true);
+                echo "\" rel=\"next\">";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.next"), "html", null, true);
+                echo " <i class=\"fa fw fa-arrow-right\"></i></a></li>
+                    ";
+            } else {
+                // line 58
+                echo "                        <li class=\"next disabled\"><span>";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.next"), "html", null, true);
+                echo " <i class=\"fa fw fa-arrow-right\"></i></span></li>
+                    ";
+            }
+            // line 60
+            echo "                </ul>
+            </div>
+        ";
+        }
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -168,7 +246,7 @@ class __TwigTemplate_f95060f987507a7d2ed04b52aabfbbe726c321b4620680da79bd32f600f
 
     }
 
-    // line 40
+    // line 65
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -178,26 +256,26 @@ class __TwigTemplate_f95060f987507a7d2ed04b52aabfbbe726c321b4620680da79bd32f600f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 41
+        // line 66
         echo "    <div class=\"section actions\">
         <a href=\"";
-        // line 42
+        // line 67
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_tag_new");
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> ";
-        // line 43
+        // line 68
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.create"), "html", null, true);
         echo "
         </a>
     </div>
 
     ";
-        // line 47
+        // line 72
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 49
+        // line 74
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -221,7 +299,7 @@ class __TwigTemplate_f95060f987507a7d2ed04b52aabfbbe726c321b4620680da79bd32f600f
 
     public function getDebugInfo()
     {
-        return array (  201 => 49,  196 => 47,  189 => 43,  185 => 42,  182 => 41,  172 => 40,  160 => 36,  151 => 33,  148 => 32,  137 => 26,  133 => 25,  127 => 22,  123 => 21,  117 => 18,  114 => 17,  109 => 16,  102 => 12,  98 => 11,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  279 => 74,  274 => 72,  267 => 68,  263 => 67,  260 => 66,  250 => 65,  237 => 60,  231 => 58,  223 => 56,  221 => 55,  218 => 54,  212 => 53,  204 => 51,  196 => 49,  193 => 48,  189 => 47,  186 => 46,  180 => 44,  172 => 42,  170 => 41,  166 => 39,  164 => 38,  160 => 36,  151 => 33,  148 => 32,  137 => 26,  133 => 25,  127 => 22,  123 => 21,  117 => 18,  114 => 17,  109 => 16,  102 => 12,  98 => 11,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -241,7 +319,7 @@ class __TwigTemplate_f95060f987507a7d2ed04b52aabfbbe726c321b4620680da79bd32f600f
             </tr>
         </thead>
         <tbody>
-        {% for tag in tags %}
+        {% for tag in paginator.results %}
             <tr>
                 <td>{{ tag.name }}</td>
                 <td class=\"text-right\">
@@ -263,6 +341,31 @@ class __TwigTemplate_f95060f987507a7d2ed04b52aabfbbe726c321b4620680da79bd32f600f
         {% endfor %}
         </tbody>
     </table>
+        {% if paginator.hasToPaginate %}
+            <div class=\"navigation text-center\">
+                <ul class=\"pagination\">
+                    {% if paginator.hasPreviousPage %}
+                        <li class=\"prev\"><a href=\"{{ path('admin_tag_paginated', {page: paginator.previousPage}) }}\" rel=\"previous\"><i class=\"fa fw fa-long-arrow-left\"></i> {{ 'paginator.previous'|trans }}</a></li>
+                    {% else %}
+                        <li class=\"prev disabled\"><span><i class=\"fa fw fa-arrow-left\"></i> {{ 'paginator.previous'|trans }}</span></li>
+                    {% endif %}
+
+                    {% for i in 1..paginator.lastPage %}
+                        {% if i == paginator.currentPage %}
+                            <li class=\"active\"><span>{{ i }} <span class=\"sr-only\">{{ 'paginator.current'|trans }}</span></span></li>
+                        {% else %}
+                            <li><a href=\"{{ path('admin_tag_paginated', {page: i}) }}\">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if paginator.hasNextPage %}
+                        <li class=\"next\"><a href=\"{{ path('admin_tag_paginated', {page: paginator.nextPage}) }}\" rel=\"next\">{{ 'paginator.next'|trans }} <i class=\"fa fw fa-arrow-right\"></i></a></li>
+                    {% else %}
+                        <li class=\"next disabled\"><span>{{ 'paginator.next'|trans }} <i class=\"fa fw fa-arrow-right\"></i></span></li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
 {% endblock %}
 
 {% block sidebar %}
