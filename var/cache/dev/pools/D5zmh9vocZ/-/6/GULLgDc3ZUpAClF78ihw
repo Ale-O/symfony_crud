@@ -2,18 +2,29 @@
 
 return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
     $o = [
-        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        clone $p['Symfony\\Component\\Routing\\Annotation\\Route'],
     ],
     null,
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
                 '/',
+                '/page/{page<[1-9]\\d*>}',
             ],
             'name' => [
                 'admin_user_index',
+                'admin_user_paginated',
+            ],
+            'defaults' => [
+                [
+                    'page' => '1',
+                ],
             ],
             'methods' => [
+                [
+                    'GET',
+                ],
                 [
                     'GET',
                 ],
@@ -22,6 +33,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     ],
     [
         $o[0],
+        $o[1],
     ],
     []
 ); }];

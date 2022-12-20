@@ -17,7 +17,7 @@ class TagRepository extends ServiceEntityRepository
     public function findOrderByName(int $page = 1): Paginator
     {
         $qb = $this->createQueryBuilder('p')
-            ->orderBy('p.name', 'DESC')
+            ->orderBy('p.name', 'ASC')
         ;
 
         return (new Paginator($qb))->paginate($page);

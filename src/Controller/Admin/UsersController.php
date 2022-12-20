@@ -23,13 +23,16 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class UsersController extends AbstractController
 {
     /**
-     * @Route("/", methods="GET", name="admin_user_index")
+     * @Route("/", defaults={"page": "1"}, methods="GET", name="admin_user_index")
+     * @Route("/page/{page<[1-9]\d*>}", methods="GET", name="admin_user_paginated")
      */
-    public function index(UserRepository $users): Response
+    public function index(UserRepository $users, int $page): Response
     {
-        $allUsers = $users->findAll();
+        $allUsers = $users->findOrderByName($page);
 
-        return $this->render('admin/user/users_list.html.twig', ['users' => $allUsers]);
+        return $this->render('admin/user/users_list.html.twig', [
+            'paginator' => $allUsers,
+        ]);
     }
 
     /**
