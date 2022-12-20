@@ -100,9 +100,22 @@ class CrudController extends AbstractController
         $element = $subelement->getElement();
         $slugElement = $element->getSlug();
 
+        $arrayTextFields = $subelement->getTextFields();
+        $arrayDateFields = $subelement->getDateFields();
+
+        $fields = [];
+
+        foreach ($arrayTextFields as $field) {
+            array_push($fields, $field);
+        }
+        foreach ($arrayDateFields as $field) {
+            array_push($fields, $field);
+        }
+
         return $this->render('crud/subelement/subelement_show.html.twig', [
             'subelement' => $subelement,
             'slugElement' => $slugElement,
+            'fields' => $fields,
         ]);
     }
 

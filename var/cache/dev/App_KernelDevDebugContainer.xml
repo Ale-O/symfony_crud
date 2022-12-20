@@ -477,6 +477,10 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Pagination\Paginator" class="App\Pagination\Paginator" autowire="true" autoconfigure="true"/>
+    <service id="App\Repository\DateFieldsRepository" class="App\Repository\DateFieldsRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\ElementRepository" class="App\Repository\ElementRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -4084,7 +4088,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator..MGxzMM"/>
+      <argument type="service" id=".service_locator.PLIQRci"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5466,6 +5470,8 @@
     <service id=".abstract.instanceof.App\Form\UserNewType" class="App\Form\UserNewType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DateFieldsRepository" class="App\Repository\DateFieldsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\DateFieldsRepository" class="App\Repository\DateFieldsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ElementRepository" class="App\Repository\ElementRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ElementRepository" class="App\Repository\ElementRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TagRepository" class="App\Repository\TagRepository" autowire="true" abstract="true"/>
@@ -5984,9 +5990,10 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator..MGxzMM" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.PLIQRci" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\DateFieldsRepository" type="service" id="App\Repository\DateFieldsRepository"/>
         <argument key="App\Repository\ElementRepository" type="service" id="App\Repository\ElementRepository"/>
         <argument key="App\Repository\TagRepository" type="service" id="App\Repository\TagRepository"/>
         <argument key="App\Repository\TextFieldsRepository" type="service" id="App\Repository\TextFieldsRepository"/>

@@ -78,10 +78,24 @@ class Subelement
      */
     private $textfields;
 
+    /**
+     * @var DateFields[]|Collection
+     *
+     * @ORM\OneToMany(
+     *      targetEntity="DateFields",
+     *      mappedBy="subelement",
+     *      orphanRemoval=true,
+     *      cascade={"persist"}
+     * )
+     * @ORM\OrderBy({"id": "DESC"})
+     */
+    private $datefields;
+
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
         $this->textfields = new ArrayCollection();
+        $this->datefields = new ArrayCollection();
     }
 
     /**
@@ -167,5 +181,23 @@ class Subelement
     public function removeTextField(TextFields $textfield): void
     {
         $this->textfield->removeSubelement($textfield);
+    }
+
+    public function getDateFields(): Collection
+    {
+        return $this->datefields;
+    }
+
+    public function addDateField(DateFields $datefield): void
+    {
+        $datefield->setSubelement($this);
+        if (!$this->datefields->contains($datefield)) {
+            $this->datefields->add($datefield);
+        }
+    }
+
+    public function removeDateField(DateFields $datefield): void
+    {
+        $this->datefield->removeSubelement($datefield);
     }
 }
