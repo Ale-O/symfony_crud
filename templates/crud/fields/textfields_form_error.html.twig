@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'textfields_form_error' %}
+
+{% block main %}
+    <h1 class="text-danger">{{ 'title.textfields_error'|trans }}</h1>
+
+    <div class="well">
+        {{ include('crud/fields/_textfields_form.html.twig') }}
+    </div>
+{% endblock %}

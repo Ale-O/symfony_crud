@@ -1,0 +1,13 @@
+{{ form_start(form, {method: 'POST', action: path('datefields_edit', {'id': datefields.id})}) }}
+    <fieldset>
+
+        {{ form_errors(form) }}
+        {{ form_row(form.content, {attr: { value : datefields.content|date("Y-m-d\\TH:i:s") }}) }}
+
+        <div class="form-group">
+            <button class="btn btn-primary pull-right" type="submit">
+                <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+            </button>
+        </div>
+    </fieldset>
+{{ form_end(form) }}

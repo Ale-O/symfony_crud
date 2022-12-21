@@ -112,6 +112,14 @@
                 <source>title.subelement_error</source>
                 <target>Il y a eu une erreur lors de l'ajout du sous-élément.</target>
             </trans-unit>
+            <trans-unit id="title.textfields_error">
+                <source>title.textfields_error</source>
+                <target>Il y a eu une erreur lors de la modification du champs texte.</target>
+            </trans-unit>
+            <trans-unit id="title.datefields_error">
+                <source>title.datefields_error</source>
+                <target>Il y a eu une erreur lors de la modification du champs date.</target>
+            </trans-unit>
             <trans-unit id="title.edit_user">
                 <source>title.edit_user</source>
                 <target>Modifier l'utilisateur</target>
@@ -447,6 +455,10 @@
             <trans-unit id="element.subelemented_on">
                 <source>element.subelemented_on</source>
                 <target>ajouté le</target>
+            </trans-unit>
+            <trans-unit id="fields.no_fields">
+                <source>fields.no_fields</source>
+                <target>Aucun champs détecté.</target>
             </trans-unit>
             <trans-unit id="element.no_subelements">
                 <source>element.no_subelements</source>

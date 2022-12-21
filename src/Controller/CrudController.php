@@ -128,7 +128,7 @@ class CrudController extends AbstractController
     }
 
     /**
-     * @Route("/{id<\d+>}/edit", methods="GET|POST", name="subelement_edit")
+     * @Route("subelement/{id<\d+>}/edit", methods="GET|POST", name="subelement_edit")
      */
     // @IsGranted("edit", subject="subelement", message="Subelements can only be edited by their authors.")
     public function subelementEdit(Request $request, Subelement $subelement): Response

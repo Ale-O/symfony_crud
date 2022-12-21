@@ -24,16 +24,24 @@
         <div>
             <h3>{{ field.title }}</h3>
             <p>
-                {% if field.content.timestamp is defined %}
-                    {{ field.content|date('m/d/Y') }}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% if field.content.timestamp is defined %}
+                        {{ render(controller('App\\Controller\\FieldsController::DateFieldsForm', {'id': field.id})) }}
+                    {% else %}
+                        {{ render(controller('App\\Controller\\FieldsController::textFieldsForm', {'id': field.id})) }}
+                    {% endif %}
                 {% else %}
-                    {{ field.content }}
+                    <p>
+                        <a class="btn btn-success" href="{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.sign_in'|trans }}
+                        </a>
+                    </p>
                 {% endif %}
             </p>
         </div>
     {% else %}
         <tr>
-            <div class='well'>{{ 'element.no_subelements'|trans }}</div>
+            <div class='well'>{{ 'fields.no_fields'|trans }}</div>
         </tr>
     {% endfor %}
 
