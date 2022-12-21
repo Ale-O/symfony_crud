@@ -31,11 +31,11 @@
                         {{ render(controller('App\\Controller\\FieldsController::textFieldsForm', {'id': field.id})) }}
                     {% endif %}
                 {% else %}
-                    <p>
-                        <a class="btn btn-success" href="{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}">
-                            <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.sign_in'|trans }}
-                        </a>
-                    </p>
+                    {% if field.content.timestamp is defined %}
+                        {{ field.content|format_datetime('long', 'medium', '', 'UTC') }}
+                    {% else %}
+                        {{ field.content }}
+                    {% endif %}
                 {% endif %}
             </p>
         </div>

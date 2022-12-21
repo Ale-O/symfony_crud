@@ -92,7 +92,7 @@ class __TwigTemplate_3ccbccdd2401c912bfb27b3f3bb84be8e6a1a8144210a09256dc0938306
 
     ";
         // line 8
-        echo twig_include($this->env, $context, "admin/fields/_fields_form.html.twig", ["form" =>         // line 9
+        echo twig_include($this->env, $context, "admin/fields/_textfields_form.html.twig", ["form" =>         // line 9
 (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "element" =>         // line 10
 (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 10, $this->source); })()), "button_label" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.save"), "include_back_to_home_link" => true], false);
         // line 13
@@ -132,7 +132,7 @@ class __TwigTemplate_3ccbccdd2401c912bfb27b3f3bb84be8e6a1a8144210a09256dc0938306
     <div class=\"section actions\">
         ";
         // line 24
-        echo twig_include($this->env, $context, "admin/fields/_fields_delete_form.html.twig", ["textfields" => (isset($context["textfields"]) || array_key_exists("textfields", $context) ? $context["textfields"] : (function () { throw new RuntimeError('Variable "textfields" does not exist.', 24, $this->source); })())], false);
+        echo twig_include($this->env, $context, "admin/fields/_textfields_delete_form.html.twig", ["textfields" => (isset($context["textfields"]) || array_key_exists("textfields", $context) ? $context["textfields"] : (function () { throw new RuntimeError('Variable "textfields" does not exist.', 24, $this->source); })())], false);
         echo "
     </div>
 
@@ -178,7 +178,7 @@ class __TwigTemplate_3ccbccdd2401c912bfb27b3f3bb84be8e6a1a8144210a09256dc0938306
 {% block main %}
     <h1>{{ 'title.edit'|trans({'%id%': textfields.id}) }}</h1>
 
-    {{ include('admin/fields/_fields_form.html.twig', {
+    {{ include('admin/fields/_textfields_form.html.twig', {
         form: form,
         element: element,
         button_label: 'action.save'|trans,
@@ -194,7 +194,7 @@ class __TwigTemplate_3ccbccdd2401c912bfb27b3f3bb84be8e6a1a8144210a09256dc0938306
     </div>
 
     <div class=\"section actions\">
-        {{ include('admin/fields/_fields_delete_form.html.twig', {textfields: textfields}, with_context = false) }}
+        {{ include('admin/fields/_textfields_delete_form.html.twig', {textfields: textfields}, with_context = false) }}
     </div>
 
     {{ parent() }}

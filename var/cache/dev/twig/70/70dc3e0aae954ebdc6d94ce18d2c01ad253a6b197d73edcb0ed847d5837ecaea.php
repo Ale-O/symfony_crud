@@ -155,18 +155,22 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
                 echo "                ";
             } else {
                 // line 34
-                echo "                    <p>
-                        <a class=\"btn btn-success\" href=\"";
-                // line 35
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login", ["redirect_to" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "request", [], "any", false, false, false, 35), "pathInfo", [], "any", false, false, false, 35)]), "html", null, true);
-                echo "\">
-                            <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> ";
-                // line 36
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.sign_in"), "html", null, true);
-                echo "
-                        </a>
-                    </p>
-                ";
+                echo "                    ";
+                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, true, false, 34), "timestamp", [], "any", true, true, false, 34)) {
+                    // line 35
+                    echo "                        ";
+                    echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, false, false, 35), "long", "medium", "", "UTC"), "html", null, true);
+                    echo "
+                    ";
+                } else {
+                    // line 37
+                    echo "                        ";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, false, false, 37), "html", null, true);
+                    echo "
+                    ";
+                }
+                // line 39
+                echo "                ";
             }
             // line 40
             echo "            </p>
@@ -259,7 +263,7 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
 
     public function getDebugInfo()
     {
-        return array (  239 => 68,  234 => 66,  228 => 63,  220 => 58,  216 => 57,  212 => 55,  202 => 54,  188 => 45,  179 => 43,  172 => 40,  165 => 36,  161 => 35,  158 => 34,  155 => 33,  149 => 31,  143 => 29,  140 => 28,  138 => 27,  133 => 25,  130 => 24,  125 => 23,  115 => 16,  111 => 15,  105 => 12,  100 => 10,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  243 => 68,  238 => 66,  232 => 63,  224 => 58,  220 => 57,  216 => 55,  206 => 54,  192 => 45,  183 => 43,  176 => 40,  173 => 39,  167 => 37,  161 => 35,  158 => 34,  155 => 33,  149 => 31,  143 => 29,  140 => 28,  138 => 27,  133 => 25,  130 => 24,  125 => 23,  115 => 16,  111 => 15,  105 => 12,  100 => 10,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -297,11 +301,11 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
                         {{ render(controller('App\\\\Controller\\\\FieldsController::textFieldsForm', {'id': field.id})) }}
                     {% endif %}
                 {% else %}
-                    <p>
-                        <a class=\"btn btn-success\" href=\"{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}\">
-                            <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> {{ 'action.sign_in'|trans }}
-                        </a>
-                    </p>
+                    {% if field.content.timestamp is defined %}
+                        {{ field.content|format_datetime('long', 'medium', '', 'UTC') }}
+                    {% else %}
+                        {{ field.content }}
+                    {% endif %}
                 {% endif %}
             </p>
         </div>
