@@ -158,7 +158,7 @@ class __TwigTemplate_1835fbdc36b67b246f78727f26bf247ce917d9a9e62182ce21b2f9741f2
     <div class=\"row\">
         <div class=\"col-md-4 col-md-offset-2\">
             <h3>
-                <i class=\"fa fa-subelements\" aria-hidden=\"true\"></i> ";
+                <i class=\"fa fa-dashboard\" aria-hidden=\"true\"></i> ";
         // line 41
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("element.num_subelements", ["count" => twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 41, $this->source); })()), "subelements", [], "any", false, false, false, 41))]), "html", null, true);
         echo "
@@ -430,7 +430,7 @@ class __TwigTemplate_1835fbdc36b67b246f78727f26bf247ce917d9a9e62182ce21b2f9741f2
     <div class=\"row\">
         <div class=\"col-md-4 col-md-offset-2\">
             <h3>
-                <i class=\"fa fa-subelements\" aria-hidden=\"true\"></i> {{ 'element.num_subelements'|trans({ 'count': element.subelements|length }) }}
+                <i class=\"fa fa-dashboard\" aria-hidden=\"true\"></i> {{ 'element.num_subelements'|trans({ 'count': element.subelements|length }) }}
             </h3>
         </div>
     </div>

@@ -1,0 +1,30 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_textfields_edit' %}
+
+{% block main %}
+    <h1>{{ 'title.edit'|trans({'%id%': textfields.id}) }}</h1>
+
+    {{ include('admin/fields/_fields_form.html.twig', {
+        form: form,
+        element: element,
+        button_label: 'action.save'|trans,
+        include_back_to_home_link: true,
+    }, with_context = false) }}
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('admin_element_show', {id: element.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show'|trans }}
+        </a>
+    </div>
+
+    <div class="section actions">
+        {{ include('admin/fields/_fields_delete_form.html.twig', {textfields: textfields}, with_context = false) }}
+    </div>
+
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}

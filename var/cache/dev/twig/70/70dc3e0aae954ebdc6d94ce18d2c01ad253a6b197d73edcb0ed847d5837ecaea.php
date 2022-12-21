@@ -176,18 +176,15 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
         }
         if (!$context['_iterated']) {
             // line 43
-            echo "        <tr>
-            <div class='well'>";
-            // line 44
+            echo "        <div class='well'>";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("fields.no_fields"), "html", null, true);
             echo "</div>
-        </tr>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['field'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 45
         echo "
 
 
@@ -201,7 +198,7 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
 
     }
 
-    // line 56
+    // line 54
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -211,15 +208,15 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 57
+        // line 55
         echo "
     <div class=\"section\">
         <a href=\"";
-        // line 59
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 59, $this->source); })()), "id", [], "any", false, false, false, 59)]), "html", null, true);
+        // line 57
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 57, $this->source); })()), "id", [], "any", false, false, false, 57)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
-        // line 60
+        // line 58
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
         echo "
         </a>
@@ -227,18 +224,18 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
     
     <div class=\"section\">
         ";
-        // line 65
-        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 65, $this->source); })())], false);
+        // line 63
+        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 63, $this->source); })())], false);
         echo "
     </div>
 
     ";
-        // line 68
+        // line 66
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 70
+        // line 68
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -262,7 +259,7 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
 
     public function getDebugInfo()
     {
-        return array (  242 => 70,  237 => 68,  231 => 65,  223 => 60,  219 => 59,  215 => 57,  205 => 56,  191 => 47,  182 => 44,  179 => 43,  172 => 40,  165 => 36,  161 => 35,  158 => 34,  155 => 33,  149 => 31,  143 => 29,  140 => 28,  138 => 27,  133 => 25,  130 => 24,  125 => 23,  115 => 16,  111 => 15,  105 => 12,  100 => 10,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  239 => 68,  234 => 66,  228 => 63,  220 => 58,  216 => 57,  212 => 55,  202 => 54,  188 => 45,  179 => 43,  172 => 40,  165 => 36,  161 => 35,  158 => 34,  155 => 33,  149 => 31,  143 => 29,  140 => 28,  138 => 27,  133 => 25,  130 => 24,  125 => 23,  115 => 16,  111 => 15,  105 => 12,  100 => 10,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -309,9 +306,7 @@ class __TwigTemplate_842aecf47631f574deb4ff14c41672bebf5cf095413ca791e3e10c544c3
             </p>
         </div>
     {% else %}
-        <tr>
-            <div class='well'>{{ 'fields.no_fields'|trans }}</div>
-        </tr>
+        <div class='well'>{{ 'fields.no_fields'|trans }}</div>
     {% endfor %}
 
 

@@ -80,6 +80,14 @@
                 <source>title.element_list</source>
                 <target>Liste des éléments</target>
             </trans-unit>
+            <trans-unit id="title.textfields_list">
+                <source>title.textfields_list</source>
+                <target>Liste des champs textes</target>
+            </trans-unit>
+            <trans-unit id="title.datefields_list">
+                <source>title.datefields_list</source>
+                <target>Liste des champs dates</target>
+            </trans-unit>
             <trans-unit id="title.tag_list">
                 <source>title.tag_list</source>
                 <target>Liste des tags</target>
@@ -225,6 +233,10 @@
                 <source>label.create</source>
                 <target>Créer</target>
             </trans-unit>
+            <trans-unit id="label.create_fields">
+                <source>label.create_fields</source>
+                <target>Créer un champs</target>
+            </trans-unit>
             <trans-unit id="label.create_element">
                 <source>label.create_element</source>
                 <target>Créer un élément</target>
@@ -302,6 +314,10 @@
                 <source>label.title</source>
                 <target>Titre</target>
             </trans-unit>
+            <trans-unit id="label.position">
+                <source>label.position</source>
+                <target>Position</target>
+            </trans-unit>
             <trans-unit id="label.name">
                 <source>label.name</source>
                 <target>Nom</target>
@@ -373,6 +389,10 @@
             <trans-unit id="label.actions">
                 <source>label.actions</source>
                 <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="title.fields_new">
+                <source>title.fields_new</source>
+                <target>Ajouter un nouveau champs</target>
             </trans-unit>
             <trans-unit id="title.element_new">
                 <source>title.element_new</source>
@@ -447,6 +467,10 @@
             <trans-unit id="element.to_publish_a_subelement">
                 <source>element.to_publish_a_subelement</source>
                 <target>pour rajouter un sous-élément</target>
+            </trans-unit>
+            <trans-unit id="fields.num_fields">
+                <source>fields.num_fields</source>
+                <target>{count, plural, one {# champs} other {# champs}}</target>
             </trans-unit>
             <trans-unit id="element.num_subelements">
                 <source>element.num_subelements</source>
