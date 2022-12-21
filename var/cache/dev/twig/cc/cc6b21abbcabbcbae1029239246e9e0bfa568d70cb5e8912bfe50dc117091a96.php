@@ -188,7 +188,7 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
                     <div class=\"item-actions\">
                         <a href=\"";
             // line 54
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 54, $this->source); })()), "id", [], "any", false, false, false, 54)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_textfields_show", ["id" => twig_get_attribute($this->env, $this->source, $context["field"], "id", [], "any", false, false, false, 54)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-default\">
                             <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
             // line 55
@@ -198,7 +198,7 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
 
                         <a href=\"";
             // line 58
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 58, $this->source); })()), "id", [], "any", false, false, false, 58)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_textfields_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["field"], "id", [], "any", false, false, false, 58)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-primary\">
                             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
             // line 59
@@ -295,7 +295,7 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
                     <div class=\"item-actions\">
                         <a href=\"";
             // line 104
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 104, $this->source); })()), "id", [], "any", false, false, false, 104)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_datefields_show", ["id" => twig_get_attribute($this->env, $this->source, $context["field"], "id", [], "any", false, false, false, 104)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-default\">
                             <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
             // line 105
@@ -305,7 +305,7 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
 
                         <a href=\"";
             // line 108
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 108, $this->source); })()), "id", [], "any", false, false, false, 108)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_datefields_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["field"], "id", [], "any", false, false, false, 108)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-primary\">
                             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
             // line 109
@@ -464,11 +464,11 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
                 <td>{{ field.position }}</td>
                 <td class=\"text-center\">
                     <div class=\"item-actions\">
-                        <a href=\"{{ path('admin_element_show', {id: element.id}) }}\" class=\"btn btn-sm btn-default\">
+                        <a href=\"{{ path('admin_textfields_show', {id: field.id}) }}\" class=\"btn btn-sm btn-default\">
                             <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
                         </a>
 
-                        <a href=\"{{ path('admin_element_edit', {id: element.id}) }}\" class=\"btn btn-sm btn-primary\">
+                        <a href=\"{{ path('admin_textfields_edit', {id: field.id}) }}\" class=\"btn btn-sm btn-primary\">
                             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
                         </a>
                     </div>
@@ -514,11 +514,11 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
                 <td>{{ field.position }}</td>
                 <td class=\"text-center\">
                     <div class=\"item-actions\">
-                        <a href=\"{{ path('admin_element_show', {id: element.id}) }}\" class=\"btn btn-sm btn-default\">
+                        <a href=\"{{ path('admin_datefields_show', {id: field.id}) }}\" class=\"btn btn-sm btn-default\">
                             <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
                         </a>
 
-                        <a href=\"{{ path('admin_element_edit', {id: element.id}) }}\" class=\"btn btn-sm btn-primary\">
+                        <a href=\"{{ path('admin_datefields_edit', {id: field.id}) }}\" class=\"btn btn-sm btn-primary\">
                             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
                         </a>
                     </div>

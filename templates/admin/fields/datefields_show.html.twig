@@ -1,0 +1,27 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_datefields_show' %}
+
+{% block main %}
+    <h1>{{ datefields.title }}</h1>
+    <h2>{{ datefields.position }}</h2>
+
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('admin_datefields_edit', {id: datefields.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+        </a>
+    </div>
+
+    
+    <div class="section">
+        {{ include('admin/fields/_datefields_delete_form.html.twig', {datefields: datefields}, with_context = false) }}
+    </div>
+    
+
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}

@@ -98,11 +98,33 @@ class FieldsController extends AbstractController
     }
 
     /**
+     * @Route("textfields/{id<\d+>}", methods="GET", name="admin_textfields_show")
+     */
+    public function showTextFields(TextFields $textfields): Response
+    {
+        return $this->render('admin/fields/textfields_show.html.twig', [
+            'textfields' => $textfields,
+        ]);
+    }
+
+    /**
+     * @Route("datefields/{id<\d+>}", methods="GET", name="admin_datefields_show")
+     */
+    public function showDateFields(DateFields $datefields): Response
+    {
+        return $this->render('admin/fields/datefields_show.html.twig', [
+            'datefields' => $datefields,
+        ]);
+    }
+
+    /**
      * @Route("textfields/{id<\d+>}/edit", methods="GET|POST", name="admin_textfields_edit")
      */
     // @IsGranted("edit", subject="textfields", message="TextFieldss can only be edited by their authors.")
     public function editTextFields(Request $request, TextFields $textfields): Response
     {
+        $element = $textfields->getElement();
+
         $form = $this->createForm(TextFieldsAdminType::class, $textfields);
         $form->handleRequest($request);
 
@@ -117,6 +139,7 @@ class FieldsController extends AbstractController
         return $this->render('admin/fields/textfields_edit.html.twig', [
             'textfields' => $textfields,
             'form' => $form->createView(),
+            'element' => $element,
         ]);
     }
 
@@ -126,6 +149,8 @@ class FieldsController extends AbstractController
     // @IsGranted("edit", subject="datefields", message="DateFields can only be edited by their authors.")
     public function editDateFields(Request $request, DateFields $datefields): Response
     {
+        $element = $datefields->getElement();
+
         $form = $this->createForm(DateFieldsAdminType::class, $datefields);
         $form->handleRequest($request);
 
@@ -140,6 +165,7 @@ class FieldsController extends AbstractController
         return $this->render('admin/fields/datefields_edit.html.twig', [
             'datefields' => $datefields,
             'form' => $form->createView(),
+            'element' => $element,
         ]);
     }
 

@@ -51,11 +51,11 @@
                 <td>{{ field.position }}</td>
                 <td class="text-center">
                     <div class="item-actions">
-                        <a href="{{ path('admin_element_show', {id: element.id}) }}" class="btn btn-sm btn-default">
+                        <a href="{{ path('admin_textfields_show', {id: field.id}) }}" class="btn btn-sm btn-default">
                             <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show'|trans }}
                         </a>
 
-                        <a href="{{ path('admin_element_edit', {id: element.id}) }}" class="btn btn-sm btn-primary">
+                        <a href="{{ path('admin_textfields_edit', {id: field.id}) }}" class="btn btn-sm btn-primary">
                             <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit'|trans }}
                         </a>
                     </div>
@@ -101,11 +101,11 @@
                 <td>{{ field.position }}</td>
                 <td class="text-center">
                     <div class="item-actions">
-                        <a href="{{ path('admin_element_show', {id: element.id}) }}" class="btn btn-sm btn-default">
+                        <a href="{{ path('admin_datefields_show', {id: field.id}) }}" class="btn btn-sm btn-default">
                             <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show'|trans }}
                         </a>
 
-                        <a href="{{ path('admin_element_edit', {id: element.id}) }}" class="btn btn-sm btn-primary">
+                        <a href="{{ path('admin_datefields_edit', {id: field.id}) }}" class="btn btn-sm btn-primary">
                             <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit'|trans }}
                         </a>
                     </div>
