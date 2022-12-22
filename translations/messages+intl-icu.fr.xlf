@@ -80,6 +80,10 @@
                 <source>title.element_list</source>
                 <target>Liste des éléments</target>
             </trans-unit>
+            <trans-unit id="title.fields_list">
+                <source>title.fields_list</source>
+                <target>Liste des champs</target>
+            </trans-unit>
             <trans-unit id="title.textfields_list">
                 <source>title.textfields_list</source>
                 <target>Liste des champs textes</target>
@@ -156,6 +160,14 @@
             <trans-unit id="action.edit">
                 <source>action.edit</source>
                 <target>Modifier</target>
+            </trans-unit>
+            <trans-unit id="action.edit_fields">
+                <source>action.edit_fields</source>
+                <target>Modifier les champs</target>
+            </trans-unit>
+            <trans-unit id="action.lock_fields">
+                <source>action.lock_fields</source>
+                <target>Vérrouiller les champs</target>
             </trans-unit>
             <trans-unit id="action.level_up">
                 <source>action.level_up</source>

@@ -20,22 +20,16 @@
 
     <hr/>
 
+    <h1>{{ 'title.fields_list'|trans }}</h1>
+
     {% for field in fields|sort((a, b) => a.position <=> b.position) %}
         <div>
             <h3>{{ field.title }}</h3>
             <p>
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    {% if field.content.timestamp is defined %}
-                        {{ render(controller('App\\Controller\\FieldsController::DateFieldsForm', {'id': field.id})) }}
-                    {% else %}
-                        {{ render(controller('App\\Controller\\FieldsController::textFieldsForm', {'id': field.id})) }}
-                    {% endif %}
+                {% if field.content.timestamp is defined %}
+                    {{ field.content|format_datetime('long', 'medium', '', 'UTC') }}
                 {% else %}
-                    {% if field.content.timestamp is defined %}
-                        {{ field.content|format_datetime('long', 'medium', '', 'UTC') }}
-                    {% else %}
-                        {{ field.content }}
-                    {% endif %}
+                    {{ field.content }}
                 {% endif %}
             </p>
         </div>
@@ -56,6 +50,12 @@
     <div class="section">
         <a href="{{ path('subelement_edit', {id: subelement.id}) }}" class="btn btn-lg btn-block btn-success">
             <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+        </a>
+    </div>
+
+    <div class="section">
+        <a href="{{ path('subelement_edit_fields', {id: subelement.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-unlock" aria-hidden="true"></i> {{ 'action.edit_fields'|trans }}
         </a>
     </div>
     

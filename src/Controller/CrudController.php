@@ -156,6 +156,35 @@ class CrudController extends AbstractController
     }
 
     /**
+     * @Route("editFields/{id<\d+>}}", methods="GET", name="subelement_edit_fields")
+     */
+    public function subelementEditFields(Subelement $subelement): Response
+    {
+        // $this->denyAccessUnlessGranted(ElementVoter::SHOW, $element, 'Elements can only be shown to their authors.');
+
+        $element = $subelement->getElement();
+        $slugElement = $element->getSlug();
+
+        $arrayTextFields = $subelement->getTextFields();
+        $arrayDateFields = $subelement->getDateFields();
+
+        $fields = [];
+
+        foreach ($arrayTextFields as $field) {
+            array_push($fields, $field);
+        }
+        foreach ($arrayDateFields as $field) {
+            array_push($fields, $field);
+        }
+
+        return $this->render('crud/subelement/subelement_edit_fields.html.twig', [
+            'subelement' => $subelement,
+            'slugElement' => $slugElement,
+            'fields' => $fields,
+        ]);
+    }
+
+    /**
      * @Route("subelement/{id<\d+>}/edit", methods="GET|POST", name="subelement_edit")
      */
     // @IsGranted("edit", subject="subelement", message="Subelements can only be edited by their authors.")

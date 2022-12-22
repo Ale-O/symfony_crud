@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'crud_edit_fields' %}
+
+{% block main %}
+    <h1>{{ subelement.title }}</h1>
+    <p class="element-metadata">
+        <span class="metadata"><i class="fa fa-calendar-o"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+        <br/>
+        <span class="metadata"><i class="fa fa-user-circle-o"></i> {{ subelement.author.fullName }}</span>
+    </p>
+    {{ subelement.content|markdown_to_html|sanitize_html }}
+
+    <div>
+        <a href="{{ path('crud_element', {slug: slugElement}) }}" class="btn btn-link">
+            <i class="fa fa-backward" aria-hidden="true"></i> {{ 'action.back'|trans }}
+        </a>
+    </div>
+
+
+    <hr/>
+
+    <h1>{{ 'title.fields_list'|trans }}</h1>
+
+    {% for field in fields|sort((a, b) => a.position <=> b.position) %}
+        <div>
+            <h3>{{ field.title }}</h3>
+            <p>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% if field.content.timestamp is defined %}
+                        {{ render(controller('App\\Controller\\FieldsController::DateFieldsForm', {'id': field.id})) }}
+                    {% else %}
+                        {{ render(controller('App\\Controller\\FieldsController::textFieldsForm', {'id': field.id})) }}
+                    {% endif %}
+                {% else %}
+                    {% if field.content.timestamp is defined %}
+                        {{ field.content|format_datetime('long', 'medium', '', 'UTC') }}
+                    {% else %}
+                        {{ field.content }}
+                    {% endif %}
+                {% endif %}
+            </p>
+        </div>
+    {% else %}
+        <div class='well'>{{ 'fields.no_fields'|trans }}</div>
+    {% endfor %}
+
+
+
+
+{% endblock %}
+
+
+
+
+{% block sidebar %}
+
+    <div class="section">
+        <a href="{{ path('subelement_edit', {id: subelement.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+        </a>
+    </div>
+
+    <div class="section">
+        <a href="{{ path('subelement_show', {id: subelement.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-lock" aria-hidden="true"></i> {{ 'action.lock_fields'|trans }}
+        </a>
+    </div>
+    
+    <div class="section">
+        {{ include('crud/subelement/_subelement_delete_form.html.twig', {subelement: subelement}, with_context = false) }}
+    </div>
+
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}
