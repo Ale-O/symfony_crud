@@ -150,7 +150,7 @@ class FieldsController extends AbstractController
      * @Route("textfields/{id<\d+>}/edit", methods="GET|POST", name="admin_textfields_edit")
      */
     // @IsGranted("edit", subject="textfields", message="TextFieldss can only be edited by their authors.")
-    public function editTextFields(Request $request, TextFields $textfields): Response
+    public function editTextFields(Request $request, TextFields $textfields, ManagerRegistry $doctrine): Response
     {
         $element = $textfields->getElement();
 
@@ -161,6 +161,16 @@ class FieldsController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash('success', 'action.updated_successfully');
+
+            $entityManager = $doctrine->getManager();
+
+            $childTextfields = $textfields->getChildFields();
+            foreach ($childTextfields as $childTextfield) {
+                $childTextfield->setTitle($textfields->getTitle());
+                $childTextfield->setPosition($textfields->getPosition());
+                $entityManager->persist($childTextfield);
+                $entityManager->flush();
+            }
 
             return $this->redirectToRoute('admin_textfields_edit', ['id' => $textfields->getId()]);
         }
@@ -176,7 +186,7 @@ class FieldsController extends AbstractController
      * @Route("datefields/{id<\d+>}/edit", methods="GET|POST", name="admin_datefields_edit")
      */
     // @IsGranted("edit", subject="datefields", message="DateFields can only be edited by their authors.")
-    public function editDateFields(Request $request, DateFields $datefields): Response
+    public function editDateFields(Request $request, DateFields $datefields, ManagerRegistry $doctrine): Response
     {
         $element = $datefields->getElement();
 
@@ -187,6 +197,16 @@ class FieldsController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash('success', 'action.updated_successfully');
+
+            $entityManager = $doctrine->getManager();
+
+            $childDatefields = $datefields->getChildFields();
+            foreach ($childDatefields as $childDatefield) {
+                $childDatefield->setTitle($datefields->getTitle());
+                $childDatefield->setPosition($datefields->getPosition());
+                $entityManager->persist($childDatefield);
+                $entityManager->flush();
+            }
 
             return $this->redirectToRoute('admin_datefields_edit', ['id' => $datefields->getId()]);
         }
