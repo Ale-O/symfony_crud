@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\DateFields;
+use App\Entity\NumberFields;
 use App\Entity\TextFields;
 use App\Form\DateFieldsType;
+use App\Form\NumberFieldsType;
 use App\Form\TextFieldsType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -33,6 +35,16 @@ class FieldsController extends AbstractController
 
         return $this->render('crud/fields/_datefields_form.html.twig', [
             'datefields' => $datefields,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    public function numberFieldsForm(NumberFields $numberfields): Response
+    {
+        $form = $this->createForm(NumberFieldsType::class, $numberfields);
+
+        return $this->render('crud/fields/_numberfields_form.html.twig', [
+            'numberfields' => $numberfields,
             'form' => $form->createView(),
         ]);
     }
@@ -81,6 +93,30 @@ class FieldsController extends AbstractController
 
         return $this->render('crud/fields/datefields_form_error.html.twig', [
             'datefields' => $datefields,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("numberfields/{id<\d+>}/edit", methods="GET|POST", name="numberfields_edit")
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
+     */
+    public function numberFieldsEdit(Request $request, NumberFields $numberfields): Response
+    {
+        $subelement = $numberfields->getSubelement();
+        $idSubelement = $subelement->getId();
+
+        $form = $this->createForm(NumberFieldsType::class, $numberfields);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+        }
+
+        return $this->render('crud/fields/numberfields_form_error.html.twig', [
+            'numberfields' => $numberfields,
             'form' => $form->createView(),
         ]);
     }

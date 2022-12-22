@@ -4,8 +4,10 @@ namespace App\Controller\Admin;
 
 use App\Entity\DateFields;
 use App\Entity\Element;
+use App\Entity\NumberFields;
 use App\Entity\TextFields;
 use App\Form\DateFieldsAdminType;
+use App\Form\NumberFieldsAdminType;
 use App\Form\TextFieldsAdminType;
 use DateTime;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -122,6 +124,56 @@ class FieldsController extends AbstractController
     }
 
     /**
+     * @Route("numberfields/{elementSlug}/new", methods="GET|POST", name="admin_numberfields_new")
+     * @ParamConverter("element", options={"mapping": {"elementSlug": "slug"}})
+     */
+    public function newNumberFields(Request $request, Element $element): Response
+    {
+        $idElement = $element->getId();
+
+        $numberfields = new NumberFields();
+        $numberfields->setElement($element);
+        $numberfields->setContent(0);
+
+        $form = $this->createForm(NumberFieldsAdminType::class, $numberfields)
+            ->add('saveAndCreateNew', SubmitType::class);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($numberfields);
+            $em->flush();
+
+            $this->addFlash('success', 'action.created_successfully');
+
+            if ($form->get('saveAndCreateNew')->isClicked()) {
+                return $this->redirectToRoute('admin_numberfields_new');
+            }
+
+            $subelements = $element->getSubelements();
+            foreach ($subelements as $subelement) {
+                $newNumberfields = new NumberFields();
+                $newNumberfields->setSubelement($subelement);
+                $newNumberfields->setTitle($numberfields->getTitle());
+                $newNumberfields->setContent(0);
+                $newNumberfields->setPosition($numberfields->getPosition());
+                $newNumberfields->setParentFields($numberfields);
+                $em->persist($newNumberfields);
+                $em->flush();
+            }
+
+            return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
+        }
+
+        return $this->render('admin/fields/numberfields_new.html.twig', [
+            'numberfields' => $numberfields,
+            'form' => $form->createView(),
+            'element' => $element,
+        ]);
+    }
+
+    /**
      * @Route("textfields/{id<\d+>}", methods="GET", name="admin_textfields_show")
      */
     public function showTextFields(TextFields $textfields): Response
@@ -138,6 +190,16 @@ class FieldsController extends AbstractController
     {
         return $this->render('admin/fields/datefields_show.html.twig', [
             'datefields' => $datefields,
+        ]);
+    }
+
+    /**
+     * @Route("numberfields/{id<\d+>}", methods="GET", name="admin_numberfields_show")
+     */
+    public function showNumberFields(NumberFields $numberfields): Response
+    {
+        return $this->render('admin/fields/numberfields_show.html.twig', [
+            'numberfields' => $numberfields,
         ]);
     }
 
@@ -214,6 +276,42 @@ class FieldsController extends AbstractController
     }
 
     /**
+     * @Route("numberfields/{id<\d+>}/edit", methods="GET|POST", name="admin_numberfields_edit")
+     */
+    // @IsGranted("edit", subject="numberfields", message="NumberFields can only be edited by their authors.")
+    public function editNumberFields(Request $request, NumberFields $numberfields): Response
+    {
+        $element = $numberfields->getElement();
+
+        $form = $this->createForm(NumberFieldsAdminType::class, $numberfields);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('success', 'action.updated_successfully');
+
+            $em = $this->getDoctrine()->getManager();
+
+            $childDatefields = $numberfields->getChildFields();
+            foreach ($childDatefields as $childDatefield) {
+                $childDatefield->setTitle($numberfields->getTitle());
+                $childDatefield->setPosition($numberfields->getPosition());
+                $em->persist($childDatefield);
+                $em->flush();
+            }
+
+            return $this->redirectToRoute('admin_numberfields_edit', ['id' => $numberfields->getId()]);
+        }
+
+        return $this->render('admin/fields/numberfields_edit.html.twig', [
+            'numberfields' => $numberfields,
+            'form' => $form->createView(),
+            'element' => $element,
+        ]);
+    }
+
+    /**
      * @Route("textfields/{id}/delete", methods="POST", name="admin_textfields_delete")
      */
     // @IsGranted("delete", subject="textfields")
@@ -264,6 +362,35 @@ class FieldsController extends AbstractController
         }
 
         $em->remove($datefields);
+        $em->flush();
+
+        $this->addFlash('success', 'action.deleted_successfully');
+
+        return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
+    }
+
+    /**
+     * @Route("numberfields/{id}/delete", methods="POST", name="admin_numberfields_delete")
+     */
+    // @IsGranted("delete", subject="numberfields")
+    public function deleteNumberFields(Request $request, NumberFields $numberfields): Response
+    {
+        $element = $numberfields->getElement();
+        $idElement = $element->getId();
+
+        if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
+            return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $childDatefields = $numberfields->getChildFields();
+        foreach ($childDatefields as $childDatefield) {
+            $em->remove($childDatefield);
+            $em->flush();
+        }
+
+        $em->remove($numberfields);
         $em->flush();
 
         $this->addFlash('success', 'action.deleted_successfully');

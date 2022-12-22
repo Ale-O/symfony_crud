@@ -92,6 +92,10 @@
                 <source>title.datefields_list</source>
                 <target>Liste des champs dates</target>
             </trans-unit>
+            <trans-unit id="title.numberfields_list">
+                <source>title.numberfields_list</source>
+                <target>Liste des champs nombres</target>
+            </trans-unit>
             <trans-unit id="title.tag_list">
                 <source>title.tag_list</source>
                 <target>Liste des tags</target>

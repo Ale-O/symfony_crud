@@ -87,7 +87,7 @@ class __TwigTemplate_d47d73f1a2dfdaa5ee05a53bd9d2ff363cbf9191e0caf34015336db8605
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.element_list"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("menu.admin"), "html", null, true);
         echo "</h1>
 
     <table class=\"table table-striped table-middle-aligned\">
@@ -338,7 +338,7 @@ class __TwigTemplate_d47d73f1a2dfdaa5ee05a53bd9d2ff363cbf9191e0caf34015336db8605
 {% block body_id 'admin_element_index' %}
 
 {% block main %}
-    <h1>{{ 'title.element_list'|trans }}</h1>
+    <h1>{{ 'menu.admin'|trans }}</h1>
 
     <table class=\"table table-striped table-middle-aligned\">
         <thead>

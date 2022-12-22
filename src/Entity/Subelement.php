@@ -91,11 +91,17 @@ class Subelement
      */
     private $datefields;
 
+    /**
+     * @ORM\OneToMany(targetEntity=NumberFields::class, mappedBy="subelement")
+     */
+    private $numberFields;
+
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
         $this->textfields = new ArrayCollection();
         $this->datefields = new ArrayCollection();
+        $this->numberFields = new ArrayCollection();
     }
 
     /**
@@ -199,5 +205,35 @@ class Subelement
     public function removeDateField(DateFields $datefield): void
     {
         $this->datefield->removeSubelement($datefield);
+    }
+
+    /**
+     * @return Collection|NumberFields[]
+     */
+    public function getNumberFields(): Collection
+    {
+        return $this->numberFields;
+    }
+
+    public function addNumberField(NumberFields $numberField): self
+    {
+        if (!$this->numberFields->contains($numberField)) {
+            $this->numberFields[] = $numberField;
+            $numberField->setSubelement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNumberField(NumberFields $numberField): self
+    {
+        if ($this->numberFields->removeElement($numberField)) {
+            // set the owning side to null (unless already changed)
+            if ($numberField->getSubelement() === $this) {
+                $numberField->setSubelement(null);
+            }
+        }
+
+        return $this;
     }
 }

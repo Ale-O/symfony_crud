@@ -28,7 +28,9 @@
             <p>
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     {% if field.content.timestamp is defined %}
-                        {{ render(controller('App\\Controller\\FieldsController::DateFieldsForm', {'id': field.id})) }}
+                        {{ render(controller('App\\Controller\\FieldsController::dateFieldsForm', {'id': field.id})) }}
+                    {% elseif field.content matches '/^\\d+$/' %}
+                        {{ render(controller('App\\Controller\\FieldsController::numberFieldsForm', {'id': field.id})) }}
                     {% else %}
                         {{ render(controller('App\\Controller\\FieldsController::textFieldsForm', {'id': field.id})) }}
                     {% endif %}

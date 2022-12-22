@@ -146,45 +146,52 @@ class __TwigTemplate_0c85d9ff21153f922846f07b7a7a5aec2f096ccc1cf92d37aa2f057c765
                 if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, true, false, 30), "timestamp", [], "any", true, true, false, 30)) {
                     // line 31
                     echo "                        ";
-                    echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\FieldsController::DateFieldsForm", ["id" => twig_get_attribute($this->env, $this->source, $context["field"], "id", [], "any", false, false, false, 31)]));
+                    echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\FieldsController::dateFieldsForm", ["id" => twig_get_attribute($this->env, $this->source, $context["field"], "id", [], "any", false, false, false, 31)]));
                     echo "
                     ";
-                } else {
+                } elseif (preg_match("/^\\d+\$/", twig_get_attribute($this->env, $this->source,                 // line 32
+$context["field"], "content", [], "any", false, false, false, 32))) {
                     // line 33
                     echo "                        ";
-                    echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\FieldsController::textFieldsForm", ["id" => twig_get_attribute($this->env, $this->source, $context["field"], "id", [], "any", false, false, false, 33)]));
-                    echo "
-                    ";
-                }
-                // line 35
-                echo "                ";
-            } else {
-                // line 36
-                echo "                    ";
-                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, true, false, 36), "timestamp", [], "any", true, true, false, 36)) {
-                    // line 37
-                    echo "                        ";
-                    echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, false, false, 37), "long", "medium", "", "UTC"), "html", null, true);
+                    echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\FieldsController::numberFieldsForm", ["id" => twig_get_attribute($this->env, $this->source, $context["field"], "id", [], "any", false, false, false, 33)]));
                     echo "
                     ";
                 } else {
-                    // line 39
+                    // line 35
                     echo "                        ";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, false, false, 39), "html", null, true);
+                    echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\FieldsController::textFieldsForm", ["id" => twig_get_attribute($this->env, $this->source, $context["field"], "id", [], "any", false, false, false, 35)]));
                     echo "
                     ";
                 }
-                // line 41
+                // line 37
+                echo "                ";
+            } else {
+                // line 38
+                echo "                    ";
+                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, true, false, 38), "timestamp", [], "any", true, true, false, 38)) {
+                    // line 39
+                    echo "                        ";
+                    echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, false, false, 39), "long", "medium", "", "UTC"), "html", null, true);
+                    echo "
+                    ";
+                } else {
+                    // line 41
+                    echo "                        ";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, false, false, 41), "html", null, true);
+                    echo "
+                    ";
+                }
+                // line 43
                 echo "                ";
             }
-            // line 42
+            // line 44
             echo "            </p>
         </div>
     ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 45
+            // line 47
             echo "        <div class='well'>";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("fields.no_fields"), "html", null, true);
             echo "</div>
@@ -193,7 +200,7 @@ class __TwigTemplate_0c85d9ff21153f922846f07b7a7a5aec2f096ccc1cf92d37aa2f057c765
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['field'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 49
         echo "
 
 
@@ -207,7 +214,7 @@ class __TwigTemplate_0c85d9ff21153f922846f07b7a7a5aec2f096ccc1cf92d37aa2f057c765
 
     }
 
-    // line 56
+    // line 58
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -217,15 +224,15 @@ class __TwigTemplate_0c85d9ff21153f922846f07b7a7a5aec2f096ccc1cf92d37aa2f057c765
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 57
+        // line 59
         echo "
     <div class=\"section\">
         <a href=\"";
-        // line 59
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 59, $this->source); })()), "id", [], "any", false, false, false, 59)]), "html", null, true);
+        // line 61
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 61, $this->source); })()), "id", [], "any", false, false, false, 61)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
-        // line 60
+        // line 62
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
         echo "
         </a>
@@ -233,11 +240,11 @@ class __TwigTemplate_0c85d9ff21153f922846f07b7a7a5aec2f096ccc1cf92d37aa2f057c765
 
     <div class=\"section\">
         <a href=\"";
-        // line 65
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 65, $this->source); })()), "id", [], "any", false, false, false, 65)]), "html", null, true);
+        // line 67
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 67, $this->source); })()), "id", [], "any", false, false, false, 67)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> ";
-        // line 66
+        // line 68
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.lock_fields"), "html", null, true);
         echo "
         </a>
@@ -245,18 +252,18 @@ class __TwigTemplate_0c85d9ff21153f922846f07b7a7a5aec2f096ccc1cf92d37aa2f057c765
     
     <div class=\"section\">
         ";
-        // line 71
-        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 71, $this->source); })())], false);
+        // line 73
+        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 73, $this->source); })())], false);
         echo "
     </div>
 
     ";
-        // line 74
+        // line 76
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 76
+        // line 78
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -280,7 +287,7 @@ class __TwigTemplate_0c85d9ff21153f922846f07b7a7a5aec2f096ccc1cf92d37aa2f057c765
 
     public function getDebugInfo()
     {
-        return array (  260 => 76,  255 => 74,  249 => 71,  241 => 66,  237 => 65,  229 => 60,  225 => 59,  221 => 57,  211 => 56,  197 => 47,  188 => 45,  181 => 42,  178 => 41,  172 => 39,  166 => 37,  163 => 36,  160 => 35,  154 => 33,  148 => 31,  145 => 30,  143 => 29,  138 => 27,  135 => 26,  130 => 25,  125 => 23,  115 => 16,  111 => 15,  105 => 12,  100 => 10,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  267 => 78,  262 => 76,  256 => 73,  248 => 68,  244 => 67,  236 => 62,  232 => 61,  228 => 59,  218 => 58,  204 => 49,  195 => 47,  188 => 44,  185 => 43,  179 => 41,  173 => 39,  170 => 38,  167 => 37,  161 => 35,  155 => 33,  153 => 32,  148 => 31,  145 => 30,  143 => 29,  138 => 27,  135 => 26,  130 => 25,  125 => 23,  115 => 16,  111 => 15,  105 => 12,  100 => 10,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -315,7 +322,9 @@ class __TwigTemplate_0c85d9ff21153f922846f07b7a7a5aec2f096ccc1cf92d37aa2f057c765
             <p>
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     {% if field.content.timestamp is defined %}
-                        {{ render(controller('App\\\\Controller\\\\FieldsController::DateFieldsForm', {'id': field.id})) }}
+                        {{ render(controller('App\\\\Controller\\\\FieldsController::dateFieldsForm', {'id': field.id})) }}
+                    {% elseif field.content matches '/^\\\\d+\$/' %}
+                        {{ render(controller('App\\\\Controller\\\\FieldsController::numberFieldsForm', {'id': field.id})) }}
                     {% else %}
                         {{ render(controller('App\\\\Controller\\\\FieldsController::textFieldsForm', {'id': field.id})) }}
                     {% endif %}

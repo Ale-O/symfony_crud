@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\DateFields;
 use App\Entity\Element;
+use App\Entity\NumberFields;
 use App\Entity\Subelement;
 use App\Entity\TextFields;
 use App\Event\SubelementCreatedEvent;
@@ -84,6 +85,7 @@ class CrudController extends AbstractController
 
             $arrayTextFields = $element->getTextFields();
             $arrayDateFields = $element->getDateFields();
+            $arrayNumberFields = $element->getNumberFields();
 
             foreach ($arrayTextFields as $field) {
                 $textfields = new TextFields();
@@ -104,6 +106,17 @@ class CrudController extends AbstractController
                 $datefields->setPosition($field->getPosition());
                 $datefields->setParentFields($field);
                 $em->persist($datefields);
+                $em->flush();
+            }
+
+            foreach ($arrayNumberFields as $field) {
+                $numberfields = new NumberFields();
+                $numberfields->setSubelement($subelement);
+                $numberfields->setTitle($field->getTitle());
+                $numberfields->setContent(0);
+                $numberfields->setPosition($field->getPosition());
+                $numberfields->setParentFields($field);
+                $em->persist($numberfields);
                 $em->flush();
             }
 
@@ -136,6 +149,7 @@ class CrudController extends AbstractController
 
         $arrayTextFields = $subelement->getTextFields();
         $arrayDateFields = $subelement->getDateFields();
+        $arrayNumberFields = $subelement->getNumberFields();
 
         $fields = [];
 
@@ -143,6 +157,9 @@ class CrudController extends AbstractController
             array_push($fields, $field);
         }
         foreach ($arrayDateFields as $field) {
+            array_push($fields, $field);
+        }
+        foreach ($arrayNumberFields as $field) {
             array_push($fields, $field);
         }
 
@@ -163,6 +180,7 @@ class CrudController extends AbstractController
 
         $arrayTextFields = $subelement->getTextFields();
         $arrayDateFields = $subelement->getDateFields();
+        $arrayNumberFields = $subelement->getNumberFields();
 
         $fields = [];
 
@@ -170,6 +188,9 @@ class CrudController extends AbstractController
             array_push($fields, $field);
         }
         foreach ($arrayDateFields as $field) {
+            array_push($fields, $field);
+        }
+        foreach ($arrayNumberFields as $field) {
             array_push($fields, $field);
         }
 

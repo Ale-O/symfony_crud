@@ -1,0 +1,27 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_numberfields_show' %}
+
+{% block main %}
+    <h1>{{ numberfields.title }}</h1>
+    <h2>{{ numberfields.position }}</h2>
+
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('admin_numberfields_edit', {id: numberfields.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+        </a>
+    </div>
+
+    
+    <div class="section">
+        {{ include('admin/fields/_numberfields_delete_form.html.twig', {numberfields: numberfields}, with_context = false) }}
+    </div>
+    
+
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}

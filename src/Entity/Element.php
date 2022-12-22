@@ -121,6 +121,11 @@ class Element
      */
     private $datefields;
 
+    /**
+     * @ORM\OneToMany(targetEntity=NumberFields::class, mappedBy="element")
+     */
+    private $numberFields;
+
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
@@ -128,6 +133,7 @@ class Element
         $this->tags = new ArrayCollection();
         $this->textfields = new ArrayCollection();
         $this->datefields = new ArrayCollection();
+        $this->numberFields = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -266,5 +272,35 @@ class Element
     public function removeDateField(DateFields $datefield): void
     {
         $this->datefield->removeElement($datefield);
+    }
+
+    /**
+     * @return Collection|NumberFields[]
+     */
+    public function getNumberFields(): Collection
+    {
+        return $this->numberFields;
+    }
+
+    public function addNumberField(NumberFields $numberField): self
+    {
+        if (!$this->numberFields->contains($numberField)) {
+            $this->numberFields[] = $numberField;
+            $numberField->setElement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNumberField(NumberFields $numberField): self
+    {
+        if ($this->numberFields->removeElement($numberField)) {
+            // set the owning side to null (unless already changed)
+            if ($numberField->getElement() === $this) {
+                $numberField->setElement(null);
+            }
+        }
+
+        return $this;
     }
 }
