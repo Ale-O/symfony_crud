@@ -3,7 +3,7 @@
 {% block body_id 'subelement_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit'|trans({'%id%': subelement.id}) }}</h1>
+    <h1>{{ 'action.edit'|trans }} {{ subelement.title }}</h1>
 
     {{ include('crud/subelement/_subelement_edit_form.html.twig', {
         form: form,

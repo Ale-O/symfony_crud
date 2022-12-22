@@ -19,6 +19,12 @@
 
     {{ include('crud/_element_tags.html.twig') }}
 
+    <div>
+        <a href="{{ path('admin_element_index') }}">
+            <i class="fa fa-database" aria-hidden="true"></i> {{ 'menu.admin'|trans }}
+        </a>
+    </div>
+
     <hr/>
 
     <h1>{{ 'title.textfields_list'|trans }}</h1>

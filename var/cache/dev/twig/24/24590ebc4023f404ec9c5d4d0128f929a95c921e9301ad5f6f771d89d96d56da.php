@@ -87,7 +87,9 @@ class __TwigTemplate_e30e92c60779734f132f3be4a433fc0e8ee30abc5e12df7cdfc67573065
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 6, $this->source); })()), "title", [], "any", false, false, false, 6), "html", null, true);
         echo "</h1>
 
     ";
@@ -165,7 +167,7 @@ class __TwigTemplate_e30e92c60779734f132f3be4a433fc0e8ee30abc5e12df7cdfc67573065
 
     public function getDebugInfo()
     {
-        return array (  145 => 28,  140 => 26,  134 => 23,  126 => 18,  122 => 17,  119 => 16,  109 => 15,  98 => 12,  96 => 9,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  147 => 28,  142 => 26,  136 => 23,  128 => 18,  124 => 17,  121 => 16,  111 => 15,  100 => 12,  98 => 9,  97 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -175,7 +177,7 @@ class __TwigTemplate_e30e92c60779734f132f3be4a433fc0e8ee30abc5e12df7cdfc67573065
 {% block body_id 'admin_element_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit'|trans({'%id%': element.id}) }}</h1>
+    <h1>{{ 'action.edit'|trans }} {{ element.title }}</h1>
 
     {{ include('admin/crud/_form.html.twig', {
         form: form,

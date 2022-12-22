@@ -87,7 +87,9 @@ class __TwigTemplate_0696592c2f32f19e83029b87d756b07210bfc9d839724e49d7c42d6dc33
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 6, $this->source); })()), "title", [], "any", false, false, false, 6), "html", null, true);
         echo "</h1>
 
     ";
@@ -166,7 +168,7 @@ class __TwigTemplate_0696592c2f32f19e83029b87d756b07210bfc9d839724e49d7c42d6dc33
 
     public function getDebugInfo()
     {
-        return array (  146 => 29,  141 => 27,  135 => 24,  127 => 19,  123 => 18,  120 => 17,  110 => 16,  99 => 13,  97 => 10,  96 => 9,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  148 => 29,  143 => 27,  137 => 24,  129 => 19,  125 => 18,  122 => 17,  112 => 16,  101 => 13,  99 => 10,  98 => 9,  97 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -176,7 +178,7 @@ class __TwigTemplate_0696592c2f32f19e83029b87d756b07210bfc9d839724e49d7c42d6dc33
 {% block body_id 'subelement_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit'|trans({'%id%': subelement.id}) }}</h1>
+    <h1>{{ 'action.edit'|trans }} {{ subelement.title }}</h1>
 
     {{ include('crud/subelement/_subelement_edit_form.html.twig', {
         form: form,
