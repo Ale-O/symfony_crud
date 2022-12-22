@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Tag;
 use App\Entity\User;
 use App\Form\UserNewType;
-use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,7 +46,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/new", methods="GET|POST", name="user_new")
      */
-    public function new(Request $request, UserPasswordEncoderInterface $encoder, ManagerRegistry $doctrine): Response
+    public function new(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
         $user = new User();
 
@@ -64,12 +63,11 @@ class SecurityController extends AbstractController
 
             $this->addFlash('success', 'action.created_successfully');
 
-            $entityManager = $doctrine->getManager();
             $tag = new Tag();
             $name = $user->getUsername();
             $tag->setName(strval($name));
-            $entityManager->persist($tag);
-            $entityManager->flush();
+            $em->persist($tag);
+            $em->flush();
 
             return $this->redirectToRoute('security_login');
         }

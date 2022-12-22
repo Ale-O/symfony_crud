@@ -12,7 +12,6 @@ use App\Repository\ElementRepository;
 use App\Repository\SubelementRepository;
 use App\Repository\TagRepository;
 use DateTime;
-use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -67,7 +66,7 @@ class CrudController extends AbstractController
      * @IsGranted("IS_AUTHENTICATED_FULLY")
      * @ParamConverter("element", options={"mapping": {"elementSlug": "slug"}})
      */
-    public function subelementNew(Request $request, Element $element, EventDispatcherInterface $eventDispatcher, ManagerRegistry $doctrine): Response
+    public function subelementNew(Request $request, Element $element, EventDispatcherInterface $eventDispatcher): Response
     {
         $subelement = new Subelement();
         $subelement->setAuthor($this->getUser());
@@ -83,8 +82,6 @@ class CrudController extends AbstractController
 
             $eventDispatcher->dispatch(new SubelementCreatedEvent($subelement));
 
-            $entityManager = $doctrine->getManager();
-
             $arrayTextFields = $element->getTextFields();
             $arrayDateFields = $element->getDateFields();
 
@@ -95,8 +92,8 @@ class CrudController extends AbstractController
                 $textfields->setContent('...');
                 $textfields->setPosition($field->getPosition());
                 $textfields->setParentFields($field);
-                $entityManager->persist($textfields);
-                $entityManager->flush();
+                $em->persist($textfields);
+                $em->flush();
             }
 
             foreach ($arrayDateFields as $field) {
@@ -106,8 +103,8 @@ class CrudController extends AbstractController
                 $datefields->setContent(new DateTime());
                 $datefields->setPosition($field->getPosition());
                 $datefields->setParentFields($field);
-                $entityManager->persist($datefields);
-                $entityManager->flush();
+                $em->persist($datefields);
+                $em->flush();
             }
 
             return $this->redirectToRoute('crud_element', ['slug' => $element->getSlug()]);

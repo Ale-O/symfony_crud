@@ -7,7 +7,6 @@ use App\Entity\User;
 use App\Form\UserEditType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
-use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -38,7 +37,7 @@ class UsersController extends AbstractController
     /**
      * @Route("/new", methods="GET|POST", name="admin_user_new")
      */
-    public function new(Request $request, UserPasswordEncoderInterface $encoder, ManagerRegistry $doctrine): Response
+    public function new(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
         $user = new User();
 
@@ -60,12 +59,11 @@ class UsersController extends AbstractController
                 return $this->redirectToRoute('admin_user_new');
             }
 
-            $entityManager = $doctrine->getManager();
             $tag = new Tag();
             $name = $user->getUsername();
             $tag->setName(strval($name));
-            $entityManager->persist($tag);
-            $entityManager->flush();
+            $em->persist($tag);
+            $em->flush();
 
             return $this->redirectToRoute('admin_user_index');
         }

@@ -8,7 +8,6 @@ use App\Entity\TextFields;
 use App\Form\DateFieldsAdminType;
 use App\Form\TextFieldsAdminType;
 use DateTime;
-use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,7 +25,7 @@ class FieldsController extends AbstractController
      * @Route("textfields/{elementSlug}/new", methods="GET|POST", name="admin_textfields_new")
      * @ParamConverter("element", options={"mapping": {"elementSlug": "slug"}})
      */
-    public function newTextFields(Request $request, Element $element, ManagerRegistry $doctrine): Response
+    public function newTextFields(Request $request, Element $element): Response
     {
         $idElement = $element->getId();
 
@@ -50,8 +49,6 @@ class FieldsController extends AbstractController
                 return $this->redirectToRoute('admin_textfields_new');
             }
 
-            $entityManager = $doctrine->getManager();
-
             $subelements = $element->getSubelements();
             foreach ($subelements as $subelement) {
                 $newTextfields = new TextFields();
@@ -60,8 +57,8 @@ class FieldsController extends AbstractController
                 $newTextfields->setContent('...');
                 $newTextfields->setPosition($textfields->getPosition());
                 $newTextfields->setParentFields($textfields);
-                $entityManager->persist($newTextfields);
-                $entityManager->flush();
+                $em->persist($newTextfields);
+                $em->flush();
             }
 
             return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
@@ -78,7 +75,7 @@ class FieldsController extends AbstractController
      * @Route("datefields/{elementSlug}/new", methods="GET|POST", name="admin_datefields_new")
      * @ParamConverter("element", options={"mapping": {"elementSlug": "slug"}})
      */
-    public function newDateFields(Request $request, Element $element, ManagerRegistry $doctrine): Response
+    public function newDateFields(Request $request, Element $element): Response
     {
         $idElement = $element->getId();
 
@@ -102,8 +99,6 @@ class FieldsController extends AbstractController
                 return $this->redirectToRoute('admin_datefields_new');
             }
 
-            $entityManager = $doctrine->getManager();
-
             $subelements = $element->getSubelements();
             foreach ($subelements as $subelement) {
                 $newDatefields = new DateFields();
@@ -112,8 +107,8 @@ class FieldsController extends AbstractController
                 $newDatefields->setContent(new DateTime());
                 $newDatefields->setPosition($datefields->getPosition());
                 $newDatefields->setParentFields($datefields);
-                $entityManager->persist($newDatefields);
-                $entityManager->flush();
+                $em->persist($newDatefields);
+                $em->flush();
             }
 
             return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
@@ -150,7 +145,7 @@ class FieldsController extends AbstractController
      * @Route("textfields/{id<\d+>}/edit", methods="GET|POST", name="admin_textfields_edit")
      */
     // @IsGranted("edit", subject="textfields", message="TextFieldss can only be edited by their authors.")
-    public function editTextFields(Request $request, TextFields $textfields, ManagerRegistry $doctrine): Response
+    public function editTextFields(Request $request, TextFields $textfields): Response
     {
         $element = $textfields->getElement();
 
@@ -162,14 +157,14 @@ class FieldsController extends AbstractController
 
             $this->addFlash('success', 'action.updated_successfully');
 
-            $entityManager = $doctrine->getManager();
+            $em = $this->getDoctrine()->getManager();
 
             $childTextfields = $textfields->getChildFields();
             foreach ($childTextfields as $childTextfield) {
                 $childTextfield->setTitle($textfields->getTitle());
                 $childTextfield->setPosition($textfields->getPosition());
-                $entityManager->persist($childTextfield);
-                $entityManager->flush();
+                $em->persist($childTextfield);
+                $em->flush();
             }
 
             return $this->redirectToRoute('admin_textfields_edit', ['id' => $textfields->getId()]);
@@ -186,7 +181,7 @@ class FieldsController extends AbstractController
      * @Route("datefields/{id<\d+>}/edit", methods="GET|POST", name="admin_datefields_edit")
      */
     // @IsGranted("edit", subject="datefields", message="DateFields can only be edited by their authors.")
-    public function editDateFields(Request $request, DateFields $datefields, ManagerRegistry $doctrine): Response
+    public function editDateFields(Request $request, DateFields $datefields): Response
     {
         $element = $datefields->getElement();
 
@@ -198,14 +193,14 @@ class FieldsController extends AbstractController
 
             $this->addFlash('success', 'action.updated_successfully');
 
-            $entityManager = $doctrine->getManager();
+            $em = $this->getDoctrine()->getManager();
 
             $childDatefields = $datefields->getChildFields();
             foreach ($childDatefields as $childDatefield) {
                 $childDatefield->setTitle($datefields->getTitle());
                 $childDatefield->setPosition($datefields->getPosition());
-                $entityManager->persist($childDatefield);
-                $entityManager->flush();
+                $em->persist($childDatefield);
+                $em->flush();
             }
 
             return $this->redirectToRoute('admin_datefields_edit', ['id' => $datefields->getId()]);
@@ -222,7 +217,7 @@ class FieldsController extends AbstractController
      * @Route("textfields/{id}/delete", methods="POST", name="admin_textfields_delete")
      */
     // @IsGranted("delete", subject="textfields")
-    public function deleteTextFields(Request $request, TextFields $textfields, ManagerRegistry $doctrine): Response
+    public function deleteTextFields(Request $request, TextFields $textfields): Response
     {
         $element = $textfields->getElement();
         $idElement = $element->getId();
@@ -231,15 +226,14 @@ class FieldsController extends AbstractController
             return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
         }
 
-        $entityManager = $doctrine->getManager();
+        $em = $this->getDoctrine()->getManager();
 
         $childTextfields = $textfields->getChildFields();
         foreach ($childTextfields as $childTextfield) {
-            $entityManager->remove($childTextfield);
-            $entityManager->flush();
+            $em->remove($childTextfield);
+            $em->flush();
         }
 
-        $em = $this->getDoctrine()->getManager();
         $em->remove($textfields);
         $em->flush();
 
@@ -252,7 +246,7 @@ class FieldsController extends AbstractController
      * @Route("datefields/{id}/delete", methods="POST", name="admin_datefields_delete")
      */
     // @IsGranted("delete", subject="datefields")
-    public function deleteDateFields(Request $request, DateFields $datefields, ManagerRegistry $doctrine): Response
+    public function deleteDateFields(Request $request, DateFields $datefields): Response
     {
         $element = $datefields->getElement();
         $idElement = $element->getId();
@@ -261,15 +255,14 @@ class FieldsController extends AbstractController
             return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
         }
 
-        $entityManager = $doctrine->getManager();
+        $em = $this->getDoctrine()->getManager();
 
         $childDatefields = $datefields->getChildFields();
         foreach ($childDatefields as $childDatefield) {
-            $entityManager->remove($childDatefield);
-            $entityManager->flush();
+            $em->remove($childDatefield);
+            $em->flush();
         }
 
-        $em = $this->getDoctrine()->getManager();
         $em->remove($datefields);
         $em->flush();
 

@@ -5782,13 +5782,6 @@
         <argument key="element" type="service" id=".errored..service_locator.nfDhB4v.App\Entity\Element"/>
       </argument>
     </service>
-    <service id=".service_locator.9CRX9Vx" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="doctrine" type="service" id="doctrine"/>
-        <argument key="element" type="service" id=".errored..service_locator.9CRX9Vx.App\Entity\Element"/>
-      </argument>
-    </service>
     <service id=".service_locator.uFJkjP8" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5799,20 +5792,6 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="datefields" type="service" id=".errored..service_locator.hvP7sfc.App\Entity\DateFields"/>
-      </argument>
-    </service>
-    <service id=".service_locator.dwzhFZh" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="doctrine" type="service" id="doctrine"/>
-        <argument key="textfields" type="service" id=".errored..service_locator.dwzhFZh.App\Entity\TextFields"/>
-      </argument>
-    </service>
-    <service id=".service_locator.cZ2Ga9K" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="datefields" type="service" id=".errored..service_locator.cZ2Ga9K.App\Entity\DateFields"/>
-        <argument key="doctrine" type="service" id="doctrine"/>
       </argument>
     </service>
     <service id=".service_locator.kR88F0P" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5833,10 +5812,9 @@
         <argument key="users" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.GeY2L1o" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gPh6X_L" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="doctrine" type="service" id="doctrine"/>
         <argument key="encoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
@@ -5853,11 +5831,10 @@
         <argument key="subelements" type="service" id="App\Repository\SubelementRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.Met3hw9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.c5BQ3qw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="doctrine" type="service" id="doctrine"/>
-        <argument key="element" type="service" id=".errored..service_locator.Met3hw9.App\Entity\Element"/>
+        <argument key="element" type="service" id=".errored..service_locator.c5BQ3qw.App\Entity\Element"/>
         <argument key="eventDispatcher" type="service" id="debug.event_dispatcher"/>
       </argument>
     </service>
@@ -5880,25 +5857,19 @@
         <argument key="security" type="service" id="security.helper"/>
       </argument>
     </service>
-    <service id=".service_locator.gPh6X_L" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="encoder" type="service" id="security.user_password_encoder.generic"/>
-      </argument>
-    </service>
-    <service id=".service_locator.YWQ6VQd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.jz54fmp" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CrudController::delete" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\CrudController::edit" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\CrudController::index" type="service" id=".service_locator.G4iNSV6"/>
         <argument key="App\Controller\Admin\CrudController::show" type="service" id=".service_locator.nfDhB4v"/>
-        <argument key="App\Controller\Admin\FieldsController::deleteDateFields" type="service" id=".service_locator.cZ2Ga9K"/>
-        <argument key="App\Controller\Admin\FieldsController::deleteTextFields" type="service" id=".service_locator.dwzhFZh"/>
-        <argument key="App\Controller\Admin\FieldsController::editDateFields" type="service" id=".service_locator.cZ2Ga9K"/>
-        <argument key="App\Controller\Admin\FieldsController::editTextFields" type="service" id=".service_locator.dwzhFZh"/>
-        <argument key="App\Controller\Admin\FieldsController::newDateFields" type="service" id=".service_locator.9CRX9Vx"/>
-        <argument key="App\Controller\Admin\FieldsController::newTextFields" type="service" id=".service_locator.9CRX9Vx"/>
+        <argument key="App\Controller\Admin\FieldsController::deleteDateFields" type="service" id=".service_locator.hvP7sfc"/>
+        <argument key="App\Controller\Admin\FieldsController::deleteTextFields" type="service" id=".service_locator.uFJkjP8"/>
+        <argument key="App\Controller\Admin\FieldsController::editDateFields" type="service" id=".service_locator.hvP7sfc"/>
+        <argument key="App\Controller\Admin\FieldsController::editTextFields" type="service" id=".service_locator.uFJkjP8"/>
+        <argument key="App\Controller\Admin\FieldsController::newDateFields" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\Admin\FieldsController::newTextFields" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\FieldsController::showDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController::showTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\TagsController::delete" type="service" id=".service_locator.S92MJGp"/>
@@ -5910,7 +5881,7 @@
         <argument key="App\Controller\Admin\UsersController::index" type="service" id=".service_locator.QOjUGpS"/>
         <argument key="App\Controller\Admin\UsersController::levelDown" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\Admin\UsersController::levelUp" type="service" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\Admin\UsersController::new" type="service" id=".service_locator.GeY2L1o"/>
+        <argument key="App\Controller\Admin\UsersController::new" type="service" id=".service_locator.gPh6X_L"/>
         <argument key="App\Controller\Admin\UsersController::show" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\CrudController::elementShow" type="service" id=".service_locator.SRCoNHU"/>
         <argument key="App\Controller\CrudController::index" type="service" id=".service_locator.G4iNSV6"/>
@@ -5918,14 +5889,14 @@
         <argument key="App\Controller\CrudController::subelementDelete" type="service" id=".service_locator.25IZi3d"/>
         <argument key="App\Controller\CrudController::subelementEdit" type="service" id=".service_locator.25IZi3d"/>
         <argument key="App\Controller\CrudController::subelementForm" type="service" id=".service_locator.nfDhB4v"/>
-        <argument key="App\Controller\CrudController::subelementNew" type="service" id=".service_locator.Met3hw9"/>
+        <argument key="App\Controller\CrudController::subelementNew" type="service" id=".service_locator.c5BQ3qw"/>
         <argument key="App\Controller\CrudController::subelementShow" type="service" id=".service_locator.25IZi3d"/>
         <argument key="App\Controller\FieldsController::dateFieldsEdit" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\FieldsController::dateFieldsForm" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\FieldsController::textFieldsEdit" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\FieldsController::textFieldsForm" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.FXjGl5F"/>
-        <argument key="App\Controller\SecurityController::new" type="service" id=".service_locator.GeY2L1o"/>
+        <argument key="App\Controller\SecurityController::new" type="service" id=".service_locator.gPh6X_L"/>
         <argument key="App\Controller\UserController::changePassword" type="service" id=".service_locator.gPh6X_L"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
@@ -5937,12 +5908,12 @@
         <argument key="App\Controller\Admin\CrudController:edit" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\CrudController:index" type="service" id=".service_locator.G4iNSV6"/>
         <argument key="App\Controller\Admin\CrudController:show" type="service" id=".service_locator.nfDhB4v"/>
-        <argument key="App\Controller\Admin\FieldsController:deleteDateFields" type="service" id=".service_locator.cZ2Ga9K"/>
-        <argument key="App\Controller\Admin\FieldsController:deleteTextFields" type="service" id=".service_locator.dwzhFZh"/>
-        <argument key="App\Controller\Admin\FieldsController:editDateFields" type="service" id=".service_locator.cZ2Ga9K"/>
-        <argument key="App\Controller\Admin\FieldsController:editTextFields" type="service" id=".service_locator.dwzhFZh"/>
-        <argument key="App\Controller\Admin\FieldsController:newDateFields" type="service" id=".service_locator.9CRX9Vx"/>
-        <argument key="App\Controller\Admin\FieldsController:newTextFields" type="service" id=".service_locator.9CRX9Vx"/>
+        <argument key="App\Controller\Admin\FieldsController:deleteDateFields" type="service" id=".service_locator.hvP7sfc"/>
+        <argument key="App\Controller\Admin\FieldsController:deleteTextFields" type="service" id=".service_locator.uFJkjP8"/>
+        <argument key="App\Controller\Admin\FieldsController:editDateFields" type="service" id=".service_locator.hvP7sfc"/>
+        <argument key="App\Controller\Admin\FieldsController:editTextFields" type="service" id=".service_locator.uFJkjP8"/>
+        <argument key="App\Controller\Admin\FieldsController:newDateFields" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\Admin\FieldsController:newTextFields" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\FieldsController:showDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController:showTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\TagsController:delete" type="service" id=".service_locator.S92MJGp"/>
@@ -5954,7 +5925,7 @@
         <argument key="App\Controller\Admin\UsersController:index" type="service" id=".service_locator.QOjUGpS"/>
         <argument key="App\Controller\Admin\UsersController:levelDown" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\Admin\UsersController:levelUp" type="service" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\Admin\UsersController:new" type="service" id=".service_locator.GeY2L1o"/>
+        <argument key="App\Controller\Admin\UsersController:new" type="service" id=".service_locator.gPh6X_L"/>
         <argument key="App\Controller\Admin\UsersController:show" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\CrudController:elementShow" type="service" id=".service_locator.SRCoNHU"/>
         <argument key="App\Controller\CrudController:index" type="service" id=".service_locator.G4iNSV6"/>
@@ -5962,14 +5933,14 @@
         <argument key="App\Controller\CrudController:subelementDelete" type="service" id=".service_locator.25IZi3d"/>
         <argument key="App\Controller\CrudController:subelementEdit" type="service" id=".service_locator.25IZi3d"/>
         <argument key="App\Controller\CrudController:subelementForm" type="service" id=".service_locator.nfDhB4v"/>
-        <argument key="App\Controller\CrudController:subelementNew" type="service" id=".service_locator.Met3hw9"/>
+        <argument key="App\Controller\CrudController:subelementNew" type="service" id=".service_locator.c5BQ3qw"/>
         <argument key="App\Controller\CrudController:subelementShow" type="service" id=".service_locator.25IZi3d"/>
         <argument key="App\Controller\FieldsController:dateFieldsEdit" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\FieldsController:dateFieldsForm" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\FieldsController:textFieldsEdit" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\FieldsController:textFieldsForm" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.FXjGl5F"/>
-        <argument key="App\Controller\SecurityController:new" type="service" id=".service_locator.GeY2L1o"/>
+        <argument key="App\Controller\SecurityController:new" type="service" id=".service_locator.gPh6X_L"/>
         <argument key="App\Controller\UserController:changePassword" type="service" id=".service_locator.gPh6X_L"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
@@ -6475,25 +6446,22 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.YWQ6VQd"/>
+      <argument type="service" id=".service_locator.jz54fmp"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.YWQ6VQd"/>
+      <argument type="service" id=".service_locator.jz54fmp"/>
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.nfDhB4v.App\Entity\Element" class="App\Entity\Element"/>
-    <service id=".errored..service_locator.9CRX9Vx.App\Entity\Element" class="App\Entity\Element"/>
     <service id=".errored..service_locator.uFJkjP8.App\Entity\TextFields" class="App\Entity\TextFields"/>
     <service id=".errored..service_locator.hvP7sfc.App\Entity\DateFields" class="App\Entity\DateFields"/>
-    <service id=".errored..service_locator.dwzhFZh.App\Entity\TextFields" class="App\Entity\TextFields"/>
-    <service id=".errored..service_locator.cZ2Ga9K.App\Entity\DateFields" class="App\Entity\DateFields"/>
     <service id=".errored..service_locator.S92MJGp.App\Entity\Tag" class="App\Entity\Tag"/>
     <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.SRCoNHU.App\Entity\Element" class="App\Entity\Element"/>
-    <service id=".errored..service_locator.Met3hw9.App\Entity\Element" class="App\Entity\Element"/>
+    <service id=".errored..service_locator.c5BQ3qw.App\Entity\Element" class="App\Entity\Element"/>
     <service id=".errored..service_locator.25IZi3d.App\Entity\Subelement" class="App\Entity\Subelement"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
@@ -6897,7 +6865,7 @@
     <service id="html_sanitizer" alias="html_sanitizer.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.YWQ6VQd"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.jz54fmp"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
     <service id="Psr\Log\LoggerInterface $cacheLogger" alias="monolog.logger.cache"/>
