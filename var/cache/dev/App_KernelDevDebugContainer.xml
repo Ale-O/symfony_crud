@@ -5782,6 +5782,13 @@
         <argument key="element" type="service" id=".errored..service_locator.nfDhB4v.App\Entity\Element"/>
       </argument>
     </service>
+    <service id=".service_locator.9CRX9Vx" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctrine" type="service" id="doctrine"/>
+        <argument key="element" type="service" id=".errored..service_locator.9CRX9Vx.App\Entity\Element"/>
+      </argument>
+    </service>
     <service id=".service_locator.uFJkjP8" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5865,7 +5872,7 @@
         <argument key="encoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
-    <service id=".service_locator.3DAjI3B" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.hOHyH2E" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CrudController::delete" type="service" id=".service_locator.nfDhB4v"/>
@@ -5876,8 +5883,8 @@
         <argument key="App\Controller\Admin\FieldsController::deleteTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\FieldsController::editDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController::editTextFields" type="service" id=".service_locator.uFJkjP8"/>
-        <argument key="App\Controller\Admin\FieldsController::newDateFields" type="service" id=".service_locator.nfDhB4v"/>
-        <argument key="App\Controller\Admin\FieldsController::newTextFields" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\Admin\FieldsController::newDateFields" type="service" id=".service_locator.9CRX9Vx"/>
+        <argument key="App\Controller\Admin\FieldsController::newTextFields" type="service" id=".service_locator.9CRX9Vx"/>
         <argument key="App\Controller\Admin\FieldsController::showDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController::showTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\TagsController::delete" type="service" id=".service_locator.S92MJGp"/>
@@ -5920,8 +5927,8 @@
         <argument key="App\Controller\Admin\FieldsController:deleteTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\FieldsController:editDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController:editTextFields" type="service" id=".service_locator.uFJkjP8"/>
-        <argument key="App\Controller\Admin\FieldsController:newDateFields" type="service" id=".service_locator.nfDhB4v"/>
-        <argument key="App\Controller\Admin\FieldsController:newTextFields" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\Admin\FieldsController:newDateFields" type="service" id=".service_locator.9CRX9Vx"/>
+        <argument key="App\Controller\Admin\FieldsController:newTextFields" type="service" id=".service_locator.9CRX9Vx"/>
         <argument key="App\Controller\Admin\FieldsController:showDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController:showTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\TagsController:delete" type="service" id=".service_locator.S92MJGp"/>
@@ -6454,16 +6461,17 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.3DAjI3B"/>
+      <argument type="service" id=".service_locator.hOHyH2E"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.3DAjI3B"/>
+      <argument type="service" id=".service_locator.hOHyH2E"/>
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.nfDhB4v.App\Entity\Element" class="App\Entity\Element"/>
+    <service id=".errored..service_locator.9CRX9Vx.App\Entity\Element" class="App\Entity\Element"/>
     <service id=".errored..service_locator.uFJkjP8.App\Entity\TextFields" class="App\Entity\TextFields"/>
     <service id=".errored..service_locator.hvP7sfc.App\Entity\DateFields" class="App\Entity\DateFields"/>
     <service id=".errored..service_locator.S92MJGp.App\Entity\Tag" class="App\Entity\Tag"/>
@@ -6873,7 +6881,7 @@
     <service id="html_sanitizer" alias="html_sanitizer.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.3DAjI3B"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.hOHyH2E"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
     <service id="Psr\Log\LoggerInterface $cacheLogger" alias="monolog.logger.cache"/>

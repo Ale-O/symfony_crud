@@ -8,6 +8,7 @@ use App\Entity\TextFields;
 use App\Form\DateFieldsAdminType;
 use App\Form\TextFieldsAdminType;
 use DateTime;
+use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,7 +26,7 @@ class FieldsController extends AbstractController
      * @Route("textfields/{elementSlug}/new", methods="GET|POST", name="admin_textfields_new")
      * @ParamConverter("element", options={"mapping": {"elementSlug": "slug"}})
      */
-    public function newTextFields(Request $request, Element $element): Response
+    public function newTextFields(Request $request, Element $element, ManagerRegistry $doctrine): Response
     {
         $idElement = $element->getId();
 
@@ -49,6 +50,20 @@ class FieldsController extends AbstractController
                 return $this->redirectToRoute('admin_textfields_new');
             }
 
+            $entityManager = $doctrine->getManager();
+
+            $subelements = $element->getSubelements();
+            foreach ($subelements as $subelement) {
+                $newTextfields = new TextFields();
+                $newTextfields->setSubelement($subelement);
+                $newTextfields->setTitle($textfields->getTitle());
+                $newTextfields->setContent('...');
+                $newTextfields->setPosition($textfields->getPosition());
+                $newTextfields->setParentFields($textfields);
+                $entityManager->persist($newTextfields);
+                $entityManager->flush();
+            }
+
             return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
         }
 
@@ -63,7 +78,7 @@ class FieldsController extends AbstractController
      * @Route("datefields/{elementSlug}/new", methods="GET|POST", name="admin_datefields_new")
      * @ParamConverter("element", options={"mapping": {"elementSlug": "slug"}})
      */
-    public function newDateFields(Request $request, Element $element): Response
+    public function newDateFields(Request $request, Element $element, ManagerRegistry $doctrine): Response
     {
         $idElement = $element->getId();
 
@@ -85,6 +100,20 @@ class FieldsController extends AbstractController
 
             if ($form->get('saveAndCreateNew')->isClicked()) {
                 return $this->redirectToRoute('admin_datefields_new');
+            }
+
+            $entityManager = $doctrine->getManager();
+
+            $subelements = $element->getSubelements();
+            foreach ($subelements as $subelement) {
+                $newDatefields = new DateFields();
+                $newDatefields->setSubelement($subelement);
+                $newDatefields->setTitle($datefields->getTitle());
+                $newDatefields->setContent(new DateTime());
+                $newDatefields->setPosition($datefields->getPosition());
+                $newDatefields->setParentFields($datefields);
+                $entityManager->persist($newDatefields);
+                $entityManager->flush();
             }
 
             return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
