@@ -50,7 +50,7 @@ class __TwigTemplate_b87e66a52a3a11d3eb6f8aa57bdf413ae06d426c8b24f6130bf6fe9af70
         echo "
         ";
         // line 5
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), "content", [], "any", false, false, false, 5), 'row', ["attr" => ["value" => twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["datefields"]) || array_key_exists("datefields", $context) ? $context["datefields"] : (function () { throw new RuntimeError('Variable "datefields" does not exist.', 5, $this->source); })()), "content", [], "any", false, false, false, 5), "Y-m-d\\TH:i:s")]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), "content", [], "any", false, false, false, 5), 'row');
         echo "
 
         <div class=\"form-group\">
@@ -96,7 +96,7 @@ class __TwigTemplate_b87e66a52a3a11d3eb6f8aa57bdf413ae06d426c8b24f6130bf6fe9af70
     <fieldset>
 
         {{ form_errors(form) }}
-        {{ form_row(form.content, {attr: { value : datefields.content|date(\"Y-m-d\\\\TH:i:s\") }}) }}
+        {{ form_row(form.content) }}
 
         <div class=\"form-group\">
             <button class=\"btn btn-primary pull-right\" type=\"submit\">

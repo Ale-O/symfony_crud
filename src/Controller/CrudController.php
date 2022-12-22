@@ -131,8 +131,6 @@ class CrudController extends AbstractController
      */
     public function subelementShow(Subelement $subelement): Response
     {
-        // $this->denyAccessUnlessGranted(ElementVoter::SHOW, $element, 'Elements can only be shown to their authors.');
-
         $element = $subelement->getElement();
         $slugElement = $element->getSlug();
 
@@ -160,8 +158,6 @@ class CrudController extends AbstractController
      */
     public function subelementEditFields(Subelement $subelement): Response
     {
-        // $this->denyAccessUnlessGranted(ElementVoter::SHOW, $element, 'Elements can only be shown to their authors.');
-
         $element = $subelement->getElement();
         $slugElement = $element->getSlug();
 

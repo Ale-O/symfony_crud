@@ -50,7 +50,7 @@ class __TwigTemplate_65549f861edd97c70fe1bf432506c9c4949cd7719c910378c07adda7d8d
         echo "
         ";
         // line 5
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), "content", [], "any", false, false, false, 5), 'row', ["attr" => ["value" => twig_get_attribute($this->env, $this->source, (isset($context["textfields"]) || array_key_exists("textfields", $context) ? $context["textfields"] : (function () { throw new RuntimeError('Variable "textfields" does not exist.', 5, $this->source); })()), "content", [], "any", false, false, false, 5)]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), "content", [], "any", false, false, false, 5), 'row');
         echo "
 
         <div class=\"form-group\">
@@ -96,7 +96,7 @@ class __TwigTemplate_65549f861edd97c70fe1bf432506c9c4949cd7719c910378c07adda7d8d
     <fieldset>
 
         {{ form_errors(form) }}
-        {{ form_row(form.content, {attr: { value : textfields.content }}) }}
+        {{ form_row(form.content) }}
 
         <div class=\"form-group\">
             <button class=\"btn btn-primary pull-right\" type=\"submit\">

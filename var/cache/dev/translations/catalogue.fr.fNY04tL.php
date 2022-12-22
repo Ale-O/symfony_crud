@@ -326,6 +326,9 @@ $catalogue = new MessageCatalogue('fr', array (
     'paginator.previous' => 'Précédent',
     'paginator.next' => 'Suivant',
     'paginator.current' => 'Page actuelle',
+    'Year' => 'Année',
+    'Month' => 'Mois',
+    'Day' => 'Jour',
   ),
 ));
 

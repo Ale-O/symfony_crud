@@ -3,8 +3,8 @@
 namespace App\Form;
 
 use App\Entity\DateFields;
-use App\Form\Type\DateTimePickerType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,7 +16,7 @@ class DateFieldsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('content', DateTimePickerType::class, [
+            ->add('content', DateType::class, [
                 'label' => 'label.content',
                 'required' => true,
             ])

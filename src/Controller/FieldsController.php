@@ -19,7 +19,7 @@ class FieldsController extends AbstractController
 {
     public function textFieldsForm(TextFields $textfields): Response
     {
-        $form = $this->createForm(TextFieldsType::class);
+        $form = $this->createForm(TextFieldsType::class, $textfields);
 
         return $this->render('crud/fields/_textfields_form.html.twig', [
             'textfields' => $textfields,
@@ -29,7 +29,7 @@ class FieldsController extends AbstractController
 
     public function dateFieldsForm(DateFields $datefields): Response
     {
-        $form = $this->createForm(DateFieldsType::class);
+        $form = $this->createForm(DateFieldsType::class, $datefields);
 
         return $this->render('crud/fields/_datefields_form.html.twig', [
             'datefields' => $datefields,
@@ -52,7 +52,7 @@ class FieldsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('subelement_show', ['id' => $idSubelement]);
+            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
         }
 
         return $this->render('crud/fields/textfields_form_error.html.twig', [
@@ -76,7 +76,7 @@ class FieldsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('subelement_show', ['id' => $idSubelement]);
+            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
         }
 
         return $this->render('crud/fields/datefields_form_error.html.twig', [

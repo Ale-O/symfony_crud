@@ -650,6 +650,18 @@
                 <source>paginator.current</source>
                 <target>Page actuelle</target>
             </trans-unit>
+            <trans-unit id="Year">
+                <source>Year</source>
+                <target>Année</target>
+            </trans-unit>
+            <trans-unit id="Month">
+                <source>Month</source>
+                <target>Mois</target>
+            </trans-unit>
+            <trans-unit id="Day">
+                <source>Day</source>
+                <target>Jour</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
