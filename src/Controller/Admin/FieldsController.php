@@ -222,13 +222,21 @@ class FieldsController extends AbstractController
      * @Route("textfields/{id}/delete", methods="POST", name="admin_textfields_delete")
      */
     // @IsGranted("delete", subject="textfields")
-    public function deleteTextFields(Request $request, TextFields $textfields): Response
+    public function deleteTextFields(Request $request, TextFields $textfields, ManagerRegistry $doctrine): Response
     {
         $element = $textfields->getElement();
         $idElement = $element->getId();
 
         if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
             return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
+        }
+
+        $entityManager = $doctrine->getManager();
+
+        $childTextfields = $textfields->getChildFields();
+        foreach ($childTextfields as $childTextfield) {
+            $entityManager->remove($childTextfield);
+            $entityManager->flush();
         }
 
         $em = $this->getDoctrine()->getManager();
@@ -244,13 +252,21 @@ class FieldsController extends AbstractController
      * @Route("datefields/{id}/delete", methods="POST", name="admin_datefields_delete")
      */
     // @IsGranted("delete", subject="datefields")
-    public function deleteDateFields(Request $request, DateFields $datefields): Response
+    public function deleteDateFields(Request $request, DateFields $datefields, ManagerRegistry $doctrine): Response
     {
         $element = $datefields->getElement();
         $idElement = $element->getId();
 
         if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
             return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
+        }
+
+        $entityManager = $doctrine->getManager();
+
+        $childDatefields = $datefields->getChildFields();
+        foreach ($childDatefields as $childDatefield) {
+            $entityManager->remove($childDatefield);
+            $entityManager->flush();
         }
 
         $em = $this->getDoctrine()->getManager();
