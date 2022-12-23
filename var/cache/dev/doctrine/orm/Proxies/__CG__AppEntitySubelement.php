@@ -66,10 +66,10 @@ class Subelement extends \App\Entity\Subelement implements \Doctrine\ORM\Proxy\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'element', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'textfields', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'datefields', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'numberFields'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'element', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'textfields', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'datefields', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'numberFields', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'fileFields'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'element', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'textfields', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'datefields', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'numberFields'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'element', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'textfields', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'datefields', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'numberFields', '' . "\0" . 'App\\Entity\\Subelement' . "\0" . 'fileFields'];
     }
 
     /**
@@ -409,6 +409,39 @@ class Subelement extends \App\Entity\Subelement implements \Doctrine\ORM\Proxy\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeNumberField', [$numberField]);
 
         return parent::removeNumberField($numberField);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFileFields(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFileFields', []);
+
+        return parent::getFileFields();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addFileField(\App\Entity\FileFields $fileField): \App\Entity\Subelement
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addFileField', [$fileField]);
+
+        return parent::addFileField($fileField);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeFileField(\App\Entity\FileFields $fileField): \App\Entity\Subelement
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeFileField', [$fileField]);
+
+        return parent::removeFileField($fileField);
     }
 
 }

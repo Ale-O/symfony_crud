@@ -66,10 +66,10 @@ class Element extends \App\Entity\Element implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'subelements', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'tags', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'textfields', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'datefields', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'numberFields'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'subelements', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'tags', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'textfields', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'datefields', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'numberFields', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'fileFields'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'subelements', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'tags', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'textfields', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'datefields', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'numberFields'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'content', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'publishedAt', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'author', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'subelements', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'tags', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'textfields', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'datefields', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'numberFields', '' . "\0" . 'App\\Entity\\Element' . "\0" . 'fileFields'];
     }
 
     /**
@@ -486,6 +486,39 @@ class Element extends \App\Entity\Element implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeNumberField', [$numberField]);
 
         return parent::removeNumberField($numberField);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFileFields(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFileFields', []);
+
+        return parent::getFileFields();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addFileField(\App\Entity\FileFields $fileField): \App\Entity\Element
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addFileField', [$fileField]);
+
+        return parent::addFileField($fileField);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeFileField(\App\Entity\FileFields $fileField): \App\Entity\Element
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeFileField', [$fileField]);
+
+        return parent::removeFileField($fileField);
     }
 
 }

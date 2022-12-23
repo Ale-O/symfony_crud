@@ -190,6 +190,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'title.textfields_list' => 'Liste des champs textes',
     'title.datefields_list' => 'Liste des champs dates',
     'title.numberfields_list' => 'Liste des champs nombres',
+    'title.filefields_list' => 'Liste des champs fichiers',
     'title.tag_list' => 'Liste des tags',
     'title.user_list' => 'Liste des utilisateurs',
     'title.edit' => 'Modifier {id, number}',

@@ -119,7 +119,7 @@ class __TwigTemplate_c998626076e419dbc358044e0c25575274ba0b0611ba40b87570457356c
         echo "\" class=\"btn btn-link\">
             <i class=\"fa fa-database\" aria-hidden=\"true\"></i> ";
         // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.back_to_list"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.back"), "html", null, true);
         echo "
         </a>
     ";
@@ -196,7 +196,7 @@ class __TwigTemplate_c998626076e419dbc358044e0c25575274ba0b0611ba40b87570457356c
         </button>
         {{ form_widget(form.saveAndCreateNew, {label: 'label.save_and_create_new', attr: {class: 'btn btn-primary'}}) }}
         <a href=\"{{ path('admin_element_show', {id: element.id}) }}\" class=\"btn btn-link\">
-            <i class=\"fa fa-database\" aria-hidden=\"true\"></i> {{ 'action.back_to_list'|trans }}
+            <i class=\"fa fa-database\" aria-hidden=\"true\"></i> {{ 'action.back'|trans }}
         </a>
     {{ form_end(form) }}
 {% endblock %}

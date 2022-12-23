@@ -126,6 +126,11 @@ class Element
      */
     private $numberFields;
 
+    /**
+     * @ORM\OneToMany(targetEntity=FileFields::class, mappedBy="element")
+     */
+    private $fileFields;
+
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
@@ -134,6 +139,7 @@ class Element
         $this->textfields = new ArrayCollection();
         $this->datefields = new ArrayCollection();
         $this->numberFields = new ArrayCollection();
+        $this->fileFields = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -298,6 +304,36 @@ class Element
             // set the owning side to null (unless already changed)
             if ($numberField->getElement() === $this) {
                 $numberField->setElement(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|FileFields[]
+     */
+    public function getFileFields(): Collection
+    {
+        return $this->fileFields;
+    }
+
+    public function addFileField(FileFields $fileField): self
+    {
+        if (!$this->fileFields->contains($fileField)) {
+            $this->fileFields[] = $fileField;
+            $fileField->setElement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFileField(FileFields $fileField): self
+    {
+        if ($this->fileFields->removeElement($fileField)) {
+            // set the owning side to null (unless already changed)
+            if ($fileField->getElement() === $this) {
+                $fileField->setElement(null);
             }
         }
 

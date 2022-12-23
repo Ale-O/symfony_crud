@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\DateFields;
+use App\Entity\FileFields;
 use App\Entity\NumberFields;
 use App\Entity\TextFields;
 use App\Form\DateFieldsType;
+use App\Form\FileFieldsType;
 use App\Form\NumberFieldsType;
 use App\Form\TextFieldsType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -45,6 +47,16 @@ class FieldsController extends AbstractController
 
         return $this->render('crud/fields/_numberfields_form.html.twig', [
             'numberfields' => $numberfields,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    public function fileFieldsForm(FileFields $filefields): Response
+    {
+        $form = $this->createForm(FileFieldsType::class, $filefields);
+
+        return $this->render('crud/fields/_filefields_form.html.twig', [
+            'filefields' => $filefields,
             'form' => $form->createView(),
         ]);
     }
@@ -117,6 +129,30 @@ class FieldsController extends AbstractController
 
         return $this->render('crud/fields/numberfields_form_error.html.twig', [
             'numberfields' => $numberfields,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("filefields/{id<\d+>}/edit", methods="GET|POST", name="filefields_edit")
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
+     */
+    public function fileFieldsEdit(Request $request, FileFields $filefields): Response
+    {
+        $subelement = $filefields->getSubelement();
+        $idSubelement = $subelement->getId();
+
+        $form = $this->createForm(FileFieldsType::class, $filefields);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+        }
+
+        return $this->render('crud/fields/filefields_form_error.html.twig', [
+            'filefields' => $filefields,
             'form' => $form->createView(),
         ]);
     }

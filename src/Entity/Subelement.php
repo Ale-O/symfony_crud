@@ -96,12 +96,18 @@ class Subelement
      */
     private $numberFields;
 
+    /**
+     * @ORM\OneToMany(targetEntity=FileFields::class, mappedBy="subelement")
+     */
+    private $fileFields;
+
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
         $this->textfields = new ArrayCollection();
         $this->datefields = new ArrayCollection();
         $this->numberFields = new ArrayCollection();
+        $this->fileFields = new ArrayCollection();
     }
 
     /**
@@ -231,6 +237,36 @@ class Subelement
             // set the owning side to null (unless already changed)
             if ($numberField->getSubelement() === $this) {
                 $numberField->setSubelement(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|FileFields[]
+     */
+    public function getFileFields(): Collection
+    {
+        return $this->fileFields;
+    }
+
+    public function addFileField(FileFields $fileField): self
+    {
+        if (!$this->fileFields->contains($fileField)) {
+            $this->fileFields[] = $fileField;
+            $fileField->setSubelement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFileField(FileFields $fileField): self
+    {
+        if ($this->fileFields->removeElement($fileField)) {
+            // set the owning side to null (unless already changed)
+            if ($fileField->getSubelement() === $this) {
+                $fileField->setSubelement(null);
             }
         }
 

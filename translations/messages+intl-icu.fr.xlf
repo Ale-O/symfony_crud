@@ -96,6 +96,10 @@
                 <source>title.numberfields_list</source>
                 <target>Liste des champs nombres</target>
             </trans-unit>
+            <trans-unit id="title.filefields_list">
+                <source>title.filefields_list</source>
+                <target>Liste des champs fichiers</target>
+            </trans-unit>
             <trans-unit id="title.tag_list">
                 <source>title.tag_list</source>
                 <target>Liste des tags</target>
