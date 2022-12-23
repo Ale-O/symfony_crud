@@ -34,6 +34,7 @@
                     {{ field.content|number_format }}
                 {% elseif field.type is same as('file') %}
                     {{ field.content }}
+                    <a href="{{ asset('uploads/files/' ~ field.content) }}">{{ 'file.show_pdf'|trans }}</a>
                 {% else %}
                     {{ field.content }}
                 {% endif %}

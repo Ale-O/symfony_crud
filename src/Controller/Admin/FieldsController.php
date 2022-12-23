@@ -208,7 +208,7 @@ class FieldsController extends AbstractController
                 $newFilefields = new FileFields();
                 $newFilefields->setSubelement($subelement);
                 $newFilefields->setTitle($filefields->getTitle());
-                $newFilefields->setContent('file');
+                $newFilefields->setContent('file.pdf');
                 $newFilefields->setPosition($filefields->getPosition());
                 $newFilefields->setParentFields($filefields);
                 $em->persist($newFilefields);

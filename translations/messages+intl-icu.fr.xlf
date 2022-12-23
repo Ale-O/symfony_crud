@@ -670,6 +670,18 @@
                 <source>Day</source>
                 <target>Jour</target>
             </trans-unit>
+            <trans-unit id="file">
+                <source>file</source>
+                <target>Fichier</target>
+            </trans-unit>
+            <trans-unit id="file.show_pdf">
+                <source>file.show_pdf</source>
+                <target>(Voir le pdf)</target>
+            </trans-unit>
+            <trans-unit id="title.filefields_error">
+                <source>title.filefields_error</source>
+                <target>Erreur sur le titre du fichier</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

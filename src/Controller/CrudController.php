@@ -126,7 +126,7 @@ class CrudController extends AbstractController
                 $filefields = new FileFields();
                 $filefields->setSubelement($subelement);
                 $filefields->setTitle($field->getTitle());
-                $filefields->setContent('file');
+                $filefields->setContent('file.pdf');
                 $filefields->setPosition($field->getPosition());
                 $filefields->setParentFields($field);
                 $em->persist($filefields);

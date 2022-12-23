@@ -35,7 +35,7 @@ class FileFields
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=255)
      */
     private $content;
 

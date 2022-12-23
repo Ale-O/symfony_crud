@@ -331,6 +331,9 @@ $catalogue = new MessageCatalogue('fr', array (
     'Year' => 'Année',
     'Month' => 'Mois',
     'Day' => 'Jour',
+    'file' => 'Fichier',
+    'file.show_pdf' => '(Voir le pdf)',
+    'title.filefields_error' => 'Erreur sur le titre du fichier',
   ),
 ));
 

@@ -12,9 +12,12 @@ use App\Form\NumberFieldsType;
 use App\Form\TextFieldsType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * @Route("/fields")
@@ -133,11 +136,7 @@ class FieldsController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("filefields/{id<\d+>}/edit", methods="GET|POST", name="filefields_edit")
-     * @IsGranted("IS_AUTHENTICATED_FULLY")
-     */
-    public function fileFieldsEdit(Request $request, FileFields $filefields): Response
+    public function oldfileFieldsEdit(Request $request, FileFields $filefields): Response
     {
         $subelement = $filefields->getSubelement();
         $idSubelement = $subelement->getId();
@@ -154,6 +153,52 @@ class FieldsController extends AbstractController
         return $this->render('crud/fields/filefields_form_error.html.twig', [
             'filefields' => $filefields,
             'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("filefields/{id<\d+>}/edit", methods="GET|POST", name="filefields_edit")
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
+     */
+    public function fileFieldsEdit(Request $request, FileFields $filefields, SluggerInterface $slugger)
+    {
+        $subelement = $filefields->getSubelement();
+        $idSubelement = $subelement->getId();
+
+        $form = $this->createForm(FileFieldsType::class, $filefields);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $file */
+            $file = $form->get('content')->getData();
+
+            if ($file) {
+                $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$file->guessExtension();
+
+                try {
+                    $file->move(
+                        $this->getParameter('files_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    return $this->redirectToRoute('subelement_show', ['id' => $idSubelement]);
+                }
+
+                $filefields->setContent($newFilename);
+            }
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($filefields);
+            $em->flush();
+
+            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+        }
+
+        return $this->render('crud/fields/filefields_form_error.html.twig', [
+            'filefields' => $filefields,
+            'form' => $form,
         ]);
     }
 }
