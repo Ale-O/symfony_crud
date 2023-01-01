@@ -90,7 +90,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
         echo "    <header>
         <div class=\"navbar navbar-default navbar-static-top\" role=\"navigation\">
             <div class=\"container\">
-                <div class=\"col-sm-10\">
+                <div class=\"col-sm-8\">
                     <a class=\"navbar-brand\" href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
@@ -102,12 +102,23 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
                     </a>
                 </div>
                 <div class=\"col-sm-2\">
-                    <a class=\"navbar-brand\" href=\"";
+                    <a class=\"btn btn-primary btn-lg\" href=\"";
         // line 15
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
+        echo "\">
+                        <i class=\"fa fa-door-open\" aria-hidden=\"true\"></i> ";
+        // line 16
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.browse_app"), "html", null, true);
+        echo "
+                    </a>
+                </div>
+                <div class=\"col-sm-2\">
+                    <a class=\"navbar-brand\" href=\"";
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
         echo "\">
                         <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> ";
-        // line 16
+        // line 21
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.browse_admin"), "html", null, true);
         echo "
                     </a>
@@ -124,7 +135,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
 
     }
 
-    // line 24
+    // line 29
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -134,33 +145,11 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 25
-        echo "    <div class=\"row\">
-        <div class=\"col-md-4 col-md-offset-4\">
-            <div class=\"alert alert-success\">
-                <br>
-                <p>
-                    ";
         // line 30
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("help.browse_app");
         echo "
-                </p>
-                <br>
-                <p>
-                    <a class=\"btn btn-primary btn-lg\" href=\"";
-        // line 34
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("crud_index");
-        echo "\">
-                        <i class=\"fa fa-door-open\" aria-hidden=\"true\"></i> ";
-        // line 35
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.browse_app"), "html", null, true);
+";
+        // line 50
         echo "
-                    </a>
-                </p>
-                <br>
-            </div>
-        </div>
-    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -170,7 +159,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
 
     }
 
-    // line 44
+    // line 53
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -200,7 +189,7 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
 
     public function getDebugInfo()
     {
-        return array (  174 => 44,  156 => 35,  152 => 34,  145 => 30,  138 => 25,  128 => 24,  111 => 16,  107 => 15,  100 => 11,  96 => 10,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  163 => 53,  152 => 50,  149 => 30,  139 => 29,  122 => 21,  118 => 20,  111 => 16,  107 => 15,  100 => 11,  96 => 10,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -213,9 +202,14 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
     <header>
         <div class=\"navbar navbar-default navbar-static-top\" role=\"navigation\">
             <div class=\"container\">
-                <div class=\"col-sm-10\">
+                <div class=\"col-sm-8\">
                     <a class=\"navbar-brand\" href=\"{{ path('homepage') }}\">
                         {{ 'title.homepage'|trans|raw }}
+                    </a>
+                </div>
+                <div class=\"col-sm-2\">
+                    <a class=\"btn btn-primary btn-lg\" href=\"{{ path('crud_index') }}\">
+                        <i class=\"fa fa-door-open\" aria-hidden=\"true\"></i> {{ 'action.browse_app'|trans }}
                     </a>
                 </div>
                 <div class=\"col-sm-2\">
@@ -229,6 +223,8 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
 {% endblock %}
 
 {% block body %}
+
+{#
     <div class=\"row\">
         <div class=\"col-md-4 col-md-offset-4\">
             <div class=\"alert alert-success\">
@@ -246,13 +242,10 @@ class __TwigTemplate_a44810e8c940456c6f3a9f44ea8c2120b5cc553b6abce941df249d5bfe1
             </div>
         </div>
     </div>
+#}
+
 {% endblock %}
 
-{% block footer %}{% endblock %}
-
-{#
-{{ 'help.browse_admin'|trans|raw }}
-{{ 'action.browse_admin'|trans }}
-#}", "default/homepage.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\default\\homepage.html.twig");
+{% block footer %}{% endblock %}", "default/homepage.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\default\\homepage.html.twig");
     }
 }

@@ -1752,8 +1752,6 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.ar.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.ar.xlf</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
@@ -1769,8 +1767,6 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.bg.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.bg.xlf</argument>
           </argument>
           <argument key="bs" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
@@ -1781,15 +1777,11 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.ca.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.ca.xlf</argument>
           </argument>
           <argument key="cs" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.cs.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.cs.xlf</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
@@ -1803,8 +1795,6 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.de.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.de.xlf</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
@@ -1822,8 +1812,6 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.es.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.es.xlf</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
@@ -1865,8 +1853,6 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.hr.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.hr.xlf</argument>
           </argument>
           <argument key="hu" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
@@ -1881,22 +1867,16 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.id.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.id.xlf</argument>
           </argument>
           <argument key="it" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.it.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.it.xlf</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.ja.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.ja.xlf</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
@@ -1907,8 +1887,6 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.lt.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.lt.xlf</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
@@ -1929,8 +1907,6 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.nl.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.nl.xlf</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
@@ -1946,8 +1922,6 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.pl.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.pl.xlf</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
@@ -1958,35 +1932,26 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.pt_BR.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.pt_BR.xlf</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.ro.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.ro.xlf</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.ru.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.ru.xlf</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.sk.xlf</argument>
           </argument>
           <argument key="sl" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.sl.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.sl.xlf</argument>
           </argument>
           <argument key="sq" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
@@ -2022,15 +1987,11 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.tr.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.tr.xlf</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.uk.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.uk.xlf</argument>
           </argument>
           <argument key="vi" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
@@ -2041,8 +2002,6 @@
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\messages+intl-icu.zh_CN.xlf</argument>
-            <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations\validators+intl-icu.zh_CN.xlf</argument>
           </argument>
           <argument key="zh_TW" type="collection">
             <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>

@@ -16,7 +16,7 @@
             </trans-unit>
             <trans-unit id="mit_license">
                 <source>mit_license</source>
-                <target>MIT License</target>
+                <target>MIT Licence</target>
             </trans-unit>
 
             <trans-unit id="http_error.name">
@@ -58,7 +58,7 @@
 
             <trans-unit id="title.homepage">
                 <source>title.homepage</source>
-                <target><![CDATA[Welcome to the <strong>Symfony Demo</strong> application]]></target>
+                <target><![CDATA[Application <strong>Crud</strong>]]></target>
             </trans-unit>
             <trans-unit id="title.source_code">
                 <source>title.source_code</source>
@@ -74,23 +74,71 @@
             </trans-unit>
             <trans-unit id="title.login">
                 <source>title.login</source>
-                <target>Secure Sign in</target>
+                <target>Secure connection</target>
             </trans-unit>
-            <trans-unit id="title.post_list">
-                <source>title.post_list</source>
-                <target>Post List</target>
+            <trans-unit id="title.element_list">
+                <source>title.element_list</source>
+                <target>List of elements</target>
             </trans-unit>
-            <trans-unit id="title.edit_post">
-                <source>title.edit_post</source>
-                <target>Edit post #{id, number}</target>
+            <trans-unit id="title.fields_list">
+                <source>title.fields_list</source>
+                <target>List of fields</target>
             </trans-unit>
-            <trans-unit id="title.add_comment">
-                <source>title.add_comment</source>
-                <target>Add a comment</target>
+            <trans-unit id="title.textfields_list">
+                <source>title.textfields_list</source>
+                <target>List of text fields</target>
             </trans-unit>
-            <trans-unit id="title.comment_error">
-                <source>title.comment_error</source>
-                <target>There was an error publishing your comment</target>
+            <trans-unit id="title.datefields_list">
+                <source>title.datefields_list</source>
+                <target>List of date fields</target>
+            </trans-unit>
+            <trans-unit id="title.numberfields_list">
+                <source>title.numberfields_list</source>
+                <target>List of number fields</target>
+            </trans-unit>
+            <trans-unit id="title.filefields_list">
+                <source>title.filefields_list</source>
+                <target>List of file fields</target>
+            </trans-unit>
+            <trans-unit id="title.tag_list">
+                <source>title.tag_list</source>
+                <target>List of tags</target>
+            </trans-unit>
+            <trans-unit id="title.user_list">
+                <source>title.user_list</source>
+                <target>List of users</target>
+            </trans-unit>
+            <trans-unit id="title.edit">
+                <source>title.edit</source>
+                <target>Edit {id, number}</target>
+            </trans-unit>
+            <trans-unit id="title.edit_element">
+                <source>title.edit_element</source>
+                <target>Edit element #{id, number}</target>
+            </trans-unit>
+            <trans-unit id="title.add_subelement">
+                <source>title.add_subelement</source>
+                <target>Add registration</target>
+            </trans-unit>
+            <trans-unit id="subelement.too_short">
+                <source>subelement.too_short</source>
+                <target>Registration content too short</target>
+            </trans-unit>
+            <trans-unit id="element.too_short_content">
+                <source>element.too_short_content</source>
+                <target>Element content too short</target>
+            </trans-unit>
+            <trans-unit id="title.subelement_error">
+                <source>title.subelement_error</source>
+                <target>Registration creating error.</target>
+            </trans-unit>
+            <trans-unit id="title.textfields_error">
+                <source>title.textfields_error</source>
+                <target>Text field edit error.</target>
+            </trans-unit>
+            <trans-unit id="title.datefields_error">
+                <source>title.datefields_error</source>
+                <target>Date field edit error.</target>
             </trans-unit>
             <trans-unit id="title.edit_user">
                 <source>title.edit_user</source>
@@ -98,16 +146,20 @@
             </trans-unit>
             <trans-unit id="title.change_password">
                 <source>title.change_password</source>
-                <target>Change password</target>
+                <target>Edit password</target>
             </trans-unit>
 
             <trans-unit id="action.show">
                 <source>action.show</source>
                 <target>Show</target>
             </trans-unit>
-            <trans-unit id="action.show_post">
-                <source>action.show_post</source>
-                <target>Show post</target>
+            <trans-unit id="action.create_account">
+                <source>action.create_account</source>
+                <target>Create your account</target>
+            </trans-unit>
+            <trans-unit id="action.show_element">
+                <source>action.show_element</source>
+                <target>Show registration</target>
             </trans-unit>
             <trans-unit id="action.show_code">
                 <source>action.show_code</source>
@@ -117,41 +169,121 @@
                 <source>action.edit</source>
                 <target>Edit</target>
             </trans-unit>
-            <trans-unit id="action.edit_post">
-                <source>action.edit_post</source>
-                <target>Edit post</target>
+            <trans-unit id="action.edit_fields">
+                <source>action.edit_fields</source>
+                <target>Edit field</target>
+            </trans-unit>
+            <trans-unit id="action.lock_fields">
+                <source>action.lock_fields</source>
+                <target>Lock field</target>
+            </trans-unit>
+            <trans-unit id="action.level_up">
+                <source>action.level_up</source>
+                <target>Upgrade to administrator</target>
+            </trans-unit>
+            <trans-unit id="action.level_down">
+                <source>action.level_down</source>
+                <target>Downgrade to user</target>
+            </trans-unit>
+            <trans-unit id="action.level_up_successfully">
+                <source>action.level_up_successfully</source>
+                <target>You successfully upgrated to administrator</target>
+            </trans-unit>
+            <trans-unit id="action.level_down_successfully">
+                <source>action.level_down_successfully</source>
+                <target>You successfully downgrated to user</target>
+            </trans-unit>
+            <trans-unit id="action.edit_element">
+                <source>action.edit_element</source>
+                <target>Edit element</target>
             </trans-unit>
             <trans-unit id="action.save">
                 <source>action.save</source>
-                <target>Save changes</target>
+                <target>Save</target>
             </trans-unit>
-            <trans-unit id="action.delete_post">
-                <source>action.delete_post</source>
-                <target>Delete post</target>
+            <trans-unit id="action.delete">
+                <source>action.delete</source>
+                <target>Delete</target>
             </trans-unit>
-            <trans-unit id="delete_post_modal.title">
-                <source>delete_post_modal.title</source>
-                <target>Are you sure you want to delete this post?</target>
+            <trans-unit id="action.delete_element">
+                <source>action.delete_element</source>
+                <target>Delete element</target>
             </trans-unit>
-            <trans-unit id="delete_post_modal.body">
-                <source>delete_post_modal.body</source>
-                <target>This action cannot be undone.</target>
+            <trans-unit id="action.delete_subelement">
+                <source>action.delete_subelement</source>
+                <target>Delete registration</target>
             </trans-unit>
-            <trans-unit id="label.delete_post">
-                <source>label.delete_post</source>
-                <target>Delete post</target>
+            <trans-unit id="delete_modal.title">
+                <source>delete_modal.title</source>
+                <target>Are you sure you want to delete ?</target>
+            </trans-unit>
+            <trans-unit id="delete_element_modal.title">
+                <source>delete_element_modal.title</source>
+                <target>Are you sure you want to delete this element ?</target>
+            </trans-unit>
+            <trans-unit id="delete_subelement_modal.title">
+                <source>delete_subelement_modal.title</source>
+                <target>Are you sure you want to delete this registration ?</target>
+            </trans-unit>
+            <trans-unit id="delete_modal.body">
+                <source>delete_modal.body</source>
+                <target>This action can't be cancelled.</target>
+            </trans-unit>
+            <trans-unit id="delete_element_modal.body">
+                <source>delete_element_modal.body</source>
+                <target>The delete can't be cancelled.</target>
+            </trans-unit>
+            <trans-unit id="label.delete">
+                <source>label.delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="label.delete_element">
+                <source>label.delete_element</source>
+                <target>Delete element</target>
+            </trans-unit>
+            <trans-unit id="label.delete_subelement">
+                <source>label.delete_subelement</source>
+                <target>Delete registration</target>
             </trans-unit>
             <trans-unit id="label.cancel">
                 <source>label.cancel</source>
                 <target>Cancel</target>
             </trans-unit>
-            <trans-unit id="action.create_post">
-                <source>action.create_post</source>
-                <target>Create a new post</target>
+            <trans-unit id="label.create">
+                <source>label.create</source>
+                <target>Create</target>
             </trans-unit>
-            <trans-unit id="label.create_post">
-                <source>label.create_post</source>
-                <target>Create post</target>
+            <trans-unit id="label.create_fields">
+                <source>label.create_fields</source>
+                <target>Create field</target>
+            </trans-unit>
+            <trans-unit id="label.create_element">
+                <source>label.create_element</source>
+                <target>Create element</target>
+            </trans-unit>
+            <trans-unit id="label.create_subelement">
+                <source>label.create_subelement</source>
+                <target>Create registration</target>
+            </trans-unit>
+            <trans-unit id="label.create_tag">
+                <source>label.create_tag</source>
+                <target>Create tag</target>
+            </trans-unit>
+            <trans-unit id="label.create_user">
+                <source>label.create_user</source>
+                <target>Create user</target>
+            </trans-unit>
+            <trans-unit id="action.create">
+                <source>action.create</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="action.create_element">
+                <source>action.create_element</source>
+                <target>Create new element</target>
+            </trans-unit>
+            <trans-unit id="action.create_subelement">
+                <source>action.create_subelement</source>
+                <target>Create registration</target>
             </trans-unit>
             <trans-unit id="label.save_and_create_new">
                 <source>label.save_and_create_new</source>
@@ -159,23 +291,27 @@
             </trans-unit>
             <trans-unit id="action.back_to_list">
                 <source>action.back_to_list</source>
-                <target>Back to the post list</target>
+                <target>Back to list</target>
             </trans-unit>
-            <trans-unit id="action.publish_comment">
-                <source>action.publish_comment</source>
-                <target>Publish comment</target>
+            <trans-unit id="action.back">
+                <source>action.back</source>
+                <target>Back</target>
+            </trans-unit>
+            <trans-unit id="action.quick_add_subelement">
+                <source>action.quick_add_subelement</source>
+                <target>Quick creation</target>
             </trans-unit>
             <trans-unit id="action.sign_in">
                 <source>action.sign_in</source>
-                <target>Sign in</target>
+                <target>Login in</target>
             </trans-unit>
             <trans-unit id="action.browse_app">
                 <source>action.browse_app</source>
-                <target>Browse application</target>
+                <target>Navigation</target>
             </trans-unit>
             <trans-unit id="action.browse_admin">
                 <source>action.browse_admin</source>
-                <target>Browse backend</target>
+                <target>Login in</target>
             </trans-unit>
             <trans-unit id="action.edit_user">
                 <source>action.edit_user</source>
@@ -183,36 +319,52 @@
             </trans-unit>
             <trans-unit id="action.change_password">
                 <source>action.change_password</source>
-                <target>Change password</target>
+                <target>Edit password</target>
+            </trans-unit>
+
+            <trans-unit id="label.too_many_tags">
+                <source>label.too_many_tags</source>
+                <target>Too many tags</target>
+            </trans-unit>
+            <trans-unit id="label.id">
+                <source>label.id</source>
+                <target>ID</target>
+            </trans-unit>
+            <trans-unit id="label.title">
+                <source>label.title</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="label.position">
+                <source>label.position</source>
+                <target>Position</target>
+            </trans-unit>
+            <trans-unit id="label.name">
+                <source>label.name</source>
+                <target>Name</target>
             </trans-unit>
             <trans-unit id="action.close">
                 <source>action.close</source>
                 <target>Close</target>
             </trans-unit>
-
-            <trans-unit id="label.title">
-                <source>label.title</source>
-                <target>Title</target>
-            </trans-unit>
             <trans-unit id="label.author">
                 <source>label.author</source>
-                <target>Author</target>
+                <target>Creator</target>
             </trans-unit>
             <trans-unit id="label.author_email">
                 <source>label.author_email</source>
-                <target>Author email</target>
+                <target>Creator mail</target>
             </trans-unit>
             <trans-unit id="label.username">
                 <source>label.username</source>
-                <target>Username</target>
+                <target>ID</target>
             </trans-unit>
             <trans-unit id="label.fullname">
                 <source>label.fullname</source>
-                <target>Fullname</target>
+                <target>Name</target>
             </trans-unit>
             <trans-unit id="label.email">
                 <source>label.email</source>
-                <target>Email</target>
+                <target>Mail</target>
             </trans-unit>
             <trans-unit id="label.password">
                 <source>label.password</source>
@@ -229,6 +381,10 @@
             <trans-unit id="label.new_password_confirm">
                 <source>label.new_password_confirm</source>
                 <target>Confirm password</target>
+            </trans-unit>
+            <trans-unit id="label.isAdmin">
+                <source>label.isAdmin</source>
+                <target>Administrator profil</target>
             </trans-unit>
             <trans-unit id="label.role">
                 <source>label.role</source>
@@ -254,42 +410,66 @@
                 <source>label.actions</source>
                 <target>Actions</target>
             </trans-unit>
-            <trans-unit id="title.post_new">
-                <source>title.post_new</source>
-                <target>Post creation</target>
+            <trans-unit id="title.fields_new">
+                <source>title.fields_new</source>
+                <target>Add new field</target>
+            </trans-unit>
+            <trans-unit id="title.element_new">
+                <source>title.element_new</source>
+                <target>Add new element</target>
+            </trans-unit>
+            <trans-unit id="title.subelement_new">
+                <source>title.subelement_new</source>
+                <target>Add new registration</target>
+            </trans-unit>
+            <trans-unit id="title.tag_new">
+                <source>title.tag_new</source>
+                <target>Add new tag</target>
+            </trans-unit>
+            <trans-unit id="title.user_new">
+                <source>title.user_new</source>
+                <target>Add new user</target>
             </trans-unit>
             <trans-unit id="action.edit_contents">
                 <source>action.edit_contents</source>
-                <target>Edit contents</target>
+                <target>Edit content</target>
             </trans-unit>
 
             <trans-unit id="menu.toggle_nav">
                 <source>menu.toggle_nav</source>
-                <target>Toggle navigation</target>
+                <target>Activate/Deactivate navigation</target>
             </trans-unit>
             <trans-unit id="menu.choose_language">
                 <source>menu.choose_language</source>
                 <target>Choose language</target>
             </trans-unit>
-            <trans-unit id="menu.post_list">
-                <source>menu.post_list</source>
-                <target>Post list</target>
+            <trans-unit id="menu.element_list">
+                <source>menu.element_list</source>
+                <target>List of element</target>
             </trans-unit>
             <trans-unit id="menu.back_to_crud">
                 <source>menu.back_to_crud</source>
-                <target>Back to crud</target>
+                <target>Back to navigation</target>
             </trans-unit>
             <trans-unit id="menu.homepage">
                 <source>menu.homepage</source>
-                <target>Homepage</target>
+                <target>Navigation</target>
+            </trans-unit>
+            <trans-unit id="menu.tags">
+                <source>menu.tags</source>
+                <target>Manage tags</target>
             </trans-unit>
             <trans-unit id="menu.admin">
                 <source>menu.admin</source>
-                <target>Backend</target>
+                <target>Database</target>
             </trans-unit>
             <trans-unit id="menu.user">
                 <source>menu.user</source>
                 <target>Account</target>
+            </trans-unit>
+            <trans-unit id="menu.users">
+                <source>menu.users</source>
+                <target>Manage users</target>
             </trans-unit>
             <trans-unit id="menu.logout">
                 <source>menu.logout</source>
@@ -297,137 +477,173 @@
             </trans-unit>
             <trans-unit id="menu.rss">
                 <source>menu.rss</source>
-                <target>Crud Posts RSS</target>
+                <target>Crud Elements RSS</target>
             </trans-unit>
             <trans-unit id="menu.search">
                 <source>menu.search</source>
                 <target>Search</target>
             </trans-unit>
 
-            <trans-unit id="post.to_publish_a_comment">
-                <source>post.to_publish_a_comment</source>
-                <target>to publish a comment</target>
+            <trans-unit id="element.to_publish_a_subelement">
+                <source>element.to_publish_a_subelement</source>
+                <target>For add registration</target>
             </trans-unit>
-            <trans-unit id="post.num_comments">
-                <source>post.num_comments</source>
-                <target>{count, plural, one {# comment} other {# comments}}</target>
+            <trans-unit id="fields.num_fields">
+                <source>fields.num_fields</source>
+                <target>{count, plural, one {# field} other {# fields}}</target>
             </trans-unit>
-            <trans-unit id="post.commented_on">
-                <source>post.commented_on</source>
-                <target>commented on</target>
+            <trans-unit id="element.num_subelements">
+                <source>element.num_subelements</source>
+                <target>{count, plural, one {# registration} other {# registrations}}</target>
             </trans-unit>
-            <trans-unit id="post.no_comments">
-                <source>post.no_comments</source>
-                <target>Be the first to comment on this post.</target>
+            <trans-unit id="element.subelemented_on">
+                <source>element.subelemented_on</source>
+                <target>Add at</target>
             </trans-unit>
-            <trans-unit id="post.no_posts_found">
-                <source>post.no_posts_found</source>
-                <target>No posts found.</target>
+            <trans-unit id="fields.no_fields">
+                <source>fields.no_fields</source>
+                <target>No field found.</target>
             </trans-unit>
-            <trans-unit id="post.created_successfully">
-                <source>post.created_successfully</source>
-                <target>Post created successfully!</target>
+            <trans-unit id="element.no_subelements">
+                <source>element.no_subelements</source>
+                <target>Add the first registration.</target>
             </trans-unit>
-            <trans-unit id="post.updated_successfully">
-                <source>post.updated_successfully</source>
-                <target>Post updated successfully!</target>
+            <trans-unit id="element.no_elements_found">
+                <source>element.no_elements_found</source>
+                <target>No element found.</target>
             </trans-unit>
-            <trans-unit id="post.deleted_successfully">
-                <source>post.deleted_successfully</source>
-                <target>Post deleted successfully!</target>
+            <trans-unit id="tag.no_tags_found">
+                <source>tag.no_tags_found</source>
+                <target>No tag found.</target>
             </trans-unit>
-            <trans-unit id="post.search_for">
-                <source>post.search_for</source>
-                <target>Search for...</target>
+            <trans-unit id="user.no_users_found">
+                <source>user.no_users_found</source>
+                <target>No user found.</target>
             </trans-unit>
-            <trans-unit id="post.search_no_results">
-                <source>post.search_no_results</source>
-                <target>No results found</target>
+            <trans-unit id="action.created_successfully">
+                <source>action.created_successfully</source>
+                <target>Successfully created !</target>
+            </trans-unit>
+            <trans-unit id="element.created_successfully">
+                <source>element.created_successfully</source>
+                <target>Element successfully created !</target>
+            </trans-unit>
+            <trans-unit id="action.updated_successfully">
+                <source>action.updated_successfully</source>
+                <target>Successfully updated !</target>
+            </trans-unit>
+            <trans-unit id="element.updated_successfully">
+                <source>element.updated_successfully</source>
+                <target>Element successfully updated !</target>
+            </trans-unit>
+            <trans-unit id="action.deleted_successfully">
+                <source>action.deleted_successfully</source>
+                <target>Successfully deleted !</target>
+            </trans-unit>
+            <trans-unit id="element.deleted_successfully">
+                <source>element.deleted_successfully</source>
+                <target>Element successfully deleted !</target>
+            </trans-unit>
+            <trans-unit id="subelement.deleted_successfully">
+                <source>subelement.deleted_successfully</source>
+                <target>Registration successfully deleted !</target>
+            </trans-unit>
+            <trans-unit id="element.search_for">
+                <source>element.search_for</source>
+                <target>Search...</target>
+            </trans-unit>
+            <trans-unit id="element.search_no_results">
+                <source>element.search_no_results</source>
+                <target>No result</target>
             </trans-unit>
 
             <trans-unit id="user.updated_successfully">
                 <source>user.updated_successfully</source>
-                <target>User updated successfully!</target>
+                <target>information successfully updated !</target>
             </trans-unit>
 
-            <trans-unit id="notification.comment_created">
-                <source>notification.comment_created</source>
-                <target>Your post received a comment!</target>
+            <trans-unit id="notification.subelement_created">
+                <source>notification.subelement_created</source>
+                <target>Your element has been completed with new registration !</target>
             </trans-unit>
-            <trans-unit id="notification.comment_created.description">
-                <source>notification.comment_created.description</source>
-                <target><![CDATA[Your post "{title}" has received a new comment. You can read the comment by following <a href="{link}">this link</a>]]></target>
+            <trans-unit id="notification.subelement_created.description">
+                <source>notification.subelement_created.description</source>
+                <target><![CDATA[Your element "{title}" has been completed with new registration. You can see the new registration with <a href="{link}">this link</a>]]></target>
             </trans-unit>
 
             <trans-unit id="help.app_description">
                 <source>help.app_description</source>
-                <target><![CDATA[This is a <strong>demo application</strong> built in the Symfony Framework to illustrate the recommended way of developing Symfony applications.]]></target>
+                <target><![CDATA[This <strong>CRUD</strong> has been built with the framework Symfony.]]></target>
             </trans-unit>
             <trans-unit id="help.show_code">
                 <source>help.show_code</source>
-                <target><![CDATA[Click on this button to show the source code of the <strong>Controller</strong> and <strong>template</strong> used to render this page.]]></target>
+                <target><![CDATA[Click to see the source code of the <strong>controller</strong> and <strong>template</strong> use to display this page.]]></target>
             </trans-unit>
             <trans-unit id="help.browse_app">
                 <source>help.browse_app</source>
-                <target><![CDATA[Browse the <strong>public section</strong> of the demo application.]]></target>
+                <target><![CDATA[<strong>Public</strong> space without connection]]></target>
+            </trans-unit>
+            <trans-unit id="help.first_connect">
+                <source>help.first_connect</source>
+                <target><![CDATA[You have not <strong>account</strong>]]></target>
             </trans-unit>
             <trans-unit id="help.browse_admin">
                 <source>help.browse_admin</source>
-                <target><![CDATA[Browse the <strong>admin backend</strong> of the demo application.]]></target>
+                <target><![CDATA[Login to your <strong>account</strong>.]]></target>
             </trans-unit>
             <trans-unit id="help.login_users">
                 <source>help.login_users</source>
-                <target>Try either of the following users</target>
+                <target>Try one of these users</target>
             </trans-unit>
             <trans-unit id="help.role_user">
                 <source>help.role_user</source>
-                <target>regular user</target>
+                <target>Normal user</target>
             </trans-unit>
             <trans-unit id="help.role_admin">
                 <source>help.role_admin</source>
-                <target>administrator</target>
+                <target>Administrator</target>
             </trans-unit>
             <trans-unit id="help.reload_fixtures">
                 <source>help.reload_fixtures</source>
-                <target>If these users don't work, reload application fixtures by running this command from the terminal:</target>
+                <target>If these users don't word, reload the application fixtures excuting this command from the terminal :</target>
             </trans-unit>
             <trans-unit id="help.add_user">
                 <source>help.add_user</source>
-                <target>If you want to create new users, run this other command:</target>
+                <target>If you want to create new users, excute this command :</target>
             </trans-unit>
             <trans-unit id="help.more_information">
                 <source>help.more_information</source>
-                <target><![CDATA[For more information, check out the <a href="https://symfony.com/doc">Symfony doc</a>.]]></target>
+                <target><![CDATA[For more informatins, consult the <a href="https://symfony.com/doc">documentation of Symfony</a>.]]></target>
             </trans-unit>
-            <trans-unit id="help.post_summary">
-                <source>help.post_summary</source>
-                <target>Summaries can't contain Markdown or HTML contents; only plain text.</target>
+            <trans-unit id="help.element_summary">
+                <source>help.element_summary</source>
+                <target>The summary can't have Markdown content or HTML ; only brut text.</target>
             </trans-unit>
-            <trans-unit id="help.post_publication">
-                <source>help.post_publication</source>
-                <target>Set the date in the future to schedule the crud post publication.</target>
+            <trans-unit id="help.element_publication">
+                <source>help.element_publication</source>
+                <target>Select the future publication date.</target>
             </trans-unit>
-            <trans-unit id="help.post_content">
-                <source>help.post_content</source>
-                <target>Use Markdown to format the crud post contents. HTML is allowed too.</target>
+            <trans-unit id="help.element_content">
+                <source>help.element_content</source>
+                <target>Use the Markdown to formate the element content. HTML is also authorized.</target>
             </trans-unit>
-            <trans-unit id="help.comment_content">
-                <source>help.comment_content</source>
-                <target>Comments not complying with our Code of Conduct will be moderated.</target>
+            <trans-unit id="help.subelement_content">
+                <source>help.subelement_content</source>
+                <target>Registration description.</target>
             </trans-unit>
 
             <trans-unit id="info.change_password">
                 <source>info.change_password</source>
-                <target>After changing your password, you will be logged out of the application.</target>
+                <target>After updating yout password, you will be disconnecting from the application.</target>
             </trans-unit>
 
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Symfony Demo crud</target>
+                <target>Crud</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>Most recent posts published on the Symfony Demo crud</target>
+                <target>Last elements created</target>
             </trans-unit>
 
             <trans-unit id="paginator.previous">
@@ -440,7 +656,31 @@
             </trans-unit>
             <trans-unit id="paginator.current">
                 <source>paginator.current</source>
-                <target>(current)</target>
+                <target>Current page</target>
+            </trans-unit>
+            <trans-unit id="Year">
+                <source>Year</source>
+                <target>Year</target>
+            </trans-unit>
+            <trans-unit id="Month">
+                <source>Month</source>
+                <target>Month</target>
+            </trans-unit>
+            <trans-unit id="Day">
+                <source>Day</source>
+                <target>Day</target>
+            </trans-unit>
+            <trans-unit id="file">
+                <source>file</source>
+                <target>File</target>
+            </trans-unit>
+            <trans-unit id="file.show_pdf">
+                <source>file.show_pdf</source>
+                <target>Show pdf</target>
+            </trans-unit>
+            <trans-unit id="title.filefields_error">
+                <source>title.filefields_error</source>
+                <target>Title filefields error</target>
             </trans-unit>
         </body>
     </file>

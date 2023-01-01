@@ -118,11 +118,11 @@
             </trans-unit>
             <trans-unit id="title.add_subelement">
                 <source>title.add_subelement</source>
-                <target>Ajouter un sous-élément</target>
+                <target>Ajouter un enregistrement</target>
             </trans-unit>
             <trans-unit id="subelement.too_short">
                 <source>subelement.too_short</source>
-                <target>Contenu du sous-élément trop court</target>
+                <target>Contenu du enregistrement trop court</target>
             </trans-unit>
             <trans-unit id="element.too_short_content">
                 <source>element.too_short_content</source>
@@ -130,7 +130,7 @@
             </trans-unit>
             <trans-unit id="title.subelement_error">
                 <source>title.subelement_error</source>
-                <target>Il y a eu une erreur lors de l'ajout du sous-élément.</target>
+                <target>Il y a eu une erreur lors de l'ajout du enregistrement.</target>
             </trans-unit>
             <trans-unit id="title.textfields_error">
                 <source>title.textfields_error</source>
@@ -211,7 +211,7 @@
             </trans-unit>
             <trans-unit id="action.delete_subelement">
                 <source>action.delete_subelement</source>
-                <target>Supprimer le sous-élément</target>
+                <target>Supprimer le enregistrement</target>
             </trans-unit>
             <trans-unit id="delete_modal.title">
                 <source>delete_modal.title</source>
@@ -223,7 +223,7 @@
             </trans-unit>
             <trans-unit id="delete_subelement_modal.title">
                 <source>delete_subelement_modal.title</source>
-                <target>Êtes-vous sûr de vouloir supprimer ce sous-élément ?</target>
+                <target>Êtes-vous sûr de vouloir supprimer ce enregistrement ?</target>
             </trans-unit>
             <trans-unit id="delete_modal.body">
                 <source>delete_modal.body</source>
@@ -243,7 +243,7 @@
             </trans-unit>
             <trans-unit id="label.delete_subelement">
                 <source>label.delete_subelement</source>
-                <target>Supprimer le sous-élément</target>
+                <target>Supprimer le enregistrement</target>
             </trans-unit>
             <trans-unit id="label.cancel">
                 <source>label.cancel</source>
@@ -263,7 +263,7 @@
             </trans-unit>
             <trans-unit id="label.create_subelement">
                 <source>label.create_subelement</source>
-                <target>Créer un sous-élément</target>
+                <target>Créer un enregistrement</target>
             </trans-unit>
             <trans-unit id="label.create_tag">
                 <source>label.create_tag</source>
@@ -283,7 +283,7 @@
             </trans-unit>
             <trans-unit id="action.create_subelement">
                 <source>action.create_subelement</source>
-                <target>Créer sous-élément</target>
+                <target>Créer enregistrement</target>
             </trans-unit>
             <trans-unit id="label.save_and_create_new">
                 <source>label.save_and_create_new</source>
@@ -420,7 +420,7 @@
             </trans-unit>
             <trans-unit id="title.subelement_new">
                 <source>title.subelement_new</source>
-                <target>Ajouter un nouveau sous-élément</target>
+                <target>Ajouter un nouveau enregistrement</target>
             </trans-unit>
             <trans-unit id="title.tag_new">
                 <source>title.tag_new</source>
@@ -486,7 +486,7 @@
 
             <trans-unit id="element.to_publish_a_subelement">
                 <source>element.to_publish_a_subelement</source>
-                <target>pour rajouter un sous-élément</target>
+                <target>pour rajouter un enregistrement</target>
             </trans-unit>
             <trans-unit id="fields.num_fields">
                 <source>fields.num_fields</source>
@@ -494,7 +494,7 @@
             </trans-unit>
             <trans-unit id="element.num_subelements">
                 <source>element.num_subelements</source>
-                <target>{count, plural, one {# sous-élément} other {# sous-éléments}}</target>
+                <target>{count, plural, one {# enregistrement} other {# enregistrements}}</target>
             </trans-unit>
             <trans-unit id="element.subelemented_on">
                 <source>element.subelemented_on</source>
@@ -506,7 +506,7 @@
             </trans-unit>
             <trans-unit id="element.no_subelements">
                 <source>element.no_subelements</source>
-                <target>Ajouter un premier sous-élément.</target>
+                <target>Ajouter un premier enregistrement.</target>
             </trans-unit>
             <trans-unit id="element.no_elements_found">
                 <source>element.no_elements_found</source>
@@ -564,11 +564,11 @@
 
             <trans-unit id="notification.subelement_created">
                 <source>notification.subelement_created</source>
-                <target>Votre élément a été complété par un sous-élément !</target>
+                <target>Votre élément a été complété par un enregistrement !</target>
             </trans-unit>
             <trans-unit id="notification.subelement_created.description">
                 <source>notification.subelement_created.description</source>
-                <target><![CDATA[Votre élément "{title}" a été complété par un sous-élément. Vous pouvez lire le sous-élément en suivant <a href="{link}">ce lien</a>]]></target>
+                <target><![CDATA[Votre élément "{title}" a été complété par un enregistrement. Vous pouvez lire le enregistrement en suivant <a href="{link}">ce lien</a>]]></target>
             </trans-unit>
 
             <trans-unit id="help.app_description">
@@ -629,7 +629,7 @@
             </trans-unit>
             <trans-unit id="help.subelement_content">
                 <source>help.subelement_content</source>
-                <target>Description du sous-élément.</target>
+                <target>Description du enregistrement.</target>
             </trans-unit>
 
             <trans-unit id="info.change_password">
