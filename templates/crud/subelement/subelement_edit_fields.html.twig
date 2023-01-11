@@ -35,6 +35,8 @@
                         {{ render(controller('App\\Controller\\FieldsController::numberFieldsForm', {'id': field.id})) }}
                     {% elseif field.type is same as('file') %}
                         {{ render(controller('App\\Controller\\FieldsController::fileFieldsForm', {'id': field.id})) }}
+                    {% elseif field.type is same as('subelement') %}
+                        {{ render(controller('App\\Controller\\FieldsController::subelementFieldsForm', {'id': field.id})) }}
                     {% else %}
                         {{ field.content }}
                     {% endif %}
@@ -47,6 +49,12 @@
                         {{ field.content|number_format }}
                     {% elseif field.type is same as('file') %}
                         {{ field.content }}
+                    {% elseif field.type is same as('subelement') %}
+                        {% if field.content is null %}
+                            {{ field.content }}
+                        {% else %}
+                            {{ field.content.title }}
+                        {% endif %}
                     {% else %}
                         {{ field.content }}
                     {% endif %}

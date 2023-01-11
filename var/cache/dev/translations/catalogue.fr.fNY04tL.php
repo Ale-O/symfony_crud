@@ -191,6 +191,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'title.datefields_list' => 'Liste des champs dates',
     'title.numberfields_list' => 'Liste des champs nombres',
     'title.filefields_list' => 'Liste des champs fichiers',
+    'title.subelementfields_list' => 'Champs listes déroulantes',
     'title.tag_list' => 'Liste des tags',
     'title.user_list' => 'Liste des utilisateurs',
     'title.edit' => 'Modifier {id, number}',
@@ -334,6 +335,9 @@ $catalogue = new MessageCatalogue('fr', array (
     'file' => 'Fichier',
     'file.show_pdf' => '(Voir le pdf)',
     'title.filefields_error' => 'Erreur sur le titre du fichier',
+    'Filter' => 'Filtre',
+    'Content' => 'Contenu',
+    'title.subelementfields_error' => 'Erreur sur le choix dans la liste',
   ),
 ));
 
@@ -528,6 +532,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'title.datefields_list' => 'List of date fields',
     'title.numberfields_list' => 'List of number fields',
     'title.filefields_list' => 'List of file fields',
+    'title.subelementfields_list' => 'List of dropdown fields',
     'title.tag_list' => 'List of tags',
     'title.user_list' => 'List of users',
     'title.edit' => 'Edit {id, number}',
@@ -671,6 +676,9 @@ $catalogueEn = new MessageCatalogue('en', array (
     'file' => 'File',
     'file.show_pdf' => 'Show pdf',
     'title.filefields_error' => 'Title filefields error',
+    'Filter' => 'Filter',
+    'Content' => 'Content',
+    'title.subelementfields_error' => 'Error in subelementfield',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueEn);

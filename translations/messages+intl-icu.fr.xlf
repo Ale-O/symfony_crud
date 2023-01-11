@@ -100,6 +100,10 @@
                 <source>title.filefields_list</source>
                 <target>Liste des champs fichiers</target>
             </trans-unit>
+            <trans-unit id="title.subelementfields_list">
+                <source>title.subelementfields_list</source>
+                <target>Champs listes déroulantes</target>
+            </trans-unit>
             <trans-unit id="title.tag_list">
                 <source>title.tag_list</source>
                 <target>Liste des tags</target>
@@ -681,6 +685,18 @@
             <trans-unit id="title.filefields_error">
                 <source>title.filefields_error</source>
                 <target>Erreur sur le titre du fichier</target>
+            </trans-unit>
+            <trans-unit id="Filter">
+                <source>Filter</source>
+                <target>Filtre</target>
+            </trans-unit>
+            <trans-unit id="Content">
+                <source>Content</source>
+                <target>Contenu</target>
+            </trans-unit>
+            <trans-unit id="title.subelementfields_error">
+                <source>title.subelementfields_error</source>
+                <target>Erreur sur le choix dans la liste</target>
             </trans-unit>
         </body>
     </file>

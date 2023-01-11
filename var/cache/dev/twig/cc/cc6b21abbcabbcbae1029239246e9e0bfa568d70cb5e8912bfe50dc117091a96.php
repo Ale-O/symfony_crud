@@ -561,6 +561,113 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
         echo "        </tbody>
     </table>
 
+    <hr/>
+
+    <h1>";
+        // line 230
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.subelementfields_list"), "html", null, true);
+        echo "</h1>
+
+    <div class=\"row\">
+        <div class=\"col-md-4 col-md-offset-2\">
+            <h3>
+                <i class=\"fa fa-dashboard\" aria-hidden=\"true\"></i> ";
+        // line 235
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("fields.num_fields", ["count" => twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 235, $this->source); })()), "subelementfields", [], "any", false, false, false, 235))]), "html", null, true);
+        echo "
+            </h3>
+        </div>
+        <div class=\"col-md-4 col-md-offset-2\">
+            <a href=\"";
+        // line 239
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_subelementfields_new", ["elementSlug" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 239, $this->source); })()), "slug", [], "any", false, false, false, 239)]), "html", null, true);
+        echo "\" class=\"btn btn-sm btn-success\">
+                <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> ";
+        // line 240
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.create"), "html", null, true);
+        echo "
+            </a>
+        </div>
+    </div>
+
+    <table class=\"table table-striped table-middle-aligned\">
+        <thead>
+            <tr>
+                <th scope=\"col\">";
+        // line 248
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.title"), "html", null, true);
+        echo "</th>
+                <th scope=\"col\">";
+        // line 249
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.position"), "html", null, true);
+        echo "</th>
+                <th scope=\"col\" class=\"text-center\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> ";
+        // line 250
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.actions"), "html", null, true);
+        echo "</th>
+            </tr>
+        </thead>
+        <tbody>
+        ";
+        // line 254
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_sort_filter(twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 254, $this->source); })()), "subelementfields", [], "any", false, false, false, 254), function ($__a__, $__b__) use ($context, $macros) { $context["a"] = $__a__; $context["b"] = $__b__; return (twig_get_attribute($this->env, $this->source, (isset($context["a"]) || array_key_exists("a", $context) ? $context["a"] : (function () { throw new RuntimeError('Variable "a" does not exist.', 254, $this->source); })()), "position", [], "any", false, false, false, 254) <=> twig_get_attribute($this->env, $this->source, (isset($context["b"]) || array_key_exists("b", $context) ? $context["b"] : (function () { throw new RuntimeError('Variable "b" does not exist.', 254, $this->source); })()), "position", [], "any", false, false, false, 254)); }));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["field"]) {
+            // line 255
+            echo "            <tr>
+                <td>";
+            // line 256
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["field"], "title", [], "any", false, false, false, 256), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 257
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["field"], "position", [], "any", false, false, false, 257), "html", null, true);
+            echo "</td>
+                <td class=\"text-center\">
+                    <div class=\"item-actions\">
+                        <a href=\"";
+            // line 260
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_subelementfields_show", ["id" => twig_get_attribute($this->env, $this->source, $context["field"], "id", [], "any", false, false, false, 260)]), "html", null, true);
+            echo "\" class=\"btn btn-sm btn-default\">
+                            <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
+            // line 261
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.show"), "html", null, true);
+            echo "
+                        </a>
+
+                        <a href=\"";
+            // line 264
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_subelementfields_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["field"], "id", [], "any", false, false, false, 264)]), "html", null, true);
+            echo "\" class=\"btn btn-sm btn-primary\">
+                            <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
+            // line 265
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
+            echo "
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 271
+            echo "            <tr>
+                <div class='well'>";
+            // line 272
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("fields.no_fields"), "html", null, true);
+            echo "</div>
+           </tr>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['field'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 275
+        echo "        </tbody>
+    </table>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -570,7 +677,7 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
 
     }
 
-    // line 230
+    // line 280
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -580,14 +687,14 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 231
+        // line 281
         echo "    <div class=\"section\">
         <a href=\"";
-        // line 232
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 232, $this->source); })()), "id", [], "any", false, false, false, 232)]), "html", null, true);
+        // line 282
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_element_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 282, $this->source); })()), "id", [], "any", false, false, false, 282)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
-        // line 233
+        // line 283
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
         echo "
         </a>
@@ -596,19 +703,19 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
     
     <div class=\"section\">
         ";
-        // line 239
-        echo twig_include($this->env, $context, "admin/crud/_delete_form.html.twig", ["element" => (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 239, $this->source); })())], false);
+        // line 289
+        echo twig_include($this->env, $context, "admin/crud/_delete_form.html.twig", ["element" => (isset($context["element"]) || array_key_exists("element", $context) ? $context["element"] : (function () { throw new RuntimeError('Variable "element" does not exist.', 289, $this->source); })())], false);
         echo "
     </div>
     
 
     ";
-        // line 243
+        // line 293
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 245
+        // line 295
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -632,7 +739,7 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
 
     public function getDebugInfo()
     {
-        return array (  612 => 245,  607 => 243,  600 => 239,  591 => 233,  587 => 232,  584 => 231,  574 => 230,  561 => 225,  552 => 222,  549 => 221,  538 => 215,  534 => 214,  528 => 211,  524 => 210,  518 => 207,  514 => 206,  511 => 205,  506 => 204,  499 => 200,  495 => 199,  491 => 198,  480 => 190,  476 => 189,  469 => 185,  461 => 180,  454 => 175,  445 => 172,  442 => 171,  431 => 165,  427 => 164,  421 => 161,  417 => 160,  411 => 157,  407 => 156,  404 => 155,  399 => 154,  392 => 150,  388 => 149,  384 => 148,  373 => 140,  369 => 139,  362 => 135,  354 => 130,  347 => 125,  338 => 122,  335 => 121,  324 => 115,  320 => 114,  314 => 111,  310 => 110,  304 => 107,  300 => 106,  297 => 105,  292 => 104,  285 => 100,  281 => 99,  277 => 98,  266 => 90,  262 => 89,  255 => 85,  247 => 80,  240 => 75,  231 => 72,  228 => 71,  217 => 65,  213 => 64,  207 => 61,  203 => 60,  197 => 57,  193 => 56,  190 => 55,  185 => 54,  178 => 50,  174 => 49,  170 => 48,  159 => 40,  155 => 39,  148 => 35,  140 => 30,  131 => 24,  127 => 23,  121 => 20,  116 => 18,  108 => 15,  101 => 11,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  719 => 295,  714 => 293,  707 => 289,  698 => 283,  694 => 282,  691 => 281,  681 => 280,  668 => 275,  659 => 272,  656 => 271,  645 => 265,  641 => 264,  635 => 261,  631 => 260,  625 => 257,  621 => 256,  618 => 255,  613 => 254,  606 => 250,  602 => 249,  598 => 248,  587 => 240,  583 => 239,  576 => 235,  568 => 230,  561 => 225,  552 => 222,  549 => 221,  538 => 215,  534 => 214,  528 => 211,  524 => 210,  518 => 207,  514 => 206,  511 => 205,  506 => 204,  499 => 200,  495 => 199,  491 => 198,  480 => 190,  476 => 189,  469 => 185,  461 => 180,  454 => 175,  445 => 172,  442 => 171,  431 => 165,  427 => 164,  421 => 161,  417 => 160,  411 => 157,  407 => 156,  404 => 155,  399 => 154,  392 => 150,  388 => 149,  384 => 148,  373 => 140,  369 => 139,  362 => 135,  354 => 130,  347 => 125,  338 => 122,  335 => 121,  324 => 115,  320 => 114,  314 => 111,  310 => 110,  304 => 107,  300 => 106,  297 => 105,  292 => 104,  285 => 100,  281 => 99,  277 => 98,  266 => 90,  262 => 89,  255 => 85,  247 => 80,  240 => 75,  231 => 72,  228 => 71,  217 => 65,  213 => 64,  207 => 61,  203 => 60,  197 => 57,  193 => 56,  190 => 55,  185 => 54,  178 => 50,  174 => 49,  170 => 48,  159 => 40,  155 => 39,  148 => 35,  140 => 30,  131 => 24,  127 => 23,  121 => 20,  116 => 18,  108 => 15,  101 => 11,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -851,6 +958,56 @@ class __TwigTemplate_58e5976169eeb231060b10bc28f52574b2a522acafbfe257f85c4741446
                         </a>
 
                         <a href=\"{{ path('admin_filefields_edit', {id: field.id}) }}\" class=\"btn btn-sm btn-primary\">
+                            <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <div class='well'>{{ 'fields.no_fields'|trans }}</div>
+           </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <hr/>
+
+    <h1>{{ 'title.subelementfields_list'|trans }}</h1>
+
+    <div class=\"row\">
+        <div class=\"col-md-4 col-md-offset-2\">
+            <h3>
+                <i class=\"fa fa-dashboard\" aria-hidden=\"true\"></i> {{ 'fields.num_fields'|trans({ 'count': element.subelementfields|length }) }}
+            </h3>
+        </div>
+        <div class=\"col-md-4 col-md-offset-2\">
+            <a href=\"{{ path('admin_subelementfields_new', {elementSlug: element.slug}) }}\" class=\"btn btn-sm btn-success\">
+                <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> {{ 'action.create'|trans }}
+            </a>
+        </div>
+    </div>
+
+    <table class=\"table table-striped table-middle-aligned\">
+        <thead>
+            <tr>
+                <th scope=\"col\">{{ 'label.title'|trans }}</th>
+                <th scope=\"col\">{{ 'label.position'|trans }}</th>
+                <th scope=\"col\" class=\"text-center\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> {{ 'label.actions'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for field in element.subelementfields|sort((a, b) => a.position <=> b.position) %}
+            <tr>
+                <td>{{ field.title }}</td>
+                <td>{{ field.position }}</td>
+                <td class=\"text-center\">
+                    <div class=\"item-actions\">
+                        <a href=\"{{ path('admin_subelementfields_show', {id: field.id}) }}\" class=\"btn btn-sm btn-default\">
+                            <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{ 'action.show'|trans }}
+                        </a>
+
+                        <a href=\"{{ path('admin_subelementfields_edit', {id: field.id}) }}\" class=\"btn btn-sm btn-primary\">
                             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
                         </a>
                     </div>

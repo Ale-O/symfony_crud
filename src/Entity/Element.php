@@ -131,6 +131,16 @@ class Element
      */
     private $fileFields;
 
+    /**
+     * @ORM\OneToMany(targetEntity=SubelementFields::class, mappedBy="Element")
+     */
+    private $subelementFields;
+
+    /**
+     * @ORM\OneToMany(targetEntity=SubelementFields::class, mappedBy="filter")
+     */
+    private $filterInSubelementFields;
+
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
@@ -140,6 +150,8 @@ class Element
         $this->datefields = new ArrayCollection();
         $this->numberFields = new ArrayCollection();
         $this->fileFields = new ArrayCollection();
+        $this->subelementFields = new ArrayCollection();
+        $this->filterInSubelementFields = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -334,6 +346,66 @@ class Element
             // set the owning side to null (unless already changed)
             if ($fileField->getElement() === $this) {
                 $fileField->setElement(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SubelementFields[]
+     */
+    public function getSubelementFields(): Collection
+    {
+        return $this->subelementFields;
+    }
+
+    public function addSubelementField(SubelementFields $subelementField): self
+    {
+        if (!$this->subelementFields->contains($subelementField)) {
+            $this->subelementFields[] = $subelementField;
+            $subelementField->setElement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSubelementField(SubelementFields $subelementField): self
+    {
+        if ($this->subelementFields->removeElement($subelementField)) {
+            // set the owning side to null (unless already changed)
+            if ($subelementField->getElement() === $this) {
+                $subelementField->setElement(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SubelementFields[]
+     */
+    public function getFilterInSubelementFields(): Collection
+    {
+        return $this->filterInSubelementFields;
+    }
+
+    public function addFilterInSubelementField(SubelementFields $filterInSubelementField): self
+    {
+        if (!$this->filterInSubelementFields->contains($filterInSubelementField)) {
+            $this->filterInSubelementFields[] = $filterInSubelementField;
+            $filterInSubelementField->setFilter($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFilterInSubelementField(SubelementFields $filterInSubelementField): self
+    {
+        if ($this->filterInSubelementFields->removeElement($filterInSubelementField)) {
+            // set the owning side to null (unless already changed)
+            if ($filterInSubelementField->getFilter() === $this) {
+                $filterInSubelementField->setFilter(null);
             }
         }
 

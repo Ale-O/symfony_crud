@@ -1,0 +1,27 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_subelementfields_show' %}
+
+{% block main %}
+    <h1>{{ subelementfields.title }}</h1>
+    <h2>{{ subelementfields.position }}</h2>
+
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('admin_subelementfields_edit', {id: subelementfields.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+        </a>
+    </div>
+
+    
+    <div class="section">
+        {{ include('admin/fields/_subelementfields_delete_form.html.twig', {subelementfields: subelementfields}, with_context = false) }}
+    </div>
+    
+
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}

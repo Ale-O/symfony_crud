@@ -173,21 +173,40 @@ $context["field"], "type", [], "any", false, false, false, 35) === "file")) {
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("file.show_pdf"), "html", null, true);
                 echo "</a>
                 ";
-            } else {
+            } elseif ((twig_get_attribute($this->env, $this->source,             // line 38
+$context["field"], "type", [], "any", false, false, false, 38) === "subelement")) {
                 // line 39
                 echo "                    ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, false, false, 39), "html", null, true);
+                if ((null === twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, false, false, 39))) {
+                    // line 40
+                    echo "                        ";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, false, false, 40), "html", null, true);
+                    echo "
+                    ";
+                } else {
+                    // line 42
+                    echo "                        ";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, false, false, 42), "title", [], "any", false, false, false, 42), "html", null, true);
+                    echo "
+                    ";
+                }
+                // line 44
+                echo "                ";
+            } else {
+                // line 45
+                echo "                    ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["field"], "content", [], "any", false, false, false, 45), "html", null, true);
                 echo "
                 ";
             }
-            // line 41
+            // line 47
             echo "            </p>
         </div>
     ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 44
+            // line 50
             echo "        <div class='well'>";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("fields.no_fields"), "html", null, true);
             echo "</div>
@@ -196,7 +215,7 @@ $context["field"], "type", [], "any", false, false, false, 35) === "file")) {
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['field'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 52
         echo "
 
 
@@ -210,7 +229,7 @@ $context["field"], "type", [], "any", false, false, false, 35) === "file")) {
 
     }
 
-    // line 55
+    // line 61
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -220,15 +239,15 @@ $context["field"], "type", [], "any", false, false, false, 35) === "file")) {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 56
+        // line 62
         echo "
     <div class=\"section\">
         <a href=\"";
-        // line 58
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 58, $this->source); })()), "id", [], "any", false, false, false, 58)]), "html", null, true);
+        // line 64
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 64, $this->source); })()), "id", [], "any", false, false, false, 64)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
-        // line 59
+        // line 65
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
         echo "
         </a>
@@ -236,11 +255,11 @@ $context["field"], "type", [], "any", false, false, false, 35) === "file")) {
 
     <div class=\"section\">
         <a href=\"";
-        // line 64
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit_fields", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 64, $this->source); })()), "id", [], "any", false, false, false, 64)]), "html", null, true);
+        // line 70
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelement_edit_fields", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 70, $this->source); })()), "id", [], "any", false, false, false, 70)]), "html", null, true);
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-unlock\" aria-hidden=\"true\"></i> ";
-        // line 65
+        // line 71
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit_fields"), "html", null, true);
         echo "
         </a>
@@ -248,18 +267,18 @@ $context["field"], "type", [], "any", false, false, false, 35) === "file")) {
     
     <div class=\"section\">
         ";
-        // line 70
-        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 70, $this->source); })())], false);
+        // line 76
+        echo twig_include($this->env, $context, "crud/subelement/_subelement_delete_form.html.twig", ["subelement" => (isset($context["subelement"]) || array_key_exists("subelement", $context) ? $context["subelement"] : (function () { throw new RuntimeError('Variable "subelement" does not exist.', 76, $this->source); })())], false);
         echo "
     </div>
 
     ";
-        // line 73
+        // line 79
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 75
+        // line 81
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -283,7 +302,7 @@ $context["field"], "type", [], "any", false, false, false, 35) === "file")) {
 
     public function getDebugInfo()
     {
-        return array (  263 => 75,  258 => 73,  252 => 70,  244 => 65,  240 => 64,  232 => 59,  228 => 58,  224 => 56,  214 => 55,  200 => 46,  191 => 44,  184 => 41,  178 => 39,  171 => 37,  166 => 36,  164 => 35,  159 => 34,  157 => 33,  152 => 32,  150 => 31,  145 => 30,  143 => 29,  138 => 27,  135 => 26,  130 => 25,  125 => 23,  115 => 16,  111 => 15,  105 => 12,  100 => 10,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  282 => 81,  277 => 79,  271 => 76,  263 => 71,  259 => 70,  251 => 65,  247 => 64,  243 => 62,  233 => 61,  219 => 52,  210 => 50,  203 => 47,  197 => 45,  194 => 44,  188 => 42,  182 => 40,  179 => 39,  177 => 38,  171 => 37,  166 => 36,  164 => 35,  159 => 34,  157 => 33,  152 => 32,  150 => 31,  145 => 30,  143 => 29,  138 => 27,  135 => 26,  130 => 25,  125 => 23,  115 => 16,  111 => 15,  105 => 12,  100 => 10,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -325,6 +344,12 @@ $context["field"], "type", [], "any", false, false, false, 35) === "file")) {
                 {% elseif field.type is same as('file') %}
                     {{ field.content }}
                     <a href=\"{{ asset('uploads/files/' ~ field.content) }}\">{{ 'file.show_pdf'|trans }}</a>
+                {% elseif field.type is same as('subelement') %}
+                    {% if field.content is null %}
+                        {{ field.content }}
+                    {% else %}
+                        {{ field.content.title }}
+                    {% endif %}
                 {% else %}
                     {{ field.content }}
                 {% endif %}

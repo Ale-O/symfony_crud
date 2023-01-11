@@ -101,6 +101,16 @@ class Subelement
      */
     private $fileFields;
 
+    /**
+     * @ORM\OneToMany(targetEntity=SubelementFields::class, mappedBy="Subelement")
+     */
+    private $subelementFields;
+
+    /**
+     * @ORM\OneToMany(targetEntity=SubelementFields::class, mappedBy="content")
+     */
+    private $selectInSubelementFields;
+
     public function __construct()
     {
         $this->publishedAt = new \DateTime();
@@ -108,6 +118,8 @@ class Subelement
         $this->datefields = new ArrayCollection();
         $this->numberFields = new ArrayCollection();
         $this->fileFields = new ArrayCollection();
+        $this->subelementFields = new ArrayCollection();
+        $this->selectInSubelementFields = new ArrayCollection();
     }
 
     /**
@@ -267,6 +279,66 @@ class Subelement
             // set the owning side to null (unless already changed)
             if ($fileField->getSubelement() === $this) {
                 $fileField->setSubelement(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SubelementFields[]
+     */
+    public function getSubelementFields(): Collection
+    {
+        return $this->subelementFields;
+    }
+
+    public function addSubelementField(SubelementFields $subelementField): self
+    {
+        if (!$this->subelementFields->contains($subelementField)) {
+            $this->subelementFields[] = $subelementField;
+            $subelementField->setSubelement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSubelementField(SubelementFields $subelementField): self
+    {
+        if ($this->subelementFields->removeElement($subelementField)) {
+            // set the owning side to null (unless already changed)
+            if ($subelementField->getSubelement() === $this) {
+                $subelementField->setSubelement(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SubelementFields[]
+     */
+    public function getSelectInSubelementFields(): Collection
+    {
+        return $this->selectInSubelementFields;
+    }
+
+    public function addSelectInSubelementField(SubelementFields $selectInSubelementField): self
+    {
+        if (!$this->selectInSubelementFields->contains($selectInSubelementField)) {
+            $this->selectInSubelementFields[] = $selectInSubelementField;
+            $selectInSubelementField->setContent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSelectInSubelementField(SubelementFields $selectInSubelementField): self
+    {
+        if ($this->selectInSubelementFields->removeElement($selectInSubelementField)) {
+            // set the owning side to null (unless already changed)
+            if ($selectInSubelementField->getContent() === $this) {
+                $selectInSubelementField->setContent(null);
             }
         }
 

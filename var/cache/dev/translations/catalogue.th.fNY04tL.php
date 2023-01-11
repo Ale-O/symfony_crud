@@ -348,6 +348,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'title.datefields_list' => 'List of date fields',
     'title.numberfields_list' => 'List of number fields',
     'title.filefields_list' => 'List of file fields',
+    'title.subelementfields_list' => 'List of dropdown fields',
     'title.tag_list' => 'List of tags',
     'title.user_list' => 'List of users',
     'title.edit' => 'Edit {id, number}',
@@ -491,6 +492,9 @@ $catalogueEn = new MessageCatalogue('en', array (
     'file' => 'File',
     'file.show_pdf' => 'Show pdf',
     'title.filefields_error' => 'Title filefields error',
+    'Filter' => 'Filter',
+    'Content' => 'Content',
+    'title.subelementfields_error' => 'Error in subelementfield',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueEn);

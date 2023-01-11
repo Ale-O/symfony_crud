@@ -100,6 +100,10 @@
                 <source>title.filefields_list</source>
                 <target>List of file fields</target>
             </trans-unit>
+            <trans-unit id="title.subelementfields_list">
+                <source>title.subelementfields_list</source>
+                <target>List of dropdown fields</target>
+            </trans-unit>
             <trans-unit id="title.tag_list">
                 <source>title.tag_list</source>
                 <target>List of tags</target>
@@ -681,6 +685,18 @@
             <trans-unit id="title.filefields_error">
                 <source>title.filefields_error</source>
                 <target>Title filefields error</target>
+            </trans-unit>
+            <trans-unit id="Filter">
+                <source>Filter</source>
+                <target>Filter</target>
+            </trans-unit>
+            <trans-unit id="Content">
+                <source>Content</source>
+                <target>Content</target>
+            </trans-unit>
+            <trans-unit id="title.subelementfields_error">
+                <source>title.subelementfields_error</source>
+                <target>Error in subelementfield</target>
             </trans-unit>
         </body>
     </file>

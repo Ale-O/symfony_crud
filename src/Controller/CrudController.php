@@ -7,6 +7,7 @@ use App\Entity\Element;
 use App\Entity\FileFields;
 use App\Entity\NumberFields;
 use App\Entity\Subelement;
+use App\Entity\SubelementFields;
 use App\Entity\TextFields;
 use App\Event\SubelementCreatedEvent;
 use App\Form\SubelementType;
@@ -88,6 +89,7 @@ class CrudController extends AbstractController
             $arrayDateFields = $element->getDateFields();
             $arrayNumberFields = $element->getNumberFields();
             $arrayFileFields = $element->getFileFields();
+            $arraySubelementFields = $element->getSubelementFields();
 
             foreach ($arrayTextFields as $field) {
                 $textfields = new TextFields();
@@ -133,6 +135,18 @@ class CrudController extends AbstractController
                 $em->flush();
             }
 
+            foreach ($arraySubelementFields as $field) {
+                $subelementfields = new SubelementFields();
+                $subelementfields->setSubelement($subelement);
+                $subelementfields->setTitle($field->getTitle());
+                // $subelementfields->setContent();
+                $subelementfields->setPosition($field->getPosition());
+                $subelementfields->setFilter($field->getFilter());
+                $subelementfields->setParentFields($field);
+                $em->persist($subelementfields);
+                $em->flush();
+            }
+
             return $this->redirectToRoute('crud_element', ['slug' => $element->getSlug()]);
         }
 
@@ -164,6 +178,7 @@ class CrudController extends AbstractController
         $arrayDateFields = $subelement->getDateFields();
         $arrayNumberFields = $subelement->getNumberFields();
         $arrayFileFields = $subelement->getFileFields();
+        $arraySubelementFields = $subelement->getSubelementFields();
 
         $fields = [];
 
@@ -181,6 +196,10 @@ class CrudController extends AbstractController
         }
         foreach ($arrayFileFields as $field) {
             $field->type = 'file';
+            array_push($fields, $field);
+        }
+        foreach ($arraySubelementFields as $field) {
+            $field->type = 'subelement';
             array_push($fields, $field);
         }
 
@@ -203,6 +222,7 @@ class CrudController extends AbstractController
         $arrayDateFields = $subelement->getDateFields();
         $arrayNumberFields = $subelement->getNumberFields();
         $arrayFileFields = $subelement->getFileFields();
+        $arraySubelementFields = $subelement->getSubelementFields();
 
         $fields = [];
 
@@ -220,6 +240,10 @@ class CrudController extends AbstractController
         }
         foreach ($arrayFileFields as $field) {
             $field->type = 'file';
+            array_push($fields, $field);
+        }
+        foreach ($arraySubelementFields as $field) {
+            $field->type = 'subelement';
             array_push($fields, $field);
         }
 

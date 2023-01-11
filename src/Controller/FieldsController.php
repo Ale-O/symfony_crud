@@ -5,10 +5,12 @@ namespace App\Controller;
 use App\Entity\DateFields;
 use App\Entity\FileFields;
 use App\Entity\NumberFields;
+use App\Entity\SubelementFields;
 use App\Entity\TextFields;
 use App\Form\DateFieldsType;
 use App\Form\FileFieldsType;
 use App\Form\NumberFieldsType;
+use App\Form\SubelementFieldsType;
 use App\Form\TextFieldsType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -60,6 +62,16 @@ class FieldsController extends AbstractController
 
         return $this->render('crud/fields/_filefields_form.html.twig', [
             'filefields' => $filefields,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    public function subelementFieldsForm(SubelementFields $subelementfields): Response
+    {
+        $form = $this->createForm(SubelementFieldsType::class, $subelementfields);
+
+        return $this->render('crud/fields/_subelementfields_form.html.twig', [
+            'subelementfields' => $subelementfields,
             'form' => $form->createView(),
         ]);
     }
@@ -152,6 +164,30 @@ class FieldsController extends AbstractController
 
         return $this->render('crud/fields/filefields_form_error.html.twig', [
             'filefields' => $filefields,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("subelementfields/{id<\d+>}/edit", methods="GET|POST", name="subelementfields_edit")
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
+     */
+    public function subelementFieldsEdit(Request $request, SubelementFields $subelementfields): Response
+    {
+        $subelement = $subelementfields->getSubelement();
+        $idSubelement = $subelement->getId();
+
+        $form = $this->createForm(SubelementFieldsType::class, $subelementfields);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+        }
+
+        return $this->render('crud/fields/subelementfields_form_error.html.twig', [
+            'subelementfields' => $subelementfields,
             'form' => $form->createView(),
         ]);
     }

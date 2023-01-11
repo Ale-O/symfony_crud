@@ -471,6 +471,8 @@
     <service id="App\Form\Fields\FileFieldsType" class="App\Form\Fields\FileFieldsType" autowire="true" autoconfigure="true"/>
     <service id="App\Form\Fields\NumberFieldsAdminType" class="App\Form\Fields\NumberFieldsAdminType" autowire="true" autoconfigure="true"/>
     <service id="App\Form\Fields\NumberFieldsType" class="App\Form\Fields\NumberFieldsType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\Fields\SubelementFieldsAdminType" class="App\Form\Fields\SubelementFieldsAdminType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\Fields\SubelementFieldsType" class="App\Form\Fields\SubelementFieldsType" autowire="true" autoconfigure="true"/>
     <service id="App\Form\Fields\TextFieldsAdminType" class="App\Form\Fields\TextFieldsAdminType" autowire="true" autoconfigure="true"/>
     <service id="App\Form\Fields\TextFieldsType" class="App\Form\Fields\TextFieldsType" autowire="true" autoconfigure="true"/>
     <service id="App\Form\SubelementType" class="App\Form\SubelementType" autowire="true" autoconfigure="true">
@@ -513,6 +515,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\NumberFieldsRepository" class="App\Repository\NumberFieldsRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\SubelementFieldsRepository" class="App\Repository\SubelementFieldsRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -4082,7 +4088,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.vOu8yOz"/>
+      <argument type="service" id=".service_locator.5Ny9_fR"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5478,6 +5484,8 @@
     <service id=".abstract.instanceof.App\Repository\FileFieldsRepository" class="App\Repository\FileFieldsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NumberFieldsRepository" class="App\Repository\NumberFieldsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\NumberFieldsRepository" class="App\Repository\NumberFieldsRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SubelementFieldsRepository" class="App\Repository\SubelementFieldsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\SubelementFieldsRepository" class="App\Repository\SubelementFieldsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SubelementRepository" class="App\Repository\SubelementRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SubelementRepository" class="App\Repository\SubelementRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TagRepository" class="App\Repository\TagRepository" autowire="true" abstract="true"/>
@@ -5782,6 +5790,12 @@
         <argument key="filefields" type="service" id=".errored..service_locator.N088Aaf.App\Entity\FileFields"/>
       </argument>
     </service>
+    <service id=".service_locator.7bDjG1d" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="subelementfields" type="service" id=".errored..service_locator.7bDjG1d.App\Entity\SubelementFields"/>
+      </argument>
+    </service>
     <service id=".service_locator.kR88F0P" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5852,7 +5866,7 @@
         <argument key="security" type="service" id="security.helper"/>
       </argument>
     </service>
-    <service id=".service_locator.CAEMo9O" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.E5nlexb" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CrudController::delete" type="service" id=".service_locator.nfDhB4v"/>
@@ -5862,18 +5876,22 @@
         <argument key="App\Controller\Admin\FieldsController::deleteDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController::deleteFileFields" type="service" id=".service_locator.N088Aaf"/>
         <argument key="App\Controller\Admin\FieldsController::deleteNumberFields" type="service" id=".service_locator.brTJSoj"/>
+        <argument key="App\Controller\Admin\FieldsController::deleteSubelementFields" type="service" id=".service_locator.7bDjG1d"/>
         <argument key="App\Controller\Admin\FieldsController::deleteTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\FieldsController::editDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController::editFileFields" type="service" id=".service_locator.N088Aaf"/>
         <argument key="App\Controller\Admin\FieldsController::editNumberFields" type="service" id=".service_locator.brTJSoj"/>
+        <argument key="App\Controller\Admin\FieldsController::editSubelementFields" type="service" id=".service_locator.7bDjG1d"/>
         <argument key="App\Controller\Admin\FieldsController::editTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\FieldsController::newDateFields" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\FieldsController::newFileFields" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\FieldsController::newNumberFields" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\Admin\FieldsController::newSubelementFields" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\FieldsController::newTextFields" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\FieldsController::showDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController::showFileFields" type="service" id=".service_locator.N088Aaf"/>
         <argument key="App\Controller\Admin\FieldsController::showNumberFields" type="service" id=".service_locator.brTJSoj"/>
+        <argument key="App\Controller\Admin\FieldsController::showSubelementFields" type="service" id=".service_locator.7bDjG1d"/>
         <argument key="App\Controller\Admin\FieldsController::showTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\TagsController::delete" type="service" id=".service_locator.S92MJGp"/>
         <argument key="App\Controller\Admin\TagsController::edit" type="service" id=".service_locator.S92MJGp"/>
@@ -5902,6 +5920,8 @@
         <argument key="App\Controller\FieldsController::numberFieldsEdit" type="service" id=".service_locator.brTJSoj"/>
         <argument key="App\Controller\FieldsController::numberFieldsForm" type="service" id=".service_locator.brTJSoj"/>
         <argument key="App\Controller\FieldsController::oldfileFieldsEdit" type="service" id=".service_locator.N088Aaf"/>
+        <argument key="App\Controller\FieldsController::subelementFieldsEdit" type="service" id=".service_locator.7bDjG1d"/>
+        <argument key="App\Controller\FieldsController::subelementFieldsForm" type="service" id=".service_locator.7bDjG1d"/>
         <argument key="App\Controller\FieldsController::textFieldsEdit" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\FieldsController::textFieldsForm" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.FXjGl5F"/>
@@ -5920,18 +5940,22 @@
         <argument key="App\Controller\Admin\FieldsController:deleteDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController:deleteFileFields" type="service" id=".service_locator.N088Aaf"/>
         <argument key="App\Controller\Admin\FieldsController:deleteNumberFields" type="service" id=".service_locator.brTJSoj"/>
+        <argument key="App\Controller\Admin\FieldsController:deleteSubelementFields" type="service" id=".service_locator.7bDjG1d"/>
         <argument key="App\Controller\Admin\FieldsController:deleteTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\FieldsController:editDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController:editFileFields" type="service" id=".service_locator.N088Aaf"/>
         <argument key="App\Controller\Admin\FieldsController:editNumberFields" type="service" id=".service_locator.brTJSoj"/>
+        <argument key="App\Controller\Admin\FieldsController:editSubelementFields" type="service" id=".service_locator.7bDjG1d"/>
         <argument key="App\Controller\Admin\FieldsController:editTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\FieldsController:newDateFields" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\FieldsController:newFileFields" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\FieldsController:newNumberFields" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\Admin\FieldsController:newSubelementFields" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\FieldsController:newTextFields" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\FieldsController:showDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController:showFileFields" type="service" id=".service_locator.N088Aaf"/>
         <argument key="App\Controller\Admin\FieldsController:showNumberFields" type="service" id=".service_locator.brTJSoj"/>
+        <argument key="App\Controller\Admin\FieldsController:showSubelementFields" type="service" id=".service_locator.7bDjG1d"/>
         <argument key="App\Controller\Admin\FieldsController:showTextFields" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\Admin\TagsController:delete" type="service" id=".service_locator.S92MJGp"/>
         <argument key="App\Controller\Admin\TagsController:edit" type="service" id=".service_locator.S92MJGp"/>
@@ -5960,6 +5984,8 @@
         <argument key="App\Controller\FieldsController:numberFieldsEdit" type="service" id=".service_locator.brTJSoj"/>
         <argument key="App\Controller\FieldsController:numberFieldsForm" type="service" id=".service_locator.brTJSoj"/>
         <argument key="App\Controller\FieldsController:oldfileFieldsEdit" type="service" id=".service_locator.N088Aaf"/>
+        <argument key="App\Controller\FieldsController:subelementFieldsEdit" type="service" id=".service_locator.7bDjG1d"/>
+        <argument key="App\Controller\FieldsController:subelementFieldsForm" type="service" id=".service_locator.7bDjG1d"/>
         <argument key="App\Controller\FieldsController:textFieldsEdit" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\FieldsController:textFieldsForm" type="service" id=".service_locator.uFJkjP8"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.FXjGl5F"/>
@@ -6079,13 +6105,14 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.vOu8yOz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.5Ny9_fR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\DateFieldsRepository" type="service" id="App\Repository\DateFieldsRepository"/>
         <argument key="App\Repository\ElementRepository" type="service" id="App\Repository\ElementRepository"/>
         <argument key="App\Repository\FileFieldsRepository" type="service" id="App\Repository\FileFieldsRepository"/>
         <argument key="App\Repository\NumberFieldsRepository" type="service" id="App\Repository\NumberFieldsRepository"/>
+        <argument key="App\Repository\SubelementFieldsRepository" type="service" id="App\Repository\SubelementFieldsRepository"/>
         <argument key="App\Repository\SubelementRepository" type="service" id="App\Repository\SubelementRepository"/>
         <argument key="App\Repository\TagRepository" type="service" id="App\Repository\TagRepository"/>
         <argument key="App\Repository\TextFieldsRepository" type="service" id="App\Repository\TextFieldsRepository"/>
@@ -6471,12 +6498,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.CAEMo9O"/>
+      <argument type="service" id=".service_locator.E5nlexb"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.CAEMo9O"/>
+      <argument type="service" id=".service_locator.E5nlexb"/>
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
@@ -6485,6 +6512,7 @@
     <service id=".errored..service_locator.hvP7sfc.App\Entity\DateFields" class="App\Entity\DateFields"/>
     <service id=".errored..service_locator.brTJSoj.App\Entity\NumberFields" class="App\Entity\NumberFields"/>
     <service id=".errored..service_locator.N088Aaf.App\Entity\FileFields" class="App\Entity\FileFields"/>
+    <service id=".errored..service_locator.7bDjG1d.App\Entity\SubelementFields" class="App\Entity\SubelementFields"/>
     <service id=".errored..service_locator.S92MJGp.App\Entity\Tag" class="App\Entity\Tag"/>
     <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.SRCoNHU.App\Entity\Element" class="App\Entity\Element"/>
@@ -6893,7 +6921,7 @@
     <service id="html_sanitizer" alias="html_sanitizer.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.CAEMo9O"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.E5nlexb"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
     <service id="Psr\Log\LoggerInterface $cacheLogger" alias="monolog.logger.cache"/>

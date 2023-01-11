@@ -6,10 +6,12 @@ use App\Entity\DateFields;
 use App\Entity\Element;
 use App\Entity\FileFields;
 use App\Entity\NumberFields;
+use App\Entity\SubelementFields;
 use App\Entity\TextFields;
 use App\Form\DateFieldsAdminType;
 use App\Form\FileFieldsAdminType;
 use App\Form\NumberFieldsAdminType;
+use App\Form\SubelementFieldsAdminType;
 use App\Form\TextFieldsAdminType;
 use DateTime;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -226,6 +228,57 @@ class FieldsController extends AbstractController
     }
 
     /**
+     * @Route("subelementfields/{elementSlug}/new", methods="GET|POST", name="admin_subelementfields_new")
+     * @ParamConverter("element", options={"mapping": {"elementSlug": "slug"}})
+     */
+    public function newSubelementFields(Request $request, Element $element): Response
+    {
+        $idElement = $element->getId();
+
+        $subelementfields = new SubelementFields();
+        $subelementfields->setElement($element);
+        // $subelementfields->setContent();
+
+        $form = $this->createForm(SubelementFieldsAdminType::class, $subelementfields)
+            ->add('saveAndCreateNew', SubmitType::class);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($subelementfields);
+            $em->flush();
+
+            $this->addFlash('success', 'action.created_successfully');
+
+            if ($form->get('saveAndCreateNew')->isClicked()) {
+                return $this->redirectToRoute('admin_subelementfields_new');
+            }
+
+            $subelements = $element->getSubelements();
+            foreach ($subelements as $subelement) {
+                $newSubelementfields = new SubelementFields();
+                $newSubelementfields->setSubelement($subelement);
+                $newSubelementfields->setTitle($subelementfields->getTitle());
+                // $newSubelementfields->setContent();
+                $newSubelementfields->setPosition($subelementfields->getPosition());
+                $newSubelementfields->setFilter($subelementfields->getFilter());
+                $newSubelementfields->setParentFields($subelementfields);
+                $em->persist($newSubelementfields);
+                $em->flush();
+            }
+
+            return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
+        }
+
+        return $this->render('admin/fields/subelementfields_new.html.twig', [
+            'subelementfields' => $subelementfields,
+            'form' => $form->createView(),
+            'element' => $element,
+        ]);
+    }
+
+    /**
      * @Route("textfields/{id<\d+>}", methods="GET", name="admin_textfields_show")
      */
     public function showTextFields(TextFields $textfields): Response
@@ -262,6 +315,16 @@ class FieldsController extends AbstractController
     {
         return $this->render('admin/fields/filefields_show.html.twig', [
             'filefields' => $filefields,
+        ]);
+    }
+
+    /**
+     * @Route("subelementfields/{id<\d+>}", methods="GET", name="admin_subelementfields_show")
+     */
+    public function showSubelementFields(SubelementFields $subelementfields): Response
+    {
+        return $this->render('admin/fields/subelementfields_show.html.twig', [
+            'subelementfields' => $subelementfields,
         ]);
     }
 
@@ -410,6 +473,42 @@ class FieldsController extends AbstractController
     }
 
     /**
+     * @Route("subelementfields/{id<\d+>}/edit", methods="GET|POST", name="admin_subelementfields_edit")
+     */
+    // @IsGranted("edit", subject="subelementfields", message="SubelementFields can only be edited by their authors.")
+    public function editSubelementFields(Request $request, SubelementFields $subelementfields): Response
+    {
+        $element = $subelementfields->getElement();
+
+        $form = $this->createForm(SubelementFieldsAdminType::class, $subelementfields);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('success', 'action.updated_successfully');
+
+            $em = $this->getDoctrine()->getManager();
+
+            $childSubelementfields = $subelementfields->getChildFields();
+            foreach ($childSubelementfields as $childSubelementfield) {
+                $childSubelementfield->setTitle($subelementfields->getTitle());
+                $childSubelementfield->setPosition($subelementfields->getPosition());
+                $em->persist($childSubelementfield);
+                $em->flush();
+            }
+
+            return $this->redirectToRoute('admin_subelementfields_edit', ['id' => $subelementfields->getId()]);
+        }
+
+        return $this->render('admin/fields/subelementfields_edit.html.twig', [
+            'subelementfields' => $subelementfields,
+            'form' => $form->createView(),
+            'element' => $element,
+        ]);
+    }
+
+    /**
      * @Route("textfields/{id}/delete", methods="POST", name="admin_textfields_delete")
      */
     // @IsGranted("delete", subject="textfields")
@@ -518,6 +617,35 @@ class FieldsController extends AbstractController
         }
 
         $em->remove($filefields);
+        $em->flush();
+
+        $this->addFlash('success', 'action.deleted_successfully');
+
+        return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
+    }
+
+    /**
+     * @Route("subelementfields/{id}/delete", methods="POST", name="admin_subelementfields_delete")
+     */
+    // @IsGranted("delete", subject="subelementfields")
+    public function deleteSubelementFields(Request $request, SubelementFields $subelementfields): Response
+    {
+        $element = $subelementfields->getElement();
+        $idElement = $element->getId();
+
+        if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
+            return $this->redirectToRoute('admin_element_show', ['id' => $idElement]);
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $childSubelementfields = $subelementfields->getChildFields();
+        foreach ($childSubelementfields as $childSubelementfield) {
+            $em->remove($childSubelementfield);
+            $em->flush();
+        }
+
+        $em->remove($subelementfields);
         $em->flush();
 
         $this->addFlash('success', 'action.deleted_successfully');
