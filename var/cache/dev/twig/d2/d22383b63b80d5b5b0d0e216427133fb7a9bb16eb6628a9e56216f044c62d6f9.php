@@ -109,54 +109,75 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
         // line 14
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.role"), "html", null, true);
         echo "</th>
-                <th scope=\"col\" class=\"text-center\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> ";
+                <th scope=\"col\"><i class=\"fa fa-tags\" aria-hidden=\"true\"></i> ";
         // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.tags"), "html", null, true);
+        echo "</th>
+                <th scope=\"col\" class=\"text-center\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> ";
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.actions"), "html", null, true);
         echo "</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 19, $this->source); })()), "results", [], "any", false, false, false, 19));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 20, $this->source); })()), "results", [], "any", false, false, false, 20));
         $context['_iterated'] = false;
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 20
+            // line 21
             echo "            <tr>
                 <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "FullName", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "Username", [], "any", false, false, false, 22), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "FullName", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
                 <td>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "Email", [], "any", false, false, false, 23), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "Username", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
                 <td>";
             // line 24
-            echo (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["user"], "Roles", [], "any", false, false, false, 24), 0, [], "array", false, false, false, 24) === "ROLE_ADMIN")) ? ("Administrateur") : ("Utilisateur"));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "Email", [], "any", false, false, false, 24), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 25
+            echo (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["user"], "Roles", [], "any", false, false, false, 25), 0, [], "array", false, false, false, 25) === "ROLE_ADMIN")) ? ("Administrateur") : ("Utilisateur"));
+            echo "</td>
+                <td>";
+            // line 26
+            echo twig_include($this->env, $context, "admin/user/_user_tags.html.twig");
             echo "</td>
                 <td class=\"text-right\">
                     <div class=\"item-actions\">
                         <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 29)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-default\">
                             <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> ";
-            // line 28
+            // line 30
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.show"), "html", null, true);
             echo "
                         </a>
                         <a href=\"";
-            // line 30
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 32)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-primary\">
                             <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> ";
-            // line 31
+            // line 33
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
             echo "
                         </a>
@@ -165,12 +186,20 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
             </tr>
         ";
             $context['_iterated'] = true;
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
         }
         if (!$context['_iterated']) {
-            // line 37
+            // line 39
             echo "            <tr>
                 <td colspan=\"4\" align=\"center\">";
-            // line 38
+            // line 40
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("user.no_users_found"), "html", null, true);
             echo "</td>
            </tr>
@@ -179,43 +208,43 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 43
         echo "        </tbody>
     </table>
         ";
-        // line 43
-        if (twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 43, $this->source); })()), "hasToPaginate", [], "any", false, false, false, 43)) {
-            // line 44
+        // line 45
+        if (twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 45, $this->source); })()), "hasToPaginate", [], "any", false, false, false, 45)) {
+            // line 46
             echo "            <div class=\"navigation text-center\">
                 <ul class=\"pagination\">
                     ";
-            // line 46
-            if (twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 46, $this->source); })()), "hasPreviousPage", [], "any", false, false, false, 46)) {
-                // line 47
+            // line 48
+            if (twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 48, $this->source); })()), "hasPreviousPage", [], "any", false, false, false, 48)) {
+                // line 49
                 echo "                        <li class=\"prev\"><a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_paginated", ["page" => twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 47, $this->source); })()), "previousPage", [], "any", false, false, false, 47)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_paginated", ["page" => twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 49, $this->source); })()), "previousPage", [], "any", false, false, false, 49)]), "html", null, true);
                 echo "\" rel=\"previous\"><i class=\"fa fw fa-long-arrow-left\"></i> ";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.previous"), "html", null, true);
                 echo "</a></li>
                     ";
             } else {
-                // line 49
+                // line 51
                 echo "                        <li class=\"prev disabled\"><span><i class=\"fa fw fa-arrow-left\"></i> ";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.previous"), "html", null, true);
                 echo "</span></li>
                     ";
             }
-            // line 51
+            // line 53
             echo "
                     ";
-            // line 52
+            // line 54
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(range(1, twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 52, $this->source); })()), "lastPage", [], "any", false, false, false, 52)));
+            $context['_seq'] = twig_ensure_traversable(range(1, twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 54, $this->source); })()), "lastPage", [], "any", false, false, false, 54)));
             foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 53
+                // line 55
                 echo "                        ";
-                if ((0 === twig_compare($context["i"], twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 53, $this->source); })()), "currentPage", [], "any", false, false, false, 53)))) {
-                    // line 54
+                if ((0 === twig_compare($context["i"], twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 55, $this->source); })()), "currentPage", [], "any", false, false, false, 55)))) {
+                    // line 56
                     echo "                            <li class=\"active\"><span>";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo " <span class=\"sr-only\">";
@@ -223,7 +252,7 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
                     echo "</span></span></li>
                         ";
                 } else {
-                    // line 56
+                    // line 58
                     echo "                            <li><a href=\"";
                     echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_paginated", ["page" => $context["i"]]), "html", null, true);
                     echo "\">";
@@ -231,32 +260,32 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
                     echo "</a></li>
                         ";
                 }
-                // line 58
+                // line 60
                 echo "                    ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 59
+            // line 61
             echo "
                     ";
-            // line 60
-            if (twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 60, $this->source); })()), "hasNextPage", [], "any", false, false, false, 60)) {
-                // line 61
+            // line 62
+            if (twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 62, $this->source); })()), "hasNextPage", [], "any", false, false, false, 62)) {
+                // line 63
                 echo "                        <li class=\"next\"><a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_paginated", ["page" => twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 61, $this->source); })()), "nextPage", [], "any", false, false, false, 61)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_paginated", ["page" => twig_get_attribute($this->env, $this->source, (isset($context["paginator"]) || array_key_exists("paginator", $context) ? $context["paginator"] : (function () { throw new RuntimeError('Variable "paginator" does not exist.', 63, $this->source); })()), "nextPage", [], "any", false, false, false, 63)]), "html", null, true);
                 echo "\" rel=\"next\">";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.next"), "html", null, true);
                 echo " <i class=\"fa fw fa-arrow-right\"></i></a></li>
                     ";
             } else {
-                // line 63
+                // line 65
                 echo "                        <li class=\"next disabled\"><span>";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("paginator.next"), "html", null, true);
                 echo " <i class=\"fa fw fa-arrow-right\"></i></span></li>
                     ";
             }
-            // line 65
+            // line 67
             echo "                </ul>
             </div>
         ";
@@ -269,7 +298,7 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
 
     }
 
-    // line 70
+    // line 72
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -279,26 +308,26 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 71
+        // line 73
         echo "    <div class=\"section actions\">
         <a href=\"";
-        // line 72
+        // line 74
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_new");
         echo "\" class=\"btn btn-lg btn-block btn-success\">
             <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> ";
-        // line 73
+        // line 75
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.create"), "html", null, true);
         echo "
         </a>
     </div>
 
     ";
-        // line 77
+        // line 79
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 79
+        // line 81
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -322,7 +351,7 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
 
     public function getDebugInfo()
     {
-        return array (  302 => 79,  297 => 77,  290 => 73,  286 => 72,  283 => 71,  273 => 70,  260 => 65,  254 => 63,  246 => 61,  244 => 60,  241 => 59,  235 => 58,  227 => 56,  219 => 54,  216 => 53,  212 => 52,  209 => 51,  203 => 49,  195 => 47,  193 => 46,  189 => 44,  187 => 43,  183 => 41,  174 => 38,  171 => 37,  160 => 31,  156 => 30,  151 => 28,  147 => 27,  141 => 24,  137 => 23,  133 => 22,  129 => 21,  126 => 20,  121 => 19,  114 => 15,  110 => 14,  106 => 13,  102 => 12,  98 => 11,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  331 => 81,  326 => 79,  319 => 75,  315 => 74,  312 => 73,  302 => 72,  289 => 67,  283 => 65,  275 => 63,  273 => 62,  270 => 61,  264 => 60,  256 => 58,  248 => 56,  245 => 55,  241 => 54,  238 => 53,  232 => 51,  224 => 49,  222 => 48,  218 => 46,  216 => 45,  212 => 43,  203 => 40,  200 => 39,  181 => 33,  177 => 32,  172 => 30,  168 => 29,  162 => 26,  158 => 25,  154 => 24,  150 => 23,  146 => 22,  143 => 21,  125 => 20,  118 => 16,  114 => 15,  110 => 14,  106 => 13,  102 => 12,  98 => 11,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -341,6 +370,7 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
                 <th scope=\"col\">{{ 'label.username'|trans }}</th>
                 <th scope=\"col\">{{ 'label.email'|trans }}</th>
                 <th scope=\"col\">{{ 'label.role'|trans }}</th>
+                <th scope=\"col\"><i class=\"fa fa-tags\" aria-hidden=\"true\"></i> {{ 'label.tags'|trans }}</th>
                 <th scope=\"col\" class=\"text-center\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> {{ 'label.actions'|trans }}</th>
             </tr>
         </thead>
@@ -351,6 +381,7 @@ class __TwigTemplate_f94cb3bf2f691d909021aac92de0b8240ab93a8c17117191114e3753d4e
                 <td>{{ user.Username }}</td>
                 <td>{{ user.Email }}</td>
                 <td>{{ user.Roles[0] is same as('ROLE_ADMIN') ? 'Administrateur' : 'Utilisateur' }}</td>
+                <td>{{ include('admin/user/_user_tags.html.twig') }}</td>
                 <td class=\"text-right\">
                     <div class=\"item-actions\">
                         <a href=\"{{ path('admin_user_show', {id: user.id}) }}\" class=\"btn btn-sm btn-default\">

@@ -6,6 +6,7 @@ use App\Entity\Tag;
 use App\Entity\User;
 use App\Form\UserEditType;
 use App\Form\UserType;
+use App\Repository\TagRepository;
 use App\Repository\UserRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,12 +26,19 @@ class UsersController extends AbstractController
      * @Route("/", defaults={"page": "1"}, methods="GET", name="admin_user_index")
      * @Route("/page/{page<[1-9]\d*>}", methods="GET", name="admin_user_paginated")
      */
-    public function index(UserRepository $users, int $page): Response
+    public function index(Request $request, UserRepository $users, int $page, TagRepository $tags): Response
     {
-        $allUsers = $users->findOrderByName($page);
+        $tag = null;
+
+        if ($request->query->has('tag')) {
+            $tag = $tags->findOneBy(['name' => $request->query->get('tag')]);
+        }
+
+        $allUsers = $users->findOrderByName($page, $tag);
 
         return $this->render('admin/user/users_list.html.twig', [
             'paginator' => $allUsers,
+            'tagName' => $tag ? $tag->getName() : null,
         ]);
     }
 

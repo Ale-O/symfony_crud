@@ -114,29 +114,33 @@ class __TwigTemplate_d4b9fc86cf5fba38c20b264f5141169126ca62d1a733c815d27c22f5fba
         // line 13
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), "isAdmin", [], "any", false, false, false, 13), 'row');
         echo "
+        ";
+        // line 14
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), "tags", [], "any", false, false, false, 14), 'row');
+        echo "
 
         <button type=\"submit\" class=\"btn btn-primary\">
             <i class=\"fa fa-save\" aria-hidden=\"true\"></i> ";
-        // line 16
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("label.create_user"), "html", null, true);
         echo "
         </button>
         ";
-        // line 18
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "saveAndCreateNew", [], "any", false, false, false, 18), 'widget', ["label" => "label.save_and_create_new", "attr" => ["class" => "btn btn-primary"]]);
+        // line 19
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), "saveAndCreateNew", [], "any", false, false, false, 19), 'widget', ["label" => "label.save_and_create_new", "attr" => ["class" => "btn btn-primary"]]);
         echo "
         <a href=\"";
-        // line 19
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_index");
         echo "\" class=\"btn btn-link\">
             <i class=\"fa fa-users\" aria-hidden=\"true\"></i> ";
-        // line 20
+        // line 21
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.back"), "html", null, true);
         echo "
         </a>
     ";
-        // line 22
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), 'form_end');
+        // line 23
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -147,7 +151,7 @@ class __TwigTemplate_d4b9fc86cf5fba38c20b264f5141169126ca62d1a733c815d27c22f5fba
 
     }
 
-    // line 25
+    // line 26
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -157,13 +161,13 @@ class __TwigTemplate_d4b9fc86cf5fba38c20b264f5141169126ca62d1a733c815d27c22f5fba
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 26
+        // line 27
         echo "    ";
         $this->displayParentBlock("sidebar", $context, $blocks);
         echo "
 
     ";
-        // line 28
+        // line 29
         echo $this->extensions['App\Twig\SourceCodeExtension']->showSourceCode($this->env, $this->getTemplateName());
         echo "
 ";
@@ -187,7 +191,7 @@ class __TwigTemplate_d4b9fc86cf5fba38c20b264f5141169126ca62d1a733c815d27c22f5fba
 
     public function getDebugInfo()
     {
-        return array (  167 => 28,  161 => 26,  151 => 25,  139 => 22,  134 => 20,  130 => 19,  126 => 18,  121 => 16,  115 => 13,  111 => 12,  107 => 11,  103 => 10,  99 => 9,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  171 => 29,  165 => 27,  155 => 26,  143 => 23,  138 => 21,  134 => 20,  130 => 19,  125 => 17,  119 => 14,  115 => 13,  111 => 12,  107 => 11,  103 => 10,  99 => 9,  95 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -205,6 +209,7 @@ class __TwigTemplate_d4b9fc86cf5fba38c20b264f5141169126ca62d1a733c815d27c22f5fba
         {{ form_row(form.email) }}
         {{ form_row(form.password) }}
         {{ form_row(form.isAdmin) }}
+        {{ form_row(form.tags) }}
 
         <button type=\"submit\" class=\"btn btn-primary\">
             <i class=\"fa fa-save\" aria-hidden=\"true\"></i> {{ 'label.create_user'|trans }}

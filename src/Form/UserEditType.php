@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use App\Form\Type\TagsInputType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -32,7 +33,12 @@ class UserEditType extends AbstractType
             ])
             ->add('email', EmailType::class, [
                 'label' => 'label.email',
-            ]);
+            ])
+            ->add('tags', TagsInputType::class, [
+                'label' => 'label.tags',
+                'required' => false,
+            ])
+            ;
     }
 
     /**

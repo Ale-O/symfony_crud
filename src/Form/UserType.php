@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use App\Form\Type\TagsInputType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -57,7 +58,12 @@ class UserType extends AbstractType
                 'mapped' => false,
                 'label' => 'label.isAdmin',
                 'required' => false,
-            ]);
+            ])
+            ->add('tags', TagsInputType::class, [
+                'label' => 'label.tags',
+                'required' => false,
+            ])
+            ;
     }
 
     /**
