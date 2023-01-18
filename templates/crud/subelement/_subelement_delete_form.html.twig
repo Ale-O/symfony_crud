@@ -1,8 +1,20 @@
 {{ include('crud/subelement/_subelement_delete_confirmation.html.twig') }}
-<form action="{{ url('subelement_delete', {id: subelement.id}) }}" method="post" data-confirmation="true" id="delete-form">
-    <input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
-    <button type="submit" class="btn btn-lg btn-block btn-danger">
-        <i class="fa fa-trash" aria-hidden="true"></i>
-        {{ 'action.delete'|trans }}
-    </button>
-</form>
+
+    {% if subelement.selectInSubelementFields[0] is defined %}
+
+            <button type="submit" class="btn btn-lg btn-block btn-secondary">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                {{ 'action.undeletable'|trans }}
+            </button>
+
+    {% else %}
+
+            <form action="{{ url('subelement_delete', {id: subelement.id}) }}" method="post" data-confirmation="true" id="delete-form">
+                <input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
+                <button type="submit" class="btn btn-lg btn-block btn-danger">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    {{ 'action.delete'|trans }}
+                </button>
+            </form>
+
+    {% endif %}

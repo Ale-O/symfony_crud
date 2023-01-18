@@ -95,7 +95,6 @@ class UsersController extends AbstractController
     /**
      * @Route("/{id<\d+>}/edit", methods="GET|POST", name="admin_user_edit")
      */
-    // @IsGranted("edit", subject="user", message="Users can only be edited by their authors.")
     public function edit(Request $request, User $user): Response
     {
         $form = $this->createForm(UserEditType::class, $user);
@@ -118,7 +117,6 @@ class UsersController extends AbstractController
     /**
      * @Route("/{id}/delete", methods="POST", name="admin_user_delete")
      */
-    // @IsGranted("delete", subject="user")
     public function delete(Request $request, User $user): Response
     {
         if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
@@ -137,7 +135,6 @@ class UsersController extends AbstractController
     /**
      * @Route("/{id<\d+>}/level_up", methods="GET|POST", name="admin_user_level_up")
      */
-    // @IsGranted("level_up", subject="user", message="Users can only be edited by their authors.")
     public function levelUp(User $user): Response
     {
         $user->setRoles(['ROLE_ADMIN']);
@@ -155,7 +152,6 @@ class UsersController extends AbstractController
     /**
      * @Route("/{id<\d+>}/level_down", methods="GET|POST", name="admin_user_level_down")
      */
-    // @IsGranted("level_down", subject="user", message="Users can only be edited by their authors.")
     public function levelDown(User $user): Response
     {
         $user->setRoles(['ROLE_USER']);

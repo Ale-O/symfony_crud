@@ -87,7 +87,7 @@ class __TwigTemplate_70fd633ca580b4e3c82823759b919e77b184693d376da663ffcad7e79de
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["tag"]) || array_key_exists("tag", $context) ? $context["tag"] : (function () { throw new RuntimeError('Variable "tag" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["tag"]) || array_key_exists("tag", $context) ? $context["tag"] : (function () { throw new RuntimeError('Variable "tag" does not exist.', 6, $this->source); })()), "name", [], "any", false, false, false, 6), "html", null, true);
         echo "</h1>
 
     ";
@@ -175,7 +175,7 @@ class __TwigTemplate_70fd633ca580b4e3c82823759b919e77b184693d376da663ffcad7e79de
 {% block body_id 'admin_tag_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit'|trans({'%id%': tag.id}) }}</h1>
+    <h1>{{ tag.name }}</h1>
 
     {{ include('admin/tag/_tag_form.html.twig', {
         form: form,

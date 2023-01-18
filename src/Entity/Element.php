@@ -122,17 +122,32 @@ class Element
     private $datefields;
 
     /**
-     * @ORM\OneToMany(targetEntity=NumberFields::class, mappedBy="element")
+     * @ORM\OneToMany(
+     *      targetEntity=NumberFields::class,
+     *      mappedBy="element",
+     *      orphanRemoval=true,
+     *      cascade={"persist"}
+     * )
      */
     private $numberFields;
 
     /**
-     * @ORM\OneToMany(targetEntity=FileFields::class, mappedBy="element")
+     * @ORM\OneToMany(
+     *      targetEntity=FileFields::class,
+     *      mappedBy="element",
+     *      orphanRemoval=true,
+     *      cascade={"persist"}
+     * )
      */
     private $fileFields;
 
     /**
-     * @ORM\OneToMany(targetEntity=SubelementFields::class, mappedBy="Element")
+     * @ORM\OneToMany(
+     *      targetEntity=SubelementFields::class,
+     *      mappedBy="Element",
+     *      orphanRemoval=true,
+     *      cascade={"persist"}
+     * )
      */
     private $subelementFields;
 

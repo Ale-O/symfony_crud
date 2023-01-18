@@ -52,15 +52,7 @@ class __TwigTemplate_418416b8593a824accf39f92a41fb828b5cf44bde5d98bce2b6bc20964d
 
         ";
         // line 7
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'errors');
-        echo "
-        ";
-        // line 8
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), "title", [], "any", false, false, false, 8), 'row');
-        echo "
-        ";
-        // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "content", [], "any", false, false, false, 9), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'widget');
         echo "
 
 
@@ -68,15 +60,15 @@ class __TwigTemplate_418416b8593a824accf39f92a41fb828b5cf44bde5d98bce2b6bc20964d
         <div class=\"form-group\">
             <button class=\"btn btn-primary pull-right\" type=\"submit\">
                 <i class=\"fa fa-plus\" aria-hidden=\"true\"></i> ";
-        // line 15
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.quick_add_subelement"), "html", null, true);
         echo "
             </button>
         </div>
     </fieldset>
 ";
-        // line 19
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'form_end');
+        // line 17
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -99,7 +91,7 @@ class __TwigTemplate_418416b8593a824accf39f92a41fb828b5cf44bde5d98bce2b6bc20964d
 
     public function getDebugInfo()
     {
-        return array (  79 => 19,  72 => 15,  63 => 9,  59 => 8,  55 => 7,  49 => 4,  43 => 1,);
+        return array (  71 => 17,  64 => 13,  55 => 7,  49 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -110,9 +102,7 @@ class __TwigTemplate_418416b8593a824accf39f92a41fb828b5cf44bde5d98bce2b6bc20964d
             <i class=\"fa fa-list\" aria-hidden=\"true\"></i> {{ 'title.add_subelement'|trans }}
         </legend>
 
-        {{ form_errors(form) }}
-        {{ form_row(form.title) }}
-        {{ form_row(form.content) }}
+        {{ form_widget(form) }}
 
 
 

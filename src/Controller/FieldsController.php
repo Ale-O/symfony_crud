@@ -91,7 +91,14 @@ class FieldsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            $user = $this->getUser();
+            isset($user) ? $roles = $user->getRoles() : $roles = '';
+
+            if ($roles[0] === 'ROLE_ADMIN') {
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+            } else {
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            }
         }
 
         return $this->render('crud/fields/textfields_form_error.html.twig', [
@@ -115,7 +122,14 @@ class FieldsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            $user = $this->getUser();
+            isset($user) ? $roles = $user->getRoles() : $roles = '';
+
+            if ($roles[0] === 'ROLE_ADMIN') {
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+            } else {
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            }
         }
 
         return $this->render('crud/fields/datefields_form_error.html.twig', [
@@ -139,7 +153,14 @@ class FieldsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            $user = $this->getUser();
+            isset($user) ? $roles = $user->getRoles() : $roles = '';
+
+            if ($roles[0] === 'ROLE_ADMIN') {
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+            } else {
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            }
         }
 
         return $this->render('crud/fields/numberfields_form_error.html.twig', [
@@ -159,7 +180,14 @@ class FieldsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            $user = $this->getUser();
+            isset($user) ? $roles = $user->getRoles() : $roles = '';
+
+            if ($roles[0] === 'ROLE_ADMIN') {
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+            } else {
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            }
         }
 
         return $this->render('crud/fields/filefields_form_error.html.twig', [
@@ -183,7 +211,14 @@ class FieldsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            $user = $this->getUser();
+            isset($user) ? $roles = $user->getRoles() : $roles = '';
+
+            if ($roles[0] === 'ROLE_ADMIN') {
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+            } else {
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            }
         }
 
         return $this->render('crud/fields/subelementfields_form_error.html.twig', [
@@ -229,7 +264,14 @@ class FieldsController extends AbstractController
             $em->persist($filefields);
             $em->flush();
 
-            return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            $user = $this->getUser();
+            isset($user) ? $roles = $user->getRoles() : $roles = '';
+
+            if ($roles[0] === 'ROLE_ADMIN') {
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+            } else {
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+            }
         }
 
         return $this->render('crud/fields/filefields_form_error.html.twig', [

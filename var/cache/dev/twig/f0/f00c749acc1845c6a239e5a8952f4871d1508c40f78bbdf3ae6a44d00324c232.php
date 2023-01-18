@@ -87,7 +87,7 @@ class __TwigTemplate_bbdf817d923a694f03eb32a50fabf794d5bee86a78499ca45de75d622be
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["datefields"]) || array_key_exists("datefields", $context) ? $context["datefields"] : (function () { throw new RuntimeError('Variable "datefields" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["datefields"]) || array_key_exists("datefields", $context) ? $context["datefields"] : (function () { throw new RuntimeError('Variable "datefields" does not exist.', 6, $this->source); })()), "title", [], "any", false, false, false, 6), "html", null, true);
         echo "</h1>
 
     ";
@@ -176,7 +176,7 @@ class __TwigTemplate_bbdf817d923a694f03eb32a50fabf794d5bee86a78499ca45de75d622be
 {% block body_id 'admin_datefields_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit'|trans({'%id%': datefields.id}) }}</h1>
+    <h1>{{ datefields.title }}</h1>
 
     {{ include('admin/fields/_datefields_form.html.twig', {
         form: form,

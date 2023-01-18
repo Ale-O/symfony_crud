@@ -1,0 +1,30 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_subelement_edit' %}
+
+{% block main %}
+    <h1>{{ 'action.edit'|trans }} {{ subelement.title }}</h1>
+
+    {{ include('admin/crud/subelement/_subelement_edit_form.html.twig', {
+        form: form,
+        id: subelement.id,
+        button_label: 'action.save'|trans,
+        include_back_to_home_link: true,
+    }, with_context = false) }}
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('admin_subelement_show', {id: subelement.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show'|trans }}
+        </a>
+    </div>
+
+    <div class="section actions">
+        {{ include('admin/crud/subelement/_subelement_delete_form.html.twig', {subelement: subelement}, with_context = false) }}
+    </div>
+
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}

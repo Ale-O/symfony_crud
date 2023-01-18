@@ -87,7 +87,7 @@ class __TwigTemplate_b4ee25e4c9dbe706dc09209e5518f7207b296625f0c0ee064b05b3d4484
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 6, $this->source); })()), "fullname", [], "any", false, false, false, 6), "html", null, true);
         echo "</h1>
 
     ";
@@ -175,7 +175,7 @@ class __TwigTemplate_b4ee25e4c9dbe706dc09209e5518f7207b296625f0c0ee064b05b3d4484
 {% block body_id 'admin_user_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit'|trans({'%id%': user.id}) }}</h1>
+    <h1>{{ user.fullname }}</h1>
 
     {{ include('admin/user/_user_form.html.twig', {
         form: form,

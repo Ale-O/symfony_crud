@@ -35,13 +35,21 @@ class CrudController extends AbstractController
      * @Route("/page/{page<[1-9]\d*>}", defaults={"_format"="html"}, methods="GET", name="crud_index_paginated")
      * @Cache(smaxage="10")
      */
-    public function index(Request $request, int $page, string $_format, ElementRepository $elements, TagRepository $tags): Response
+    public function index(Request $request, int $page, string $_format, ElementRepository $elements, SubelementRepository $subelements, TagRepository $tags): Response
     {
         $user = $this->getUser();
         isset($user) ? $username = $user->getUsername() : $username = strval('Public');
+        isset($user) ? $tagsUser = $user->getTags() : $tagsUser = null;
         $tag = $tags->findOneBy(['name' => strval($username)]);
 
-        $latestElements = $elements->findLatest($page, $tag);
+        if ($request->query->has('tag')) {
+            $tag = $tags->findOneBy(['name' => $request->query->get('tag')]);
+        }
+
+        // Project : display all elements who contains visibles subelements
+        // $visibleSubelements = $subelements->findByTags($page, $tagsUser, $tag);
+
+        $latestElements = $elements->findByTags($page, $tagsUser, $tag);
 
         return $this->render('crud/index.'.$_format.'.twig', [
             'paginator' => $latestElements,
@@ -54,13 +62,23 @@ class CrudController extends AbstractController
      * @Route("/elements/{slug}/page/{page<[1-9]\d*>}", methods="GET", name="crud_element_paginated")
      * @Cache(smaxage="10")
      */
-    public function elementShow(Element $element, int $page, SubelementRepository $subelements): Response
+    public function elementShow(Request $request, Element $element, int $page, SubelementRepository $subelements, TagRepository $tags): Response
     {
-        $latestSubelements = $subelements->findLatest($page, $element);
+        $user = $this->getUser();
+        isset($user) ? $username = $user->getUsername() : $username = strval('Public');
+        isset($user) ? $tagsUser = $user->getTags() : $tagsUser = null;
+        $tag = $tags->findOneBy(['name' => strval($username)]);
+
+        if ($request->query->has('tag')) {
+            $tag = $tags->findOneBy(['name' => $request->query->get('tag')]);
+        }
+
+        $latestSubelements = $subelements->findByTagsAndElement($page, $element, $tagsUser, $tag);
 
         return $this->render('crud/element_show.html.twig', [
             'paginator' => $latestSubelements,
             'element' => $element,
+            'tagName' => $tag ? $tag->getName() : null,
         ]);
     }
 
@@ -147,7 +165,7 @@ class CrudController extends AbstractController
                 $em->flush();
             }
 
-            return $this->redirectToRoute('crud_element', ['slug' => $element->getSlug()]);
+            return $this->redirectToRoute('subelement_show', ['id' => $subelement->getId()]);
         }
 
         return $this->render('crud/subelement/subelement_form_error.html.twig', [
@@ -158,7 +176,7 @@ class CrudController extends AbstractController
 
     public function subelementForm(Element $element): Response
     {
-        $form = $this->createForm(SubelementType::class);
+        $form = $this->createForm(SubelementType::class, null, ['role' => ['ROLE_USER']]);
 
         return $this->render('crud/subelement/_subelement_form.html.twig', [
             'element' => $element,
@@ -167,7 +185,7 @@ class CrudController extends AbstractController
     }
 
     /**
-     * @Route("/{id<\d+>}}", methods="GET", name="subelement_show")
+     * @Route("/{id<\d+>}", methods="GET", name="subelement_show")
      */
     public function subelementShow(Subelement $subelement): Response
     {
@@ -257,10 +275,9 @@ class CrudController extends AbstractController
     /**
      * @Route("subelement/{id<\d+>}/edit", methods="GET|POST", name="subelement_edit")
      */
-    // @IsGranted("edit", subject="subelement", message="Subelements can only be edited by their authors.")
     public function subelementEdit(Request $request, Subelement $subelement): Response
     {
-        $form = $this->createForm(SubelementType::class, $subelement);
+        $form = $this->createForm(SubelementType::class, $subelement, ['role' => ['ROLE_USER']]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -280,7 +297,6 @@ class CrudController extends AbstractController
     /**
      * @Route("/{id}/delete", methods="POST", name="subelement_delete")
      */
-    // @IsGranted("delete", subject="subelement")
     public function subelementDelete(Request $request, Subelement $subelement): Response
     {
         $element = $subelement->getElement();

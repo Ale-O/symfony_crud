@@ -1,0 +1,97 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_edit_fields' %}
+
+{% block main %}
+    <h1>{{ subelement.title }}</h1>
+    <p class="element-metadata">
+        <span class="metadata"><i class="fa fa-calendar-o"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
+        <br/>
+        <span class="metadata"><i class="fa fa-user-circle-o"></i> {{ subelement.author.fullName }}</span>
+    </p>
+    {{ subelement.content|markdown_to_html|sanitize_html }}
+
+    <div>
+        <a href="{{ path('admin_element_show', {id: idElement}) }}" class="btn btn-link">
+            <i class="fa fa-backward" aria-hidden="true"></i> {{ 'action.back'|trans }}
+        </a>
+    </div>
+
+
+    <hr/>
+
+    <h1>{{ 'title.fields_list'|trans }}</h1>
+
+    {% for field in fields|sort((a, b) => a.position <=> b.position) %}
+        <div>
+            <h3>{{ field.title }}</h3>
+            <p>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% if field.type is same as('text') %}
+                        {{ render(controller('App\\Controller\\FieldsController::textFieldsForm', {'id': field.id})) }}
+                    {% elseif field.type is same as('date') %}
+                        {{ render(controller('App\\Controller\\FieldsController::dateFieldsForm', {'id': field.id})) }}
+                    {% elseif field.type is same as('number') %}
+                        {{ render(controller('App\\Controller\\FieldsController::numberFieldsForm', {'id': field.id})) }}
+                    {% elseif field.type is same as('file') %}
+                        {{ render(controller('App\\Controller\\FieldsController::fileFieldsForm', {'id': field.id})) }}
+                    {% elseif field.type is same as('subelement') %}
+                        {{ render(controller('App\\Controller\\FieldsController::subelementFieldsForm', {'id': field.id})) }}
+                    {% else %}
+                        {{ field.content }}
+                    {% endif %}
+                {% else %}
+                    {% if field.type is same as('text') %}
+                        {{ field.content }}
+                    {% elseif field.type is same as('date') %}
+                        {{ field.content|format_datetime('long', 'medium', '', 'UTC') }}
+                    {% elseif field.type is same as('number') %}
+                        {{ field.content|number_format }}
+                    {% elseif field.type is same as('file') %}
+                        {{ field.content }}
+                    {% elseif field.type is same as('subelement') %}
+                        {% if field.content is null %}
+                            {{ field.content }}
+                        {% else %}
+                            {{ field.content.title }}
+                        {% endif %}
+                    {% else %}
+                        {{ field.content }}
+                    {% endif %}
+                {% endif %}
+            </p>
+        </div>
+    {% else %}
+        <div class='well'>{{ 'fields.no_fields'|trans }}</div>
+    {% endfor %}
+
+
+
+
+{% endblock %}
+
+
+
+
+{% block sidebar %}
+
+    <div class="section">
+        <a href="{{ path('admin_subelement_edit', {id: subelement.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+        </a>
+    </div>
+
+    <div class="section">
+        <a href="{{ path('admin_subelement_show', {id: subelement.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-lock" aria-hidden="true"></i> {{ 'action.lock_fields'|trans }}
+        </a>
+    </div>
+    
+    <div class="section">
+        {{ include('admin/crud/subelement/_subelement_delete_form.html.twig', {subelement: subelement}, with_context = false) }}
+    </div>
+
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}

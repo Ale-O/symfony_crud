@@ -27,6 +27,92 @@
 
     <hr/>
 
+    <div id="element-add-subelement" class="well">
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {{ render(controller('App\\Controller\\Admin\\CrudController::subelementForm', {'id': element.id})) }}
+        {% else %}
+            <p>
+                <a class="btn btn-success" href="{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.sign_in'|trans }}
+                </a>
+                {{ 'element.to_publish_a_subelement'|trans }}
+            </p>
+        {% endif %}
+    </div>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+            <h3>
+                <i class="fa fa-dashboard" aria-hidden="true"></i> {{ 'element.num_subelements'|trans({ 'count': element.subelements|length }) }}
+            </h3>
+        </div>
+    </div>
+
+    <table class="table table-striped table-middle-aligned">
+        <thead>
+            <tr>
+                <th scope="col">{{ 'label.title'|trans }}</th>
+                <th scope="col"><i class="fa fa-tags" aria-hidden="true"></i> {{ 'label.tags'|trans }}</th>
+                <th scope="col" class="text-center"><i class="fa fa-cog" aria-hidden="true"></i> {{ 'label.actions'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for subelement in paginator.results %}
+                <tr>
+                    <td>{{ subelement.title }}</td>
+                    <td>{{ include('admin/crud/subelement/_subelement_tags.html.twig') }}</td>
+                    <td class="text-center">
+                        <div class="item-actions">
+                            <a href="{{ path('admin_subelement_show', {id: subelement.id}) }}" class="btn btn-sm btn-default">
+                                <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show'|trans }}
+                            </a>
+
+                            <a href="{{ path('admin_subelement_edit', {id: subelement.id}) }}" class="btn btn-sm btn-primary">
+                                <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4" align="center">{{ 'element.no_subelements'|trans }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        {% if paginator.hasToPaginate %}
+            <div class="navigation text-center">
+                <ul class="pagination">
+                    {% if paginator.hasPreviousPage %}
+                        <li class="prev"><a href="{{ path('admin_element_paginated', {id: element.id, page: paginator.previousPage}) }}" rel="previous"><i class="fa fw fa-long-arrow-left"></i> {{ 'paginator.previous'|trans }}</a></li>
+                    {% else %}
+                        <li class="prev disabled"><span><i class="fa fw fa-arrow-left"></i> {{ 'paginator.previous'|trans }}</span></li>
+                    {% endif %}
+
+                    {% for i in 1..paginator.lastPage %}
+                        {% if i == paginator.currentPage %}
+                            <li class="active"><span>{{ i }} <span class="sr-only">{{ 'paginator.current'|trans }}</span></span></li>
+                        {% else %}
+                            <li><a href="{{ path('admin_element_paginated', {id: element.id, page: i}) }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if paginator.hasNextPage %}
+                        <li class="next"><a href="{{ path('admin_element_paginated', {id: element.id, page: paginator.nextPage}) }}" rel="next">{{ 'paginator.next'|trans }} <i class="fa fw fa-arrow-right"></i></a></li>
+                    {% else %}
+                        <li class="next disabled"><span>{{ 'paginator.next'|trans }} <i class="fa fw fa-arrow-right"></i></span></li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+
+    <br/>
+    <hr/>
+    <hr/>
+    <br/>
+
     <h1>{{ 'title.textfields_list'|trans }}</h1>
 
     <div class="row">

@@ -92,17 +92,32 @@ class Subelement
     private $datefields;
 
     /**
-     * @ORM\OneToMany(targetEntity=NumberFields::class, mappedBy="subelement")
+     * @ORM\OneToMany(
+     *      targetEntity=NumberFields::class,
+     *      mappedBy="subelement",
+     *      orphanRemoval=true,
+     *      cascade={"persist"}
+     * )
      */
     private $numberFields;
 
     /**
-     * @ORM\OneToMany(targetEntity=FileFields::class, mappedBy="subelement")
+     * @ORM\OneToMany(
+     *      targetEntity=FileFields::class,
+     *      mappedBy="subelement",
+     *      orphanRemoval=true,
+     *      cascade={"persist"}
+     * )
      */
     private $fileFields;
 
     /**
-     * @ORM\OneToMany(targetEntity=SubelementFields::class, mappedBy="Subelement")
+     * @ORM\OneToMany(
+     *      targetEntity=SubelementFields::class,
+     *      mappedBy="Subelement",
+     *      orphanRemoval=true,
+     *      cascade={"persist"}
+     * )
      */
     private $subelementFields;
 
@@ -110,6 +125,16 @@ class Subelement
      * @ORM\OneToMany(targetEntity=SubelementFields::class, mappedBy="content")
      */
     private $selectInSubelementFields;
+
+    /**
+     * @var Tag[]|Collection
+     *
+     * @ORM\ManyToMany(targetEntity="App\Entity\Tag", cascade={"persist"})
+     * @ORM\JoinTable(name="symfony_subelement_tag")
+     * @ORM\OrderBy({"name": "ASC"})
+     * @Assert\Count(max="4", maxMessage="label.too_many_tags")
+     */
+    private $tags;
 
     public function __construct()
     {
@@ -120,6 +145,7 @@ class Subelement
         $this->fileFields = new ArrayCollection();
         $this->subelementFields = new ArrayCollection();
         $this->selectInSubelementFields = new ArrayCollection();
+        $this->tags = new ArrayCollection();
     }
 
     /**
@@ -343,5 +369,24 @@ class Subelement
         }
 
         return $this;
+    }
+
+    public function addTag(Tag ...$tags): void
+    {
+        foreach ($tags as $tag) {
+            if (!$this->tags->contains($tag)) {
+                $this->tags->add($tag);
+            }
+        }
+    }
+
+    public function removeTag(Tag $tag): void
+    {
+        $this->tags->removeElement($tag);
+    }
+
+    public function getTags(): Collection
+    {
+        return $this->tags;
     }
 }

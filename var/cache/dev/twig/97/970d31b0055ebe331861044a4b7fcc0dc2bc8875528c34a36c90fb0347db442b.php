@@ -87,7 +87,7 @@ class __TwigTemplate_3ccbccdd2401c912bfb27b3f3bb84be8e6a1a8144210a09256dc0938306
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["textfields"]) || array_key_exists("textfields", $context) ? $context["textfields"] : (function () { throw new RuntimeError('Variable "textfields" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["textfields"]) || array_key_exists("textfields", $context) ? $context["textfields"] : (function () { throw new RuntimeError('Variable "textfields" does not exist.', 6, $this->source); })()), "title", [], "any", false, false, false, 6), "html", null, true);
         echo "</h1>
 
     ";
@@ -176,7 +176,7 @@ class __TwigTemplate_3ccbccdd2401c912bfb27b3f3bb84be8e6a1a8144210a09256dc0938306
 {% block body_id 'admin_textfields_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit'|trans({'%id%': textfields.id}) }}</h1>
+    <h1>{{ textfields.title }}</h1>
 
     {{ include('admin/fields/_textfields_form.html.twig', {
         form: form,

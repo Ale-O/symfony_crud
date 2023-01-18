@@ -1,0 +1,13 @@
+{% if not subelement.tags.empty %}
+    <p class="subelement-tags">
+        {% for tag in subelement.tags %}
+            <i> </i>
+            <a href="{{ path('admin_element_show', {id: idElement, 'tag': tag.name == app.request.query.get('tag') ? null : tag.name}) }}"
+               class="label label-{{ tag.name == app.request.query.get('tag') ? 'success' : 'default' }}"
+            >
+                <i class="fa fa-tag"></i> {{ tag.name }}
+            </a>
+        {% endfor %}
+    </p>
+{% endif %}
+

@@ -3,7 +3,7 @@
 {% block body_id 'admin_user_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit'|trans({'%id%': user.id}) }}</h1>
+    <h1>{{ user.fullname }}</h1>
 
     {{ include('admin/user/_user_form.html.twig', {
         form: form,

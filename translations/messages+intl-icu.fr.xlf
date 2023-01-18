@@ -209,6 +209,10 @@
                 <source>action.delete</source>
                 <target>Supprimer</target>
             </trans-unit>
+            <trans-unit id="action.undeletable">
+                <source>action.undeletable</source>
+                <target>Non supprimable</target>
+            </trans-unit>
             <trans-unit id="action.delete_element">
                 <source>action.delete_element</source>
                 <target>Supprimer l'élément</target>

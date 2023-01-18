@@ -87,7 +87,7 @@ class __TwigTemplate_5b26ff310c93ec736094ae3b88805d00ade1f3a05986f48551bcf7de288
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["subelementfields"]) || array_key_exists("subelementfields", $context) ? $context["subelementfields"] : (function () { throw new RuntimeError('Variable "subelementfields" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelementfields"]) || array_key_exists("subelementfields", $context) ? $context["subelementfields"] : (function () { throw new RuntimeError('Variable "subelementfields" does not exist.', 6, $this->source); })()), "title", [], "any", false, false, false, 6), "html", null, true);
         echo "</h1>
 
     ";
@@ -176,7 +176,7 @@ class __TwigTemplate_5b26ff310c93ec736094ae3b88805d00ade1f3a05986f48551bcf7de288
 {% block body_id 'admin_subelementfields_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit'|trans({'%id%': subelementfields.id}) }}</h1>
+    <h1>{{ subelementfields.title }}</h1>
 
     {{ include('admin/fields/_subelementfields_form.html.twig', {
         form: form,

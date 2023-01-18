@@ -76,7 +76,6 @@ class TagsController extends AbstractController
     /**
      * @Route("/{id<\d+>}/edit", methods="GET|POST", name="admin_tag_edit")
      */
-    // @IsGranted("edit", subject="tag", message="Tags can only be edited by their authors.")
     public function edit(Request $request, Tag $tag): Response
     {
         $form = $this->createForm(TagType::class, $tag);
@@ -99,7 +98,6 @@ class TagsController extends AbstractController
     /**
      * @Route("/{id}/delete", methods="POST", name="admin_tag_delete")
      */
-    // @IsGranted("delete", subject="tag")
     public function delete(Request $request, Tag $tag): Response
     {
         if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {

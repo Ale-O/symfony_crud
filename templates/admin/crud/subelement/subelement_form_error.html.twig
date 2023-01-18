@@ -1,0 +1,11 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_subelement_show' %}
+
+{% block main %}
+    <h1 class="text-danger">{{ 'title.subelement_error'|trans }}</h1>
+
+    <div class="well">
+        {{ include('admin/crud/subelement/_subelement_form.html.twig') }}
+    </div>
+{% endblock %}

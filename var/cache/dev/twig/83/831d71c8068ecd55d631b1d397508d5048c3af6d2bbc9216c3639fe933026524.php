@@ -87,7 +87,7 @@ class __TwigTemplate_36183b328565b0b16cc3211ab2590d0aaa1e3c847735ce8316ae9d2f821
 
         // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("title.edit", ["%id%" => twig_get_attribute($this->env, $this->source, (isset($context["filefields"]) || array_key_exists("filefields", $context) ? $context["filefields"] : (function () { throw new RuntimeError('Variable "filefields" does not exist.', 6, $this->source); })()), "id", [], "any", false, false, false, 6)]), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["filefields"]) || array_key_exists("filefields", $context) ? $context["filefields"] : (function () { throw new RuntimeError('Variable "filefields" does not exist.', 6, $this->source); })()), "title", [], "any", false, false, false, 6), "html", null, true);
         echo "</h1>
 
     ";
@@ -176,7 +176,7 @@ class __TwigTemplate_36183b328565b0b16cc3211ab2590d0aaa1e3c847735ce8316ae9d2f821
 {% block body_id 'admin_filefields_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit'|trans({'%id%': filefields.id}) }}</h1>
+    <h1>{{ filefields.title }}</h1>
 
     {{ include('admin/fields/_filefields_form.html.twig', {
         form: form,

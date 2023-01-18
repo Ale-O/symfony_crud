@@ -6,6 +6,7 @@ use App\Entity\Element;
 use App\Entity\Tag;
 use App\Pagination\Paginator;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\Persistence\ManagerRegistry;
 use function Symfony\Component\String\u;
 
@@ -30,6 +31,76 @@ class ElementRepository extends ServiceEntityRepository
         if (null !== $tag) {
             $qb->andWhere(':tag MEMBER OF p.tags')
                 ->setParameter('tag', $tag);
+        }
+
+        return (new Paginator($qb))->paginate($page);
+    }
+
+    public function findByTags(int $page = 1, Collection $tags = null, Tag $tag = null): Paginator
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->addSelect('a', 't')
+            ->innerJoin('p.author', 'a')
+            ->leftJoin('p.tags', 't')
+            ->where('p.publishedAt <= :now')
+            ->orderBy('p.publishedAt', 'DESC')
+            ->setParameter('now', new \DateTime())
+        ;
+
+        if (null !== $tags && null !== $tag) {
+            $qb->andWhere(':tags MEMBER OF p.tags OR :tag MEMBER OF p.tags')
+                ->setParameter('tags', $tags)
+                ->setParameter('tag', $tag);
+        } elseif (null !== $tags && null === $tag) {
+            $qb->andWhere(':tags MEMBER OF p.tags')
+                ->setParameter('tags', $tags);
+        } elseif (null === $tags && null !== $tag) {
+            $qb->andWhere(':tag MEMBER OF p.tags')
+                ->setParameter('tag', $tag);
+        }
+
+        return (new Paginator($qb))->paginate($page);
+    }
+
+    // Project : display all elements who contains visibles subelements
+    public function findByTagsAndSubelements(int $page = 1, Collection $subelements = null, Collection $tags = null, Tag $tag = null): Paginator
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->addSelect('a', 't', 's')
+            ->innerJoin('p.author', 'a')
+            ->leftJoin('p.tags', 't')
+            ->leftJoin('p.subelements', 's')
+            ->where('p.publishedAt <= :now')
+            ->orderBy('p.publishedAt', 'DESC')
+            ->setParameter('now', new \DateTime())
+        ;
+
+        if (null !== $subelements && null !== $tags && null !== $tag) {
+            $qb->andWhere(':subelements MEMBER OF p.subelements OR :tags MEMBER OF p.tags OR :tag MEMBER OF p.tags')
+                ->setParameter('subelements', $subelements)
+                ->setParameter('tags', $tags)
+                ->setParameter('tag', $tag);
+        } elseif (null !== $subelements && null !== $tags && null === $tag) {
+            $qb->andWhere(':subelements MEMBER OF p.subelements OR :tags MEMBER OF p.tags')
+                ->setParameter('subelements', $subelements)
+                ->setParameter('tags', $tags);
+        } elseif (null !== $subelements && null === $tags && null !== $tag) {
+            $qb->andWhere(':subelements MEMBER OF p.subelements OR :tag MEMBER OF p.tags')
+                ->setParameter('subelements', $subelements)
+                ->setParameter('tag', $tag);
+        } elseif (null === $subelements && null !== $tags && null !== $tag) {
+            $qb->andWhere(':tags MEMBER OF p.tags OR :tag MEMBER OF p.tags')
+                ->setParameter('tags', $tags)
+                ->setParameter('tag', $tag);
+        } elseif (null === $subelements && null !== $tags && null === $tag) {
+            $qb->andWhere(':tags MEMBER OF p.tags')
+                ->setParameter('tags', $tags);
+        } elseif (null === $subelements && null === $tags && null !== $tag) {
+            $qb->andWhere(':tag MEMBER OF p.tags')
+                ->setParameter('tag', $tag);
+        } elseif (null !== $subelements && null === $tags && null === $tag) {
+            $qb->andWhere(':subelements MEMBER OF p.subelements')
+                ->setParameter('subelements', $subelements);
         }
 
         return (new Paginator($qb))->paginate($page);

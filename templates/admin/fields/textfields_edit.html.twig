@@ -3,7 +3,7 @@
 {% block body_id 'admin_textfields_edit' %}
 
 {% block main %}
-    <h1>{{ 'title.edit'|trans({'%id%': textfields.id}) }}</h1>
+    <h1>{{ textfields.title }}</h1>
 
     {{ include('admin/fields/_textfields_form.html.twig', {
         form: form,

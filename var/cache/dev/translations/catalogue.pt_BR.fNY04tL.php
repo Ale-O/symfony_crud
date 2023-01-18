@@ -530,6 +530,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'action.edit_element' => 'Edit element',
     'action.save' => 'Save',
     'action.delete' => 'Delete',
+    'action.undeletable' => 'Undeletable',
     'action.delete_element' => 'Delete element',
     'action.delete_subelement' => 'Delete registration',
     'delete_modal.title' => 'Are you sure you want to delete ?',

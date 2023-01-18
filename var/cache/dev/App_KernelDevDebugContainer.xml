@@ -5,8 +5,8 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev</parameter>
+    <parameter key="kernel.build_dir">C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -128,21 +128,21 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
-    <parameter key="validator.mapping.cache.file">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/translations</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/profiler</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
@@ -229,7 +229,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
     <parameter key="monolog.swift_mailer.handlers" type="collection"/>
@@ -612,7 +612,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/http_cache</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -622,7 +622,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -1177,7 +1177,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/pools</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1206,7 +1206,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/pools</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1360,14 +1360,14 @@
       <deprecated package="symfony/framework-bundle" version="5.1">The "%service_id%" service is deprecated, use "$session-&gt;getAttributeBag()" instead.</deprecated>
     </service>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/sessions</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-          <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/sessions</argument>
+          <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/sessions</argument>
         </service>
       </argument>
     </service>
@@ -1660,10 +1660,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/validation.php</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/validation.php</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -1746,7 +1746,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/translations</argument>
+        <argument key="cache_dir">C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -2323,7 +2323,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/profiler</argument>
+      <argument>file:C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -2369,7 +2369,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/App_KernelDevDebugContainer</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -3071,7 +3071,7 @@
       <argument type="service" id=".service_locator.9i0MWoK.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev</argument>
+        <argument key="cache_dir">C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3180,14 +3180,14 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/annotations.php</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider">
       <argument type="service">
         <service class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-          <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/annotations.php</argument>
+          <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/annotations.php</argument>
           <argument type="service" id="cache.annotations"/>
           <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
         </service>
@@ -4244,7 +4244,7 @@
         <argument type="service" id="doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -4476,7 +4476,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/twig</argument>
+        <argument key="cache">C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -5151,11 +5151,11 @@
       <argument type="collection">
         <argument key="_default">C:\Users\corbin-a-2\Downloads\symfony\symfony_crud/public/build/entrypoints.json</argument>
       </argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/webpack_encore.cache.php</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/webpack_encore.cache.php</argument>
       <argument type="service" id="cache.webpack_encore"/>
     </service>
     <service id="webpack_encore.cache" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/webpack_encore.cache.php</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/webpack_encore.cache.php</argument>
       <argument type="service" id="cache.webpack_encore"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -5760,10 +5760,31 @@
         <argument key="tags" type="service" id="App\Repository\TagRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.dbY8AGk" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="element" type="service" id=".errored..service_locator.dbY8AGk.App\Entity\Element"/>
+        <argument key="subelements" type="service" id="App\Repository\SubelementRepository"/>
+        <argument key="tags" type="service" id="App\Repository\TagRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.nfDhB4v" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="element" type="service" id=".errored..service_locator.nfDhB4v.App\Entity\Element"/>
+      </argument>
+    </service>
+    <service id=".service_locator.c5BQ3qw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="element" type="service" id=".errored..service_locator.c5BQ3qw.App\Entity\Element"/>
+        <argument key="eventDispatcher" type="service" id="debug.event_dispatcher"/>
+      </argument>
+    </service>
+    <service id=".service_locator.25IZi3d" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="subelement" type="service" id=".errored..service_locator.25IZi3d.App\Entity\Subelement"/>
       </argument>
     </service>
     <service id=".service_locator.uFJkjP8" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5827,24 +5848,12 @@
         <argument key="user" type="service" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.SRCoNHU" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.V0mgu1t" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="element" type="service" id=".errored..service_locator.SRCoNHU.App\Entity\Element"/>
+        <argument key="elements" type="service" id="App\Repository\ElementRepository"/>
         <argument key="subelements" type="service" id="App\Repository\SubelementRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.c5BQ3qw" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="element" type="service" id=".errored..service_locator.c5BQ3qw.App\Entity\Element"/>
-        <argument key="eventDispatcher" type="service" id="debug.event_dispatcher"/>
-      </argument>
-    </service>
-    <service id=".service_locator.25IZi3d" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="subelement" type="service" id=".errored..service_locator.25IZi3d.App\Entity\Subelement"/>
+        <argument key="tags" type="service" id="App\Repository\TagRepository"/>
       </argument>
     </service>
     <service id=".service_locator.MlSflDM" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5867,13 +5876,19 @@
         <argument key="security" type="service" id="security.helper"/>
       </argument>
     </service>
-    <service id=".service_locator..9i7GG7" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.njU82ge" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CrudController::delete" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\CrudController::edit" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\CrudController::index" type="service" id=".service_locator.G4iNSV6"/>
-        <argument key="App\Controller\Admin\CrudController::show" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\Admin\CrudController::show" type="service" id=".service_locator.dbY8AGk"/>
+        <argument key="App\Controller\Admin\CrudController::subelementDelete" type="service" id=".service_locator.25IZi3d"/>
+        <argument key="App\Controller\Admin\CrudController::subelementEdit" type="service" id=".service_locator.25IZi3d"/>
+        <argument key="App\Controller\Admin\CrudController::subelementEditFields" type="service" id=".service_locator.25IZi3d"/>
+        <argument key="App\Controller\Admin\CrudController::subelementForm" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\Admin\CrudController::subelementNew" type="service" id=".service_locator.c5BQ3qw"/>
+        <argument key="App\Controller\Admin\CrudController::subelementShow" type="service" id=".service_locator.25IZi3d"/>
         <argument key="App\Controller\Admin\FieldsController::deleteDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController::deleteFileFields" type="service" id=".service_locator.N088Aaf"/>
         <argument key="App\Controller\Admin\FieldsController::deleteNumberFields" type="service" id=".service_locator.brTJSoj"/>
@@ -5905,8 +5920,8 @@
         <argument key="App\Controller\Admin\UsersController::levelUp" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\Admin\UsersController::new" type="service" id=".service_locator.gPh6X_L"/>
         <argument key="App\Controller\Admin\UsersController::show" type="service" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\CrudController::elementShow" type="service" id=".service_locator.SRCoNHU"/>
-        <argument key="App\Controller\CrudController::index" type="service" id=".service_locator.G4iNSV6"/>
+        <argument key="App\Controller\CrudController::elementShow" type="service" id=".service_locator.dbY8AGk"/>
+        <argument key="App\Controller\CrudController::index" type="service" id=".service_locator.V0mgu1t"/>
         <argument key="App\Controller\CrudController::search" type="service" id=".service_locator.MlSflDM"/>
         <argument key="App\Controller\CrudController::subelementDelete" type="service" id=".service_locator.25IZi3d"/>
         <argument key="App\Controller\CrudController::subelementEdit" type="service" id=".service_locator.25IZi3d"/>
@@ -5937,7 +5952,13 @@
         <argument key="App\Controller\Admin\CrudController:delete" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\CrudController:edit" type="service" id=".service_locator.nfDhB4v"/>
         <argument key="App\Controller\Admin\CrudController:index" type="service" id=".service_locator.G4iNSV6"/>
-        <argument key="App\Controller\Admin\CrudController:show" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\Admin\CrudController:show" type="service" id=".service_locator.dbY8AGk"/>
+        <argument key="App\Controller\Admin\CrudController:subelementDelete" type="service" id=".service_locator.25IZi3d"/>
+        <argument key="App\Controller\Admin\CrudController:subelementEdit" type="service" id=".service_locator.25IZi3d"/>
+        <argument key="App\Controller\Admin\CrudController:subelementEditFields" type="service" id=".service_locator.25IZi3d"/>
+        <argument key="App\Controller\Admin\CrudController:subelementForm" type="service" id=".service_locator.nfDhB4v"/>
+        <argument key="App\Controller\Admin\CrudController:subelementNew" type="service" id=".service_locator.c5BQ3qw"/>
+        <argument key="App\Controller\Admin\CrudController:subelementShow" type="service" id=".service_locator.25IZi3d"/>
         <argument key="App\Controller\Admin\FieldsController:deleteDateFields" type="service" id=".service_locator.hvP7sfc"/>
         <argument key="App\Controller\Admin\FieldsController:deleteFileFields" type="service" id=".service_locator.N088Aaf"/>
         <argument key="App\Controller\Admin\FieldsController:deleteNumberFields" type="service" id=".service_locator.brTJSoj"/>
@@ -5969,8 +5990,8 @@
         <argument key="App\Controller\Admin\UsersController:levelUp" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\Admin\UsersController:new" type="service" id=".service_locator.gPh6X_L"/>
         <argument key="App\Controller\Admin\UsersController:show" type="service" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\CrudController:elementShow" type="service" id=".service_locator.SRCoNHU"/>
-        <argument key="App\Controller\CrudController:index" type="service" id=".service_locator.G4iNSV6"/>
+        <argument key="App\Controller\CrudController:elementShow" type="service" id=".service_locator.dbY8AGk"/>
+        <argument key="App\Controller\CrudController:index" type="service" id=".service_locator.V0mgu1t"/>
         <argument key="App\Controller\CrudController:search" type="service" id=".service_locator.MlSflDM"/>
         <argument key="App\Controller\CrudController:subelementDelete" type="service" id=".service_locator.25IZi3d"/>
         <argument key="App\Controller\CrudController:subelementEdit" type="service" id=".service_locator.25IZi3d"/>
@@ -6499,16 +6520,19 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator..9i7GG7"/>
+      <argument type="service" id=".service_locator.njU82ge"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator..9i7GG7"/>
+      <argument type="service" id=".service_locator.njU82ge"/>
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.dbY8AGk.App\Entity\Element" class="App\Entity\Element"/>
     <service id=".errored..service_locator.nfDhB4v.App\Entity\Element" class="App\Entity\Element"/>
+    <service id=".errored..service_locator.c5BQ3qw.App\Entity\Element" class="App\Entity\Element"/>
+    <service id=".errored..service_locator.25IZi3d.App\Entity\Subelement" class="App\Entity\Subelement"/>
     <service id=".errored..service_locator.uFJkjP8.App\Entity\TextFields" class="App\Entity\TextFields"/>
     <service id=".errored..service_locator.hvP7sfc.App\Entity\DateFields" class="App\Entity\DateFields"/>
     <service id=".errored..service_locator.brTJSoj.App\Entity\NumberFields" class="App\Entity\NumberFields"/>
@@ -6516,9 +6540,6 @@
     <service id=".errored..service_locator.7bDjG1d.App\Entity\SubelementFields" class="App\Entity\SubelementFields"/>
     <service id=".errored..service_locator.S92MJGp.App\Entity\Tag" class="App\Entity\Tag"/>
     <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
-    <service id=".errored..service_locator.SRCoNHU.App\Entity\Element" class="App\Entity\Element"/>
-    <service id=".errored..service_locator.c5BQ3qw.App\Entity\Element" class="App\Entity\Element"/>
-    <service id=".errored..service_locator.25IZi3d.App\Entity\Subelement" class="App\Entity\Subelement"/>
     <service id=".errored..service_locator.div2LH8.App\Entity\FileFields" class="App\Entity\FileFields"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
@@ -6718,7 +6739,7 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>o03+nEGp5J</argument>
       <argument>0</argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/pools</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -6728,7 +6749,7 @@
       <argument>3aY-6-DeQ-</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/pools</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6736,7 +6757,7 @@
       <argument>xme-vDEUOy</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/pools</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6744,7 +6765,7 @@
       <argument>jRf7W86q1u</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/pools</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6752,7 +6773,7 @@
       <argument>D5zmh9vocZ</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/pools</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6760,7 +6781,7 @@
       <argument>i8iv0Hmg1A</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/pools</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6768,7 +6789,7 @@
       <argument>ODEHhvzJAG</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/pools</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6779,7 +6800,7 @@
       <argument>DTH8bXQSd4</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\corbin-a-2\Downloads\symfony\symfony_crud\var\cache\dev/pools</argument>
+      <argument>C:/Users/corbin-a-2/Downloads/symfony/symfony_crud/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6922,7 +6943,7 @@
     <service id="html_sanitizer" alias="html_sanitizer.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator..9i7GG7"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.njU82ge"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
     <service id="Psr\Log\LoggerInterface $cacheLogger" alias="monolog.logger.cache"/>

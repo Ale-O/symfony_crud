@@ -1,0 +1,17 @@
+{{ form_start(form, {method: 'POST', action: path('admin_subelement_new', {'id': element.id})}) }}
+    <fieldset>
+        <legend>
+            <i class="fa fa-list" aria-hidden="true"></i> {{ 'title.add_subelement'|trans }}
+        </legend>
+
+        {{ form_widget(form) }}
+
+
+
+        <div class="form-group">
+            <button class="btn btn-primary pull-right" type="submit">
+                <i class="fa fa-plus" aria-hidden="true"></i> {{ 'action.quick_add_subelement'|trans }}
+            </button>
+        </div>
+    </fieldset>
+{{ form_end(form) }}
