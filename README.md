@@ -4,6 +4,20 @@
 
 <hr />
 
+## Project setup
+```
+npm install or yarn install
+download symfony CLI : https://symfony.com/download
+
+```
+
+### Run
+```
+symfony server:start
+```
+
+<hr />
+
 This is a CRUD Application created from the framework Symfony.
 
 You can navigate on the application without connection, or connect as user or administrator.
@@ -45,4 +59,3 @@ En tant qu’utilisateur, on peut :
 La page de connexion de l’application permet au visiteur de se créer un compte.
 
 L’application est disponible en français et en anglais.
-
