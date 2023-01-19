@@ -1,0 +1,10 @@
+c28bee,127.0.0.1,GET,http://localhost:8000/,1674145500,,302
+d43c75,127.0.0.1,GET,http://localhost:8000/fr,1674145501,,200
+e5de46,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_locale%3Dfr%26_format%3Dhtml%26_controller%3DSymfony%255CBundle%255CFrameworkBundle%255CController%255CTemplateController%253A%253AtemplateAction,1674145504,2ca2ef,200
+2ca2ef,127.0.0.1,GET,http://localhost:8000/fr/login,1674145504,,200
+215ea0,127.0.0.1,POST,http://localhost:8000/fr/login,1674145508,,302
+8d9a8e,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_locale%3Dfr%26_format%3Dhtml%26_controller%3DSymfony%255CBundle%255CFrameworkBundle%255CController%255CTemplateController%253A%253AtemplateAction,1674145510,b258f0,200
+b258f0,127.0.0.1,GET,http://localhost:8000/fr/crud/,1674145511,,200
+ad48d4,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_locale%3Dfr%26_format%3Dhtml%26_controller%3DSymfony%255CBundle%255CFrameworkBundle%255CController%255CTemplateController%253A%253AtemplateAction,1674145513,46eed3,200
+46eed3,127.0.0.1,GET,http://localhost:8000/fr/admin/element/,1674145513,,200
+6e3a25,127.0.0.1,GET,http://localhost:8000/fr,1674145515,,200
