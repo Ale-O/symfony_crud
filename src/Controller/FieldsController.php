@@ -84,6 +84,7 @@ class FieldsController extends AbstractController
     {
         $subelement = $textfields->getSubelement();
         $idSubelement = $subelement->getId();
+        $anchor = $textfields->getId();
 
         $form = $this->createForm(TextFieldsType::class, $textfields);
         $form->handleRequest($request);
@@ -95,9 +96,9 @@ class FieldsController extends AbstractController
             isset($user) ? $roles = $user->getRoles() : $roles = '';
 
             if ($roles[0] === 'ROLE_ADMIN') {
-                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             } else {
-                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             }
         }
 
@@ -115,6 +116,7 @@ class FieldsController extends AbstractController
     {
         $subelement = $datefields->getSubelement();
         $idSubelement = $subelement->getId();
+        $anchor = $datefields->getId();
 
         $form = $this->createForm(DateFieldsType::class, $datefields);
         $form->handleRequest($request);
@@ -126,9 +128,9 @@ class FieldsController extends AbstractController
             isset($user) ? $roles = $user->getRoles() : $roles = '';
 
             if ($roles[0] === 'ROLE_ADMIN') {
-                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             } else {
-                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             }
         }
 
@@ -146,6 +148,7 @@ class FieldsController extends AbstractController
     {
         $subelement = $numberfields->getSubelement();
         $idSubelement = $subelement->getId();
+        $anchor = $numberfields->getId();
 
         $form = $this->createForm(NumberFieldsType::class, $numberfields);
         $form->handleRequest($request);
@@ -157,9 +160,9 @@ class FieldsController extends AbstractController
             isset($user) ? $roles = $user->getRoles() : $roles = '';
 
             if ($roles[0] === 'ROLE_ADMIN') {
-                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             } else {
-                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             }
         }
 
@@ -173,6 +176,7 @@ class FieldsController extends AbstractController
     {
         $subelement = $filefields->getSubelement();
         $idSubelement = $subelement->getId();
+        $anchor = $filefields->getId();
 
         $form = $this->createForm(FileFieldsType::class, $filefields);
         $form->handleRequest($request);
@@ -184,9 +188,9 @@ class FieldsController extends AbstractController
             isset($user) ? $roles = $user->getRoles() : $roles = '';
 
             if ($roles[0] === 'ROLE_ADMIN') {
-                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             } else {
-                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             }
         }
 
@@ -204,6 +208,7 @@ class FieldsController extends AbstractController
     {
         $subelement = $subelementfields->getSubelement();
         $idSubelement = $subelement->getId();
+        $anchor = $subelementfields->getId();
 
         $form = $this->createForm(SubelementFieldsType::class, $subelementfields);
         $form->handleRequest($request);
@@ -215,9 +220,9 @@ class FieldsController extends AbstractController
             isset($user) ? $roles = $user->getRoles() : $roles = '';
 
             if ($roles[0] === 'ROLE_ADMIN') {
-                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             } else {
-                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             }
         }
 
@@ -235,6 +240,7 @@ class FieldsController extends AbstractController
     {
         $subelement = $filefields->getSubelement();
         $idSubelement = $subelement->getId();
+        $anchor = $filefields->getId();
 
         $form = $this->createForm(FileFieldsType::class, $filefields);
         $form->handleRequest($request);
@@ -268,9 +274,9 @@ class FieldsController extends AbstractController
             isset($user) ? $roles = $user->getRoles() : $roles = '';
 
             if ($roles[0] === 'ROLE_ADMIN') {
-                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('admin_subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             } else {
-                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement]);
+                return $this->redirectToRoute('subelement_edit_fields', ['id' => $idSubelement, 'anchor' => $anchor]);
             }
         }
 

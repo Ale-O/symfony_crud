@@ -42,7 +42,10 @@ class __TwigTemplate_26325c90cd9923644da90c0c394a3b96ff96d58518fffdae8e6fdb24c71
         // line 1
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 1, $this->source); })()), 'form_start', ["method" => "POST", "action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("subelementfields_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["subelementfields"]) || array_key_exists("subelementfields", $context) ? $context["subelementfields"] : (function () { throw new RuntimeError('Variable "subelementfields" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)])]);
         echo "
-    <fieldset>
+    <fieldset id=";
+        // line 2
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["subelementfields"]) || array_key_exists("subelementfields", $context) ? $context["subelementfields"] : (function () { throw new RuntimeError('Variable "subelementfields" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2), "html", null, true);
+        echo ">
 
         ";
         // line 4
@@ -50,21 +53,14 @@ class __TwigTemplate_26325c90cd9923644da90c0c394a3b96ff96d58518fffdae8e6fdb24c71
         echo "
         ";
         // line 5
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), "content", [], "any", false, false, false, 5), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), "content", [], "any", false, false, false, 5), 'row', ["attr" => ["onblur" => "this.form.submit()"]]);
         echo "
 
-        <div class=\"form-group\">
-            <button class=\"btn btn-primary pull-right\" type=\"submit\">
-                <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> ";
-        // line 9
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("action.edit"), "html", null, true);
-        echo "
-            </button>
-        </div>
     </fieldset>
+    <br>
 ";
-        // line 13
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'form_end');
+        // line 9
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -87,23 +83,19 @@ class __TwigTemplate_26325c90cd9923644da90c0c394a3b96ff96d58518fffdae8e6fdb24c71
 
     public function getDebugInfo()
     {
-        return array (  67 => 13,  60 => 9,  53 => 5,  49 => 4,  43 => 1,);
+        return array (  63 => 9,  56 => 5,  52 => 4,  47 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{{ form_start(form, {method: 'POST', action: path('subelementfields_edit', {'id': subelementfields.id})}) }}
-    <fieldset>
+    <fieldset id={{ subelementfields.id }}>
 
         {{ form_errors(form) }}
-        {{ form_row(form.content) }}
+        {{ form_row(form.content, {'attr': {'onblur': 'this.form.submit()'} }) }}
 
-        <div class=\"form-group\">
-            <button class=\"btn btn-primary pull-right\" type=\"submit\">
-                <i class=\"fa fa-edit\" aria-hidden=\"true\"></i> {{ 'action.edit'|trans }}
-            </button>
-        </div>
     </fieldset>
+    <br>
 {{ form_end(form) }}
 ", "crud/fields/_subelementfields_form.html.twig", "C:\\Users\\corbin-a-2\\Downloads\\symfony\\symfony_crud\\templates\\crud\\fields\\_subelementfields_form.html.twig");
     }

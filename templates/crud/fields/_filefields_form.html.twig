@@ -1,13 +1,9 @@
 {{ form_start(form, {method: 'POST', action: path('filefields_edit', {'id': filefields.id})}) }}
-    <fieldset>
+    <fieldset id={{ filefields.id }}>
 
         {{ form_errors(form) }}
-        {{ form_row(form.content) }}
+        {{ form_row(form.content, {'attr': {'onchange': 'this.form.submit()'} }) }}
 
-        <div class="form-group">
-            <button class="btn btn-primary pull-right" type="submit">
-                <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit'|trans }}
-            </button>
-        </div>
     </fieldset>
+    <br>
 {{ form_end(form) }}

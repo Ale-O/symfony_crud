@@ -231,10 +231,11 @@ class CrudController extends AbstractController
     /**
      * @Route("editFields/{id<\d+>}}", methods="GET", name="subelement_edit_fields")
      */
-    public function subelementEditFields(Subelement $subelement): Response
+    public function subelementEditFields(Request $request, Subelement $subelement): Response
     {
         $element = $subelement->getElement();
         $slugElement = $element->getSlug();
+        isset($_GET['anchor']) ? $anchor = $_GET['anchor'] : $anchor = null;
 
         $arrayTextFields = $subelement->getTextFields();
         $arrayDateFields = $subelement->getDateFields();
@@ -269,6 +270,7 @@ class CrudController extends AbstractController
             'subelement' => $subelement,
             'slugElement' => $slugElement,
             'fields' => $fields,
+            'anchor' => $anchor,
         ]);
     }
 

@@ -1,5 +1,5 @@
 {{ form_start(form, {method: 'POST', action: path('datefields_edit', {'id': datefields.id})}) }}
-    <fieldset>
+    <fieldset id={{ datefields.id }}>
 
         {{ form_errors(form) }}
         {{ form_row(form.content) }}
@@ -10,4 +10,5 @@
             </button>
         </div>
     </fieldset>
+    <br>
 {{ form_end(form) }}

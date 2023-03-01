@@ -2,6 +2,17 @@
 
 {% block body_id 'admin_edit_fields' %}
 
+{% block javascripts %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            if(document.getElementById("{{ anchor }}")){
+                location.href = "#{{ anchor }}"
+                document.getElementById("{{ anchor }}").style.color = "green";
+            }
+        });
+    </script>
+{% endblock %}
+
 {% block main %}
     <h1>{{ subelement.title }}</h1>
     <p class="element-metadata">

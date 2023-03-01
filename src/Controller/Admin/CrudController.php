@@ -309,6 +309,7 @@ class CrudController extends AbstractController
     {
         $element = $subelement->getElement();
         $idElement = $element->getId();
+        isset($_GET['anchor']) ? $anchor = $_GET['anchor'] : $anchor = null;
 
         $arrayTextFields = $subelement->getTextFields();
         $arrayDateFields = $subelement->getDateFields();
@@ -343,6 +344,7 @@ class CrudController extends AbstractController
             'subelement' => $subelement,
             'idElement' => $idElement,
             'fields' => $fields,
+            'anchor' => $anchor,
         ]);
     }
 
