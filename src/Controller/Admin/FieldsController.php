@@ -283,8 +283,11 @@ class FieldsController extends AbstractController
      */
     public function showTextFields(TextFields $textfields): Response
     {
+        $childrenTextFields = $textfields->getChildFields();
+
         return $this->render('admin/fields/textfields_show.html.twig', [
             'textfields' => $textfields,
+            'childrenTextFields' => $childrenTextFields,
         ]);
     }
 
@@ -293,8 +296,11 @@ class FieldsController extends AbstractController
      */
     public function showDateFields(DateFields $datefields): Response
     {
+        $childrenDateFields = $datefields->getChildFields();
+
         return $this->render('admin/fields/datefields_show.html.twig', [
             'datefields' => $datefields,
+            'childrenDateFields' => $childrenDateFields,
         ]);
     }
 
@@ -303,8 +309,11 @@ class FieldsController extends AbstractController
      */
     public function showNumberFields(NumberFields $numberfields): Response
     {
+        $childrenNumberFields = $numberfields->getChildFields();
+
         return $this->render('admin/fields/numberfields_show.html.twig', [
             'numberfields' => $numberfields,
+            'childrenNumberFields' => $childrenNumberFields,
         ]);
     }
 
@@ -313,8 +322,11 @@ class FieldsController extends AbstractController
      */
     public function showFileFields(FileFields $filefields): Response
     {
+        $childrenFileFields = $filefields->getChildFields();
+
         return $this->render('admin/fields/filefields_show.html.twig', [
             'filefields' => $filefields,
+            'childrenFileFields' => $childrenFileFields,
         ]);
     }
 
@@ -323,8 +335,11 @@ class FieldsController extends AbstractController
      */
     public function showSubelementFields(SubelementFields $subelementfields): Response
     {
+        $childrenSubelementFields = $subelementfields->getChildFields();
+
         return $this->render('admin/fields/subelementfields_show.html.twig', [
             'subelementfields' => $subelementfields,
+            'childrenSubelementFields' => $childrenSubelementFields,
         ]);
     }
 

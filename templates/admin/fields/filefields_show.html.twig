@@ -4,7 +4,50 @@
 
 {% block main %}
     <h1>{{ filefields.title }}</h1>
-    <h2>{{ filefields.position }}</h2>
+    <h3>{{ 'label.position'|trans }} : {{ filefields.position }}</h3>
+
+    <a href="{{ path('admin_element_show', {id: filefields.element.id}) }}" class="btn btn-link">
+        <i class="fa fa-database" aria-hidden="true"></i> {{ 'action.back'|trans }}
+    </a>
+    
+    <br/>
+    <hr/>
+    <br/>
+
+    <table class="table table-striped table-middle-aligned">
+        <thead>
+            <tr>
+                <th scope="col"><i class="fa fa-tags" aria-hidden="true"></i> {{ 'label.tags'|trans }}</th>
+                <th scope="col">{{ 'label.subelement'|trans }}</th>
+                <th scope="col">{{ 'label.content'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for childFields in childrenFileFields %}
+                <tr>
+                    <td>
+                        {% if not childFields.subelement.tags.empty %}
+                            <p class="subelement-tags">
+                                {% for tag in childFields.subelement.tags %}
+                                    <br/>
+                                    <i class="fa fa-tag"></i> {{ tag.name }}
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+                    </td>
+                    <td>{{ childFields.subelement.title }}</td>
+                    <td>
+                    {{ childFields.content }}
+                    <a href="{{ asset('uploads/files/' ~ childFields.content) }}">{{ 'file.show_pdf'|trans }}</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4" align="center">{{ 'fields.no_fields'|trans }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 {% endblock %}
 

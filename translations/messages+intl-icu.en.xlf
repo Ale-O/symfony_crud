@@ -702,6 +702,10 @@
                 <source>title.subelementfields_error</source>
                 <target>Error in subelementfield</target>
             </trans-unit>
+            <trans-unit id="label.subelement">
+                <source>label.subelement</source>
+                <target>Registration</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

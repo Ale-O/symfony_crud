@@ -339,6 +339,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'Filter' => 'Filtre',
     'Content' => 'Contenu',
     'title.subelementfields_error' => 'Erreur sur le choix dans la liste',
+    'label.subelement' => 'Enregistrement',
   ),
 ));
 
@@ -681,6 +682,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'Filter' => 'Filter',
     'Content' => 'Content',
     'title.subelementfields_error' => 'Error in subelementfield',
+    'label.subelement' => 'Registration',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueEn);

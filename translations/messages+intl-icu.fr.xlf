@@ -702,6 +702,10 @@
                 <source>title.subelementfields_error</source>
                 <target>Erreur sur le choix dans la liste</target>
             </trans-unit>
+            <trans-unit id="label.subelement">
+                <source>label.subelement</source>
+                <target>Enregistrement</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
