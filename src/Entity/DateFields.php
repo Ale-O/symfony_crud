@@ -43,6 +43,7 @@ class DateFields
     /**
      * @var \DateTime
      * @ORM\Column(type="datetime")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $content;
 

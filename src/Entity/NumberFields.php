@@ -36,6 +36,7 @@ class NumberFields
 
     /**
      * @ORM\Column(type="integer")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $content;
 

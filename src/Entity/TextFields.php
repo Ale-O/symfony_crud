@@ -42,6 +42,7 @@ class TextFields
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $content;
 

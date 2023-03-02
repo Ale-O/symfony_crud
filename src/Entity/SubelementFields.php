@@ -36,6 +36,7 @@ class SubelementFields
 
     /**
      * @ORM\ManyToOne(targetEntity=Subelement::class, inversedBy="selectInSubelementFields")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $content;
 
