@@ -6,6 +6,7 @@ use App\Repository\DateFieldsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=DateFieldsRepository::class)
@@ -13,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 class DateFields
 {
     /**
+     * @Groups("date_fields_info")
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -36,18 +38,21 @@ class DateFields
     private $subelement;
 
     /**
+     * @Groups("date_fields_info")
      * @ORM\Column(type="string", length=50)
      */
     private $title;
 
     /**
      * @var \DateTime
+     * @Groups("date_fields_info")
      * @ORM\Column(type="datetime")
      * @ORM\JoinColumn(nullable=true)
      */
     private $content;
 
     /**
+     * @Groups("date_fields_info")
      * @ORM\Column(type="integer")
      */
     private $position;
