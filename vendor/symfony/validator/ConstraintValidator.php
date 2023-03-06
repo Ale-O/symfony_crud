@@ -54,7 +54,7 @@ abstract class ConstraintValidator implements ConstraintValidatorInterface
      *
      * @param mixed $value The value to return the type of
      *
-     * @return string The type of the value
+     * @return string
      */
     protected function formatTypeOf($value)
     {
@@ -82,12 +82,12 @@ abstract class ConstraintValidator implements ConstraintValidatorInterface
      * @param int   $format A bitwise combination of the format
      *                      constants in this class
      *
-     * @return string The string representation of the passed value
+     * @return string
      */
     protected function formatValue($value, int $format = 0)
     {
         if (($format & self::PRETTY_DATE) && $value instanceof \DateTimeInterface) {
-            if (class_exists('IntlDateFormatter')) {
+            if (class_exists(\IntlDateFormatter::class)) {
                 $formatter = new \IntlDateFormatter(\Locale::getDefault(), \IntlDateFormatter::MEDIUM, \IntlDateFormatter::SHORT, 'UTC');
 
                 return $formatter->format(new \DateTime(
@@ -144,7 +144,7 @@ abstract class ConstraintValidator implements ConstraintValidatorInterface
      * @param int   $format A bitwise combination of the format
      *                      constants in this class
      *
-     * @return string The string representation of the value list
+     * @return string
      *
      * @see formatValue()
      */

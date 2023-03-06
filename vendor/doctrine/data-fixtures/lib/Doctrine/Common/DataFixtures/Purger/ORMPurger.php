@@ -9,8 +9,10 @@ use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Schema\Identifier;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
+
 use function array_reverse;
 use function array_search;
+use function assert;
 use function count;
 use function is_callable;
 use function method_exists;
@@ -19,7 +21,7 @@ use function preg_match;
 /**
  * Class responsible for purging databases of data before reloading data fixtures.
  */
-class ORMPurger implements PurgerInterface
+class ORMPurger implements PurgerInterface, ORMPurgerInterface
 {
     public const PURGE_MODE_DELETE   = 1;
     public const PURGE_MODE_TRUNCATE = 2;
@@ -44,8 +46,8 @@ class ORMPurger implements PurgerInterface
     /**
      * Construct new purger instance.
      *
-     * @param EntityManagerInterface $em       EntityManagerInterface instance used for persistence.
-     * @param string[]               $excluded array of table/view names to be excluded from purge
+     * @param EntityManagerInterface|null $em       EntityManagerInterface instance used for persistence.
+     * @param string[]                    $excluded array of table/view names to be excluded from purge
      */
     public function __construct(?EntityManagerInterface $em = null, array $excluded = [])
     {
@@ -75,9 +77,7 @@ class ORMPurger implements PurgerInterface
         return $this->purgeMode;
     }
 
-    /**
-     * Set the EntityManagerInterface instance this purger instance should use.
-     */
+    /** @inheritDoc */
     public function setEntityManager(EntityManagerInterface $em)
     {
         $this->em = $em;
@@ -118,7 +118,8 @@ class ORMPurger implements PurgerInterface
         for ($i = count($commitOrder) - 1; $i >= 0; --$i) {
             $class = $commitOrder[$i];
 
-            if ((isset($class->isEmbeddedClass) && $class->isEmbeddedClass) ||
+            if (
+                (isset($class->isEmbeddedClass) && $class->isEmbeddedClass) ||
                 $class->isMappedSuperclass ||
                 ($class->isInheritanceTypeSingleTable() && $class->name !== $class->rootEntityName)
             ) {
@@ -129,10 +130,16 @@ class ORMPurger implements PurgerInterface
         }
 
         $connection            = $this->em->getConnection();
-        $filterExpr            = $connection->getConfiguration()->getFilterSchemaAssetsExpression();
+        $filterExpr            = method_exists(
+            $connection->getConfiguration(),
+            'getFilterSchemaAssetsExpression'
+        ) ? $connection->getConfiguration()->getFilterSchemaAssetsExpression() : null;
         $emptyFilterExpression = empty($filterExpr);
 
-        $schemaAssetsFilter = method_exists($connection->getConfiguration(), 'getSchemaAssetsFilter') ? $connection->getConfiguration()->getSchemaAssetsFilter() : null;
+        $schemaAssetsFilter = method_exists(
+            $connection->getConfiguration(),
+            'getSchemaAssetsFilter'
+        ) ? $connection->getConfiguration()->getSchemaAssetsFilter() : null;
 
         foreach ($orderedTables as $tbl) {
             // If we have a filter expression, check it and skip if necessary
@@ -151,9 +158,9 @@ class ORMPurger implements PurgerInterface
             }
 
             if ($this->purgeMode === self::PURGE_MODE_DELETE) {
-                $connection->executeUpdate($this->getDeleteFromTableSQL($tbl, $platform));
+                $connection->executeStatement($this->getDeleteFromTableSQL($tbl, $platform));
             } else {
-                $connection->executeUpdate($platform->getTruncateTableSQL($tbl, true));
+                $connection->executeStatement($platform->getTruncateTableSQL($tbl, true));
             }
         }
     }
@@ -189,8 +196,8 @@ class ORMPurger implements PurgerInterface
                     continue;
                 }
 
-                /** @var ClassMetadata $targetClass */
-                $targetClass     = $em->getClassMetadata($assoc['targetEntity']);
+                $targetClass = $em->getClassMetadata($assoc['targetEntity']);
+                assert($targetClass instanceof ClassMetadata);
                 $targetClassName = $targetClass->getName();
 
                 if (! $sorter->hasNode($targetClassName)) {
@@ -218,9 +225,9 @@ class ORMPurger implements PurgerInterface
     }
 
     /**
-     * @param array $classes
+     * @param ClassMetadata[] $classes
      *
-     * @return array
+     * @return string[]
      */
     private function getAssociationTables(array $classes, AbstractPlatform $platform)
     {
@@ -239,32 +246,35 @@ class ORMPurger implements PurgerInterface
         return $associationTables;
     }
 
-    private function getTableName(ClassMetadata $class, AbstractPlatform $platform) : string
+    private function getTableName(ClassMetadata $class, AbstractPlatform $platform): string
     {
         if (isset($class->table['schema']) && ! method_exists($class, 'getSchemaName')) {
-            return $class->table['schema'] . '.' . $this->em->getConfiguration()->getQuoteStrategy()->getTableName($class, $platform);
+            return $class->table['schema'] . '.' .
+                $this->em->getConfiguration()
+                ->getQuoteStrategy()
+                ->getTableName($class, $platform);
         }
 
         return $this->em->getConfiguration()->getQuoteStrategy()->getTableName($class, $platform);
     }
 
-    /**
-     * @param array            $association
-     * @param ClassMetadata    $class
-     * @param AbstractPlatform $platform
-     *
-     * @return string
-     */
-    private function getJoinTableName($assoc, $class, $platform)
-    {
+    /** @param mixed[] $assoc */
+    private function getJoinTableName(
+        array $assoc,
+        ClassMetadata $class,
+        AbstractPlatform $platform
+    ): string {
         if (isset($assoc['joinTable']['schema']) && ! method_exists($class, 'getSchemaName')) {
-            return $assoc['joinTable']['schema'] . '.' . $this->em->getConfiguration()->getQuoteStrategy()->getJoinTableName($assoc, $class, $platform);
+            return $assoc['joinTable']['schema'] . '.' .
+                $this->em->getConfiguration()
+                ->getQuoteStrategy()
+                ->getJoinTableName($assoc, $class, $platform);
         }
 
         return $this->em->getConfiguration()->getQuoteStrategy()->getJoinTableName($assoc, $class, $platform);
     }
 
-    private function getDeleteFromTableSQL(string $tableName, AbstractPlatform $platform) : string
+    private function getDeleteFromTableSQL(string $tableName, AbstractPlatform $platform): string
     {
         $tableIdentifier = new Identifier($tableName);
 

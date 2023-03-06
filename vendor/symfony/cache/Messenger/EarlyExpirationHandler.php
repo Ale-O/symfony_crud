@@ -59,7 +59,7 @@ class EarlyExpirationHandler implements MessageHandlerInterface
 
         static $setMetadata;
 
-        $setMetadata = $setMetadata ?? \Closure::bind(
+        $setMetadata ?? $setMetadata = \Closure::bind(
             function (CacheItem $item, float $startTime) {
                 if ($item->expiry > $endTime = microtime(true)) {
                     $item->newMetadata[CacheItem::METADATA_EXPIRY] = $item->expiry;
@@ -73,7 +73,8 @@ class EarlyExpirationHandler implements MessageHandlerInterface
         $startTime = microtime(true);
         $pool = $message->findPool($this->reverseContainer);
         $callback = $message->findCallback($this->reverseContainer);
-        $value = $callback($item);
+        $save = true;
+        $value = $callback($item, $save);
         $setMetadata($item, $startTime);
         $pool->save($item->set($value));
     }

@@ -6,6 +6,7 @@ use App\Repository\TextFieldsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=TextFieldsRepository::class)
@@ -13,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 class TextFields
 {
     /**
+     * @Groups("text_fields_info")
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -36,17 +38,20 @@ class TextFields
     private $subelement;
 
     /**
+     * @Groups("text_fields_info")
      * @ORM\Column(type="string", length=50)
      */
     private $title;
 
     /**
+     * @Groups("text_fields_info")
      * @ORM\Column(type="string", length=255)
      * @ORM\JoinColumn(nullable=true)
      */
     private $content;
 
     /**
+     * @Groups("text_fields_info")
      * @ORM\Column(type="integer")
      */
     private $position;

@@ -4,10 +4,15 @@ namespace Doctrine\Bundle\DoctrineBundle;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\ORMException;
+use Doctrine\ORM\Proxy\Proxy;
 use ProxyManager\Proxy\LazyLoadingInterface;
 use Psr\Container\ContainerInterface;
 use Symfony\Bridge\Doctrine\ManagerRegistry;
+use Symfony\Component\VarExporter\LazyObjectInterface;
 use Symfony\Contracts\Service\ResetInterface;
+
+use function array_keys;
+use function assert;
 
 /**
  * References all Doctrine connections and entity managers in a given Container.
@@ -22,7 +27,7 @@ class Registry extends ManagerRegistry implements ResetInterface
     {
         $this->container = $container;
 
-        parent::__construct('ORM', $connections, $entityManagers, $defaultConnection, $defaultEntityManager, 'Doctrine\ORM\Proxy\Proxy');
+        parent::__construct('ORM', $connections, $entityManagers, $defaultConnection, $defaultEntityManager, Proxy::class);
     }
 
     /**
@@ -39,8 +44,14 @@ class Registry extends ManagerRegistry implements ResetInterface
     public function getAliasNamespace($alias)
     {
         foreach (array_keys($this->getManagers()) as $name) {
+            $objectManager = $this->getManager($name);
+
+            if (! $objectManager instanceof EntityManagerInterface) {
+                continue;
+            }
+
             try {
-                return $this->getManager($name)->getConfiguration()->getEntityNamespace($alias);
+                return $objectManager->getConfiguration()->getEntityNamespace($alias);
             } catch (ORMException $e) {
             }
         }
@@ -65,7 +76,7 @@ class Registry extends ManagerRegistry implements ResetInterface
 
         assert($manager instanceof EntityManagerInterface);
 
-        if (! $manager instanceof LazyLoadingInterface || $manager->isOpen()) {
+        if ((! $manager instanceof LazyLoadingInterface && ! $manager instanceof LazyObjectInterface) || $manager->isOpen()) {
             $manager->clear();
 
             return;

@@ -3,11 +3,17 @@
 namespace Doctrine\Bundle\DoctrineBundle\Command;
 
 use Doctrine\DBAL\DriverManager;
-use Exception;
+use Doctrine\DBAL\Sharding\PoolingShardConnection;
 use InvalidArgumentException;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Throwable;
+
+use function array_merge;
+use function in_array;
+use function sprintf;
+use function trigger_deprecation;
 
 /**
  * Database tool allows you to easily create your configured databases.
@@ -16,10 +22,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class CreateDatabaseDoctrineCommand extends DoctrineCommand
 {
-    /**
-     * {@inheritDoc}
-     */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('doctrine:database:create')
@@ -39,10 +42,7 @@ EOT
         );
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $connectionName = $input->getOption('connection');
         if (empty($connectionName)) {
@@ -53,22 +53,10 @@ EOT
 
         $ifNotExists = $input->getOption('if-not-exists');
 
-        $driverOptions = [];
-        $params        = $connection->getParams();
+        $params = $connection->getParams();
 
-        if (isset($params['driverOptions'])) {
-            $driverOptions = $params['driverOptions'];
-        }
-
-        // Since doctrine/dbal 2.11 master has been replaced by primary
         if (isset($params['primary'])) {
-            $params                  = $params['primary'];
-            $params['driverOptions'] = $driverOptions;
-        }
-
-        if (isset($params['master'])) {
-            $params                  = $params['master'];
-            $params['driverOptions'] = $driverOptions;
+            $params = $params['primary'];
         }
 
         // Cannot inject `shard` option in parent::getDoctrineConnection
@@ -76,9 +64,16 @@ EOT
         if (isset($params['shards'])) {
             $shards = $params['shards'];
             // Default select global
-            $params = array_merge($params, $params['global']);
+            $params = array_merge($params, $params['global'] ?? []);
             unset($params['global']['dbname'], $params['global']['path'], $params['global']['url']);
             if ($input->getOption('shard')) {
+                trigger_deprecation(
+                    'doctrine/doctrine-bundle',
+                    '2.7',
+                    'Passing a "shard" option for "%s" is deprecated. DBAL 3 does not support shards anymore.',
+                    self::class
+                );
+
                 foreach ($shards as $i => $shard) {
                     if ($shard['id'] === (int) $input->getOption('shard')) {
                         // Select sharded database
@@ -91,7 +86,7 @@ EOT
         }
 
         $hasPath = isset($params['path']);
-        $name    = $hasPath ? $params['path'] : (isset($params['dbname']) ? $params['dbname'] : false);
+        $name    = $hasPath ? $params['path'] : ($params['dbname'] ?? false);
         if (! $name) {
             throw new InvalidArgumentException("Connection does not contain a 'path' or 'dbname' parameter and cannot be created.");
         }
@@ -100,7 +95,18 @@ EOT
         unset($params['dbname'], $params['path'], $params['url']);
 
         $tmpConnection = DriverManager::getConnection($params);
-        $tmpConnection->connect($input->getOption('shard'));
+        if ($tmpConnection instanceof PoolingShardConnection) {
+            $tmpConnection->connect($input->getOption('shard'));
+            trigger_deprecation(
+                'doctrine/doctrine-bundle',
+                '2.7',
+                'Using a DBAL connection of type "%s" is deprecated. DBAL 3 does not support shards anymore.',
+                PoolingShardConnection::class
+            );
+        } else {
+            $tmpConnection->connect();
+        }
+
         $shouldNotCreateDatabase = $ifNotExists && in_array($name, $tmpConnection->getSchemaManager()->listDatabases());
 
         // Only quote if we don't have a path
@@ -116,7 +122,7 @@ EOT
                 $tmpConnection->getSchemaManager()->createDatabase($name);
                 $output->writeln(sprintf('<info>Created database <comment>%s</comment> for connection named <comment>%s</comment></info>', $name, $connectionName));
             }
-        } catch (Exception $e) {
+        } catch (Throwable $e) {
             $output->writeln(sprintf('<error>Could not create database <comment>%s</comment> for connection named <comment>%s</comment></error>', $name, $connectionName));
             $output->writeln(sprintf('<error>%s</error>', $e->getMessage()));
             $error = true;

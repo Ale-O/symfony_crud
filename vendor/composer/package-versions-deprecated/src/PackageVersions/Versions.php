@@ -17,6 +17,8 @@ class_exists(InstalledVersions::class);
  *
  * If you are reading this docBlock inside your `vendor/` dir, then this means
  * that PackageVersions didn't correctly install, and is in "fallback" mode.
+ *
+ * @deprecated in favor of the Composer\InstalledVersions class provided by Composer 2. Require composer-runtime-api:^2 to ensure it is present.
  */
 final class Versions
 {
@@ -54,7 +56,7 @@ final class Versions
      */
     public static function getVersion(string $packageName): string
     {
-        if (!class_exists(InstalledVersions::class, false) || !InstalledVersions::getRawData()) {
+        if (!self::composer2ApiUsable()) {
             return FallbackVersions::getVersion($packageName);
         }
 
@@ -67,5 +69,26 @@ final class Versions
 
         return InstalledVersions::getPrettyVersion($packageName)
             . '@' . InstalledVersions::getReference($packageName);
+    }
+
+    private static function composer2ApiUsable(): bool
+    {
+        if (!class_exists(InstalledVersions::class, false)) {
+            return false;
+        }
+
+        if (method_exists(InstalledVersions::class, 'getAllRawData')) {
+            $rawData = InstalledVersions::getAllRawData();
+            if (count($rawData) === 1 && count($rawData[0]) === 0) {
+                return false;
+            }
+        } else {
+            $rawData = InstalledVersions::getRawData();
+            if ($rawData === null || $rawData === []) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

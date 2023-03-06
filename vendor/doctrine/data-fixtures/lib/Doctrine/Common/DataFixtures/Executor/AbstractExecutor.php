@@ -11,6 +11,7 @@ use Doctrine\Common\DataFixtures\ReferenceRepository;
 use Doctrine\Common\DataFixtures\SharedFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Exception;
+
 use function get_class;
 use function interface_exists;
 use function sprintf;
@@ -46,9 +47,7 @@ abstract class AbstractExecutor
         $this->referenceRepository = new ReferenceRepository($manager);
     }
 
-    /**
-     * @return ReferenceRepository
-     */
+    /** @return ReferenceRepository */
     public function getReferenceRepository()
     {
         return $this->referenceRepository;
@@ -61,15 +60,15 @@ abstract class AbstractExecutor
 
     /**
      * Sets the Purger instance to use for this executor instance.
+     *
+     * @return void
      */
     public function setPurger(PurgerInterface $purger)
     {
         $this->purger = $purger;
     }
 
-    /**
-     * @return PurgerInterface
-     */
+    /** @return PurgerInterface */
     public function getPurger()
     {
         return $this->purger;
@@ -79,6 +78,8 @@ abstract class AbstractExecutor
      * Set the logger callable to execute with the log() method.
      *
      * @param callable $logger
+     *
+     * @return void
      */
     public function setLogger($logger)
     {
@@ -89,6 +90,8 @@ abstract class AbstractExecutor
      * Logs a message using the logger.
      *
      * @param string $message
+     *
+     * @return void
      */
     public function log($message)
     {
@@ -98,6 +101,8 @@ abstract class AbstractExecutor
 
     /**
      * Load a fixture with the given persistence manager.
+     *
+     * @return void
      */
     public function load(ObjectManager $manager, FixtureInterface $fixture)
     {
@@ -106,12 +111,15 @@ abstract class AbstractExecutor
             if ($fixture instanceof OrderedFixtureInterface) {
                 $prefix = sprintf('[%d] ', $fixture->getOrder());
             }
+
             $this->log('loading ' . $prefix . get_class($fixture));
         }
+
         // additionally pass the instance of reference repository to shared fixtures
         if ($fixture instanceof SharedFixtureInterface) {
             $fixture->setReferenceRepository($this->referenceRepository);
         }
+
         $fixture->load($manager);
         $manager->clear();
     }
@@ -119,24 +127,33 @@ abstract class AbstractExecutor
     /**
      * Purges the database before loading.
      *
+     * @return void
+     *
      * @throws Exception if the purger is not defined.
      */
     public function purge()
     {
         if ($this->purger === null) {
-            throw new Exception('Doctrine\Common\DataFixtures\Purger\PurgerInterface instance is required if you want to purge the database before loading your data fixtures.');
+            throw new Exception(
+                PurgerInterface::class .
+                 ' instance is required if you want to purge the database before loading your data fixtures.'
+            );
         }
+
         if ($this->logger) {
             $this->log('purging database');
         }
+
         $this->purger->purge();
     }
 
     /**
      * Executes the given array of data fixtures.
      *
-     * @param array $fixtures Array of fixtures to execute.
-     * @param bool  $append   Whether to append the data fixtures or purge the database before loading.
+     * @param FixtureInterface[] $fixtures Array of fixtures to execute.
+     * @param bool               $append   Whether to append the data fixtures or purge the database before loading.
+     *
+     * @return void
      */
     abstract public function execute(array $fixtures, $append = false);
 }

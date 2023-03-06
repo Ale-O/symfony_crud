@@ -199,7 +199,7 @@ Generate a URL friendly string from a string of text:
 
 .. code-block:: php
 
-    echo $inflector->urlize('My first crud post'); // my-first-crud-post
+    echo $inflector->urlize('My first blog post'); // my-first-blog-post
 
 Unaccent
 ========

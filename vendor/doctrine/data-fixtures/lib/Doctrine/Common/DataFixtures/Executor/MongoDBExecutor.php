@@ -14,6 +14,12 @@ use Doctrine\ODM\MongoDB\DocumentManager;
  */
 class MongoDBExecutor extends AbstractExecutor
 {
+    /** @var DocumentManager */
+    private $dm;
+
+    /** @var MongoDBReferenceListener */
+    private $listener;
+
     /**
      * Construct new fixtures loader instance.
      *
@@ -26,6 +32,7 @@ class MongoDBExecutor extends AbstractExecutor
             $this->purger = $purger;
             $this->purger->setDocumentManager($dm);
         }
+
         parent::__construct($dm);
         $this->listener = new MongoDBReferenceListener($this->referenceRepository);
         $dm->getEventManager()->addEventSubscriber($this->listener);
@@ -60,6 +67,7 @@ class MongoDBExecutor extends AbstractExecutor
         if ($append === false) {
             $this->purge();
         }
+
         foreach ($fixtures as $fixture) {
             $this->load($this->dm, $fixture);
         }

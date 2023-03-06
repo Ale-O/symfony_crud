@@ -1,9 +1,39 @@
-{{ form_start(form, {method: 'POST', action: path('textfields_edit', {'id': textfields.id})}) }}
+
+{{ form_start(form, {attr: {'id': 'form'}, action: path('textFields_api_edit', {'id': textfields.id})}) }}
     <fieldset id={{ textfields.id }}>
 
         {{ form_errors(form) }}
-        {{ form_row(form.content, {'attr': {'onblur': 'this.form.submit()'} }) }}
-
+        {{ form_row(form.content, {'id':'content'}) }}
+        
+        <div class="form-group">
+            <button class="btn btn-primary pull-right" type="submit">
+                <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+            </button>
+        </div>
     </fieldset>
     <br>
 {{ form_end(form) }}
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(form).submit( function(event)
+        {
+        event.preventDefault();
+        $.ajax({
+            type: 'PUT',
+            url: $(form).attr('action'),
+            dataType: 'json',
+            async: true,
+            data: JSON.stringify({
+            content:document.getElementById("content").value,
+            }),
+            success: function (response) {
+            $('#res').html("data save");
+            }
+        });
+            
+        return false;
+        })
+    </script>
+{% endblock %}

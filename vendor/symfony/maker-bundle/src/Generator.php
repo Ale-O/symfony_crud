@@ -15,6 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\MakerBundle\Exception\RuntimeCommandException;
 use Symfony\Bundle\MakerBundle\Util\ClassNameDetails;
 use Symfony\Bundle\MakerBundle\Util\PhpCompatUtil;
+use Symfony\Bundle\MakerBundle\Util\TemplateComponentGenerator;
 
 /**
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
@@ -27,8 +28,9 @@ class Generator
     private $pendingOperations = [];
     private $namespacePrefix;
     private $phpCompatUtil;
+    private $templateComponentGenerator;
 
-    public function __construct(FileManager $fileManager, string $namespacePrefix, PhpCompatUtil $phpCompatUtil = null)
+    public function __construct(FileManager $fileManager, string $namespacePrefix, PhpCompatUtil $phpCompatUtil = null, TemplateComponentGenerator $templateComponentGenerator = null)
     {
         $this->fileManager = $fileManager;
         $this->twigHelper = new GeneratorTwigHelper($fileManager);
@@ -41,6 +43,7 @@ class Generator
         }
 
         $this->phpCompatUtil = $phpCompatUtil;
+        $this->templateComponentGenerator = $templateComponentGenerator;
     }
 
     /**
@@ -169,6 +172,7 @@ class Generator
         $variables['relative_path'] = $this->fileManager->relativizePath($targetPath);
         $variables['use_attributes'] = $this->phpCompatUtil->canUseAttributes();
         $variables['use_typed_properties'] = $this->phpCompatUtil->canUseTypedProperties();
+        $variables['use_union_types'] = $this->phpCompatUtil->canUseUnionTypes();
 
         $templatePath = $templateName;
         if (!file_exists($templatePath)) {
@@ -223,7 +227,7 @@ class Generator
             $controllerTemplatePath,
             $parameters +
             [
-                'parent_class_name' => method_exists(AbstractController::class, 'getParameter') ? 'AbstractController' : 'Controller',
+                'generator' => $this->templateComponentGenerator,
             ]
         );
     }
@@ -238,5 +242,15 @@ class Generator
             $templateName,
             $variables
         );
+    }
+
+    /**
+     * @deprecated MakerBundle only supports AbstractController::class. This method will be removed in the future.
+     */
+    public static function getControllerBaseClass(): ClassNameDetails
+    {
+        trigger_deprecation('symfony/maker-bundle', 'v1.41.0', 'MakerBundle only supports AbstractController. This method will be removed in the future.');
+
+        return new ClassNameDetails(AbstractController::class, '\\');
     }
 }

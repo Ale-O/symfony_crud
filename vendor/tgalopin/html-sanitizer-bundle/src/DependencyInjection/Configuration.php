@@ -21,6 +21,9 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * @return TreeBuilder
+     */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder('html_sanitizer');
@@ -31,6 +34,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('default_sanitizer')->isRequired()->end()
                 ->arrayNode('sanitizers')
                     ->isRequired()
+                    ->useAttributeAsKey('name')
                     ->prototype('variable')->end()
                     ->defaultValue([])
                 ->end()

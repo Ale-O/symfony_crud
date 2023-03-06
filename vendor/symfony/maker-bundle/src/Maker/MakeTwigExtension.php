@@ -15,10 +15,13 @@ use Symfony\Bundle\MakerBundle\ConsoleStyle;
 use Symfony\Bundle\MakerBundle\DependencyBuilder;
 use Symfony\Bundle\MakerBundle\Generator;
 use Symfony\Bundle\MakerBundle\InputConfiguration;
+use Symfony\Bundle\MakerBundle\Util\UseStatementGenerator;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 /**
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
@@ -31,16 +34,20 @@ final class MakeTwigExtension extends AbstractMaker
         return 'make:twig-extension';
     }
 
-    public function configureCommand(Command $command, InputConfiguration $inputConf)
+    public static function getCommandDescription(): string
+    {
+        return 'Creates a new Twig extension class';
+    }
+
+    public function configureCommand(Command $command, InputConfiguration $inputConfig): void
     {
         $command
-            ->setDescription('Creates a new Twig extension class')
             ->addArgument('name', InputArgument::OPTIONAL, 'The name of the Twig extension class (e.g. <fg=yellow>AppExtension</>)')
             ->setHelp(file_get_contents(__DIR__.'/../Resources/help/MakeTwigExtension.txt'))
         ;
     }
 
-    public function generate(InputInterface $input, ConsoleStyle $io, Generator $generator)
+    public function generate(InputInterface $input, ConsoleStyle $io, Generator $generator): void
     {
         $extensionClassNameDetails = $generator->createClassNameDetails(
             $input->getArgument('name'),
@@ -48,10 +55,16 @@ final class MakeTwigExtension extends AbstractMaker
             'Extension'
         );
 
+        $useStatements = new UseStatementGenerator([
+            AbstractExtension::class,
+            TwigFilter::class,
+            TwigFunction::class,
+        ]);
+
         $generator->generateClass(
             $extensionClassNameDetails->getFullName(),
             'twig/Extension.tpl.php',
-            []
+            ['use_statements' => $useStatements]
         );
 
         $generator->writeChanges();
@@ -64,7 +77,7 @@ final class MakeTwigExtension extends AbstractMaker
         ]);
     }
 
-    public function configureDependencies(DependencyBuilder $dependencies)
+    public function configureDependencies(DependencyBuilder $dependencies): void
     {
         $dependencies->addClassDependency(
             AbstractExtension::class,

@@ -1,6 +1,22 @@
 CHANGELOG
 =========
 
+5.4.21
+------
+
+ * [BC BREAK] The following data providers for `TransportFactoryTestCase` are now static:
+  `supportsProvider()`, `createProvider()`, `unsupportedSchemeProvider()`and `incompleteDsnProvider()`
+
+5.4
+---
+
+ * Enable the mailer to operate on any PSR-14-compatible event dispatcher
+
+5.3
+---
+
+ * added the `mailer` monolog channel and set it on all transport definitions
+
 5.2.0
 -----
 

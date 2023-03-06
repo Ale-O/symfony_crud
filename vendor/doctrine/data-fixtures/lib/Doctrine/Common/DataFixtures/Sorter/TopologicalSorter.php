@@ -7,6 +7,7 @@ namespace Doctrine\Common\DataFixtures\Sorter;
 use Doctrine\Common\DataFixtures\Exception\CircularReferenceException;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use RuntimeException;
+
 use function get_class;
 use function sprintf;
 
@@ -33,7 +34,7 @@ class TopologicalSorter
     /**
      * Volatile variable holding calculated nodes during sorting process.
      *
-     * @var array
+     * @var ClassMetadata[]
      */
     private $sortedNodeList = [];
 
@@ -44,11 +45,7 @@ class TopologicalSorter
      */
     private $allowCyclicDependencies;
 
-    /**
-     * Construct TopologicalSorter object
-     *
-     * @param bool $allowCyclicDependencies
-     */
+    /** @param bool $allowCyclicDependencies */
     public function __construct($allowCyclicDependencies = true)
     {
         $this->allowCyclicDependencies = $allowCyclicDependencies;
@@ -99,7 +96,7 @@ class TopologicalSorter
      *
      * Note: Highly performance-sensitive method.
      *
-     * @return array
+     * @return ClassMetadata[]
      *
      * @throws RuntimeException
      * @throws CircularReferenceException
@@ -126,6 +123,8 @@ class TopologicalSorter
      * Visit a given node definition for reordering.
      *
      * Note: Highly performance-sensitive method.
+     *
+     * @return void
      *
      * @throws RuntimeException
      * @throws CircularReferenceException
@@ -157,15 +156,19 @@ class TopologicalSorter
                     if (! $this->allowCyclicDependencies) {
                         throw new CircularReferenceException(
                             sprintf(
-                                'Graph contains cyclic dependency between the classes "%s" and'
-                                . ' "%s". An example of this problem would be the following: '
-                                . 'Class C has class B as its dependency. Then, class B has class A has its dependency. '
-                                . 'Finally, class A has class C as its dependency.',
+                                <<<'EXCEPTION'
+Graph contains cyclic dependency between the classes "%s" and
+ "%s". An example of this problem would be the following:
+Class C has class B as its dependency. Then, class B has class A has its dependency.
+Finally, class A has class C as its dependency.
+EXCEPTION
+                                ,
                                 $definition->value->getName(),
                                 $childDefinition->value->getName()
                             )
                         );
                     }
+
                     break;
                 case Vertex::NOT_VISITED:
                     $this->visit($childDefinition);

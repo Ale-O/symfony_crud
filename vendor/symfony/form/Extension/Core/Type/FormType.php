@@ -25,6 +25,7 @@ use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
+use Symfony\Component\Translation\TranslatableMessage;
 
 class FormType extends BaseType
 {
@@ -172,7 +173,7 @@ class FormType extends BaseType
         // For any form that is not represented by a single HTML control,
         // errors should bubble up by default
         $errorBubbling = function (Options $options) {
-            return $options['compound'];
+            return $options['compound'] && !$options['inherit_data'];
         };
 
         // If data is given, the form is locked to that data
@@ -215,7 +216,7 @@ class FormType extends BaseType
         $resolver->setAllowedTypes('label_attr', 'array');
         $resolver->setAllowedTypes('action', 'string');
         $resolver->setAllowedTypes('upload_max_size_message', ['callable']);
-        $resolver->setAllowedTypes('help', ['string', 'null']);
+        $resolver->setAllowedTypes('help', ['string', 'null', TranslatableMessage::class]);
         $resolver->setAllowedTypes('help_attr', 'array');
         $resolver->setAllowedTypes('help_html', 'bool');
         $resolver->setAllowedTypes('is_empty_callback', ['null', 'callable']);
