@@ -3,6 +3,7 @@
 return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
     $o = [
         clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
         clone ($p['Doctrine\\ORM\\Mapping\\Table'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Table')),
         clone ($p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
     ],
@@ -12,22 +13,31 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'repositoryClass' => [
                 'App\\Repository\\ElementRepository',
             ],
+            'attributes' => [
+                1 => [
+                    'normalization_context' => [
+                        'groups' => [
+                            'element_info',
+                        ],
+                    ],
+                ],
+            ],
             'name' => [
-                1 => 'symfony_element',
+                2 => 'symfony_element',
             ],
             'message' => [
-                2 => 'element.slug_unique',
+                3 => 'element.slug_unique',
             ],
             'fields' => [
-                2 => [
+                3 => [
                     'slug',
                 ],
             ],
             'errorPath' => [
-                2 => 'title',
+                3 => 'title',
             ],
             'groups' => [
-                2 => [
+                3 => [
                     'Default',
                 ],
             ],
@@ -37,6 +47,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
         $o[0],
         $o[1],
         $o[2],
+        $o[3],
     ],
     []
 ); }];

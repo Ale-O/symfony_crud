@@ -3,19 +3,30 @@
 return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
     $o = [
         clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
         clone ($p['Doctrine\\ORM\\Mapping\\Table'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Table')),
     ],
     null,
     [
         'stdClass' => [
+            'attributes' => [
+                1 => [
+                    'normalization_context' => [
+                        'groups' => [
+                            'subelement_info',
+                        ],
+                    ],
+                ],
+            ],
             'name' => [
-                1 => 'symfony_subelement',
+                2 => 'symfony_subelement',
             ],
         ],
     ],
     [
         $o[0],
         $o[1],
+        $o[2],
     ],
     []
 ); }];

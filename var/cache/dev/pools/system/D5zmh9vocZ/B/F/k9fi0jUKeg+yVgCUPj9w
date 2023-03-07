@@ -2,26 +2,34 @@
 
 return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
     $o = [
-        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Annotation\\Groups'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Annotation\\Groups')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
         clone ($p['Symfony\\Component\\Validator\\Constraints\\Email'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Email')),
     ],
     null,
     [
+        'Symfony\\Component\\Serializer\\Annotation\\Groups' => [
+            'groups' => [
+                [
+                    'user_info',
+                ],
+            ],
+        ],
         'stdClass' => [
             'type' => [
-                'string',
+                1 => 'string',
             ],
             'precision' => [
-                null,
+                1 => null,
             ],
             'scale' => [
-                null,
+                1 => null,
             ],
             'unique' => [
-                true,
+                1 => true,
             ],
             'groups' => [
-                1 => [
+                2 => [
                     'Default',
                 ],
             ],
@@ -30,6 +38,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         $o[0],
         $o[1],
+        $o[2],
     ],
     []
 ); }];
