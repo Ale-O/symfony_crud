@@ -1,4 +1,19 @@
+{{ form_start(form, {method: 'POST', action: path('textfields_edit', {'id': textfields.id})}) }}
+    <fieldset id={{ textfields.id }}>
 
+        {{ form_errors(form) }}
+        {{ form_row(form.content) }}
+        
+        <div class="form-group">
+            <button class="btn btn-primary pull-right" type="submit">
+                <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit'|trans }}
+            </button>
+        </div>
+    </fieldset>
+    <br>
+{{ form_end(form) }}
+
+{# AJAX Project
 {{ form_start(form, {attr: {'id': 'form'}, action: path('textFields_api_edit', {'id': textfields.id})}) }}
     <fieldset id={{ textfields.id }}>
 
@@ -20,6 +35,7 @@
         $(form).submit( function(event)
         {
         event.preventDefault();
+        document.getElementById("form").style.color = "green";
         $.ajax({
             type: 'PUT',
             url: $(form).attr('action'),
@@ -37,3 +53,4 @@
         })
     </script>
 {% endblock %}
+#}

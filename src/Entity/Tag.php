@@ -2,10 +2,15 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity()
+ * @ApiResource(
+ *      normalizationContext={"groups"={"tag_info"}}
+ * )
  * @ORM\Table(name="symfony_tag")
  */
 class Tag implements \JsonSerializable
@@ -13,6 +18,7 @@ class Tag implements \JsonSerializable
     /**
      * @var int
      *
+     * @Groups("tag_info")
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -22,6 +28,7 @@ class Tag implements \JsonSerializable
     /**
      * @var string
      *
+     * @Groups("tag_info")
      * @ORM\Column(type="string", unique=true)
      */
     private $name;

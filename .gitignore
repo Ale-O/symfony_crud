@@ -1,1 +1,14 @@
 node_modules
+
+### Ignore what is contained in a directory ###
+/vendor/
+
+###> symfony/framework-bundle ###
+/var/
+
+### The change made to a file ###
+.env
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###

@@ -2,14 +2,19 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 use function Symfony\Component\String\u;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
+ * @ApiResource(
+ *      normalizationContext={"groups"={"subelement_info"}}
+ * )
  * @ORM\Table(name="symfony_subelement")
  */
 class Subelement
@@ -17,6 +22,7 @@ class Subelement
     /**
      * @var int
      *
+     * @Groups("subelement_info")
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -34,6 +40,7 @@ class Subelement
     /**
      * @var string
      *
+     * @Groups("subelement_info")
      * @ORM\Column(type="text")
      * @Assert\NotBlank(message="subelement.blank")
      * @Assert\Length(
@@ -48,6 +55,7 @@ class Subelement
     /**
      * @var \DateTime
      *
+     * @Groups("subelement_info")
      * @ORM\Column(type="datetime")
      */
     private $publishedAt;
@@ -61,6 +69,7 @@ class Subelement
     private $author;
 
     /**
+     * @Groups("subelement_info")
      * @ORM\Column(type="string", length=50)
      */
     private $title;

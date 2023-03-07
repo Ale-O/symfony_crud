@@ -2,14 +2,19 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ApiResource(
+ *      normalizationContext={"groups"={"user_info"}}
+ * )
  * @ORM\Table(name="symfony_user")
  */
 class User implements UserInterface, \Serializable
@@ -17,6 +22,7 @@ class User implements UserInterface, \Serializable
     /**
      * @var int
      *
+     * @Groups("user_info")
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -26,6 +32,7 @@ class User implements UserInterface, \Serializable
     /**
      * @var string
      *
+     * @Groups("user_info")
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
      */
@@ -34,6 +41,7 @@ class User implements UserInterface, \Serializable
     /**
      * @var string
      *
+     * @Groups("user_info")
      * @ORM\Column(type="string", unique=true)
      * @Assert\NotBlank()
      * @Assert\Length(min=2, max=50)
@@ -43,6 +51,7 @@ class User implements UserInterface, \Serializable
     /**
      * @var string
      *
+     * @Groups("user_info")
      * @ORM\Column(type="string", unique=true)
      * @Assert\Email()
      */
@@ -58,6 +67,7 @@ class User implements UserInterface, \Serializable
     /**
      * @var array
      *
+     * @Groups("user_info")
      * @ORM\Column(type="json")
      */
     private $roles = [];

@@ -2,14 +2,19 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ElementRepository")
+ * @ApiResource(
+ *      normalizationContext={"groups"={"element_info"}}
+ * )
  * @ORM\Table(name="symfony_element")
  * @UniqueEntity(fields={"slug"}, errorPath="title", message="element.slug_unique")
  */
@@ -18,6 +23,7 @@ class Element
     /**
      * @var int
      *
+     * @Groups("element_info")
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -27,6 +33,7 @@ class Element
     /**
      * @var string
      *
+     * @Groups("element_info")
      * @ORM\Column(type="string")
      * @Assert\NotBlank
      */
@@ -42,6 +49,7 @@ class Element
     /**
      * @var string
      *
+     * @Groups("element_info")
      * @ORM\Column(type="string")
      * @Assert\NotBlank(message="element.blank_summary")
      * @Assert\Length(max=255)
@@ -51,6 +59,7 @@ class Element
     /**
      * @var string
      *
+     * @Groups("element_info")
      * @ORM\Column(type="text")
      * @Assert\NotBlank(message="element.blank_content")
      * @Assert\Length(min=10, minMessage="element.too_short_content")
@@ -60,6 +69,7 @@ class Element
     /**
      * @var \DateTime
      *
+     * @Groups("element_info")
      * @ORM\Column(type="datetime")
      */
     private $publishedAt;

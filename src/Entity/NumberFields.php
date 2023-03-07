@@ -2,17 +2,23 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\NumberFieldsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=NumberFieldsRepository::class)
+ * @ApiResource(
+ *      normalizationContext={"groups"={"number_fields_info"}}
+ * )
  */
 class NumberFields
 {
     /**
+     * @Groups("number_fields_info")
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -30,17 +36,20 @@ class NumberFields
     private $subelement;
 
     /**
+     * @Groups("number_fields_info")
      * @ORM\Column(type="string", length=50)
      */
     private $title;
 
     /**
+     * @Groups("number_fields_info")
      * @ORM\Column(type="integer")
      * @ORM\JoinColumn(nullable=true)
      */
     private $content;
 
     /**
+     * @Groups("number_fields_info")
      * @ORM\Column(type="integer")
      */
     private $position;
