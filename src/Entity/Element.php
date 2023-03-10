@@ -13,6 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ElementRepository")
  * @ApiResource(
+ *      attributes={"security"="is_granted('ROLE_ADMIN')"},
  *      normalizationContext={"groups"={"element_info"}}
  * )
  * @ORM\Table(name="symfony_element")

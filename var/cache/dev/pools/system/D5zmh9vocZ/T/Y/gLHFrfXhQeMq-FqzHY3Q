@@ -13,6 +13,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             ],
             'attributes' => [
                 1 => [
+                    'security' => 'is_granted(\'ROLE_ADMIN\')',
                     'normalization_context' => [
                         'groups' => [
                             'subelement_fields_info',

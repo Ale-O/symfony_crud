@@ -1,17 +1,30 @@
 security:
-    encoders:
+    # encoders:
         # Our user class and the algorithm we'll use to encode passwords
         # 'auto' means to let Symfony choose the best possible password hasher (Argon2 or Bcrypt)
         # https://symfony.com/doc/current/security.html#c-encoding-passwords
-        App\Entity\User: 'auto'
+        # App\Entity\User: 'auto'
+
+    # https://symfony.com/doc/current/security/authenticator_manager.html
+    enable_authenticator_manager: true
+
+    # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+        App\Entity\User:
+            algorithm: auto
 
     providers:
         # https://symfony.com/doc/current/security/user_provider.html
         # In this example, users are stored via Doctrine in the database
         # To see the users at src/App/DataFixtures/ORM/LoadFixtures.php
         # To load users from somewhere else: https://symfony.com/doc/current/security/user_provider.html#creating-a-custom-user-provider
-        database_users:
-            entity: { class: App\Entity\User, property: username }
+        # database_users:
+            # entity: { class: App\Entity\User, property: username }
+        users:
+            entity:
+                class: App\Entity\User
+                property: email
 
     # https://symfony.com/doc/current/security.html#a-authentication-firewalls
     firewalls:
@@ -19,18 +32,31 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        login_api:
+            pattern: ^/auth
+            stateless: true
+            provider: users
+            json_login:
+                check_path: auth # The name in routes.yaml is enough for mapping
+                username_path: email
+                password_path: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+            jwt: ~
+
+        api:
+            pattern: ^/apip/
+            stateless: true
+            jwt: ~
+
         main:
             # this firewall applies to all URLs
             pattern: ^/
-
             # but the firewall does not require login on every page
             # denying access is done in access_control or in your controllers
-            anonymous: true
+            # anonymous: true
             lazy: true
-
-            # The user provider to use.
-            provider: database_users
-
+            provider: users
             # This allows the user to login by submitting a username and password
             # Reference: https://symfony.com/doc/current/security/form_login_setup.html
             form_login:
@@ -41,11 +67,11 @@ security:
                 login_path: security_login
                 # Secure the login form against CSRF
                 # Reference: https://symfony.com/doc/current/security/csrf.html#csrf-protection-in-login-forms
-                csrf_token_generator: security.csrf.token_manager
+                # csrf_token_generator: security.csrf.token_manager
+                enable_csrf: true
                 # The page users are redirect to when there is no previous page stored in the
                 # session (for example when the users access directly to the login page).
                 default_target_path: crud_index
-
             logout:
                 # The route name the user can go to in order to logout
                 path: security_logout
@@ -57,9 +83,13 @@ security:
     access_control:
         # this is a catch-all for the admin area
         # additional security lives in the controllers
+        - { path: ^/login, roles: PUBLIC_ACCESS }
         - { path: '^/(%app_locales%)/admin', roles: ROLE_ADMIN }
-        - { path: ^/apip/, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/$, roles: PUBLIC_ACCESS } # Allows accessing the Swagger UI
+        - { path: ^/docs, roles: PUBLIC_ACCESS } # Allows accessing the Swagger UI docs
+        - { path: ^/auth, roles: PUBLIC_ACCESS }
         - { path: ^/apip, roles: PUBLIC_ACCESS }
+        - { path: ^/apip/, roles: IS_AUTHENTICATED_FULLY }
 
     role_hierarchy:
         ROLE_ADMIN: ROLE_USER

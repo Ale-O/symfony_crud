@@ -5,6 +5,7 @@ node_modules
 
 ###> symfony/framework-bundle ###
 /var/
+/var/cache/*
 
 ### The change made to a file ###
 .env

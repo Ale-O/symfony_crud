@@ -12,6 +12,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=FileFieldsRepository::class)
  * @ApiResource(
+ *      attributes={"security"="is_granted('ROLE_ADMIN')"},
  *      normalizationContext={"groups"={"file_fields_info"}}
  * )
  */

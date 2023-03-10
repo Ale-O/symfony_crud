@@ -11,6 +11,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
         'stdClass' => [
             'attributes' => [
                 1 => [
+                    'security' => 'is_granted(\'ROLE_ADMIN\')',
                     'normalization_context' => [
                         'groups' => [
                             'tag_info',

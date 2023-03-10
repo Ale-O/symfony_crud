@@ -9,6 +9,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity()
  * @ApiResource(
+ *      attributes={"security"="is_granted('ROLE_ADMIN')"},
  *      normalizationContext={"groups"={"tag_info"}}
  * )
  * @ORM\Table(name="symfony_tag")
