@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Form;
+namespace App\Form\Fields;
 
 use App\Entity\Element;
 use App\Entity\SubelementFields;

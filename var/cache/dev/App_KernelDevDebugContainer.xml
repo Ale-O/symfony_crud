@@ -663,16 +663,36 @@
       <tag name="form.type"/>
       <argument type="service" id="slugger"/>
     </service>
-    <service id="App\Form\Fields\DateFieldsAdminType" class="App\Form\Fields\DateFieldsAdminType" autowire="true" autoconfigure="true"/>
-    <service id="App\Form\Fields\DateFieldsType" class="App\Form\Fields\DateFieldsType" autowire="true" autoconfigure="true"/>
-    <service id="App\Form\Fields\FileFieldsAdminType" class="App\Form\Fields\FileFieldsAdminType" autowire="true" autoconfigure="true"/>
-    <service id="App\Form\Fields\FileFieldsType" class="App\Form\Fields\FileFieldsType" autowire="true" autoconfigure="true"/>
-    <service id="App\Form\Fields\NumberFieldsAdminType" class="App\Form\Fields\NumberFieldsAdminType" autowire="true" autoconfigure="true"/>
-    <service id="App\Form\Fields\NumberFieldsType" class="App\Form\Fields\NumberFieldsType" autowire="true" autoconfigure="true"/>
-    <service id="App\Form\Fields\SubelementFieldsAdminType" class="App\Form\Fields\SubelementFieldsAdminType" autowire="true" autoconfigure="true"/>
-    <service id="App\Form\Fields\SubelementFieldsType" class="App\Form\Fields\SubelementFieldsType" autowire="true" autoconfigure="true"/>
-    <service id="App\Form\Fields\TextFieldsAdminType" class="App\Form\Fields\TextFieldsAdminType" autowire="true" autoconfigure="true"/>
-    <service id="App\Form\Fields\TextFieldsType" class="App\Form\Fields\TextFieldsType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\Fields\DateFieldsAdminType" class="App\Form\Fields\DateFieldsAdminType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\Fields\DateFieldsType" class="App\Form\Fields\DateFieldsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\Fields\FileFieldsAdminType" class="App\Form\Fields\FileFieldsAdminType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\Fields\FileFieldsType" class="App\Form\Fields\FileFieldsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\Fields\NumberFieldsAdminType" class="App\Form\Fields\NumberFieldsAdminType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\Fields\NumberFieldsType" class="App\Form\Fields\NumberFieldsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\Fields\SubelementFieldsAdminType" class="App\Form\Fields\SubelementFieldsAdminType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\Fields\SubelementFieldsType" class="App\Form\Fields\SubelementFieldsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\Fields\TextFieldsAdminType" class="App\Form\Fields\TextFieldsAdminType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\Fields\TextFieldsType" class="App\Form\Fields\TextFieldsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\SubelementType" class="App\Form\SubelementType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -1457,11 +1477,22 @@
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
         <argument>App\Form</argument>
+        <argument>App\Form\Fields</argument>
         <argument>App\Form\Type</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
         <argument>App\Form\ElementType</argument>
+        <argument>App\Form\Fields\DateFieldsAdminType</argument>
+        <argument>App\Form\Fields\DateFieldsType</argument>
+        <argument>App\Form\Fields\FileFieldsAdminType</argument>
+        <argument>App\Form\Fields\FileFieldsType</argument>
+        <argument>App\Form\Fields\NumberFieldsAdminType</argument>
+        <argument>App\Form\Fields\NumberFieldsType</argument>
+        <argument>App\Form\Fields\SubelementFieldsAdminType</argument>
+        <argument>App\Form\Fields\SubelementFieldsType</argument>
+        <argument>App\Form\Fields\TextFieldsAdminType</argument>
+        <argument>App\Form\Fields\TextFieldsType</argument>
         <argument>App\Form\SubelementType</argument>
         <argument>App\Form\TagType</argument>
         <argument>App\Form\Type\ChangePasswordType</argument>
@@ -3825,7 +3856,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.ZYAOOTN"/>
+      <argument type="service" id=".service_locator.RJlMS3v"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -8310,6 +8341,26 @@
     <service id=".abstract.instanceof.App\EventSubscriber\SubelementNotificationSubscriber" class="App\EventSubscriber\SubelementNotificationSubscriber" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ElementType" class="App\Form\ElementType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ElementType" class="App\Form\ElementType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Fields\DateFieldsAdminType" class="App\Form\Fields\DateFieldsAdminType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Fields\DateFieldsAdminType" class="App\Form\Fields\DateFieldsAdminType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Fields\DateFieldsType" class="App\Form\Fields\DateFieldsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Fields\DateFieldsType" class="App\Form\Fields\DateFieldsType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Fields\FileFieldsAdminType" class="App\Form\Fields\FileFieldsAdminType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Fields\FileFieldsAdminType" class="App\Form\Fields\FileFieldsAdminType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Fields\FileFieldsType" class="App\Form\Fields\FileFieldsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Fields\FileFieldsType" class="App\Form\Fields\FileFieldsType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Fields\NumberFieldsAdminType" class="App\Form\Fields\NumberFieldsAdminType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Fields\NumberFieldsAdminType" class="App\Form\Fields\NumberFieldsAdminType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Fields\NumberFieldsType" class="App\Form\Fields\NumberFieldsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Fields\NumberFieldsType" class="App\Form\Fields\NumberFieldsType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Fields\SubelementFieldsAdminType" class="App\Form\Fields\SubelementFieldsAdminType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Fields\SubelementFieldsAdminType" class="App\Form\Fields\SubelementFieldsAdminType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Fields\SubelementFieldsType" class="App\Form\Fields\SubelementFieldsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Fields\SubelementFieldsType" class="App\Form\Fields\SubelementFieldsType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Fields\TextFieldsAdminType" class="App\Form\Fields\TextFieldsAdminType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Fields\TextFieldsAdminType" class="App\Form\Fields\TextFieldsAdminType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Fields\TextFieldsType" class="App\Form\Fields\TextFieldsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Fields\TextFieldsType" class="App\Form\Fields\TextFieldsType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SubelementType" class="App\Form\SubelementType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SubelementType" class="App\Form\SubelementType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TagType" class="App\Form\TagType" autowire="true" abstract="true"/>
@@ -9047,10 +9098,20 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.ZYAOOTN" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.RJlMS3v" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ElementType" type="service_closure" id="App\Form\ElementType"/>
+        <argument key="App\Form\Fields\DateFieldsAdminType" type="service_closure" id="App\Form\Fields\DateFieldsAdminType"/>
+        <argument key="App\Form\Fields\DateFieldsType" type="service_closure" id="App\Form\Fields\DateFieldsType"/>
+        <argument key="App\Form\Fields\FileFieldsAdminType" type="service_closure" id="App\Form\Fields\FileFieldsAdminType"/>
+        <argument key="App\Form\Fields\FileFieldsType" type="service_closure" id="App\Form\Fields\FileFieldsType"/>
+        <argument key="App\Form\Fields\NumberFieldsAdminType" type="service_closure" id="App\Form\Fields\NumberFieldsAdminType"/>
+        <argument key="App\Form\Fields\NumberFieldsType" type="service_closure" id="App\Form\Fields\NumberFieldsType"/>
+        <argument key="App\Form\Fields\SubelementFieldsAdminType" type="service_closure" id="App\Form\Fields\SubelementFieldsAdminType"/>
+        <argument key="App\Form\Fields\SubelementFieldsType" type="service_closure" id="App\Form\Fields\SubelementFieldsType"/>
+        <argument key="App\Form\Fields\TextFieldsAdminType" type="service_closure" id="App\Form\Fields\TextFieldsAdminType"/>
+        <argument key="App\Form\Fields\TextFieldsType" type="service_closure" id="App\Form\Fields\TextFieldsType"/>
         <argument key="App\Form\SubelementType" type="service_closure" id="App\Form\SubelementType"/>
         <argument key="App\Form\TagType" type="service_closure" id="App\Form\TagType"/>
         <argument key="App\Form\Type\ChangePasswordType" type="service_closure" id="App\Form\Type\ChangePasswordType"/>
@@ -10792,7 +10853,7 @@
     <service id=".service_locator.aghoMOr" alias=".service_locator.y4h8c3g"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.l6ELYLY"/>
     <service id=".service_locator.RGe.Eww" alias=".service_locator.wmwio2R"/>
-    <service id=".service_locator.9S9jEv2" alias=".service_locator.ZYAOOTN"/>
+    <service id=".service_locator.eAyDhvs" alias=".service_locator.RJlMS3v"/>
     <service id=".service_locator.4hi2aOY" alias=".service_locator.bBRwv06"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.DK8frtD" alias=".service_locator.hiko9G."/>

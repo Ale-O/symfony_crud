@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Form;
+namespace App\Form\Fields;
 
 use App\Entity\NumberFields;
 use Symfony\Component\Form\AbstractType;
