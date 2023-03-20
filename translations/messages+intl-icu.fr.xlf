@@ -706,6 +706,22 @@
                 <source>label.subelement</source>
                 <target>Enregistrement</target>
             </trans-unit>
+            <trans-unit id="label.export">
+                <source>label.export</source>
+                <target>Export</target>
+            </trans-unit>
+            <trans-unit id="label.download">
+                <source>label.download</source>
+                <target>Téléchargement</target>
+            </trans-unit>
+            <trans-unit id="label.columnsNumber">
+                <source>label.columnsNumber</source>
+                <target>Nombre de colonnes</target>
+            </trans-unit>
+            <trans-unit id="label.linesNumber">
+                <source>label.linesNumber</source>
+                <target>Nombre de lignes</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

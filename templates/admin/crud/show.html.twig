@@ -377,12 +377,14 @@
             <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit'|trans }}
         </a>
     </div>
-
-    
     <div class="section">
         {{ include('admin/crud/_delete_form.html.twig', {element: element}, with_context = false) }}
     </div>
-    
+    <div class="section actions">
+        <a href="{{ path('admin_spreadsheet_get_all_subelement', {id: element.id}) }}" class="btn btn-lg btn-block btn-info">
+            <i class="fa fa-download" aria-hidden="true"></i> {{ 'label.export'|trans }}
+        </a>
+    </div>
 
     {{ parent() }}
 

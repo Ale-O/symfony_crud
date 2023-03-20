@@ -71,6 +71,12 @@
         </a>
     </div>
 
+    <div class="section actions">
+        <a href="{{ path('admin_spreadsheet_get_all_element') }}" class="btn btn-lg btn-block btn-info">
+            <i class="fa fa-download" aria-hidden="true"></i> {{ 'label.export'|trans }}
+        </a>
+    </div>
+
     {{ parent() }}
 
     {{ show_source_code(_self) }}

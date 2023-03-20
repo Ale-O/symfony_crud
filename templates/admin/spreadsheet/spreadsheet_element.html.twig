@@ -1,0 +1,33 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_spreadsheet_get_all_element' %}
+
+{% block main %}
+
+    <h1>{{ 'label.columnsNumber'|trans }} : {{ columnsNumber }}</h1>
+    <h1>{{ 'label.linesNumber'|trans }} : {{ linesNumber }}</h1>
+    
+    <br/>
+    <hr/>
+    <hr/>
+    <br/>
+
+    <div>
+        <a href="{{ path('admin_element_index') }}">
+            <i class="fa fa-database" aria-hidden="true"></i> {{ 'menu.admin'|trans }}
+        </a>
+    </div>
+
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        <a href="{{ asset('export_xlsx/export_elements.xlsx') }}"class="btn btn-lg btn-block btn-info">
+            <i class="fa fa-file-excel-o" aria-hidden="true"></i> {{ 'label.download'|trans }}
+        </a>
+    </div>
+
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}
