@@ -404,7 +404,7 @@
             </trans-unit>
             <trans-unit id="label.summary">
                 <source>label.summary</source>
-                <target>Résumé</target>
+                <target>Résumé de l'administrateur</target>
             </trans-unit>
             <trans-unit id="label.published_at">
                 <source>label.published_at</source>

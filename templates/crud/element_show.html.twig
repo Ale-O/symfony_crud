@@ -11,10 +11,6 @@
         <span class="metadata"><i class="fa fa-user-circle-o"></i> {{ element.author.fullName }}</span>
     </p>
 
-    <div class="well">
-        <p class="m-b-0"><strong>{{ 'label.summary'|trans }}</strong>: {{ element.summary }}</p>
-    </div>
-
     {{ element.content|markdown_to_html|sanitize_html }}
 
     {{ include('crud/_element_tags.html.twig') }}
@@ -60,7 +56,7 @@
                                 <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show'|trans }}
                             </a>
 
-                            <a href="{{ path('subelement_edit', {id: subelement.id}) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ path('subelement_edit_fields', {id: subelement.id}) }}" class="btn btn-sm btn-primary">
                                 <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'action.edit'|trans }}
                             </a>
                         </div>

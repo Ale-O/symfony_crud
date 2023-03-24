@@ -9,7 +9,6 @@
         <br/>
         <span class="metadata"><i class="fa fa-user-circle-o"></i> {{ subelement.author.fullName }}</span>
     </p>
-    {{ subelement.content|markdown_to_html|sanitize_html }}
 
     <div>
         <a href="{{ path('crud_element', {slug: slugElement}) }}" class="btn btn-link">
@@ -75,14 +74,8 @@
 {% block sidebar %}
 
     <div class="section">
-        <a href="{{ path('subelement_edit', {id: subelement.id}) }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit'|trans }}
-        </a>
-    </div>
-
-    <div class="section">
         <a href="{{ path('subelement_edit_fields', {id: subelement.id}) }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-unlock" aria-hidden="true"></i> {{ 'action.edit_fields'|trans }}
+            <i class="fa fa-unlock" aria-hidden="true"></i> {{ 'action.edit'|trans }}
         </a>
     </div>
     
