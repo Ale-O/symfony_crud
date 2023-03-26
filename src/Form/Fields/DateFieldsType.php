@@ -15,12 +15,14 @@ class DateFieldsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        /*
         $builder
             ->add('content', DateType::class, [
                 'label' => 'label.content',
                 'required' => true,
             ])
         ;
+        */
     }
 
     /**

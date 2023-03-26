@@ -16,6 +16,7 @@ class FileFieldsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        /*
         $builder
             // ...
             ->add('content', FileType::class, [
@@ -35,6 +36,7 @@ class FileFieldsType extends AbstractType
             ])
             // ...
         ;
+        */
     }
 
     public function configureOptions(OptionsResolver $resolver)

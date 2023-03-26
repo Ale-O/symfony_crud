@@ -1,3 +1,4 @@
+{#
 {{ form_start(form, {method: 'POST', action: path('textfields_edit', {'id': textfields.id})}) }}
     <fieldset id={{ textfields.id }}>
 
@@ -12,13 +13,14 @@
     </fieldset>
     <br>
 {{ form_end(form) }}
+#}
 
-{# AJAX Project
-{{ form_start(form, {attr: {'id': 'form'}, action: path('textFields_api_edit', {'id': textfields.id})}) }}
-    <fieldset id={{ textfields.id }}>
+
+{{ form_start(form, {attr: {'id': 'text' ~ textfields.id}, action: path('textfields_edit_ajax', {'id': textfields.id})}) }}
+    <fieldset>
 
         {{ form_errors(form) }}
-        {{ form_row(form.content, {'id':'content'}) }}
+        {{ form_row(form.content, {'id': 'textContent' ~ textfields.id}) }}
         
         <div class="form-group">
             <button class="btn btn-primary pull-right" type="submit">
@@ -32,17 +34,17 @@
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        $(form).submit( function(event)
+        $(text{{ textfields.id }}).submit( function(event)
         {
         event.preventDefault();
-        document.getElementById("form").style.color = "green";
+        document.getElementById('text{{ textfields.id }}').style.color = "green";
         $.ajax({
             type: 'PUT',
-            url: $(form).attr('action'),
+            url: $(text{{ textfields.id }}).attr('action'),
             dataType: 'json',
             async: true,
             data: JSON.stringify({
-            content:document.getElementById("content").value,
+            content:document.getElementById('textContent{{ textfields.id }}').value,
             }),
             success: function (response) {
             $('#res').html("data save");
@@ -53,4 +55,3 @@
         })
     </script>
 {% endblock %}
-#}

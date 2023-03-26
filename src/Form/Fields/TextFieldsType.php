@@ -19,9 +19,9 @@ class TextFieldsType extends AbstractType
             ->add('content', TextType::class, [
                 'label' => 'label.content',
                 'required' => false,
-                'data_class' => null,
+                // 'data_class' => null,
                 // Register new key "empty_data" with an empty string
-                'empty_data' => '',
+                // 'empty_data' => '',
             ])
         ;
     }

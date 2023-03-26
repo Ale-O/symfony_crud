@@ -599,11 +599,11 @@
         <argument type="service" id=".service_locator.hiko9G..App\Controller\Admin\UsersController"/>
       </call>
     </service>
-    <service id="App\Controller\Api\CrudController" class="App\Controller\Api\CrudController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Ajax\CrudController" class="App\Controller\Ajax\CrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.hiko9G..App\Controller\Api\CrudController"/>
+        <argument type="service" id=".service_locator.hiko9G..App\Controller\Ajax\CrudController"/>
       </call>
     </service>
     <service id="App\Controller\CrudController" class="App\Controller\CrudController" public="true" autowire="true" autoconfigure="true">
@@ -8324,9 +8324,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\UsersController" class="App\Controller\Admin\UsersController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\UsersController" class="App\Controller\Admin\UsersController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\UsersController" class="App\Controller\Admin\UsersController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Api\CrudController" class="App\Controller\Api\CrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Api\CrudController" class="App\Controller\Api\CrudController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Api\CrudController" class="App\Controller\Api\CrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Ajax\CrudController" class="App\Controller\Ajax\CrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Ajax\CrudController" class="App\Controller\Ajax\CrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Ajax\CrudController" class="App\Controller\Ajax\CrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CrudController" class="App\Controller\CrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CrudController" class="App\Controller\CrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CrudController" class="App\Controller\CrudController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8893,6 +8893,47 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
       </argument>
     </service>
+    <service id=".service_locator.Q4BYX5K" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+        <argument key="textFields" type="service_closure" id=".errored..service_locator.Q4BYX5K.App\Entity\TextFields"/>
+      </argument>
+    </service>
+    <service id=".service_locator.3_O_NUz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="dateFields" type="service_closure" id=".errored..service_locator.3_O_NUz.App\Entity\DateFields"/>
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
+    <service id=".service_locator.vqh7SJG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="numberFields" type="service_closure" id=".errored..service_locator.vqh7SJG.App\Entity\NumberFields"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
+    <service id=".service_locator.DIH2ZJQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="fileFields" type="service_closure" id=".errored..service_locator.DIH2ZJQ.App\Entity\FileFields"/>
+        <argument key="slugger" type="service_closure" id="slugger"/>
+      </argument>
+    </service>
+    <service id=".service_locator.D1C3Jzj" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+        <argument key="subelement" type="service_closure" id="App\Repository\SubelementRepository"/>
+        <argument key="subelementFields" type="service_closure" id=".errored..service_locator.D1C3Jzj.App\Entity\SubelementFields"/>
+      </argument>
+    </service>
     <service id=".service_locator.V0mgu1t" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8915,7 +8956,7 @@
         <argument key="security" type="service_closure" id="security.helper"/>
       </argument>
     </service>
-    <service id=".service_locator.KBW3Ej8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.sWIxqcw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CrudController::delete" type="service_closure" id=".service_locator.nfDhB4v"/>
@@ -8961,6 +9002,11 @@
         <argument key="App\Controller\Admin\UsersController::levelUp" type="service_closure" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\Admin\UsersController::new" type="service_closure" id=".service_locator.gPh6X_L"/>
         <argument key="App\Controller\Admin\UsersController::show" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\Ajax\CrudController::dateFieldsEditAjax" type="service_closure" id=".service_locator.3_O_NUz"/>
+        <argument key="App\Controller\Ajax\CrudController::fileFieldsEditAjax" type="service_closure" id=".service_locator.DIH2ZJQ"/>
+        <argument key="App\Controller\Ajax\CrudController::numberFieldsEditAjax" type="service_closure" id=".service_locator.vqh7SJG"/>
+        <argument key="App\Controller\Ajax\CrudController::subelementFieldsEditAjax" type="service_closure" id=".service_locator.D1C3Jzj"/>
+        <argument key="App\Controller\Ajax\CrudController::textFieldsEditAjax" type="service_closure" id=".service_locator.Q4BYX5K"/>
         <argument key="App\Controller\CrudController::elementShow" type="service_closure" id=".service_locator.dbY8AGk"/>
         <argument key="App\Controller\CrudController::index" type="service_closure" id=".service_locator.V0mgu1t"/>
         <argument key="App\Controller\CrudController::search" type="service_closure" id=".service_locator.MlSflDM"/>
@@ -9031,6 +9077,11 @@
         <argument key="App\Controller\Admin\UsersController:levelUp" type="service_closure" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\Admin\UsersController:new" type="service_closure" id=".service_locator.gPh6X_L"/>
         <argument key="App\Controller\Admin\UsersController:show" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\Ajax\CrudController:dateFieldsEditAjax" type="service_closure" id=".service_locator.3_O_NUz"/>
+        <argument key="App\Controller\Ajax\CrudController:fileFieldsEditAjax" type="service_closure" id=".service_locator.DIH2ZJQ"/>
+        <argument key="App\Controller\Ajax\CrudController:numberFieldsEditAjax" type="service_closure" id=".service_locator.vqh7SJG"/>
+        <argument key="App\Controller\Ajax\CrudController:subelementFieldsEditAjax" type="service_closure" id=".service_locator.D1C3Jzj"/>
+        <argument key="App\Controller\Ajax\CrudController:textFieldsEditAjax" type="service_closure" id=".service_locator.Q4BYX5K"/>
         <argument key="App\Controller\CrudController:elementShow" type="service_closure" id=".service_locator.dbY8AGk"/>
         <argument key="App\Controller\CrudController:index" type="service_closure" id=".service_locator.V0mgu1t"/>
         <argument key="App\Controller\CrudController:search" type="service_closure" id=".service_locator.MlSflDM"/>
@@ -9433,9 +9484,9 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.hiko9G." method="withContext"/>
     </service>
-    <service id=".service_locator.hiko9G..App\Controller\Api\CrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Api\CrudController"/>
-      <argument>App\Controller\Api\CrudController</argument>
+    <service id=".service_locator.hiko9G..App\Controller\Ajax\CrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Ajax\CrudController"/>
+      <argument>App\Controller\Ajax\CrudController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.hiko9G." method="withContext"/>
     </service>
@@ -9683,12 +9734,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.KBW3Ej8"/>
+      <argument type="service" id=".service_locator.sWIxqcw"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.KBW3Ej8"/>
+      <argument type="service" id=".service_locator.sWIxqcw"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -9761,6 +9812,11 @@
     <service id=".errored..service_locator.SRCoNHU.App\Entity\Element" class="App\Entity\Element"/>
     <service id=".errored..service_locator.S92MJGp.App\Entity\Tag" class="App\Entity\Tag"/>
     <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
+    <service id=".errored..service_locator.Q4BYX5K.App\Entity\TextFields" class="App\Entity\TextFields"/>
+    <service id=".errored..service_locator.3_O_NUz.App\Entity\DateFields" class="App\Entity\DateFields"/>
+    <service id=".errored..service_locator.vqh7SJG.App\Entity\NumberFields" class="App\Entity\NumberFields"/>
+    <service id=".errored..service_locator.DIH2ZJQ.App\Entity\FileFields" class="App\Entity\FileFields"/>
+    <service id=".errored..service_locator.D1C3Jzj.App\Entity\SubelementFields" class="App\Entity\SubelementFields"/>
     <service id=".errored..service_locator.div2LH8.App\Entity\FileFields" class="App\Entity\FileFields"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
@@ -10851,7 +10907,7 @@
     <service id="lexik_jwt_authentication.key_loader" alias="lexik_jwt_authentication.key_loader.raw" public="true"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.KBW3Ej8"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.sWIxqcw"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -10877,8 +10933,13 @@
     <service id=".service_locator.Xbsa8iG" alias="api_platform.filter_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.Yt6x6Sy" alias=".service_locator.n6TT3Jh"/>
+    <service id=".service_locator.q.i0dA6" alias=".service_locator.Q4BYX5K"/>
+    <service id=".service_locator.nID.cQN" alias=".service_locator.3_O_NUz"/>
+    <service id=".service_locator.L1C3f1c" alias=".service_locator.vqh7SJG"/>
+    <service id=".service_locator.l1Ucnvt" alias=".service_locator.DIH2ZJQ"/>
+    <service id=".service_locator.IaaLgvh" alias=".service_locator.D1C3Jzj"/>
     <service id=".service_locator.FXjGl5F" alias=".service_locator.fIGC0_B"/>
-    <service id=".service_locator.yQeNyhn" alias=".service_locator.KBW3Ej8"/>
+    <service id=".service_locator.mUN27od" alias=".service_locator.sWIxqcw"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.l6ELYLY"/>
     <service id=".service_locator.RGe.Eww" alias=".service_locator.wmwio2R"/>
     <service id=".service_locator.eAyDhvs" alias=".service_locator.RJlMS3v"/>
@@ -10962,6 +11023,11 @@
     <service id=".service_locator.cMNJbrm" alias=".service_locator.n6TT3Jh"/>
     <service id=".service_locator.9Jslvhq" alias=".service_locator.gPh6X_L"/>
     <service id=".service_locator.NFoOWn0" alias=".service_locator.ch4Jgvl"/>
+    <service id=".service_locator.03gAvmL" alias=".service_locator.Q4BYX5K"/>
+    <service id=".service_locator._ckz95a" alias=".service_locator.3_O_NUz"/>
+    <service id=".service_locator.Nlx4jzl" alias=".service_locator.vqh7SJG"/>
+    <service id=".service_locator.geP2x1S" alias=".service_locator.DIH2ZJQ"/>
+    <service id=".service_locator.3uy35dc" alias=".service_locator.D1C3Jzj"/>
     <service id=".service_locator.Mh5bHU0" alias=".service_locator.V0mgu1t"/>
     <service id=".service_locator.9BbZeL_" alias=".service_locator.div2LH8"/>
     <service id=".service_locator.ZBzLRnv" alias=".service_locator.fIGC0_B"/>

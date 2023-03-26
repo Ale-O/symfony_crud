@@ -4,12 +4,14 @@
 
 {% block javascripts %}
     <script>
+        /* FUNCTION ANCHOR - DEACTIVATE
         document.addEventListener("DOMContentLoaded", function(event) {
             if(document.getElementById("{{ anchor }}")){
                 location.href = "#{{ anchor }}"
                 document.getElementById("{{ anchor }}").style.color = "green";
             }
         });
+        */
     </script>
 {% endblock %}
 
