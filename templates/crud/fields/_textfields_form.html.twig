@@ -23,7 +23,7 @@
         {{ form_row(form.content, {'id': 'textContent' ~ textfields.id}) }}
         
         <div class="form-group">
-            <button class="btn btn-primary pull-right" type="submit">
+            <button class="btn btn-primary pull-right" type="submit" id="textButton{{ textfields.id }}">
                 <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit'|trans }}
             </button>
         </div>

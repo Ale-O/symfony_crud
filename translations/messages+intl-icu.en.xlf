@@ -173,6 +173,10 @@
                 <source>action.edit</source>
                 <target>Edit</target>
             </trans-unit>
+            <trans-unit id="action.edit_all">
+                <source>action.edit_all</source>
+                <target>Edit all</target>
+            </trans-unit>
             <trans-unit id="action.edit_fields">
                 <source>action.edit_fields</source>
                 <target>Edit field</target>
