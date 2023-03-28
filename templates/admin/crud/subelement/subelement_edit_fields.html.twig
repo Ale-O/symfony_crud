@@ -83,8 +83,8 @@
             id="mainButton"
             value="Button" 
             onclick="
-                {% for field in fields|sort((a, b) => a.position <=> b.position) %}
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% for field in fields|sort((a, b) => a.position <=> b.position) %}
                         {% if field.type is same as('text') %}
                             document.getElementById('textButton{{ field.id }}').click(),
                         {% elseif field.type is same as('date') %}
@@ -95,12 +95,9 @@
                             document.getElementById('fileButton{{ field.id }}').click(),
                         {% elseif field.type is same as('subelement') %}
                             document.getElementById('subelementButton{{ field.id }}').click(),
-                        {% else %}
-                            {{ field.content }}
                         {% endif %}
-                    {% endif %}
-                    document.getElementById('textButton38').click(),
-                {% endfor %}
+                    {% endfor %}
+                {% endif %}
                 document.getElementById('').click()
                 "
                 <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit_all'|trans }}

@@ -42,23 +42,23 @@
 
             var form = document.getElementById('file{{ filefields.id }}');
             $.ajax({
-            url: $(file{{ filefields.id }}).attr('action'),
-            data: new FormData(form),
-            type: 'POST',
-            contentType:false,
-            processData:false,
-            cache:false,
-            dataType:"json", 
-            error:function(err){
-                    console.error(err);
-            },
-            success:function(data){
-                console.log(data);      
-            },
-            complete:function(){
-            console.log("Request finished.");
+                url: $(file{{ filefields.id }}).attr('action'),
+                data: new FormData(form),
+                type: 'POST',
+                contentType:false,
+                processData:false,
+                cache:false,
+                dataType:"json", 
+                error:function(err){
+                        console.error(err);
+                },
+                success:function(data){
+                    console.log(data);      
+                },
+                complete:function(){
+                console.log("Request finished.");
 
-            }
+                }
             });
                 
             return false;
