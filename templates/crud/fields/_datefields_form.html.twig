@@ -37,7 +37,7 @@
         $(date{{ datefields.id }}).submit( function(event)
         {
         event.preventDefault();
-        document.getElementById('date{{ datefields.id }}').style.color = "green";
+        loadPage(1);
         $.ajax({
             type: 'PUT',
             url: $(date{{ datefields.id }}).attr('action'),
@@ -47,7 +47,9 @@
             content:document.getElementById('dateContent{{ datefields.id }}').value,
             }),
             success: function (response) {
-            $('#res').html("data save");
+                $('#res').html("data save");
+                document.getElementById('date{{ datefields.id }}').style.color = "green";
+                loadPage(-1);
             }
         });
             

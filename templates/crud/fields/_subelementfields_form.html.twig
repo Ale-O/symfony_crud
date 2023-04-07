@@ -37,7 +37,7 @@
         $(subelement{{ subelementfields.id }}).submit( function(event)
         {
         event.preventDefault();
-        document.getElementById('subelement{{ subelementfields.id }}').style.color = "green";
+        loadPage(1);
         $.ajax({
             type: 'PUT',
             url: $(subelement{{ subelementfields.id }}).attr('action'),
@@ -47,7 +47,9 @@
             content:document.getElementById('subelementContent{{ subelementfields.id }}').value,
             }),
             success: function (response) {
-            $('#res').html("data save");
+                $('#res').html("data save");
+                document.getElementById('subelement{{ subelementfields.id }}').style.color = "green";
+                loadPage(-1);
             }
         });
             

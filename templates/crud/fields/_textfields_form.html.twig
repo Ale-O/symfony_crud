@@ -37,7 +37,7 @@
         $(text{{ textfields.id }}).submit( function(event)
         {
         event.preventDefault();
-        document.getElementById('text{{ textfields.id }}').style.color = "green";
+        loadPage(1);
         $.ajax({
             type: 'PUT',
             url: $(text{{ textfields.id }}).attr('action'),
@@ -47,7 +47,9 @@
             content:document.getElementById('textContent{{ textfields.id }}').value,
             }),
             success: function (response) {
-            $('#res').html("data save");
+                $('#res').html("data save");
+                document.getElementById('text{{ textfields.id }}').style.color = "green";
+                loadPage(-1);
             }
         });
             

@@ -38,8 +38,7 @@
         $(file{{ filefields.id }}).submit( function(event)
         {
             event.preventDefault();
-            document.getElementById('file{{ filefields.id }}').style.color = "green";
-
+            loadPage(1);
             var form = document.getElementById('file{{ filefields.id }}');
             $.ajax({
                 url: $(file{{ filefields.id }}).attr('action'),
@@ -53,7 +52,9 @@
                         console.error(err);
                 },
                 success:function(data){
-                    console.log(data);      
+                    console.log(data);
+                    document.getElementById('file{{ filefields.id }}').style.color = "green";
+                    loadPage(-1);      
                 },
                 complete:function(){
                 console.log("Request finished.");

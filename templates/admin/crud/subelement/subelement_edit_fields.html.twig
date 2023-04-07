@@ -12,10 +12,63 @@
             }
         });
         */
+        let stateLoad = 0;
+        function loadPage(loadPoint){
+            stateLoad = stateLoad + loadPoint;
+            let totalPercent = 100-stateLoad;
+            document.getElementById('loadPercent').firstChild.textContent = totalPercent;
+            if (stateLoad === 0){
+                document.getElementById('loading').style.visibility="hidden";
+            }
+            else {
+                document.getElementById('loading').style.visibility="visible";
+            }
+        }
     </script>
 {% endblock %}
 
 {% block main %}
+
+    <style>
+        .loader {
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid #3498db;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        margin:300px auto 0 auto;
+        animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+    </style>
+
+    <div class="well" id="loading" style=
+        "
+        background: grey;
+        opacity:0.5;
+        position: fixed;
+        margin:0;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        visibility: hidden;
+        "
+    > 
+        <div class="loader"></div>
+        <br>
+        <div class="text-center">
+            <h1>Loading <strong id="loadPercent">5</strong> %</h1>
+        </div>    
+    </div>
+
+
     <h1>{{ subelement.title }}</h1>
     <p class="element-metadata">
         <span class="metadata"><i class="fa fa-calendar-o"></i> {{ subelement.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
@@ -79,7 +132,7 @@
     {% endfor %}
 
     <div class="form-group">
-        <button class="btn btn-primary pull-right" 
+        <button class="btn btn-warning pull-center" 
             id="mainButton"
             value="Button" 
             onclick="
@@ -103,7 +156,6 @@
                 <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit_all'|trans }}
         </button>
     </div>
-
 {% endblock %}
 
 

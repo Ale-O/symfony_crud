@@ -37,7 +37,7 @@
         $(number{{ numberfields.id }}).submit( function(event)
         {
         event.preventDefault();
-        document.getElementById('number{{ numberfields.id }}').style.color = "green";
+        loadPage(1);
         $.ajax({
             type: 'PUT',
             url: $(number{{ numberfields.id }}).attr('action'),
@@ -47,7 +47,9 @@
             content:parseInt(document.getElementById('numberContent{{ numberfields.id }}').value),
             }),
             success: function (response) {
-            $('#res').html("data save");
+                $('#res').html("data save");
+                document.getElementById('number{{ numberfields.id }}').style.color = "green";
+                loadPage(-1);
             }
         });
             
