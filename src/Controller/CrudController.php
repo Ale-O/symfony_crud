@@ -87,10 +87,17 @@ class CrudController extends AbstractController
      * @IsGranted("IS_AUTHENTICATED_FULLY")
      * @ParamConverter("element", options={"mapping": {"elementSlug": "slug"}})
      */
-    public function subelementNew(Request $request, Element $element, EventDispatcherInterface $eventDispatcher): Response
+    public function subelementNew(Request $request, Element $element, TagRepository $tags, EventDispatcherInterface $eventDispatcher): Response
     {
         $subelement = new Subelement();
+
+        $user = $this->getUser();
+        isset($user) ? $username = $user->getUsername() : $username = '';
+
+        $tag = $tags->findBy(['name' => $username]);
+
         $subelement->setAuthor($this->getUser());
+        $subelement->addTag($tag[0]);
         $element->addSubelement($subelement);
 
         $form = $this->createForm(SubelementType::class, $subelement);
